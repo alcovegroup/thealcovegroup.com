@@ -1,0 +1,72 @@
+/* line 7, ../scss/no-touch.scss */
+.no-touch a:hover {
+  padding-bottom: 0.5rem;
+  border-color: transparent;
+  color: #e5a344;
+}
+/* line 17, ../scss/no-touch.scss */
+.no-touch #menu-frame ul.mobile-menu li a:hover {
+  padding: 0;
+  color: #e5a344;
+}
+/* line 27, ../scss/no-touch.scss */
+.no-touch #header a:hover {
+  padding: initial;
+}
+/* line 32, ../scss/no-touch.scss */
+.no-touch input[type="submit"]:hover,
+.no-touch button:hover,
+.no-touch a.btn:hover,
+.no-touch label.btn:hover {
+  color: #FFFFFF;
+  background: #012639;
+  border-color: #012639;
+  padding-bottom: 0.7rem;
+}
+/* line 40, ../scss/no-touch.scss */
+.no-touch input[type="submit"]:hover.small,
+.no-touch button:hover.small,
+.no-touch a.btn:hover.small,
+.no-touch label.btn:hover.small {
+  padding-bottom: 0.7rem;
+}
+@media only screen and (min-width: 40.0625em) {
+  /* line 46, ../scss/no-touch.scss */
+  .no-touch input[type="submit"]:hover,
+  .no-touch button:hover,
+  .no-touch a.btn:hover,
+  .no-touch label.btn:hover {
+    padding-bottom: 1rem;
+  }
+  /* line 51, ../scss/no-touch.scss */
+  .no-touch input[type="submit"]:hover.small,
+  .no-touch button:hover.small,
+  .no-touch a.btn:hover.small,
+  .no-touch label.btn:hover.small {
+    padding-bottom: 0.7rem;
+  }
+}
+/* line 58, ../scss/no-touch.scss */
+.no-touch .reverse input[type="submit"]:hover,
+.no-touch .reverse button:hover,
+.no-touch .reverse a.btn:hover,
+.no-touch .reverse label.btn:hover {
+  color: #012639;
+  background: #FFFFFF;
+  border-color: #FFFFFF;
+}
+/* line 85, ../scss/no-touch.scss */
+.no-touch .slick-slider button:hover {
+  padding: 0;
+  margin: 0;
+  background: transparent;
+}
+/* line 93, ../scss/no-touch.scss */
+.no-touch .slick-dots li button.tab:hover {
+  background-size: cover;
+  background-position: center;
+}
+/* line 104, ../scss/no-touch.scss */
+.no-touch #footer ul.menu li a:hover {
+  color: #e5a344;
+}
