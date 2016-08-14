@@ -9,7 +9,7 @@
       
       <div id="hero" class="section">
         <div class="video-bg" style="width: 100%; height: 100%; border: 1px dashed red; position: absolute;">
-          <video width="100%" height="100%" autoplay>
+          <video width="100%" height="100%" autoplay loop muted>
             <source src="http://mls.liquinas.com/wp-content/uploads/2016/08/earth_night_rotate_1080.mp4" type="video/mp4">
             <source src="http://mls.liquinas.com/wp-content/uploads/2016/08/earth_night_rotate_1080.webm" type="video/webm">
             <source src="http://mls.liquinas.com/wp-content/uploads/2016/08/earth_night_rotate_1080.ogg" type="video/ogg">
@@ -191,6 +191,9 @@
           navigation: true,
           navigationPosition: 'right',
           responsiveWidth: 37.70588*remUnit,
+          afterRender: function () {
+            $('video[autoplay]').play();
+          }
           onLeave: function(index, nextIndex, direction){
             var leavingSection = $(this);
             var $header = $('#header');
