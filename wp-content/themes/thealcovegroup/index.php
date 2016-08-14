@@ -192,7 +192,7 @@
           navigationPosition: 'right',
           responsiveWidth: 37.70588*remUnit,
           afterRender: function () {
-            $('video[autoplay]').play();
+            $('video').get(0).play();
           },
           onLeave: function(index, nextIndex, direction){
             var leavingSection = $(this);
