@@ -8,7 +8,7 @@
       <!-- Hero -->
       
       <div id="hero" class="section">
-        <div class="video-bg" style="width: 100%; height: 100%; border: 1px dashed red;">
+        <div class="video-bg" style="width: 100%; height: 100%; border: 1px dashed red; position: absolute;">
           <video width="100%" height="100%" autoplay>
             <source src="http://mls.liquinas.com/wp-content/uploads/2016/08/earth_night_rotate_1080.mp4" type="video/mp4">
             <source src="http://mls.liquinas.com/wp-content/uploads/2016/08/earth_night_rotate_1080.webm" type="video/webm">
