@@ -7,13 +7,16 @@
 
       <!-- Hero -->
       
-      <div id="hero"
-      <?php if (has_post_thumbnail( $post->ID ) ): ?>
-      <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
-       style="background-image: url('<?php echo $image[0]; ?>');"
-      <?php endif; ?>
-      class="section">
-      
+      <div id="hero" class="section">
+        <div class="video-bg" style="width: 100%; height: 100%; border: 1px dashed red;">
+          <video width="100%" height="100%" autoplay>
+            <source src="http://mls.liquinas.com/wp-content/uploads/2016/08/earth_night_rotate_1080.mp4" type="video/mp4">
+            <source src="http://mls.liquinas.com/wp-content/uploads/2016/08/earth_night_rotate_1080.webm" type="video/webm">
+            <source src="http://mls.liquinas.com/wp-content/uploads/2016/08/earth_night_rotate_1080.ogg" type="video/ogg">
+          Your browser does not support the video tag.
+          </video>
+        </div>
+
         <div class="hero-overlay reverse">
 
           <!-- Hero Buttons -->
