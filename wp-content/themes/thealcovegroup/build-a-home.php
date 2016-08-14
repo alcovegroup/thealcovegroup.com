@@ -54,10 +54,10 @@
                       </div>
                     </div>
                     <div class="small-6 medium-4 medium-pull-4 columns">
-                      <input type="text" placeholder="Sq. Ft. Min." />
+                      <input type="text" placeholder="Sq. Ft. Min." name="sq-ft-min" />
                     </div>
                     <div class="small-6 medium-4 columns">
-                      <input type="text" placeholder="Sq. Ft. Max." />
+                      <input type="text" placeholder="Sq. Ft. Max." name="sq-ft-max" />
                     </div>
                   </div>
                   <div class="row">
@@ -77,10 +77,10 @@
                       </div>
                     </div>
                     <div class="small-6 medium-4 medium-pull-4 columns">
-                      <input type="text" placeholder="Lot Size Min." />
+                      <input type="text" placeholder="Lot Size Min." name="lot-min" />
                     </div>
                     <div class="small-6 medium-4 columns">
-                      <input type="text" placeholder="Lot Size Max." />
+                      <input type="text" placeholder="Lot Size Max." name="lot-max" />
                     </div>
                   </div>
                   <div class="row">
@@ -93,10 +93,10 @@
                     <div class="small-12 columns">
                       <select name="price-range" required>
                         <option selected disabled value>Price Range<sup>*</sup></option>
-                        <option value="lower-range">$500,000 - $1,000,000</option>
-                        <option value="middle-range">$1,000,000 - $3,000,000</option>
-                        <option value="upper-range">$3,000,000 - $10,000,000</option>
-                        <option value="max-range">$10,000,000+</option>
+                        <option value="$500,000 - $1,000,000">$500,000 - $1,000,000</option>
+                        <option value="$1,000,000 - $3,000,000">$1,000,000 - $3,000,000</option>
+                        <option value="$3,000,000 - $10,000,000">$3,000,000 - $10,000,000</option>
+                        <option value="$10,000,000+">$10,000,000+</option>
                       </select>
                       <small class="error">We need to know your price range!</small>
                     </div> 
