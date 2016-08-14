@@ -30,7 +30,7 @@
                 <?php the_content(); ?>
                 <?php endwhile; endif; wp_reset_query(); ?>
                 <form id="build-a-home-form" class="row" action="" method="post" data-abide onsubmit="event.preventDefault(); formSubmission(event);">
-                  <input type="checkbox" name="Which Form Submitted" value="Submitted Build A Home Form" checked style="display: none;" />
+                  <input type="checkbox" name="Submitted Build A Home Form" value="Submitted Build A Home Form" checked style="display: none;" />
                   <div class="row">
                     <div class="small-12 columns select-prefix">
                       <span>Design Style?</span>
