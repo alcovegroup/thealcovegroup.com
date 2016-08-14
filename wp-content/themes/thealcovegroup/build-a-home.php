@@ -85,7 +85,8 @@
                   </div>
                   <div class="row">
                     <div class="small-12 columns">
-                      <input type="text" placeholder="Desired Zip Codes*" name="desired-zip" />
+                      <input type="text" placeholder="Desired Zip Codes*" name="desired-zip" required />
+                      <small class="error">We need to know where you would like to live!</small>
                     </div>
                   </div>
                   <div class="row">
@@ -103,13 +104,14 @@
                   <div class="row">
                     <div class="small-12 columns select-prefix">
                       <span>When are you looking to build a home?</span>
-                      <select name="building-timeframe">
+                      <select name="building-timeframe" required>
                         <option disabled selected value>Select<sup>*</sup></option>
                         <option value="interested">Right now</option>
                         <option value="1-2-months">1-2 Months</option>
                         <option value="3-6-months">3-6 Months</option>
                         <option value="6-plus-months">6+ Months</option>
                       </select>
+                      <small class="error">We need to know when you would like to build!</small>
                     </div>
                   </div>
                   <div class="row">
@@ -186,6 +188,7 @@
             <h4><?php echo get_option('global_footer_message'); ?></h4>
             <?php endif; ?>
             <form id="footerSubscribe">
+              <input type="checkbox" id="newsletter-checkbox" value="newsletter-opt-in" name="newsletter-opt-in" style="display: none;" checked>
               <input type="text" placeholder="Email Address*" name="footer-email-subscribe" required/>
               <input type="submit" class="small" value="Subscribe" />
             </form>

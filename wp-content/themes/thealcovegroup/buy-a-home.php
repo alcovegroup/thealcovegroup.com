@@ -49,9 +49,11 @@
                   <div class="row">
                     <div class="small-6 columns">
                       <input type="text" placeholder="Min. Beds*" name="min-beds" required />
+                      <small class="error">We need to know your what you're looking for!</small>
                     </div>
                     <div class="small-6 columns">
                       <input type="text" placeholder="Max. Beds*" name="max-beds" required />
+                      <small class="error">We need to know your what you're looking for!</small>
                     </div>
                   </div>
                   <div class="row">
@@ -71,7 +73,8 @@
                   </div>
                   <div class="row">
                     <div class="small-12 columns">
-                      <input type="text" placeholder="Desired Zip Codes*" name="desired-zip" />
+                      <input type="text" placeholder="Desired Zip Codes*" name="desired-zip" required />
+                      <small class="error">We need to know what you're looking for!</small>
                     </div>
                   </div>
                   <div class="row">
@@ -160,6 +163,7 @@
             <h4><?php echo get_option('global_footer_message'); ?></h4>
             <?php endif; ?>
             <form id="footerSubscribe">
+              <input type="checkbox" id="newsletter-checkbox" value="newsletter-opt-in" name="newsletter-opt-in" style="display: none;" checked>
               <input type="text" placeholder="Email Address*" name="footer-email-subscribe" required/>
               <input type="submit" class="small" value="Subscribe" />
             </form>

@@ -130,6 +130,7 @@
             <?php endif; ?>
 
             <form id="footerSubscribe">
+              <input type="checkbox" id="newsletter-checkbox" value="newsletter-opt-in" name="newsletter-opt-in" style="display: none;" checked>
               <input type="text" placeholder="Email Address*" name="footer-email-subscribe" required/>
               <input type="submit" class="small" value="Subscribe" />
             </form>
