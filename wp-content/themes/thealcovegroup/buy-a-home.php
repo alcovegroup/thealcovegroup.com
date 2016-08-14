@@ -131,6 +131,14 @@
                     </div>
                   </div>
                 </form>
+                <script type="text/javascript">
+                    var __ss_noform = __ss_noform || [];
+                    __ss_noform.push(['baseURI', 'https://app-3QEHIZGEXU.marketingautomation.services/webforms/receivePostback/MzYwtzQwMDG0BAA/']);
+                    __ss_noform.push(['form', 'buy-a-home-form', '3158dfd4-41a7-4ed8-bb9c-c353167dd35c']);
+                    __ss_noform.push(['submitType', 'manual']);
+                </script>
+                <script type="text/javascript" src="https://koi-3QEHIZGEXU.marketingautomation.services/client/noform.js?ver=1.24" ></script>
+
               </div> <!-- End form and blurb to hide after submission -->
               <div id="thank-you-message">
                 <h3>Thanks for contacting The Alcove Group!</h3>
@@ -211,6 +219,7 @@
         // console.log(invalid_fields);
       }).on('valid.fndtn.abide', function () {
         console.log('valid!');
+        __ss_noform.push(['submit', null, '3158dfd4-41a7-4ed8-bb9c-c353167dd35c']);
         $('#form-and-blurb').hide();
         $('#thank-you-message').show();
       });

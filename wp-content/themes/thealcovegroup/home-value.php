@@ -164,6 +164,7 @@
                   var __ss_noform = __ss_noform || [];
                   __ss_noform.push(['baseURI', 'https://app-3QEHIZGEXU.marketingautomation.services/webforms/receivePostback/MzYwtzQwMDG0BAA/']);
                   __ss_noform.push(['form', 'home-value-form', 'b5322a6c-5d00-4271-bd84-20fccb02c863']);
+                  __ss_noform.push(['submitType', 'manual']);
                 </script>
                 <script type="text/javascript" src="https://koi-3QEHIZGEXU.marketingautomation.services/client/noform.js?ver=1.24" ></script>
 
@@ -249,6 +250,7 @@
         // console.log(invalid_fields);
       }).on('valid.fndtn.abide', function () {
         console.log('valid!');
+        __ss_noform.push(['submit', null, 'b5322a6c-5d00-4271-bd84-20fccb02c863']);
         $('#form-and-blurb').hide();
         $('#thank-you-message').show();
       });

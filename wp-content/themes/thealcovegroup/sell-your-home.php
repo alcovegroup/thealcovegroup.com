@@ -186,6 +186,7 @@
                     var __ss_noform = __ss_noform || [];
                     __ss_noform.push(['baseURI', 'https://app-3QEHIZGEXU.marketingautomation.services/webforms/receivePostback/MzYwtzQwMDG0BAA/']);
                     __ss_noform.push(['form', 'sell-your-home-form', '64eb9023-d4bb-4cf7-b7cc-3d85b4759e13']);
+                    __ss_noform.push(['submitType', 'manual']);
                 </script>
                 <script type="text/javascript" src="https://koi-3QEHIZGEXU.marketingautomation.services/client/noform.js?ver=1.24" ></script>
 
@@ -270,6 +271,7 @@
         // console.log(invalid_fields);
       }).on('valid.fndtn.abide', function () {
         console.log('valid!');
+        __ss_noform.push(['submit', null, '64eb9023-d4bb-4cf7-b7cc-3d85b4759e13']);
         $('#form-and-blurb').hide();
         $('#thank-you-message').show();
       });
