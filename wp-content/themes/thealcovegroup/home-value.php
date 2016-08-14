@@ -138,13 +138,11 @@
                         <option selected disabled value>Select<sup>*</sup></option>
                         <option value="Interested in selling my home">Interested in selling my home</option>
                         <option value="Just curious">Just curious</option>
-                        <optgroup label="Planning to sell">
-                          <option value="Planning to sell now">Now</option>
-                          <option value="Planning to sell in 1-3 months">1-3 months</option>
-                          <option value="Planning to sell in 6+ months">6 months - 1 year</option>
-                        </optgroup>
+                        <option value="Planning to sell now">Planning to sell now</option>
+                        <option value="Planning to sell in 1-3 months">Planning to sell in 1-3 months</option>
+                        <option value="Planning to sell in 6+ months">Planning to sell in 6+ months</option>
                       </select>
-                      <small class="error">Timeframe is required.</small>
+                      <small class="error">More info is required.</small>
                     </div>
                   </div>
                   <div class="row">

@@ -106,10 +106,10 @@
                       <span>When are you looking to build a home?</span>
                       <select name="building-timeframe" required>
                         <option disabled selected value>Select<sup>*</sup></option>
-                        <option value="interested">Right now</option>
-                        <option value="1-2-months">1-2 Months</option>
-                        <option value="3-6-months">3-6 Months</option>
-                        <option value="6-plus-months">6+ Months</option>
+                        <option value="Right now">Right now</option>
+                        <option value="1-2 Months">1-2 Months</option>
+                        <option value="3-6 Months">3-6 Months</option>
+                        <option value="6+ Months">6+ Months</option>
                       </select>
                       <small class="error">We need to know when you would like to build!</small>
                     </div>
