@@ -9,7 +9,7 @@
       
       <div id="hero" class="section">
         <div class="video-bg" style="width: 100%; height: 100%; border: 1px dashed red; position: absolute;">
-          <video width="100%" height="100%" preload autoplay loop muted style="position: absolute; left: 50%; top: 50%; transform: translateX(-50%) translateY(-50%); min-height: 100%; max-height: 100%;">
+          <video width="100%" height="100%" preload autoplay loop muted style="position: absolute; height: auto; width: auto; left: 50%; top: 50%; transform: translateX(-50%) translateY(-50%); min-height: 100%; max-height: 100%;">
             <source src="http://mls.liquinas.com/wp-content/uploads/2016/08/earth_night_rotate_1080.mp4" type="video/mp4">
             <source src="http://mls.liquinas.com/wp-content/uploads/2016/08/earth_night_rotate_1080.webm" type="video/webm">
             <source src="http://mls.liquinas.com/wp-content/uploads/2016/08/earth_night_rotate_1080.ogg" type="video/ogg">
