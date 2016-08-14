@@ -186,16 +186,19 @@
         var pageHeight;
         var transformedValue;
         var remUnit = parseInt($('html').css("font-size"));
+        var responsiveWidth = 37.70588*remUnit;
         console.log(remUnit);
         $('#fullpage-slider').fullpage({
           navigation: true,
           navigationPosition: 'right',
-          responsiveWidth: 37.70588*remUnit,
+          responsiveWidth: responsiveWidth,
           afterRender: function () {
-            // $('video').get(0).play();
+            if ($(window).width() > responsiveWidth) {
+              $('video').get(0).play();
+            }
           },
           onLeave: function(index, nextIndex, direction){
-            // $('video').get(0).play();
+            $('video').get(0).play();
             var leavingSection = $(this);
             var $header = $('#header');
             var $logoImg = $('img.logo');
