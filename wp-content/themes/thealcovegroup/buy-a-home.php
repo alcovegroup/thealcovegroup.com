@@ -30,6 +30,7 @@
                 <?php the_content(); ?>
                 <?php endwhile; endif; wp_reset_query(); ?>
                 <form id="buy-a-home-form" class="row" action="" method="post" data-abide onsubmit="event.preventDefault(); formSubmission(event);">
+                  <input type="checkbox" name="Which Form Submitted" value="Submitted Buy A Home Form" checked style="display: none;" />
                   <div class="row">
                     <div class="small-12 medium-4 medium-push-4 columns">
                       <div class="slider-holder">

@@ -30,6 +30,7 @@
                 <?php the_content(); ?>
                 <?php endwhile; endif; wp_reset_query(); ?>
                 <form id="sell-your-home-form" class="row" action="" method="post" data-abide onsubmit="event.preventDefault(); formSubmission(event);">
+                  <input type="checkbox" name="Which Form Submitted" value="Submitted Sell Your Home Form" checked style="display: none;" />
                   <div class="row">
                     <div class="small-12 columns">
                       <input type="text" placeholder="Street Address*" name="street-address" required />
