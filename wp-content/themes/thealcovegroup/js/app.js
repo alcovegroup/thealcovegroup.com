@@ -29,12 +29,12 @@ jQuery(function ($) {
 	    	console.log("translated");
 	    	if (!$header.hasClass("minimized")) {
 	    		$header.addClass("minimized");
-	    		$logoImg.attr( "src", "http://localhost:8888/wp-content/themes/thealcovegroup/img/temp-logo-mark.png" );
+	    		$logoImg.attr( "src", "http://mls.liquinas.com/wp-content/themes/thealcovegroup/img/temp-logo-mark.png" );
 	    	}
 	    } else {
 	    	if ($header.hasClass("minimized")) {
 	    		$header.removeClass("minimized");
-	    		$logoImg.attr( "src", "http://localhost:8888/wp-content/themes/thealcovegroup/img/temp-logo-full.png" );
+	    		$logoImg.attr( "src", "http://mls.liquinas.com/wp-content/themes/thealcovegroup/img/temp-logo-full.png" );
 	    	}
 	    }
 	}

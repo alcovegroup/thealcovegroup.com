@@ -169,7 +169,7 @@
                   </div>
                   <div class="row">
                     <div class="small-12 columns checkbox-opt">
-                      <input type="checkbox" id="newsletter-checkbox" value="newsletter-opt" name="newsletter-opt-in" checked>
+                      <input type="checkbox" id="newsletter-checkbox" value="newsletter-opt-in" name="newsletter-opt-in" checked>
                       <label class="checkbox-skin" for="newsletter-checkbox"></label>
                       <label class="checkbox-label" for="newsletter-checkbox">Sign me up for the monthly Market Update E-Newsletter</label>
                     </div>
