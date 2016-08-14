@@ -195,7 +195,7 @@
             // $('video').get(0).play();
           },
           onLeave: function(index, nextIndex, direction){
-            $('video').get(0).play();
+            // $('video').get(0).play();
             var leavingSection = $(this);
             var $header = $('#header');
             var $logoImg = $('img.logo');
