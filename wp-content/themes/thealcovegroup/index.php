@@ -190,7 +190,7 @@
         $('#fullpage-slider').fullpage({
           navigation: true,
           navigationPosition: 'right',
-          responsiveWidth: 37.70588*remUnit,
+          // responsiveWidth: 37.70588*remUnit,
           afterRender: function () {
             $('video').get(0).play();
           },
