@@ -193,7 +193,7 @@
           responsiveWidth: 37.70588*remUnit,
           afterRender: function () {
             $('video[autoplay]').play();
-          }
+          },
           onLeave: function(index, nextIndex, direction){
             var leavingSection = $(this);
             var $header = $('#header');
