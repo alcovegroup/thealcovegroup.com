@@ -226,7 +226,7 @@
             }
           }
         });
-        if (document.documentElement.clientWidth < responsiveWidth) {
+        if (document.documentElement.clientWidth <= responsiveWidth) {
         // if (document.documentElement.clientWidth <= 640) {
           $.fn.fullpage.destroy('all');
         }
