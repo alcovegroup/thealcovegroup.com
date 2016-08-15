@@ -205,9 +205,9 @@
         $('#fullpage-slider').fullpage({
           navigation: true,
           navigationPosition: 'right',
-          responsiveWidth: responsiveWidth,
+          responsiveWidth: 640,
           afterRender: function () {
-            if ($(window).width() > responsiveWidth) {
+            if ($(window).width() > 640) {
               <?php if ( post_custom('use_video_background') ): ?>
               $('video').get(0).play();
               <?php endif; ?>
