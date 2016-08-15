@@ -8,16 +8,14 @@
       <!-- Hero -->
       
       <div id="hero"
-  
-        <?php if (has_post_thumbnail( $post->ID ) ): ?>
-        <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
-         style="background-image: url('<?php echo $image[0]; ?>');"
-        <?php endif; ?>
-
+      <?php if (has_post_thumbnail( $post->ID ) ): ?>
+      <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
+       style="background-image: url('<?php echo $image[0]; ?>');"
+      <?php endif; ?>
       class="section">
         <?php if ( post_custom('use_video_background') ): ?>
-        <div class="video-bg" style="width: 100%; height: 100%; border: 1px dashed red; position: absolute;">
-          <video width="100%" height="100%" preload autoplay loop muted style="position: absolute; top: 50%; left: 50%; z-index: 1; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translate(-50%, -50%); z-index: -1000;">
+        <div class="video-bg" style="width: 100%; height: 100%; position: absolute; overflow: hidden;">
+          <video width="100%" height="100%" preload autoplay loop muted style="position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translate(-50%, -50%); z-index: 0;">
             <source src="<?php echo the_field( 'mp4_video_file' ); ?>" type="video/mp4">
             <source src="<?php echo the_field( 'webm_video_file' ); ?>" type="video/webm">
             <source src="<?php echo the_field( 'ogg_video_file' ); ?>" type="video/ogg">
