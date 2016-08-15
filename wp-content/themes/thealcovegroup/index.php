@@ -20,7 +20,7 @@
             var videoDiv =  '<div class="video-bg"><video width="100%" height="100%" preload autoplay loop muted><source src="<?php echo the_field( "mp4_video_file" ); ?>" type="video/mp4"><source src="<?php echo the_field( "webm_video_file" ); ?>" type="video/webm"><source src="<?php echo the_field( "ogg_video_file" ); ?>" type="video/ogg">Your browser does not support the video tag.</video></div>';
             $('#hero').prepend( videoDiv );
           }
-        }
+        });
         </script>
         <?php endif; ?>
 
