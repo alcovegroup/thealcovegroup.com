@@ -13,22 +13,7 @@
        style="background-image: url('<?php echo $image[0]; ?>');"
       <?php endif; ?>
       class="section">
-        <?php if ( post_custom('use_video_background') ): ?>
-        <script>
-        jQuery(function ($) {
-          console.log("video script is running");
-          // var remUnit = parseInt($('html').css("font-size"));
-          // var responsiveWidth = 640;
-          // console.log("responsiveWidth is: " + responsiveWidth);
-          if ($(window).width() > 640) {
-            console.log("conditional is met");
-            var videoDiv =  '<div class="video-bg"><video width="100%" height="100%" preload autoplay loop muted><source src="<?php echo the_field( "mp4_video_file" ); ?>" type="video/mp4"><source src="<?php echo the_field( "webm_video_file" ); ?>" type="video/webm"><source src="<?php echo the_field( "ogg_video_file" ); ?>" type="video/ogg">Your browser does not support the video tag.</video></div>';
-            $('#hero').prepend( videoDiv );
-            console.log("video should have prepended");
-          }
-        });
-        </script>
-        <?php endif; ?>
+        
 
         <div class="hero-overlay reverse">
 
@@ -209,6 +194,8 @@
           afterRender: function () {
             if ($(window).width() > 640) {
               <?php if ( post_custom('use_video_background') ): ?>
+              var videoDiv =  '<div class="video-bg"><video width="100%" height="100%" preload autoplay loop muted><source src="<?php echo the_field( "mp4_video_file" ); ?>" type="video/mp4"><source src="<?php echo the_field( "webm_video_file" ); ?>" type="video/webm"><source src="<?php echo the_field( "ogg_video_file" ); ?>" type="video/ogg">Your browser does not support the video tag.</video></div>';
+              $('#hero').prepend( videoDiv );
               $('video').get(0).play();
               <?php endif; ?>
             }
