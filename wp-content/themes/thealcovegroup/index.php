@@ -16,13 +16,13 @@
         <?php if ( post_custom('use_video_background') ): ?>
         <script>
         if ($(window).width() > 640) {
-          var videoDiv =  '<div class="video-bg"> \
-            <video width="100%" height="100%" preload autoplay loop muted> \
-              <source src='<?php the_field( "mp4_video_file" ); ?>' type="video/mp4"> \
-              <source src='<?php the_field( "webm_video_file" ); ?>' type="video/webm"> \
-              <source src='<?php the_field( "ogg_video_file" ); ?>' type="video/ogg"> \
-            Your browser does not support the video tag. \
-            </video> \
+          var videoDiv =  '<div class="video-bg">
+            <video width="100%" height="100%" preload autoplay loop muted>
+              <source src='<?php the_field( "mp4_video_file" ); ?>' type="video/mp4">
+              <source src='<?php the_field( "webm_video_file" ); ?>' type="video/webm">
+              <source src='<?php the_field( "ogg_video_file" ); ?>' type="video/ogg">
+            Your browser does not support the video tag.
+            </video>
           </div>';
           $('#hero').prepend( videoDiv );
         }
