@@ -18,7 +18,7 @@
         jQuery(function ($) {
           console.log("video script is running");
           var remUnit = parseInt($('html').css("font-size"));
-          var responsiveWidth = 37.70588*remUnit;
+          var responsiveWidth = 40*remUnit;
           console.log("responsiveWidth is: " + responsiveWidth);
           if ($(window).width() > responsiveWidth) {
             console.log("conditional is met");
