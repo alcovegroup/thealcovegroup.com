@@ -184,15 +184,15 @@
         var pageHeight;
         var transformedValue;
         var remUnit = parseInt($('html').css("font-size"));
-        // var responsiveWidth = 37.70588*remUnit;
-        var responsiveWidth = 640;
+        var responsiveWidth = 37.70588*remUnit;
+        // var responsiveWidth = 640;
         console.log(remUnit);
         $('#fullpage-slider').fullpage({
           navigation: true,
           navigationPosition: 'right',
-          responsiveWidth: 640,
+          responsiveWidth: responsiveWidth,
           afterRender: function () {
-            if ($(window).width() > 640) {
+            if ($(window).width() > responsiveWidth) {
               <?php if ( post_custom('use_video_background') ): ?>
               var videoDiv =  '<div class="video-bg"><video width="100%" height="100%" preload autoplay loop muted><source src="<?php echo the_field( "mp4_video_file" ); ?>" type="video/mp4"><source src="<?php echo the_field( "webm_video_file" ); ?>" type="video/webm"><source src="<?php echo the_field( "ogg_video_file" ); ?>" type="video/ogg">Your browser does not support the video tag.</video></div>';
               $('#hero').prepend( videoDiv );
@@ -226,8 +226,8 @@
             }
           }
         });
-        // if (document.documentElement.clientWidth < 37.70588*remUnit) {
-        if (document.documentElement.clientWidth <= 640) {
+        if (document.documentElement.clientWidth < 37.70588*remUnit) {
+        // if (document.documentElement.clientWidth <= 640) {
           $.fn.fullpage.destroy('all');
         }
         pageHeight = $('#hero').css("height");
