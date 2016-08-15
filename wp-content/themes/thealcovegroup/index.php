@@ -184,9 +184,8 @@
         var pageHeight;
         var transformedValue;
         var remUnit = parseInt($('html').css("font-size"));
-        var responsiveWidth = Math.ceil(37.70588*remUnit);
-
-        // var responsiveWidth = 640;
+        // var responsiveWidth = Math.ceil(37.70588*remUnit);
+        var responsiveWidth = 640;
         console.log(remUnit);
         $('#fullpage-slider').fullpage({
           navigation: true,
