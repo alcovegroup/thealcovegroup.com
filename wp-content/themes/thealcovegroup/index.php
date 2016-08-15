@@ -17,10 +17,10 @@
         <script>
         jQuery(function ($) {
           console.log("video script is running");
-          var remUnit = parseInt($('html').css("font-size"));
-          var responsiveWidth = 40*remUnit;
-          console.log("responsiveWidth is: " + responsiveWidth);
-          if ($(window).width() > responsiveWidth) {
+          // var remUnit = parseInt($('html').css("font-size"));
+          // var responsiveWidth = 640;
+          // console.log("responsiveWidth is: " + responsiveWidth);
+          if ($(window).width() > 640) {
             console.log("conditional is met");
             var videoDiv =  '<div class="video-bg"><video width="100%" height="100%" preload autoplay loop muted><source src="<?php echo the_field( "mp4_video_file" ); ?>" type="video/mp4"><source src="<?php echo the_field( "webm_video_file" ); ?>" type="video/webm"><source src="<?php echo the_field( "ogg_video_file" ); ?>" type="video/ogg">Your browser does not support the video tag.</video></div>';
             $('#hero').prepend( videoDiv );
@@ -199,7 +199,8 @@
         var pageHeight;
         var transformedValue;
         var remUnit = parseInt($('html').css("font-size"));
-        var responsiveWidth = 37.70588*remUnit;
+        // var responsiveWidth = 37.70588*remUnit;
+        var responsiveWidth = 640;
         console.log(remUnit);
         $('#fullpage-slider').fullpage({
           navigation: true,
@@ -238,7 +239,8 @@
             }
           }
         });
-        if (document.documentElement.clientWidth < 37.70588*remUnit) {
+        // if (document.documentElement.clientWidth < 37.70588*remUnit) {
+        if (document.documentElement.clientWidth < 640) {
           $.fn.fullpage.destroy('all');
         }
         pageHeight = $('#hero').css("height");
