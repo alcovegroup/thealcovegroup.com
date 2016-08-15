@@ -184,7 +184,8 @@
         var pageHeight;
         var transformedValue;
         var remUnit = parseInt($('html').css("font-size"));
-        var responsiveWidth = 37.70588*remUnit;
+        var responsiveWidth = Math.floor(37.70588*remUnit);
+
         // var responsiveWidth = 640;
         console.log(remUnit);
         $('#fullpage-slider').fullpage({
@@ -226,7 +227,7 @@
             }
           }
         });
-        if (document.documentElement.clientWidth < 37.70588*remUnit) {
+        if (document.documentElement.clientWidth < responsiveWidth) {
         // if (document.documentElement.clientWidth <= 640) {
           $.fn.fullpage.destroy('all');
         }
