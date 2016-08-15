@@ -240,7 +240,7 @@
           }
         });
         // if (document.documentElement.clientWidth < 37.70588*remUnit) {
-        if (document.documentElement.clientWidth < 640) {
+        if (document.documentElement.clientWidth <= 640) {
           $.fn.fullpage.destroy('all');
         }
         pageHeight = $('#hero').css("height");
