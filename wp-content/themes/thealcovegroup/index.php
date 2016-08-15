@@ -18,9 +18,9 @@
         <?php if ( post_custom('use_video_background') ): ?>
         <div class="video-bg" style="width: 100%; height: 100%; border: 1px dashed red; position: absolute;">
           <video width="100%" height="100%" preload autoplay loop muted style="position: absolute; top: 50%; left: 50%; z-index: 1; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translate(-50%, -50%); z-index: -1000;">
-            <source src="http://mls.liquinas.com/wp-content/uploads/2016/08/earth_night_rotate_1080.mp4" type="video/mp4">
-            <source src="http://mls.liquinas.com/wp-content/uploads/2016/08/earth_night_rotate_1080.webm" type="video/webm">
-            <source src="http://mls.liquinas.com/wp-content/uploads/2016/08/earth_night_rotate_1080.ogg" type="video/ogg">
+            <source src="<?php echo the_field( 'mp4_video_file' ); ?>" type="video/mp4">
+            <source src="<?php echo the_field( 'webm_video_file' ); ?>" type="video/webm">
+            <source src="<?php echo the_field( 'ogg_video_file' ); ?>" type="video/ogg">
           Your browser does not support the video tag.
           </video>
         </div>
@@ -203,11 +203,15 @@
           responsiveWidth: responsiveWidth,
           afterRender: function () {
             if ($(window).width() > responsiveWidth) {
+              <?php if ( post_custom('use_video_background') ): ?>
               $('video').get(0).play();
+              <?php endif; ?>
             }
           },
           onLeave: function(index, nextIndex, direction){
+            <?php if ( post_custom('use_video_background') ): ?>
             $('video').get(0).play();
+            <?php endif; ?>
             var leavingSection = $(this);
             var $header = $('#header');
             var $logoImg = $('img.logo');
