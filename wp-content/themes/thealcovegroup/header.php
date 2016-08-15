@@ -48,7 +48,7 @@
         <a href="<?php echo get_site_url(); ?>" class="show-for-medium-up">
           <img src="<?php echo get_template_directory_uri(); ?>/img/temp-logo-full.png" class="logo" />
         </a>
-        <a href="index.html" class="hide-for-medium-up">
+        <a href="<?php echo get_site_url(); ?>" class="hide-for-medium-up">
           <img src="<?php echo get_template_directory_uri(); ?>/img/temp-logo-mobile.png" class="logo-mobile" />
         </a>
         <ul class="social-icons show-for-medium-up">
