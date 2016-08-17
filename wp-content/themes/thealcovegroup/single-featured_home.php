@@ -266,32 +266,9 @@
 		});
 	});
 
-	var geocoder, map;
-	var homeAddress = "<?php echo the_field( 'address_1' ); ?> <?php echo the_field( 'address_2' ); ?>";
-
-	function codeAddress(address) {
-	    geocoder = new google.maps.Geocoder();
-	    geocoder.geocode({
-	        'address': address
-	    }, function(results, status) {
-	        if (status == google.maps.GeocoderStatus.OK) {
-	            var myOptions = {
-	                zoom: 10,
-	                scrollwheel: false;
-	                center: results[0].geometry.location,
-	                mapTypeId: google.maps.MapTypeId.ROADMAP
-	            }
-	            map = new google.maps.Map(document.getElementById("home-map"), myOptions);
-
-	            var marker = new google.maps.Marker({
-	                map: map,
-	                position: results[0].geometry.location
-	            });
-	        }
-	    });
-	}
-
 	function initMap() {
+		var homeAddress = "<?php echo the_field( 'address_1' ); ?> <?php echo the_field( 'address_2' ); ?>";
+		alert(homeAddress);
 		var myLatLng = {lat: 33.5650816, lng: -111.91640030000002};
 		// Create a map object and specify the DOM element for display.
 		var map = new google.maps.Map(document.getElementById('home-map'), {
