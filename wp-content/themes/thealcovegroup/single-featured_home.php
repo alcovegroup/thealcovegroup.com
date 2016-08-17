@@ -267,7 +267,7 @@
 	});
 
 	function initMap() {
-		var homeAddress = <?php the_field( 'address_1' ); ?> + " " + <?php the_field( 'address_2' ); ?>;
+		var homeAddress = "<?php echo the_field( 'address_1' ); ?> <?php echo the_field( 'address_2' ); ?>";
 		alert(homeAddress);
 		var myLatLng = {lat: 33.5650816, lng: -111.91640030000002};
 		// Create a map object and specify the DOM element for display.
