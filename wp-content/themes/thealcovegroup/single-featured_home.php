@@ -292,19 +292,18 @@
 	}
 
 	function initMap() {
-		codeAddress(homeAddress);
-		// var myLatLng = {lat: 33.5650816, lng: -111.91640030000002};
-		// // Create a map object and specify the DOM element for display.
-		// var map = new google.maps.Map(document.getElementById('home-map'), {
-		// 	center: homeAddress,
-		// 	scrollwheel: false,
-		// 	zoom: 10
-		// });
-		// var marker = new google.maps.Marker({
-		// 	position: homeAddress,
-		// 	map: map,
-		// 	title: 'Home Location'
-		// });
+		var myLatLng = {lat: 33.5650816, lng: -111.91640030000002};
+		// Create a map object and specify the DOM element for display.
+		var map = new google.maps.Map(document.getElementById('home-map'), {
+			center: myLatLng,
+			scrollwheel: false,
+			zoom: 10
+		});
+		var marker = new google.maps.Marker({
+			position: myLatLng,
+			map: map,
+			title: 'Home Location'
+		});
 	}
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmCM_w4VaOnhY8XQgyl7SFawfm2c5s21A&callback=initMap"
