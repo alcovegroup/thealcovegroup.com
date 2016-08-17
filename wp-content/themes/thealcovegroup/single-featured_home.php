@@ -267,12 +267,12 @@
 	});
 
 	var geocoder, map;
+	var homeAddress = "<?php echo the_field( 'address_1' ); ?> <?php echo the_field( 'address_2' ); ?>";
 
 	function codeAddress(address) {
-		var homeAddress = "<?php echo the_field( 'address_1' ); ?> <?php echo the_field( 'address_2' ); ?>";
 	    geocoder = new google.maps.Geocoder();
 	    geocoder.geocode({
-	        'address': homeAddress
+	        'address': address
 	    }, function(results, status) {
 	        if (status == google.maps.GeocoderStatus.OK) {
 	            var myOptions = {
@@ -292,21 +292,22 @@
 	}
 
 	function initMap() {
-		var myLatLng = {lat: 33.5650816, lng: -111.91640030000002};
-		// Create a map object and specify the DOM element for display.
-		var map = new google.maps.Map(document.getElementById('home-map'), {
-			center: homeAddress,
-			scrollwheel: false,
-			zoom: 10
-		});
-		var marker = new google.maps.Marker({
-			position: homeAddress,
-			map: map,
-			title: 'Home Location'
-		});
+		codeAddress(homeAddress);
+		// var myLatLng = {lat: 33.5650816, lng: -111.91640030000002};
+		// // Create a map object and specify the DOM element for display.
+		// var map = new google.maps.Map(document.getElementById('home-map'), {
+		// 	center: homeAddress,
+		// 	scrollwheel: false,
+		// 	zoom: 10
+		// });
+		// var marker = new google.maps.Marker({
+		// 	position: homeAddress,
+		// 	map: map,
+		// 	title: 'Home Location'
+		// });
 	}
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmCM_w4VaOnhY8XQgyl7SFawfm2c5s21A&callback=codeAddress"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmCM_w4VaOnhY8XQgyl7SFawfm2c5s21A&callback=initMap"
     async defer></script>
 
 <?php get_footer(); ?>
