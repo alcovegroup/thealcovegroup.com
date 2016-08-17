@@ -266,9 +266,32 @@
 		});
 	});
 
-	function initMap() {
+	var geocoder, map;
+
+	function codeAddress(address) {
 		var homeAddress = "<?php echo the_field( 'address_1' ); ?> <?php echo the_field( 'address_2' ); ?>";
-		// alert(homeAddress);
+	    geocoder = new google.maps.Geocoder();
+	    geocoder.geocode({
+	        'address': homeAddress
+	    }, function(results, status) {
+	        if (status == google.maps.GeocoderStatus.OK) {
+	            var myOptions = {
+	                zoom: 10,
+	                scrollwheel: false;
+	                center: results[0].geometry.location,
+	                mapTypeId: google.maps.MapTypeId.ROADMAP
+	            }
+	            map = new google.maps.Map(document.getElementById("home-map"), myOptions);
+
+	            var marker = new google.maps.Marker({
+	                map: map,
+	                position: results[0].geometry.location
+	            });
+	        }
+	    });
+	}
+
+	function initMap() {
 		var myLatLng = {lat: 33.5650816, lng: -111.91640030000002};
 		// Create a map object and specify the DOM element for display.
 		var map = new google.maps.Map(document.getElementById('home-map'), {
@@ -283,7 +306,7 @@
 		});
 	}
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmCM_w4VaOnhY8XQgyl7SFawfm2c5s21A&callback=initMap"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmCM_w4VaOnhY8XQgyl7SFawfm2c5s21A&callback=codeAddress"
     async defer></script>
 
 <?php get_footer(); ?>
