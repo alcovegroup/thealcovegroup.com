@@ -81,7 +81,7 @@
                 <td class="fill-line"></td>
               </tr>
             </table>
-            <h3>$1,774,950</h3>
+            <h3><?php the_field( 'list_price' ); ?></h3>
           </div>
           <div class="listing-details clearfix">
             <table class="line-section-table">
@@ -92,26 +92,24 @@
             </table>
             <div class="listing-details-tile">
               <h4>Bedrooms</h4>
-              <h3>4</h3>
+              <h3><?php the_field( 'num_bedrooms' ); ?></h3>
             </div>
             <div class="listing-details-tile">
               <h4>Bathrooms</h4>
-              <h3>2.5</h3>
+              <h3><?php the_field( 'num_bathrooms' ); ?></h3>
             </div>
             <div class="listing-details-tile">
               <h4>Sq. Ft. House</h4>
-              <h3>1000</h3>
+              <h3><?php the_field( 'square_footage_house' ); ?></h3>
             </div>
             <div class="listing-details-tile">
               <h4>Sq. Ft. Lot</h4>
-              <h3>5000</h3>
+              <h3><?php the_field( 'square_footage_lot' ); ?></h3>
             </div>
           </div>
           <div class="listing-description">
             <h4>Description</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sem ex, luctus a felis vel, condimentum fringilla nulla. Proin lobortis vehicula tortor, a bibendum odio elementum non. Vivamus eget nisi nulla. Fusce magna massa, scelerisque vel pellentesque in, feugiat id nulla. Pellentesque quam felis, pretium eget nulla non, pharetra lobortis mauris. Aenean rhoncus convallis lobortis. Etiam tempus auctor lectus, eu gravida lectus ullamcorper sed. Pellentesque id gravida nulla, sed fermentum massa. Nunc rhoncus nisi quis molestie viverra. Curabitur gravida mi ut enim maximus dignissim. Vivamus rutrum ligula eu sem semper tempus. Morbi nulla mauris, ullamcorper et nisl ac, aliquam vehicula velit. Cras ut fringilla diam.</p>
-
-            <p>Donec tempus massa ut tellus fringilla suscipit. Aenean iaculis risus erat, quis pretium arcu congue accumsan. Etiam sed semper nibh, eget egestas nisl. Sed finibus justo interdum turpis tincidunt sagittis. Maecenas eu tortor eu dui placerat pretium. Duis sed mattis augue. Integer eget sagittis massa. Etiam vitae risus mollis odio hendrerit pharetra. Nunc semper, ex et lacinia accumsan, neque tellus dignissim arcu, nec iaculis risus odio vitae nunc. Ut placerat tincidunt tellus, et sagittis tellus laoreet vel. Integer non sodales elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus sagittis orci vitae ultricies. Nullam sed ex in eros lacinia tempor id id risus. Nullam tempus justo eget rutrum porttitor.</p>
+            <?php the_content(); ?>
           </div>
           <div class="listing-schools">
             <table class="line-section-table">
@@ -121,16 +119,16 @@
               </tr>
             </table>
             <h4>District</h4>
-            <h3>Phoenix Central School District</h3>
+            <h3><?php the_field( 'school_district' ); ?></h3>
 
             <h4>Elementary School</h4>
-            <h3>MICHAEL A MAROUN Elementary</h3>
+            <h3><?php the_field( 'elementary_school' ); ?></h3>
 
             <h4>Middle School</h4>
-            <h3>EMERSON J DILLON Middle</h3>
+            <h3><?php the_field( 'middle_school' ); ?></h3>
 
             <h4>High School</h4>
-            <h3>JOHN C BIRDLEBOUGH High</h3>
+            <h3><?php the_field( 'high_school' ); ?></h3>
           </div>
         </div>
         <div id="home-content-right" class="small-12 large-6 columns">
@@ -269,6 +267,8 @@
 	});
 
 	function initMap() {
+		var homeAddress = <?php the_field( 'address_1' ); ?> + " " + <?php the_field( 'address_2' ); ?>;
+		alert(homeAddress);
 		var myLatLng = {lat: 33.5650816, lng: -111.91640030000002};
 		// Create a map object and specify the DOM element for display.
 		var map = new google.maps.Map(document.getElementById('home-map'), {
