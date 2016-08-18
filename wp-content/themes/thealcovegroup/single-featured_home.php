@@ -217,19 +217,13 @@
     <script>
     jQuery(function ($) {
 		$(document).ready(function() {
+
+      //fix height of overlay- bugs due to slick slider
 			setTimeout(function(){
-				var body = document.body,
-		    	html = document.documentElement;
+				var theHeight = $(document).height();
+				$('#darken-overlay').css( "height", theHeight );
+			}, 500);
 
-				var theHeight = Math.max( body.scrollHeight, body.offsetHeight, 
-			                       		html.clientHeight, html.scrollHeight, html.offsetHeight );
-				console.log("doc height: " + $(document).height());
-				// console.log("height is: " + $('#darken-overlay').css("height"));
-				$('#darken-overlay').css( "height", $(document).height() );
-				// console.log("height is: " + $('#darken-overlay').css("height"));
-			}, 3000);
-
-			
 			$('.slickslide').slick({
 		        dots: true,
 		        arrows: true,
