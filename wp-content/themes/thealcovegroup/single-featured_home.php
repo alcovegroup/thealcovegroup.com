@@ -223,7 +223,7 @@
 
 				var theHeight = Math.max( body.scrollHeight, body.offsetHeight, 
 			                       		html.clientHeight, html.scrollHeight, html.offsetHeight );
-				console.log(theHeight);
+				console.log("doc height: " + $(document).height());
 				// console.log("height is: " + $('#darken-overlay').css("height"));
 				$('#darken-overlay').css( "height", theHeight);
 				// console.log("height is: " + $('#darken-overlay').css("height"));
