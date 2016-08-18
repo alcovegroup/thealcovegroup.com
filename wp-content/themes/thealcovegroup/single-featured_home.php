@@ -225,7 +225,7 @@
 			                       		html.clientHeight, html.scrollHeight, html.offsetHeight );
 				console.log("doc height: " + $(document).height());
 				// console.log("height is: " + $('#darken-overlay').css("height"));
-				$('#darken-overlay').css( "height", theHeight);
+				$('#darken-overlay').css( "height", $(document).height() );
 				// console.log("height is: " + $('#darken-overlay').css("height"));
 			}, 3000);
 
