@@ -763,6 +763,11 @@ ul.social-icons span.icon-icon-phone, ul.social-icons span.icon-icon-linkedin, u
   text-align: center;
 }
 
+.single-featured_home {
+  height: auto;
+}
+
+
 /* line 660, ../scss/modules.scss */
 .page-template-home-details #header,
 .single-featured_home #header,
