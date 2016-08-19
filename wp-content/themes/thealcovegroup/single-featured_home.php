@@ -166,7 +166,7 @@
         <div id="home-content-right" class="small-12 large-6 columns">
           <div id="home-map"></div>
         
-          <div class="inquire-form">
+          <div class="inquire-form form-button-right">
             <h4>Interested in this home?</h4>
             <form>
               <input type="text" placeholder="First Name*" required />

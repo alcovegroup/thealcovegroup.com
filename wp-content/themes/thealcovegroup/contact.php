@@ -59,7 +59,7 @@
           </div>
           <?php endif; ?>
         </div>
-        <div class="small-12 medium-6 columns contact-form-col">
+        <div class="small-12 medium-6 columns contact-form-col form-button-right">
           <?php if ( post_custom('form_title') ): ?>
             <table class="line-section-table">
               <tr>

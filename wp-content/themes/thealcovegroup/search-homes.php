@@ -22,7 +22,7 @@
       >
         <div class="hero-overlay reverse">
 
-          <div class="row hero-form">
+          <div class="row hero-form form-button-right">
             <div class="small-12 medium-10 medium-offset-1 large-6 large-offset-3 columns">
               <h3><?php the_title(); ?></h3>
               <?php if (have_posts()) : while (have_posts()) : the_post();?>
