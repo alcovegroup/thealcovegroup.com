@@ -12,6 +12,7 @@
 
     <!-- Expanding content frame -->
     <div id="content-frame">
+    <?php if (have_posts()) : while (have_posts()) : the_post();?>
 
       <!-- Subheader row -->
       <div id="subheader-row" class="row">
@@ -207,6 +208,7 @@
 
       <div id="darken-overlay"></div>
 
+    <?php endwhile; endif; wp_reset_query(); ?>
     </div>
     <!-- Expanding content frame -->
 
