@@ -75,6 +75,8 @@
         <div id="home-content-left" class="small-12 large-6 columns">
           <h1><span><?php the_field( 'address_1' ); ?></span>
             <span><?php the_field( 'address_2' ); ?></span></h1>
+
+          <?php if ( post_custom('list_price') ): ?>
           <div class="listing-price">
             <table class="line-section-table">
               <tr>
@@ -84,6 +86,8 @@
             </table>
             <h3><?php the_field( 'list_price' ); ?></h3>
           </div>
+          <?php endif; ?>
+
           <div class="listing-details clearfix">
             <table class="line-section-table">
               <tr>
@@ -91,27 +95,44 @@
                 <td class="fill-line"></td>
               </tr>
             </table>
+
+            <?php if ( post_custom('num_bedrooms') ): ?>
             <div class="listing-details-tile">
               <h4>Bedrooms</h4>
               <h3><?php the_field( 'num_bedrooms' ); ?></h3>
             </div>
+            <?php endif; ?>
+
+            <?php if ( post_custom('num_bathrooms') ): ?>
             <div class="listing-details-tile">
               <h4>Bathrooms</h4>
               <h3><?php the_field( 'num_bathrooms' ); ?></h3>
             </div>
+            <?php endif; ?>
+
+            <?php if ( post_custom('square_footage_house') ): ?>
             <div class="listing-details-tile">
               <h4>Sq. Ft. House</h4>
               <h3><?php the_field( 'square_footage_house' ); ?></h3>
             </div>
+            <?php endif; ?>
+
+            <?php if ( post_custom('square_footage_lot') ): ?>
             <div class="listing-details-tile">
               <h4>Sq. Ft. Lot</h4>
               <h3><?php the_field( 'square_footage_lot' ); ?></h3>
             </div>
+            <?php endif; ?>
           </div>
+
+          <?php if($post->post_content=="") : ?>
           <div class="listing-description">
             <h4>Description</h4>
             <?php the_content(); ?>
           </div>
+          <?php endif; ?>
+
+
           <div class="listing-schools">
             <table class="line-section-table">
               <tr>
@@ -119,17 +140,27 @@
                 <td class="fill-line"></td>
               </tr>
             </table>
+
+            <?php if ( post_custom('school_district') ): ?>
             <h4>District</h4>
             <h3><?php the_field( 'school_district' ); ?></h3>
+            <?php endif; ?>
 
+            <?php if ( post_custom('elementary_school') ): ?>
             <h4>Elementary School</h4>
             <h3><?php the_field( 'elementary_school' ); ?></h3>
+            <?php endif; ?>
 
+            <?php if ( post_custom('middle_school') ): ?>
             <h4>Middle School</h4>
             <h3><?php the_field( 'middle_school' ); ?></h3>
+            <?php endif; ?>
 
+            <?php if ( post_custom('high_school') ): ?>
             <h4>High School</h4>
             <h3><?php the_field( 'high_school' ); ?></h3>
+            <?php endif; ?>
+
           </div>
         </div>
         <div id="home-content-right" class="small-12 large-6 columns">
