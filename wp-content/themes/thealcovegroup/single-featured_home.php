@@ -125,7 +125,7 @@
             <?php endif; ?>
           </div>
 
-          <?php if($post->post_content=="") : ?>
+          <?php if($post->post_content!=="") : ?>
           <div class="listing-description">
             <h4>Description</h4>
             <?php the_content(); ?>
