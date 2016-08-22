@@ -204,10 +204,8 @@
         $('.slickslide').slick({
           dots: true,
           arrows: false,
-          customPaging : function(slider, i) {
-              // var thumb = $(slider.$slides[i]).data('thumb');
-              // return '<a><img src="'+thumb+'"></a>';
-              return '<span></span>';
+          customPaging : function() {
+            return '<span></span>';
           }
         });
 

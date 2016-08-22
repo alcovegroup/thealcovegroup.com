@@ -143,7 +143,7 @@
               <input type="text" placeholder="Last Name*" required />
               <input type="text" placeholder="Email Address*" required />
               <input type="text" placeholder="Phone Number*" required />
-              <span>How soon are you interested in buying?</span>
+              <span class="select-span">How soon are you interested in buying?</span>
               <select required>
                 <option selected disabled>Select<sup>*</sup></option>
                 <option value="planning-now">Now</option>
