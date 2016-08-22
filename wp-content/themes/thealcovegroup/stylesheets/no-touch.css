@@ -66,7 +66,16 @@
   background-size: cover;
   background-position: center;
 }
-/* line 104, ../scss/no-touch.scss */
+/* line 103, ../scss/no-touch.scss */
+.no-touch .featured-home:nth-child(3n+2) .featured-home-details a.btn:hover {
+  color: #4d4845;
+}
+/* line 110, ../scss/no-touch.scss */
+.no-touch .featured-home:nth-child(3n+4) .featured-home-details a.btn:hover {
+  background-color: #302b28;
+  color: #f2d383;
+}
+/* line 122, ../scss/no-touch.scss */
 .no-touch #footer ul.menu li a:hover {
   color: #e5a344;
 }

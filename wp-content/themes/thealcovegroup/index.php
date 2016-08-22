@@ -48,22 +48,26 @@
 
       <!-- Featured Home -->
       <div class="featured-home reverse section">
-        <div class="featured-home-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-01.jpg');">
-          <ol class="featured-home-gallery">
-            <li><span class="active" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-01.jpg');"></span></li>
-            <li><span style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-02.jpg');"></span></li>
-            <li><span style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-03.jpg');"></span></li>
-            <li><span style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-01.jpg');"></span></li>
-          </ol>
+        <div class="featured-home-image">
+          <ul class="slickslide">
+            <li style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-01.jpg');"></li>
+            <li style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-02.jpg');"></li>
+            <li style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-03.jpg');"></li>
+            <li style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-02.jpg');"></li>
+          </ul>
         </div>
         <div class="featured-overlay"></div>
-        <div class="row featured-home-details">
-          <div class="small-12 large-4 large-offset-8 columns v-center">
+        <div class="row full-width featured-home-details">
+          <div class="small-12 columns v-center">
               <div class="featured-home-details-inner">
-                <h4>6336 E Via Estrella Ave</h4>
-                <h4>Paradise Valley, AZ 85253</h4>
-                <h3>$1,774,950</h3>
-                <a href="#" class="btn">View Home</a>
+                <div class="left-group">
+                  <h4>6336 E Via Estrella Ave</h4>
+                  <h4>Paradise Valley, AZ 85253</h4>
+                  <h3>$1,774,950</h3>
+                </div>
+                <div class="right-group">
+                  <a href="#" class="btn">View Home</a>
+                </div>
               </div>
           </div>
         </div>
@@ -72,23 +76,27 @@
 
       <!-- Featured Home -->
       <div class="featured-home reverse section">
-        <div class="featured-home-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-02.jpg');">
-          <ol class="featured-home-gallery">
-            <li><span class="active" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-01.jpg');"></span></li>
-            <li><span style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-02.jpg');"></span></li>
-            <li><span style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-03.jpg');"></span></li>
-            <li><span style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-01.jpg');"></span></li>
-          </ol>
+        <div class="featured-home-image">
+          <ul class="slickslide">
+            <li style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-01.jpg');"></li>
+            <li style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-02.jpg');"></li>
+            <li style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-03.jpg');"></li>
+            <li style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-02.jpg');"></li>
+          </ul>
         </div>
         <div class="featured-overlay"></div>
-        <div class="row featured-home-details">
-          <div class="small-12 large-4 columns v-center">
-            <div class="featured-home-details-inner">
-              <h4>6336 E Via Estrella Ave</h4>
-              <h4>Paradise Valley, AZ 85253</h4>
-              <h3>$1,774,950</h3>
-              <a href="#" class="btn">View Home</a>
-            </div>
+        <div class="row full-width featured-home-details">
+          <div class="small-12 columns v-center">
+              <div class="featured-home-details-inner">
+                <div class="left-group">
+                  <h4>6336 E Via Estrella Ave</h4>
+                  <h4>Paradise Valley, AZ 85253</h4>
+                  <h3>$1,774,950</h3>
+                </div>
+                <div class="right-group">
+                  <a href="#" class="btn">View Home</a>
+                </div>
+              </div>
           </div>
         </div>
       </div>
@@ -96,23 +104,27 @@
 
       <!-- Featured Home -->
       <div class="featured-home section">
-        <div class="featured-home-image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-03.jpg');">
-          <ol class="featured-home-gallery">
-            <li><span class="active" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-01.jpg');"></span></li>
-            <li><span style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-02.jpg');"></span></li>
-            <li><span style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-03.jpg');"></span></li>
-            <li><span style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-01.jpg');"></span></li>
-          </ol>
+        <div class="featured-home-image">
+          <ul class="slickslide">
+            <li style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-01.jpg');"></li>
+            <li style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-02.jpg');"></li>
+            <li style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-03.jpg');"></li>
+            <li style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-02.jpg');"></li>
+          </ul>
         </div>
         <div class="featured-overlay"></div>
-        <div class="row featured-home-details">
-          <div class="small-12 large-4 large-offset-8 columns v-center">
-            <div class="featured-home-details-inner">
-              <h4>6336 E Via Estrella Ave</h4>
-              <h4>Paradise Valley, AZ 85253</h4>
-              <h3>$1,774,950</h3>
-              <a href="#" class="btn">View Home</a>
-            </div>
+        <div class="row full-width featured-home-details">
+          <div class="small-12 columns v-center">
+              <div class="featured-home-details-inner">
+                <div class="left-group">
+                  <h4>6336 E Via Estrella Ave</h4>
+                  <h4>Paradise Valley, AZ 85253</h4>
+                  <h3>$1,774,950</h3>
+                </div>
+                <div class="right-group">
+                  <a href="#" class="btn">View Home</a>
+                </div>
+              </div>
           </div>
         </div>
       </div>
@@ -177,6 +189,7 @@
 
     
     <script src="<?php echo get_template_directory_uri(); ?>/bower_components/foundation/js/foundation.min.js"></script>
+    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/bower_components/slick-carousel/slick/slick.min.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/app.js"></script>
     <script>
     jQuery(function ($) {
@@ -187,6 +200,17 @@
         // var responsiveWidth = Math.ceil(37.70588*remUnit);
         var responsiveWidth = 640;
         console.log(remUnit);
+
+        $('.slickslide').slick({
+          dots: true,
+          arrows: false,
+          customPaging : function(slider, i) {
+              // var thumb = $(slider.$slides[i]).data('thumb');
+              // return '<a><img src="'+thumb+'"></a>';
+              return '<span></span>';
+          }
+        });
+
         $('#fullpage-slider').fullpage({
           navigation: true,
           navigationPosition: 'right',
