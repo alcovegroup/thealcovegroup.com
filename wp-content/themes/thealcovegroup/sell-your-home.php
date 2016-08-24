@@ -225,19 +225,19 @@
             <ul class="social-icons">
               
             <?php if ( get_option('global_company_email') ): ?>
-            <li><a href="<?php echo get_option('global_company_email'); ?>"><span class="icon-icon-email"></span></a></li>
+            <li><a href="<?php echo get_option('global_company_email'); ?>"><span class="icon-ring"></span><span class="icon-icon-email"></span></a></li>
             <?php endif; ?>
 
             <?php if ( get_option('global_company_phone') ): ?>
-            <li><a href="<?php echo get_option('global_company_phone'); ?>"><span class="icon-icon-phone"></span></a></li>
+            <li><a href="<?php echo get_option('global_company_phone'); ?>"><span class="icon-ring"></span><span class="icon-icon-phone"></span></a></li>
             <?php endif; ?>
 
             <?php if ( get_option('global_company_facebook') ): ?>
-            <li><a href="<?php echo get_option('global_company_facebook'); ?>" target="_blank"><span class="icon-icon-facebook"></span></a></li>
+            <li><a href="<?php echo get_option('global_company_facebook'); ?>" target="_blank"><span class="icon-ring"></span><span class="icon-icon-facebook"></span></a></li>
             <?php endif; ?>
 
             <?php if ( get_option('global_company_linkedin') ): ?>
-            <li><a href="<?php echo get_option('global_company_linkedin'); ?>" target="_blank"><span class="icon-icon-linkedin"></span></a></li>
+            <li><a href="<?php echo get_option('global_company_linkedin'); ?>" target="_blank"><span class="icon-ring"></span><span class="icon-icon-linkedin"></span></a></li>
             <?php endif; ?>
 
             </ul>
