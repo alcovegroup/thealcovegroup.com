@@ -18,19 +18,22 @@
         <div class="small-12 medium-4 columns">
           <a href="<?php echo get_page_link(8); ?>" class="btn small">Back to Search</a>
         </div>
-        <div class="small-12 medium-8 columns">
-          <div class="subheader-share-3">
-          </div>
+        <div class="small-12 medium-8 large-6 columns">
           <div class="subheader-share-2">
-            <a href="#">
-              <span class="social-icon"><span class="icon-icon-facebook"></span></span>
-            </a>
-            <a href="#">
-              <span class="social-icon"><span class="icon-icon-linkedin"></span></span>
-            </a>
-          </div>
-          <div class="subheader-share-1">
-            <h4>Share this Home</h4>
+            <table class="line-section-table">
+              <tr>
+                <td class="table-left-header">
+                  <h4>Share this Home</h4>
+                  <a href="#">
+                    <span class="social-icon"><span class="icon-icon-facebook"></span></span>
+                  </a>
+                  <a href="#">
+                    <span class="social-icon"><span class="icon-icon-linkedin"></span></span>
+                  </a>
+                </td>
+                <td class="fill-line"></td>
+              </tr>
+            </table>
           </div>
         </div>
       </div>

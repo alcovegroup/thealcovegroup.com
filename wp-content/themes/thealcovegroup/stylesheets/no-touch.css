@@ -13,7 +13,26 @@
 .no-touch #header a:hover {
   padding: initial;
 }
-/* line 32, ../scss/no-touch.scss */
+/* line 37, ../scss/no-touch.scss */
+.no-touch .social-icons li:hover .icon-ring {
+  -moz-transform: scale(1.6);
+  -ms-transform: scale(1.6);
+  -webkit-transform: scale(1.6);
+  transform: scale(1.6);
+  opacity: 0;
+  border-color: #f2d383;
+}
+/* line 46, ../scss/no-touch.scss */
+.no-touch .social-icons li:hover .icon-icon-email::before,
+.no-touch .social-icons li:hover .icon-icon-linkedin::before,
+.no-touch .social-icons li:hover .icon-icon-facebook::before,
+.no-touch .social-icons li:hover .icon-icon-phone::before {
+  -moz-transform: scale(1.35) rotate(360deg);
+  -ms-transform: scale(1.35) rotate(360deg);
+  -webkit-transform: scale(1.35) rotate(360deg);
+  transform: scale(1.35) rotate(360deg);
+}
+/* line 54, ../scss/no-touch.scss */
 .no-touch input[type="submit"]:hover,
 .no-touch button:hover,
 .no-touch a.btn:hover,
@@ -23,7 +42,7 @@
   border-color: #012639;
   padding-bottom: 0.7rem;
 }
-/* line 40, ../scss/no-touch.scss */
+/* line 62, ../scss/no-touch.scss */
 .no-touch input[type="submit"]:hover.small,
 .no-touch button:hover.small,
 .no-touch a.btn:hover.small,
@@ -31,14 +50,14 @@
   padding-bottom: 0.7rem;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 46, ../scss/no-touch.scss */
+  /* line 68, ../scss/no-touch.scss */
   .no-touch input[type="submit"]:hover,
   .no-touch button:hover,
   .no-touch a.btn:hover,
   .no-touch label.btn:hover {
     padding-bottom: 1rem;
   }
-  /* line 51, ../scss/no-touch.scss */
+  /* line 73, ../scss/no-touch.scss */
   .no-touch input[type="submit"]:hover.small,
   .no-touch button:hover.small,
   .no-touch a.btn:hover.small,
@@ -46,7 +65,7 @@
     padding-bottom: 0.7rem;
   }
 }
-/* line 58, ../scss/no-touch.scss */
+/* line 80, ../scss/no-touch.scss */
 .no-touch .reverse input[type="submit"]:hover,
 .no-touch .reverse button:hover,
 .no-touch .reverse a.btn:hover,
@@ -55,27 +74,27 @@
   background: #FFFFFF;
   border-color: #FFFFFF;
 }
-/* line 85, ../scss/no-touch.scss */
+/* line 107, ../scss/no-touch.scss */
 .no-touch .slick-slider button:hover {
   padding: 0;
   margin: 0;
   background: transparent;
 }
-/* line 93, ../scss/no-touch.scss */
+/* line 115, ../scss/no-touch.scss */
 .no-touch .slick-dots li button.tab:hover {
   background-size: cover;
   background-position: center;
 }
-/* line 103, ../scss/no-touch.scss */
+/* line 125, ../scss/no-touch.scss */
 .no-touch .featured-home:nth-child(3n+2) .featured-home-details a.btn:hover {
   color: #4d4845;
 }
-/* line 110, ../scss/no-touch.scss */
+/* line 132, ../scss/no-touch.scss */
 .no-touch .featured-home:nth-child(3n+4) .featured-home-details a.btn:hover {
   background-color: #302b28;
   color: #f2d383;
 }
-/* line 122, ../scss/no-touch.scss */
+/* line 144, ../scss/no-touch.scss */
 .no-touch #footer ul.menu li a:hover {
   color: #e5a344;
 }
