@@ -72,13 +72,13 @@
               <?php the_content(); ?>
               <ul class="social-icons">
                 <?php if ( post_custom('email_address') ): ?>
-                <li><a href="mailto:<?php echo the_field( 'email_address' ); ?>"><span class="icon-icon-email"></span></a></li>
+                <li><a href="mailto:<?php echo the_field( 'email_address' ); ?>"><span class="icon-ring"></span><span class="icon-icon-email"></span></a></li>
                 <?php endif; ?>
                 <?php if ( post_custom('phone_number') ): ?>
-                <li><a href="tel:<?php echo the_field( 'phone_number' ); ?>"><span class="icon-icon-phone"></span></a></li>
+                <li><a href="tel:<?php echo the_field( 'phone_number' ); ?>"><span class="icon-ring"></span><span class="icon-icon-phone"></span></a></li>
                 <?php endif; ?>
                 <?php if ( post_custom('linked_in_profile') ): ?>
-                <li><a href="<?php echo the_field( 'linked_in_profile' ); ?>" target="_blank"><span class="icon-icon-linkedin"></span></a></li>
+                <li><a href="<?php echo the_field( 'linked_in_profile' ); ?>" target="_blank"><span class="icon-ring"></span><span class="icon-icon-linkedin"></span></a></li>
                 <?php endif; ?>
               </ul>
             </div>
@@ -102,13 +102,13 @@
               <?php the_content(); ?>
               <ul class="social-icons">
                 <?php if ( post_custom('email_address') ): ?>
-                <li><a href="mailto:<?php echo the_field( 'email_address' ); ?>"><span class="icon-icon-email"></span></a></li>
+                <li><a href="mailto:<?php echo the_field( 'email_address' ); ?>"><span class="icon-ring"></span><span class="icon-icon-email"></span></a></li>
                 <?php endif; ?>
                 <?php if ( post_custom('phone_number') ): ?>
-                <li><a href="tel:<?php echo the_field( 'phone_number' ); ?>"><span class="icon-icon-phone"></span></a></li>
+                <li><a href="tel:<?php echo the_field( 'phone_number' ); ?>"><span class="icon-ring"></span><span class="icon-icon-phone"></span></a></li>
                 <?php endif; ?>
                 <?php if ( post_custom('linked_in_profile') ): ?>
-                <li><a href="<?php echo the_field( 'linked_in_profile' ); ?>" target="_blank"><span class="icon-icon-linkedin"></span></a></li>
+                <li><a href="<?php echo the_field( 'linked_in_profile' ); ?>" target="_blank"><span class="icon-ring"></span><span class="icon-icon-linkedin"></span></a></li>
                 <?php endif; ?>
               </ul>
             </div>
