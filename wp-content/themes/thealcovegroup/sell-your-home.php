@@ -22,14 +22,19 @@
       >
         <div class="hero-overlay reverse">
 
-          <div class="row hero-form form-button-right">
-            <div class="small-12 medium-10 medium-offset-1 large-6 large-offset-3 columns">
+          <div class="row form-page-header form-and-blurb">
+            <div class="small-12 small-centered medium-11 large-9 columns">
               <h3><?php the_title(); ?></h3>
-              <div id="form-and-blurb"> <!-- Start form and blurb to hide after submission -->
-                <?php if (have_posts()) : while (have_posts()) : the_post();?>
-                <?php the_content(); ?>
-                <?php endwhile; endif; wp_reset_query(); ?>
-                <form id="sell-your-home-form" class="row" action="" method="post" data-abide onsubmit="event.preventDefault(); formSubmission(event);">
+              <?php if (have_posts()) : while (have_posts()) : the_post();?>
+              <?php the_content(); ?>
+              <?php endwhile; endif; wp_reset_query(); ?>
+            </div>
+          </div>
+
+          <div class="row hero-form form-button-right">
+            <div class="small-12 small-centered medium-10 large-6 columns"> <!-- Start form column -->
+              <!-- The form itself -->
+                <form id="sell-your-home-form" class="row form-and-blurb" action="" method="post" data-abide onsubmit="event.preventDefault(); formSubmission(event);">
                   <input type="checkbox" name="Submitted Sell Your Home Form" value="Submitted Sell Your Home Form" checked style="display: none;" />
                   <div class="row">
                     <div class="small-12 columns">
@@ -191,14 +196,15 @@
                 </script>
                 <script type="text/javascript" src="https://koi-3QEHIZGEXU.marketingautomation.services/client/noform.js?ver=1.24" ></script>
 
-              </div> <!-- End form and blurb to hide after submission -->
+              <!-- Shows after form submit hides form -->
               <div id="thank-you-message">
                 <h3>Thanks for contacting The Alcove Group!</h3>
                 <p>A specialist will get back to you shortly to discuss your submission.</p>
               </div>
-            </div>
-          </div>
 
+            </div> <!-- End form column -->
+
+          </div>
         </div>
       </div>
       <!-- Hero -->
@@ -236,7 +242,7 @@
       }).on('valid.fndtn.abide', function () {
         console.log('valid!');
         __ss_noform.push(['submit', null, '64eb9023-d4bb-4cf7-b7cc-3d85b4759e13']);
-        $('#form-and-blurb').hide();
+        $('.form-and-blurb').hide();
         $('#thank-you-message').show();
       });
     }
