@@ -22,12 +22,18 @@
       >
         <div class="hero-overlay reverse">
 
-          <div class="row hero-form form-button-right">
-            <div class="small-12 medium-10 medium-offset-1 large-6 large-offset-3 columns">
+          <div class="row form-page-header form-and-blurb">
+            <div class="small-12 small-centered medium-11 large-9 columns">
               <h3><?php the_title(); ?></h3>
               <?php if (have_posts()) : while (have_posts()) : the_post();?>
-                <?php the_content(); ?>
+              <?php the_content(); ?>
               <?php endwhile; endif; wp_reset_query(); ?>
+            </div>
+          </div>
+
+          <div class="row hero-form form-button-right">
+            <div class="small-12 small-centered medium-10 large-6 columns"> <!-- Start form column -->
+              <!-- The form itself -->
               <form>
                 <div class="row">
                   <div id="form-page-1" class="row">
@@ -162,9 +168,10 @@
 
                 </div>
               </form>
-            </div>
-          </div>
+              
+            </div> <!-- End form column -->
 
+          </div>
         </div>
       </div>
       <!-- Hero -->
