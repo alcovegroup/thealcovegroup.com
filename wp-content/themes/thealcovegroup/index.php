@@ -46,7 +46,7 @@
 
       <!-- Featured Home Section -->
 
-      <?php $loop = new WP_Query( array( 'post_type' => 'bios', 'posts_per_page' => -1 ) ); ?>
+      <?php $loop = new WP_Query( array( 'post_type' => 'featured_home', 'posts_per_page' => -1 ) ); ?>
       <?php $c = 0; ?>
       <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
       <?php $c++; ?>
