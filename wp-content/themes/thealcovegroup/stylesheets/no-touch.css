@@ -49,15 +49,21 @@
 .no-touch label.btn:hover.small {
   padding-bottom: 0.7rem;
 }
+/* line 70, ../scss/no-touch.scss */
+.no-touch .featured-home:nth-child(3n+2) a.btn:hover, .no-touch .featured-home:nth-child(3n+3) a.btn:hover {
+  color: #012639;
+  background: #FFFFFF;
+  border-color: #FFFFFF;
+}
 @media only screen and (min-width: 40.0625em) {
-  /* line 68, ../scss/no-touch.scss */
+  /* line 79, ../scss/no-touch.scss */
   .no-touch input[type="submit"]:hover,
   .no-touch button:hover,
   .no-touch a.btn:hover,
   .no-touch label.btn:hover {
     padding-bottom: 1rem;
   }
-  /* line 73, ../scss/no-touch.scss */
+  /* line 84, ../scss/no-touch.scss */
   .no-touch input[type="submit"]:hover.small,
   .no-touch button:hover.small,
   .no-touch a.btn:hover.small,
@@ -65,7 +71,7 @@
     padding-bottom: 0.7rem;
   }
 }
-/* line 80, ../scss/no-touch.scss */
+/* line 91, ../scss/no-touch.scss */
 .no-touch .reverse input[type="submit"]:hover,
 .no-touch .reverse button:hover,
 .no-touch .reverse a.btn:hover,
@@ -74,27 +80,27 @@
   background: #FFFFFF;
   border-color: #FFFFFF;
 }
-/* line 107, ../scss/no-touch.scss */
+/* line 118, ../scss/no-touch.scss */
 .no-touch .slick-slider button:hover {
   padding: 0;
   margin: 0;
   background: transparent;
 }
-/* line 115, ../scss/no-touch.scss */
+/* line 126, ../scss/no-touch.scss */
 .no-touch .slick-dots li button.tab:hover {
   background-size: cover;
   background-position: center;
 }
-/* line 125, ../scss/no-touch.scss */
+/* line 136, ../scss/no-touch.scss */
 .no-touch .featured-home:nth-child(3n+2) .featured-home-details a.btn:hover {
   color: #4d4845;
 }
-/* line 132, ../scss/no-touch.scss */
+/* line 143, ../scss/no-touch.scss */
 .no-touch .featured-home:nth-child(3n+4) .featured-home-details a.btn:hover {
   background-color: #302b28;
   color: #f2d383;
 }
-/* line 144, ../scss/no-touch.scss */
+/* line 155, ../scss/no-touch.scss */
 .no-touch #footer ul.menu li a:hover {
   color: #e5a344;
 }

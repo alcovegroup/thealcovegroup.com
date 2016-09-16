@@ -50,7 +50,7 @@
       <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
       <!-- Featured Home -->
-      <div class="featured-home reverse section">
+      <div class="featured-home section">
         <div class="featured-home-image">
           <ul class="slickslide">
             <li style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-01.jpg');"></li>
