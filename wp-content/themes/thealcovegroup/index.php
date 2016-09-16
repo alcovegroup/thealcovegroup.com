@@ -46,33 +46,11 @@
 
       <!-- Featured Home Section -->
 
-      <!-- Featured Home -->
-      <div class="featured-home reverse section">
-        <div class="featured-home-image">
-          <ul class="slickslide">
-            <li style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-01.jpg');"></li>
-            <li style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-02.jpg');"></li>
-            <li style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-03.jpg');"></li>
-            <li style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-02.jpg');"></li>
-          </ul>
-        </div>
-        <div class="featured-overlay"></div>
-        <div class="row full-width featured-home-details">
-          <div class="small-12 columns v-center">
-              <div class="featured-home-details-inner">
-                <div class="left-group">
-                  <h4>6336 E Via Estrella Ave</h4>
-                  <h4>Paradise Valley, AZ 85253</h4>
-                  <h3>$1,774,950</h3>
-                </div>
-                <div class="right-group">
-                  <a href="#" class="btn">View Home</a>
-                </div>
-              </div>
-          </div>
-        </div>
-      </div>
-      <!-- Featured Home -->
+      <?php $loop = new WP_Query( array( 'post_type' => 'bios', 'posts_per_page' => -1 ) ); ?>
+      <?php $c = 0; ?>
+      <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+      <?php $c++; ?>
+      <?php if( $c % 2 != 0 ) : ?>
 
       <!-- Featured Home -->
       <div class="featured-home reverse section">
@@ -89,12 +67,12 @@
           <div class="small-12 columns v-center">
               <div class="featured-home-details-inner">
                 <div class="left-group">
-                  <h4>6336 E Via Estrella Ave</h4>
-                  <h4>Paradise Valley, AZ 85253</h4>
-                  <h3>$1,774,950</h3>
+                  <h4><?php the_field( 'address_1' ); ?></h4>
+                  <h4><?php the_field( 'address_2' ); ?></h4>
+                  <h3><?php the_field( 'list_price' ); ?></h3>
                 </div>
                 <div class="right-group">
-                  <a href="#" class="btn">View Home</a>
+                  <a href="<?php echo get_post_permalink(); ?>" class="btn">View Home</a>
                 </div>
               </div>
           </div>
@@ -102,8 +80,10 @@
       </div>
       <!-- Featured Home -->
 
+      <?php else : ?>
+
       <!-- Featured Home -->
-      <div class="featured-home section">
+      <div class="featured-home reverse section">
         <div class="featured-home-image">
           <ul class="slickslide">
             <li style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-01.jpg');"></li>
@@ -117,18 +97,22 @@
           <div class="small-12 columns v-center">
               <div class="featured-home-details-inner">
                 <div class="left-group">
-                  <h4>6336 E Via Estrella Ave</h4>
-                  <h4>Paradise Valley, AZ 85253</h4>
-                  <h3>$1,774,950</h3>
+                  <h4><?php the_field( 'address_1' ); ?></h4>
+                  <h4><?php the_field( 'address_2' ); ?></h4>
+                  <h3><?php the_field( 'list_price' ); ?></h3>
                 </div>
                 <div class="right-group">
-                  <a href="#" class="btn">View Home</a>
+                  <a href="<?php echo get_post_permalink(); ?>" class="btn">View Home</a>
                 </div>
               </div>
           </div>
         </div>
       </div>
       <!-- Featured Home -->
+
+      <?php endif; ?>
+      <?php endwhile; wp_reset_query(); ?>
+
 
       <!-- Featured Home Section -->
 
