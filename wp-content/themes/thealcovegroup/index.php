@@ -53,10 +53,15 @@
       <div class="featured-home section">
         <div class="featured-home-image">
           <ul class="slickslide">
-            <li style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-01.jpg');"></li>
-            <li style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-02.jpg');"></li>
-            <li style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-03.jpg');"></li>
-            <li style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-02.jpg');"></li>
+            <?php 
+            $images = get_field('gallery');
+            if( $images ): ?>
+
+            <?php foreach( $images as $image ): ?>
+              <li style="background-image: url('<?php echo $image['sizes']['large']; ?>');"></li>
+            <?php endforeach; ?>
+ 
+            <?php endif; ?>
           </ul>
         </div>
         <div class="featured-overlay"></div>
