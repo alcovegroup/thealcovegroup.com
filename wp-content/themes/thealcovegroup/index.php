@@ -54,7 +54,7 @@
         <div class="featured-home-image">
           <ul class="slickslide">
             <?php 
-            $images = get_field('gallery');
+            $images = get_field('photo_gallery');
             if( $images ): ?>
 
             <?php foreach( $images as $image ): ?>
