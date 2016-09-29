@@ -55,15 +55,21 @@
   background: #FFFFFF;
   border-color: #FFFFFF;
 }
+/* line 83, ../scss/no-touch.scss */
+.no-touch .page-template-home-details #home-content-row .home-content-hidden-link:hover,
+.no-touch .single-featured_home #home-content-row .home-content-hidden-link:hover,
+.no-touch .single-sr-listings #home-content-row .home-content-hidden-link:hover {
+  padding: initial;
+}
 @media only screen and (min-width: 40.0625em) {
-  /* line 79, ../scss/no-touch.scss */
+  /* line 91, ../scss/no-touch.scss */
   .no-touch input[type="submit"]:hover,
   .no-touch button:hover,
   .no-touch a.btn:hover,
   .no-touch label.btn:hover {
     padding-bottom: 1rem;
   }
-  /* line 84, ../scss/no-touch.scss */
+  /* line 96, ../scss/no-touch.scss */
   .no-touch input[type="submit"]:hover.small,
   .no-touch button:hover.small,
   .no-touch a.btn:hover.small,
@@ -71,7 +77,7 @@
     padding-bottom: 0.7rem;
   }
 }
-/* line 91, ../scss/no-touch.scss */
+/* line 103, ../scss/no-touch.scss */
 .no-touch .reverse input[type="submit"]:hover,
 .no-touch .reverse button:hover,
 .no-touch .reverse a.btn:hover,
@@ -80,27 +86,27 @@
   background: #FFFFFF;
   border-color: #FFFFFF;
 }
-/* line 118, ../scss/no-touch.scss */
+/* line 130, ../scss/no-touch.scss */
 .no-touch .slick-slider button:hover {
   padding: 0;
   margin: 0;
   background: transparent;
 }
-/* line 126, ../scss/no-touch.scss */
+/* line 138, ../scss/no-touch.scss */
 .no-touch .slick-dots li button.tab:hover {
   background-size: cover;
   background-position: center;
 }
-/* line 136, ../scss/no-touch.scss */
+/* line 148, ../scss/no-touch.scss */
 .no-touch .featured-home:nth-child(3n+2) .featured-home-details a.btn:hover {
   color: #4d4845;
 }
-/* line 143, ../scss/no-touch.scss */
+/* line 155, ../scss/no-touch.scss */
 .no-touch .featured-home:nth-child(3n+4) .featured-home-details a.btn:hover {
   background-color: #302b28;
   color: #f2d383;
 }
-/* line 155, ../scss/no-touch.scss */
+/* line 167, ../scss/no-touch.scss */
 .no-touch #footer ul.menu li a:hover {
   color: #e5a344;
 }
