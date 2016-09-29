@@ -1,0 +1,1 @@
+[29-Sep-2016 05:19:10 UTC] PHP Fatal error:  Cannot redeclare wp_convert_hr_to_bytes() (previously declared in /home2/liquinas/mls/wp-includes/load.php:990) in /home2/liquinas/mls/wp-includes/media.php on line 2799
