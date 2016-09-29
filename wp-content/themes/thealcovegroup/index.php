@@ -59,12 +59,10 @@
 
             <?php foreach( $images as $image ): ?>
 
-              <!-- start while loop -->
-              <?php $x = 1; while($x < 5) ?>
+              <!-- start loop limit this to 4 -->
 
               <li style="background-image: url('<?php echo $image['sizes']['large']; ?>');"></li>
-
-              <?php endwhile; ?>
+      
               <!-- end while loop -->
 
             <?php endforeach; ?>
