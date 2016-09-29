@@ -18,7 +18,7 @@
         <div class="hero-overlay reverse">
 
           <!-- Hero Buttons -->
-          <div class="row">
+          <div class="row v-center">
             <div class="large-12 columns hero-buttons">
               <div>
                 <a href="<?php echo get_page_link(6); ?>" class="btn">Find your Home’s Value</a>
