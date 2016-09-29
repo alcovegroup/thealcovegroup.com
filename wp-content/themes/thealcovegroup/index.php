@@ -58,7 +58,15 @@
             if( $images ): ?>
 
             <?php foreach( $images as $image ): ?>
+
+              <!-- start while loop -->
+              <?php $x = 1; while($x < 5) ?>
+
               <li style="background-image: url('<?php echo $image['sizes']['large']; ?>');"></li>
+
+              <?php endwhile; ?>
+              <!-- end while loop -->
+
             <?php endforeach; ?>
  
             <?php endif; ?>
