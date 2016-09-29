@@ -22,7 +22,7 @@
       <ul class="social-icons">
 
         <?php if ( get_option('global_company_email') ): ?>
-        <li><a href="<?php echo get_option('global_company_email'); ?>"><span class="icon-ring"></span><span class="icon-icon-email"></span></a></li>
+        <li><a href="mailto:<?php echo get_option('global_company_email'); ?>"><span class="icon-ring"></span><span class="icon-icon-email"></span></a></li>
         <?php endif; ?>
 
         <?php if ( get_option('global_company_phone') ): ?>
@@ -53,7 +53,7 @@
         </a>
         <ul class="social-icons show-for-medium-up">
           <?php if ( get_option('global_company_email') ): ?>
-          <li><a href="<?php echo get_option('global_company_email'); ?>"><span class="icon-ring"></span><span class="icon-icon-email"></span></a></li>
+          <li><a href="mailto:<?php echo get_option('global_company_email'); ?>"><span class="icon-ring"></span><span class="icon-icon-email"></span></a></li>
           <?php endif; ?>
 
           <?php if ( get_option('global_company_phone') ): ?>
