@@ -57,11 +57,19 @@
             $images = get_field('photo_gallery');
             if( $images ): ?>
 
+            <?php
+              $i=1;
+              $limit=4;
+            ?>
+
             <?php foreach( $images as $image ): ?>
 
               <!-- start loop limit this to 4 -->
+              
 
               <li style="background-image: url('<?php echo $image['sizes']['large']; ?>');"></li>
+              
+              <?php $i=$i+1; if ($i>$limit) break; ?>
       
               <!-- end while loop -->
 
