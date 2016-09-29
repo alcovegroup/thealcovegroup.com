@@ -43,31 +43,33 @@
       <!-- Jumbotron -->
       <div id="home-gallery-row" class="row">
         <ul class="slickslide">
-            <li><img src="<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-01.jpg" title="img" alt="img" /></li>
-            <li><img src="<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-02.jpg" title="img2" alt="img2" /></li>
-            <li><img src="<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-03.jpg" title="img" alt="img" /></li>
-            <li><img src="https://s-media-cache-ak0.pinimg.com/736x/7c/0a/96/7c0a96f30b73a3ff57d66cf5c2eaab98.jpg" title="img" alt="img" /></li>
-            <li><img src="<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-01.jpg" title="img" alt="img" /></li>
-            <li><img src="<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-02.jpg" title="img2" alt="img2" /></li>
-            <li><img src="<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-03.jpg" title="img" alt="img" /></li>
-            <li><img src="https://s-media-cache-ak0.pinimg.com/736x/7c/0a/96/7c0a96f30b73a3ff57d66cf5c2eaab98.jpg" title="img" alt="img" /></li>
-            <li><img src="<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-01.jpg" title="img" alt="img" /></li>
-            <li><img src="<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-02.jpg" title="img2" alt="img2" /></li>
-            <li><img src="<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-03.jpg" title="img" alt="img" /></li>
+
+            <?php 
+            $images = get_field('photo_gallery');
+            if( $images ): ?>
+
+            <?php foreach( $images as $image ): ?>
+              <li><img src="<?php echo $image['sizes']['large']; ?>" title="img" alt="img" /></li>
+              <!-- Needs titles and alts -->
+            <?php endforeach; ?>
+ 
+            <?php endif; ?>
+
         </ul>
         <div class="slick-thumbs">
             <ul>
-              <li style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-01.jpg')"></li>
-              <li style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-02.jpg')"></li>
-              <li style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-03.jpg')"></li>
-              <li style="background-image: url('https://s-media-cache-ak0.pinimg.com/736x/7c/0a/96/7c0a96f30b73a3ff57d66cf5c2eaab98.jpg')"></li>
-              <li style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-01.jpg')"></li>
-              <li style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-02.jpg')"></li>
-              <li style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-03.jpg')"></li>
-              <li style="background-image: url('https://s-media-cache-ak0.pinimg.com/736x/7c/0a/96/7c0a96f30b73a3ff57d66cf5c2eaab98.jpg')"></li>
-              <li style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-01.jpg')"></li>
-              <li style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-02.jpg')"></li>
-              <li style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/temp-featured-home-03.jpg')"></li>
+              
+              <?php 
+              $images = get_field('photo_gallery');
+              if( $images ): ?>
+
+              <?php foreach( $images as $image ): ?>
+                <li style="background-image: url('<?php echo $image['sizes']['large']; ?>')"></li>
+                <!-- Needs titles and alts -->
+              <?php endforeach; ?>
+   
+              <?php endif; ?>
+
             </ul>
         </div>
       </div>
@@ -221,6 +223,56 @@
 				var theHeight = $(document).height();
 				$('#darken-overlay').css( "height", theHeight );
 			}, 500);
+
+      if ($(window).width() > 767) {
+        $('.slickslide').on('init', function(event, slick){
+          //find number of photos
+          var thumbs = $('.slick-dots').children('li');
+          var numThumbs = thumbs.length;
+          //find size of photo thumb
+          var thumbWidth = $(thumbs[0]).width();
+          var thumbHeight = $(thumbs[0]).height();
+          //find total width of track
+          var containerWidth = $('#home-gallery-row').width();
+          var totalTrackWidth = Math.floor(numThumbs * thumbWidth) + thumbWidth;
+          var posX = 0;
+          var numThumbsInVP = Math.floor(containerWidth / thumbWidth);
+          var numThumbsOffScreen = numThumbs - numThumbsInVP;
+          //wrap slick-dots in track
+          $('.slick-dots').wrap(function() {
+            return "<div class='slick-dots-track' style='height: " + thumbHeight + "px;'></div>";
+          });
+          //set width of dots ul to total width & height of 1 thumb
+          $('.slick-dots').css({ "height": thumbHeight, "width": totalTrackWidth });
+
+          //if the thumb track is less than the container width, we need arrows
+          if (!(totalTrackWidth < containerWidth)) {
+            $('.slick-dots-track').append("<span id='scroll-left' class='slick-dots-track-arrow'><span class='icon-icon-arrow-down arrow-prev'></span></span>");
+            $('.slick-dots-track').append("<span id='scroll-right' class='slick-dots-track-arrow'><span class='icon-icon-arrow-down arrow-next'></span></span>");
+            $('#scroll-left').on("click", function(){
+              console.log("left arrow clicked");
+              if (posX < 0) {
+                $('.slick-dots').css("-webkit-transform", "translateX(" + (posX + thumbWidth) + "px)");
+                $('.slick-dots').css("-moz-transform", "translateX(" + (posX + thumbWidth) + "px)");
+                $('.slick-dots').css("-o-transform", "translateX(" + (posX + thumbWidth) + "px)");
+                $('.slick-dots').css("transform", "translateX(" + (posX + thumbWidth) + "px)");
+                posX = (posX + thumbWidth);
+              }
+            });
+            $('#scroll-right').on("click", function(){
+              console.log("right arrow clicked");
+              if (posX > (numThumbsOffScreen * thumbWidth * -1)) {
+                $('.slick-dots').css("-webkit-transform", "translateX(" + (posX + thumbWidth*-1.2) + "px)");
+                $('.slick-dots').css("-moz-transform", "translateX(" + (posX + thumbWidth*-1.2) + "px)");
+                $('.slick-dots').css("-o-transform", "translateX(" + (posX + thumbWidth*-1.2) + "px)");
+                $('.slick-dots').css("transform", "translateX(" + (posX + thumbWidth*-1.2) + "px)");
+                posX = (posX + thumbWidth*-1);
+              }
+            });
+          } //end if track size conditional
+
+        }); //end slick init function
+      } //end if window width conditional
 
 			$('.slickslide').slick({
 		        dots: true,
