@@ -18,7 +18,7 @@
     <ul class="social-icons">
       
     <?php if ( get_option('global_company_email') ): ?>
-    <li><a href="<?php echo get_option('global_company_email'); ?>"><span class="icon-ring"></span><span class="icon-icon-email"></span></a></li>
+    <li>XX<a href="<?php echo get_option('global_company_email'); ?>"><span class="icon-ring"></span><span class="icon-icon-email"></span></a></li>
     <?php endif; ?>
 
     <?php if ( get_option('global_company_phone') ): ?>
