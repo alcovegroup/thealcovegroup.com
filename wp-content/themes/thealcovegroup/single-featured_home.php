@@ -301,11 +301,12 @@
 		            }
 		        }],
 		        customPaging: function (slider, i) {
-		            return "<button class='tab' "
-		                  + "style='background-image: "
-		                  + $('.slick-thumbs li:nth-child(' + (i + 1) + ')').css('background-image')
-		                  +  ";'></button>"
-		        }
+            return '<span class="slick-thumb-highlight""></span>'
+                  + "<button class='tab' "
+                  + "style='background-image: "
+                  + $('.slick-thumbs li:nth-child(' + (i + 1) + ')').css('background-image')
+                  +  ";'></button>"
+        }
 		    });
 		});
 	});
