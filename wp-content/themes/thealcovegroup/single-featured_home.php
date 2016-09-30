@@ -138,6 +138,7 @@
           <?php endif; ?>
 
 
+          <?php if ( post_custom('school_district') || post_custom('elementary_school') || post_custom('middle_school') || post_custom('high_school') ): ?>
           <div class="listing-schools">
             <table class="line-section-table">
               <tr>
@@ -167,6 +168,9 @@
             <?php endif; ?>
 
           </div>
+          <?php endif; ?>
+
+
         </div>
         <div id="home-content-right" class="small-12 large-6 columns">
           <div id="home-map"></div>
