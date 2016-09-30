@@ -347,6 +347,7 @@
               </tr> -->
             </table>
 
+            <?php if ( post_custom('listing_agent') ): ?>
             <table class="line-section-table">
               <tr>
                 <td><h4>Listing Information</h4></td>
@@ -356,9 +357,9 @@
             <table class="features-table">
               <tr>
                 <td>Listing Agent</td>
-                <td>Jeff Gottschalk</td>
+                <td><?php the_field( 'listing_agent' ); ?></td>
               </tr>
-              <tr>
+              <!-- <tr>
                 <td>Terms</td>
                 <td>Conventional</td>
               </tr>
@@ -385,8 +386,10 @@
               <tr>
                 <td>Disclaimer</td>
                 <td>This information is believed to be accurate, but without warranty.</td>
-              </tr>
+              </tr> -->
             </table>
+            <?php endif; ?>
+
           </div>
         
           <div class="inquire-form form-button-right">
