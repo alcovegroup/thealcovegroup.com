@@ -174,6 +174,7 @@
           </div>
           <?php endif; ?>
 
+          <?php if ( post_custom('property_style') || post_custom('num_stories') || post_custom('interior_features') || post_custom('exterior_features') || post_custom('year_built') || post_custom('heating_cooling') || post_custom('additional_rooms') ): ?>
           <div class="additional-details">
             <table class="line-section-table">
               <tr>
@@ -267,6 +268,7 @@
 
             </table>
           </div>
+          <?php endif; ?>
 
 
         </div>
@@ -274,6 +276,8 @@
           <div id="home-map"></div>
 
           <div class="additional-details">
+
+          <?php if ( post_custom('directions') || post_custom('county') || post_custom('market_area') ): ?>
             <table class="line-section-table">
               <tr>
                 <td><h4>Geographic Details</h4></td>
@@ -302,6 +306,7 @@
               </tr>
               <?php endif; ?>
             </table>
+            <?php endif; ?>
 
             <table class="line-section-table">
               <tr>
