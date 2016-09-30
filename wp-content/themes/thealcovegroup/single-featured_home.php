@@ -174,10 +174,182 @@
           </div>
           <?php endif; ?>
 
+          <div class="additional-details">
+            <table class="line-section-table">
+              <tr>
+                <td><h4>Additional Property Details</h4></td>
+                <td class="fill-line"></td>
+              </tr>
+            </table>
+            <table class="features-table">
+              <tr>
+                <td>Property Style</td>
+                <td>Traditional</td>
+              </tr>
+              <tr>
+                <td>Stories</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>Features</td>
+                <td>Drapes/Curtains/Window Cover, Fire/Smoke Alarm, High Ceiling, Island Kitchen</td>
+              </tr>
+              <tr>
+                <td>Exterior Features</td>
+                <td>Back Yard Fenced, Covered Patio/Deck, Patio/Deck</td>
+              </tr>
+              <tr>
+                <td>Year Built</td>
+                <td>1998</td>
+              </tr>
+              <tr>
+                <td>Fireplaces</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>Subdivisions</td>
+                <td>Waterstone Springs</td>
+              </tr>
+              <tr>
+                <td>View</td>
+                <td>Golf Course</td>
+              </tr>
+              <tr>
+                <td>Roof</td>
+                <td>Tile</td>
+              </tr>
+              <tr>
+                <td>Heating</td>
+                <td>Radiant Heat</td>
+              </tr>
+              <tr>
+                <td>Foundation</td>
+                <td>Slab</td>
+              </tr>
+              <tr>
+                <td>Accessibility</td>
+                <td>Manned Gate</td>
+              </tr>
+              <tr>
+                <td>Lot Description</td>
+                <td>Private Backyard</td>
+              </tr>
+              <tr>
+                <td>Laundry Features</td>
+                <td>Area,Electric Dryer Hookup,Individual Room,Washer Hookup</td>
+              </tr>
+              <tr>
+                <td>Additional Rooms</td>
+                <td>Recreation,Master Bedroom,See Remarks</td>
+              </tr>
+            </table>
+          </div>
+
 
         </div>
         <div id="home-content-right" class="small-12 large-6 columns">
           <div id="home-map"></div>
+
+          <div class="additional-details">
+            <table class="line-section-table">
+              <tr>
+                <td><h4>Geographic Details</h4></td>
+                <td class="fill-line"></td>
+              </tr>
+            </table>
+            <table class="features-table">
+              <tr>
+                <td>Directions</td>
+                <td>From 290 exit Barker Cypress to left on Tuckerton, right on Danbury Bridge, right on Bending Post, right on Driftwood Prairie</td>
+              </tr>
+              <tr>
+                <td>County</td>
+                <td>North</td>
+              </tr>
+              <tr>
+                <td>Market Area</td>
+                <td>Spring/Klein</td>
+              </tr>
+            </table>
+
+            <table class="line-section-table">
+              <tr>
+                <td><h4>Address Details</h4></td>
+                <td class="fill-line"></td>
+              </tr>
+            </table>
+            <table class="features-table">
+              <tr>
+                <td>Address</td>
+                <td>74434 East Sweet Bottom Br #18393</td>
+              </tr>
+              <tr>
+                <td>Unit</td>
+                <td>18393</td>
+              </tr>
+              <tr>
+                <td>Postal Code</td>
+                <td>77096</td>
+              </tr>
+              <tr>
+                <td>City</td>
+                <td>Houston</td>
+              </tr>
+              <tr>
+                <td>Cross Street</td>
+                <td>Dunne Ave</td>
+              </tr>
+              <tr>
+                <td>State</td>
+                <td>Texas</td>
+              </tr>
+              <tr>
+                <td>Country</td>
+                <td>United States</td>
+              </tr>
+            </table>
+
+            <table class="line-section-table">
+              <tr>
+                <td><h4>Listing Information</h4></td>
+                <td class="fill-line"></td>
+              </tr>
+            </table>
+            <table class="features-table">
+              <tr>
+                <td>Listing Agent</td>
+                <td>Jeff Gottschalk</td>
+              </tr>
+              <tr>
+                <td>Terms</td>
+                <td>Conventional</td>
+              </tr>
+              <tr>
+                <td>MLS Status</td>
+                <td>Active</td>
+              </tr>
+              <tr>
+                <td>Listing Date</td>
+                <td>May 23, 2011</td>
+              </tr>
+              <tr>
+                <td>Tax ID</td>
+                <td>593-723-781-8056</td>
+              </tr>
+              <tr>
+                <td>MLS Area</td>
+                <td>Spring/Klein</td>
+              </tr>
+              <tr>
+                <td>MLS #</td>
+                <td>49699701</td>
+              </tr>
+              <tr>
+                <td>Disclaimer</td>
+                <td>This information is believed to be accurate, but without warranty.</td>
+              </tr>
+            </table>
+          </div>
         
           <div class="inquire-form form-button-right">
             <h4>Interested in this home?</h4>
