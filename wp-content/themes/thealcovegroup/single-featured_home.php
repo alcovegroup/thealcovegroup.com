@@ -182,27 +182,42 @@
               </tr>
             </table>
             <table class="features-table">
+              <?php if ( post_custom('property_style') ): ?>
               <tr>
                 <td>Property Style</td>
-                <td>Traditional</td>
+                <td><?php the_field( 'property_style' ); ?></td>
               </tr>
+              <?php endif; ?>
+
+              <?php if ( post_custom('num_stories') ): ?>
               <tr>
                 <td>Stories</td>
-                <td>3</td>
+                <td><?php the_field( 'num_stories' ); ?></td>
               </tr>
+              <?php endif; ?>
+
+              <?php if ( post_custom('interior_features') ): ?>
               <tr>
                 <td>Features</td>
-                <td>Drapes/Curtains/Window Cover, Fire/Smoke Alarm, High Ceiling, Island Kitchen</td>
+                <td><?php the_field( 'interior_features' ); ?></td>
               </tr>
+              <?php endif; ?>
+
+              <?php if ( post_custom('exterior_features') ): ?>
               <tr>
                 <td>Exterior Features</td>
-                <td>Back Yard Fenced, Covered Patio/Deck, Patio/Deck</td>
+                <td><?php the_field( 'exterior_features' ); ?></td>
               </tr>
+              <?php endif; ?>
+
+              <?php if ( post_custom('year_built') ): ?>
               <tr>
                 <td>Year Built</td>
-                <td>1998</td>
+                <td><?php the_field( 'year_built' ); ?></td>
               </tr>
-              <tr>
+              <?php endif; ?>
+
+              <!-- <tr>
                 <td>Fireplaces</td>
                 <td>1</td>
               </tr>
@@ -217,12 +232,16 @@
               <tr>
                 <td>Roof</td>
                 <td>Tile</td>
-              </tr>
+              </tr> -->
+
+              <?php if ( post_custom('heating_cooling') ): ?>
               <tr>
-                <td>Heating</td>
-                <td>Radiant Heat</td>
+                <td>Heating &amp; Cooling</td>
+                <td><?php the_field( 'heating_cooling' ); ?></td>
               </tr>
-              <tr>
+              <?php endif; ?>
+
+              <!-- <tr>
                 <td>Foundation</td>
                 <td>Slab</td>
               </tr>
@@ -237,11 +256,15 @@
               <tr>
                 <td>Laundry Features</td>
                 <td>Area,Electric Dryer Hookup,Individual Room,Washer Hookup</td>
-              </tr>
+              </tr> -->
+
+              <?php if ( post_custom('additional_rooms') ): ?>
               <tr>
                 <td>Additional Rooms</td>
-                <td>Recreation,Master Bedroom,See Remarks</td>
+                <td><?php the_field( 'additional_rooms' ); ?></td>
               </tr>
+              <?php endif; ?>
+
             </table>
           </div>
 
