@@ -313,7 +313,8 @@
               <?php if ( post_custom('address_1') && post_custom('address_2')): ?>
               <tr>
                 <td>Address</td>
-                <td><?php the_field( 'address_1' ); ?> <?php the_field( 'address_2' ); ?></td>
+                <td><?php the_field( 'address_1' ); ?><br>
+                <?php the_field( 'address_2' ); ?></td>
               </tr>
               <?php endif; ?>
 
