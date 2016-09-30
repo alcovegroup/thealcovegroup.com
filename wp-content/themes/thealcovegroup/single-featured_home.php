@@ -281,18 +281,26 @@
               </tr>
             </table>
             <table class="features-table">
+              <?php if ( post_custom('directions') ): ?>
               <tr>
                 <td>Directions</td>
-                <td>From 290 exit Barker Cypress to left on Tuckerton, right on Danbury Bridge, right on Bending Post, right on Driftwood Prairie</td>
+                <td><?php the_field( 'directions' ); ?></td>
               </tr>
+              <?php endif; ?>
+
+              <?php if ( post_custom('county') ): ?>
               <tr>
                 <td>County</td>
-                <td>North</td>
+                <td><?php the_field( 'county' ); ?></td>
               </tr>
+              <?php endif; ?>
+
+              <?php if ( post_custom('market_area') ): ?>
               <tr>
                 <td>Market Area</td>
-                <td>Spring/Klein</td>
+                <td><?php the_field( 'market_area' ); ?></td>
               </tr>
+              <?php endif; ?>
             </table>
 
             <table class="line-section-table">
@@ -302,11 +310,14 @@
               </tr>
             </table>
             <table class="features-table">
+              <?php if ( post_custom('address_1') && post_custom('address_2')): ?>
               <tr>
                 <td>Address</td>
-                <td>74434 East Sweet Bottom Br #18393</td>
+                <td><?php the_field( 'address_1' ); ?> <?php the_field( 'address_2' ); ?></td>
               </tr>
-              <tr>
+              <?php endif; ?>
+
+              <!-- <tr>
                 <td>Unit</td>
                 <td>18393</td>
               </tr>
@@ -317,19 +328,23 @@
               <tr>
                 <td>City</td>
                 <td>Houston</td>
-              </tr>
+              </tr> -->
+
+              <?php if ( post_custom('cross_street') ): ?>
               <tr>
                 <td>Cross Street</td>
-                <td>Dunne Ave</td>
+                <td><?php the_field( 'cross_street' ); ?></td>
               </tr>
-              <tr>
+              <?php endif; ?>
+
+              <!-- <tr>
                 <td>State</td>
                 <td>Texas</td>
               </tr>
               <tr>
                 <td>Country</td>
                 <td>United States</td>
-              </tr>
+              </tr> -->
             </table>
 
             <table class="line-section-table">
