@@ -93,6 +93,8 @@
           </div>
           <?php endif; ?>
 
+
+          <?php if ( post_custom('num_bedrooms') || post_custom('num_bathrooms') || post_custom('square_footage_house') || post_custom('square_footage_lot') || ($post->post_content!=="") ): ?>
           <div class="listing-details clearfix">
             <table class="line-section-table">
               <tr>
@@ -135,6 +137,8 @@
             <h4>Description</h4>
             <?php the_content(); ?>
           </div>
+          <?php endif; ?>
+
           <?php endif; ?>
 
 
