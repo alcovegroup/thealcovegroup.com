@@ -769,10 +769,6 @@ ul.social-icons span.icon-icon-phone, ul.social-icons span.icon-icon-linkedin, u
 /* line 665, ../scss/modules.scss */
 .home #hero,
 .home .featured-home {
-  -moz-transition: height 0.2s ease-in-out;
-  -o-transition: height 0.2s ease-in-out;
-  -webkit-transition: height 0.2s ease-in-out;
-  transition: height 0.2s ease-in-out;
   height: 100vh;
 }
 

@@ -25,7 +25,7 @@
               <tr>
                 <td class="table-left-header">
                   <h4>Share this Home</h4>
-                  <a href="#">
+                  <a href="http://www.facebook.com/sharer.php?u=<?php echo get_permalink(); ?>">
                     <span class="social-icon"><span class="icon-icon-facebook"></span></span>
                   </a>
                   <a href="#">
