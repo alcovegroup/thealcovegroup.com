@@ -6,6 +6,12 @@ jQuery(function ($) {
 	$(document).foundation();
 
 	var docHeight = $(document).height();
+	var windowHeight = $(window).height();
+	setTimeout(function(){
+		$('.home #hero, .home .featured-home').css("height", windowHeight);
+	}, 0);
+
+
 	var pageBody = $('body');
 	var menuToggle = $('input#menu-toggle');
 	var menuPanel = $('#menu-frame');
@@ -29,12 +35,12 @@ jQuery(function ($) {
 	    	console.log("translated");
 	    	if (!$header.hasClass("minimized")) {
 	    		$header.addClass("minimized");
-	    		$logoImg.attr( "src", "http://mls.liquinas.com/wp-content/themes/thealcovegroup/img/temp-logo-mark.png" );
+	    		$logoImg.attr( "src", "../img/temp-logo-mark.png" );
 	    	}
 	    } else {
 	    	if ($header.hasClass("minimized")) {
 	    		$header.removeClass("minimized");
-	    		$logoImg.attr( "src", "http://mls.liquinas.com/wp-content/themes/thealcovegroup/img/temp-logo-full.png" );
+	    		$logoImg.attr( "src", "../img/temp-logo-full.png" );
 	    	}
 	    }
 	}
@@ -58,13 +64,36 @@ jQuery(function ($) {
 			darkenOverlay.toggleClass( "exposed" );
 		}
 	});
+
+	function menuButtonClick() {
+		if (menuExpanded == false) {
+			// console.log("menu has been expanded");
+			menuPanel.offset({ top: windowScrollPos});
+			pageBody.css("overflow-y", "hidden");
+			menuExpanded = true;
+			darkenOverlay.toggleClass( "exposed" );
+		} else {
+			// console.log("menu has been collapsed");
+			menuPanel.offset({ top: 0});
+			pageBody.css("overflow-y", "auto");
+			menuExpanded = false;
+			darkenOverlay.toggleClass( "exposed" );
+		}
+	}
+
+	// var featuredHomesLink = $('a[href="index.html"]');
+ //    featuredHomesLink.on( "click", function(e){
+ //    	e.preventDefault();
+ //    	if (menuToggle.prop( "checked" )) {
+ //    		menuToggle.prop("checked",false);
+ //    	}
+ //    	menuButtonClick();
+ //    } );
+
+
 	
 
 });
-
-
-
-
 
 
 
