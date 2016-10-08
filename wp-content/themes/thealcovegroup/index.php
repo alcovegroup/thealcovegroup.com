@@ -175,10 +175,8 @@
             if (headerSwapTrue) {
               if (!$header.hasClass("minimized")) {
                 $header.addClass("minimized");
-                $logoImg.attr( "src", "<?php echo get_template_directory_uri(); ?>/img/temp-logo-mark.png" )
               } else if ($header.hasClass("minimized")) {
                 $header.removeClass("minimized");
-                $logoImg.attr( "src", "<?php echo get_template_directory_uri(); ?>/img/temp-logo-full.png" )
               }
             }
           }

@@ -39,12 +39,12 @@ jQuery(function ($) {
 	    	console.log("translated");
 	    	if (!$header.hasClass("minimized")) {
 	    		$header.addClass("minimized");
-	    		$logoImg.attr( "src", "../img/temp-logo-mark.png" );
+	    		// $logoImg.attr( "src", "../img/temp-logo-mark.png" );
 	    	}
 	    } else {
 	    	if ($header.hasClass("minimized")) {
 	    		$header.removeClass("minimized");
-	    		$logoImg.attr( "src", "../img/temp-logo-full.png" );
+	    		// $logoImg.attr( "src", "../img/temp-logo-full.png" );
 	    	}
 	    }
 	}
