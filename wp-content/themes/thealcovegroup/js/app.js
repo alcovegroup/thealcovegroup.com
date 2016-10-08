@@ -5,13 +5,17 @@ jQuery(function ($) {
 
 	$(document).foundation();
 
-	var docHeight = $(document).height();
+	// if( /iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
+		//browser detection
+	// }
+
+	
 	var windowHeight = $(window).height();
 	setTimeout(function(){
 		$('.home #hero, .home .featured-home').css("height", windowHeight);
 	}, 0);
 
-
+	var docHeight = $(document).height();
 	var pageBody = $('body');
 	var menuToggle = $('input#menu-toggle');
 	var menuPanel = $('#menu-frame');
