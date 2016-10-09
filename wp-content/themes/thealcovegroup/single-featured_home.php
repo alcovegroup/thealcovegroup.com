@@ -398,7 +398,7 @@
 
           </div>
         
-          <div class="inquire-form form-button-right">
+          <!-- <div class="inquire-form form-button-right">
             <h4>Interested in this home?</h4>
             <form>
               <input type="text" placeholder="First Name*" required />
@@ -418,7 +418,32 @@
                 <input type="submit" value="Inquire" />
               </div>
             </form>
+          </div> -->
+          <div class="inquire-form form-button-right">
+            <h4>Interested in this home?</h4>
+            <form>
+              <input type="text" name="MLS-id" style="display: none;"/>
+              <input type="text" name="listing-url" style="display: none;"/>
+              <input type="text" name="first-name" placeholder="First Name*" required />
+              <input type="text" name="last-name" placeholder="Last Name*" required />
+              <input type="text" name="email-address" placeholder="Email Address*" required />
+              <input type="text" name="phone-number" placeholder="Phone Number*" required />
+              <span class="select-span">How soon are you interested in buying?</span>
+              <select name="buying-timeframe" required>
+                <option selected disabled>Select<sup>*</sup></option>
+                <option value="planning-now">Now</option>
+                <option value="planning-1-3">1-3 months</option>
+                <option value="planning-6-plus">6 months - 1 year</option>
+              </select>
+              <textarea rows="7" name="optional-message" placeholder="Optional Message"></textarea>
+              <div>
+                <span><sup>*</sup>Required</span>
+                <input type="submit" value="Inquire" />
+              </div>
+            </form>
           </div>
+
+
         </div>
       </div>
       <!-- Details content -->
@@ -444,6 +469,11 @@
     <script>
     jQuery(function ($) {
 		$(document).ready(function() {
+
+      var inputID = $('input[name="MLS-id"]');
+      var inputURL = $('input[name="listing-url"]');
+      inputID.val("MLS ID of this listing");
+      inputURL.val("Website URL of this listing");
 
       //fix height of overlay- bugs due to slick slider
 			setTimeout(function(){
