@@ -401,6 +401,7 @@
           <div class="inquire-form form-button-right">
             <h4>Interested in this home?</h4>
             <form id="inquire-form" action="" method="post" data-abide onsubmit="event.preventDefault(); formSubmission(event);">
+              <input type="checkbox" name="Submitted Listing Inquiry" value="Submitted Listing Inquiry" checked style="display: none;" />
               <input type="text" name="MLS-id" style="display: none;"/>
               <input type="text" name="listing-url" style="display: none;"/>
 
