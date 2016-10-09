@@ -397,28 +397,7 @@
             <?php endif; ?>
 
           </div>
-        
-          <!-- <div class="inquire-form form-button-right">
-            <h4>Interested in this home?</h4>
-            <form>
-              <input type="text" placeholder="First Name*" required />
-              <input type="text" placeholder="Last Name*" required />
-              <input type="text" placeholder="Email Address*" required />
-              <input type="text" placeholder="Phone Number*" required />
-              <span class="select-span">How soon are you interested in buying?</span>
-              <select required>
-                <option selected disabled>Select<sup>*</sup></option>
-                <option value="planning-now">Now</option>
-                <option value="planning-1-3">1-3 months</option>
-                <option value="planning-6-plus">6 months - 1 year</option>
-              </select>
-              <textarea rows="7" placeholder="Optional Message"></textarea>
-              <div>
-                <span><sup>*</sup>Required</span>
-                <input type="submit" value="Inquire" />
-              </div>
-            </form>
-          </div> -->
+         
           <div class="inquire-form form-button-right">
             <h4>Interested in this home?</h4>
             <form id="inquire-form" action="" method="post" data-abide onsubmit="event.preventDefault(); formSubmission(event);">
@@ -438,7 +417,7 @@
 
               <span class="select-span">How soon are you interested in buying?</span>
               <select name="buying-timeframe" required>
-                <option selected disabled>Select<sup>*</sup></option>
+                <option selected disabled value>Select<sup>*</sup></option>
                 <option value="planning-now">Now</option>
                 <option value="planning-1-3">1-3 months</option>
                 <option value="planning-6-plus">6 months - 1 year</option>
