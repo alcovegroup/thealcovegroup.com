@@ -506,18 +506,6 @@
           focus_on_invalid : false // automatically bring the focus to an invalid input field
         }
       });
-      function formSubmission(event) {
-       $('#inquire-form').on('invalid.fndtn.abide', function () {
-          var invalid_fields = $(this).find('[data-invalid]');
-          // console.log("invalid fields: ");
-          // console.log(invalid_fields);
-        }).on('valid.fndtn.abide', function () {
-          console.log('valid!');
-          __ss_noform.push(['submit', null, '7c39939e-318b-4fb1-a3cf-93d47759eb2a']);
-          $('#inquire-form').hide();
-          $('#thank-you-message').show();
-        });
-      }
 
       //fix height of overlay- bugs due to slick slider
 			setTimeout(function(){
@@ -651,6 +639,19 @@
 	// 		title: 'Home Location'
 	// 	});
 	// }
+
+      function formSubmission(event) {
+        $('#inquire-form').on('invalid.fndtn.abide', function () {
+          var invalid_fields = $(this).find('[data-invalid]');
+          // console.log("invalid fields: ");
+          // console.log(invalid_fields);
+        }).on('valid.fndtn.abide', function () {
+          console.log('valid!');
+          __ss_noform.push(['submit', null, '7c39939e-318b-4fb1-a3cf-93d47759eb2a']);
+          $('#inquire-form').hide();
+          $('#thank-you-message').show();
+        });
+      }
 
 
     </script>
