@@ -421,13 +421,21 @@
           </div> -->
           <div class="inquire-form form-button-right">
             <h4>Interested in this home?</h4>
-            <form>
+            <form id="inquire-form" action="" method="post" data-abide onsubmit="event.preventDefault(); formSubmission(event);">
               <input type="text" name="MLS-id" style="display: none;"/>
               <input type="text" name="listing-url" style="display: none;"/>
+
               <input type="text" name="first-name" placeholder="First Name*" required />
-              <input type="text" name="last-name" placeholder="Last Name*" required />
-              <input type="text" name="email-address" placeholder="Email Address*" required />
+              <small class="error">We need to know who to contact!</small>
+
+              <input type="text" name="last-name" placeholder="Last Name" />
+
+              <input type="text" name="email-address" placeholder="Email Address*" pattern="email" required />
+              <small class="error">A valid email address is required.</small>
+
               <input type="text" name="phone-number" placeholder="Phone Number*" required />
+              <small class="error">A phone number is required.</small>
+
               <span class="select-span">How soon are you interested in buying?</span>
               <select name="buying-timeframe" required>
                 <option selected disabled>Select<sup>*</sup></option>
@@ -435,12 +443,28 @@
                 <option value="planning-1-3">1-3 months</option>
                 <option value="planning-6-plus">6 months - 1 year</option>
               </select>
+              <small class="error">More info is required.</small>
+
               <textarea rows="7" name="optional-message" placeholder="Optional Message"></textarea>
               <div>
                 <span><sup>*</sup>Required</span>
                 <input type="submit" value="Inquire" />
               </div>
             </form>
+            <script type="text/javascript">
+              var __ss_noform = __ss_noform || [];
+              __ss_noform.push(['baseURI', 'https://app-3QEHIZGEXU.marketingautomation.services/webforms/receivePostback/MzYwtzQwMDG0BAA/']);
+              __ss_noform.push(['form', 'inquire-form', '7c39939e-318b-4fb1-a3cf-93d47759eb2a']);
+              __ss_noform.push(['submitType', 'manual']);
+            </script>
+            <script type="text/javascript" src="https://koi-3QEHIZGEXU.marketingautomation.services/client/noform.js?ver=1.24" ></script>
+
+            <!-- Shows after form submit hides form -->
+            <div id="thank-you-message">
+              <h3>Thanks for contacting The Alcove Group!</h3>
+              <p>A specialist will get back to you shortly to discuss your submission.</p>
+            </div>
+
           </div>
 
 
@@ -474,6 +498,26 @@
       var inputURL = $('input[name="listing-url"]');
       inputID.val("MLS ID of this listing");
       inputURL.val("Website URL of this listing");
+
+      $(document).foundation({
+        abide : {
+          live_validate : true, // validate the form as you go
+          validate_on_blur : false, // validate whenever you focus/blur on an input field
+          focus_on_invalid : false // automatically bring the focus to an invalid input field
+        }
+      });
+      function formSubmission(event) {
+       $('#inquire-form').on('invalid.fndtn.abide', function () {
+          var invalid_fields = $(this).find('[data-invalid]');
+          // console.log("invalid fields: ");
+          // console.log(invalid_fields);
+        }).on('valid.fndtn.abide', function () {
+          console.log('valid!');
+          __ss_noform.push(['submit', null, '7c39939e-318b-4fb1-a3cf-93d47759eb2a']);
+          $('#inquire-form').hide();
+          $('#thank-you-message').show();
+        });
+      }
 
       //fix height of overlay- bugs due to slick slider
 			setTimeout(function(){
