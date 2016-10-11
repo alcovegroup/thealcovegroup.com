@@ -101,13 +101,7 @@ function editglobalcustomfields() {
 	<?php
 }
 
-
-//Custom Theme Settings
-add_action('admin_menu', 'my_menu_page');
-
-function my_menu_page() {
 add_menu_page('Test Menu Page', 'Test Menu', 'manage_options', 'test-menu', 'testXX');
-}
 
 function add_menu_page( $page_title, $menu_title, $capability, $menu_slug, $function = '', $icon_url = '', $position = null ) {
     global $menu, $admin_page_hooks, $_registered_pages, $_parent_pages;
