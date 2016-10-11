@@ -175,7 +175,7 @@
         }
 
         } else {
-          console.log("and screen size is mobile");
+          console.log("and screen size is mobile: " + responsiveWidth);
           showImagePage();
         }
         <?php endif; ?>
