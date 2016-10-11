@@ -130,6 +130,8 @@
     jQuery(function ($) {
 	    $(document).ready(function() {
 
+        var responsiveWidth = 640;
+
         <?php if ( post_custom('use_video_background') ): ?>
         console.log("video background is in use");
         if ($(window).width() > responsiveWidth) {
@@ -199,7 +201,7 @@
         var transformedValue;
         var remUnit = parseInt($('html').css("font-size"));
         // var responsiveWidth = Math.ceil(37.70588*remUnit);
-        var responsiveWidth = 640;
+        
         console.log(remUnit);
 
         $('.slickslide').slick({
