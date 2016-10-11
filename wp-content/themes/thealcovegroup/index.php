@@ -153,7 +153,7 @@
           var loadingStatus = document.getElementById("loadingStatus");
           var videoElement = document.getElementById("videoPreload");
           var percentLoaded = parseInt(((videoElement.buffered.end(0) / videoElement.duration) * 100));
-          if (percentLoaded > 1) {
+          if (percentLoaded > 10) {
             playVideo();
             pageHasLoaded = true;
           }
