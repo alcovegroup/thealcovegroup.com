@@ -170,7 +170,7 @@
         }
 
         } else {
-          showImagePage();
+          showPageImage();
         }
         <?php endif; ?>
 
