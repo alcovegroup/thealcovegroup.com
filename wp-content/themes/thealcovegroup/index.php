@@ -140,10 +140,12 @@
           var videoElement = document.getElementById("videoPreload");
           videoElement.addEventListener('progress',updateLoadingStatus,false);
           if (videoElement.readyState >= videoElement.HAVE_FUTURE_DATA) {
-            videoElement.addEventListener('canplay',playVideo,false);
+            // videoElement.addEventListener('canplay',playVideo,false);
+            console.log("videoElement.readyState >= videoElement.HAVE_FUTURE_DATA");
           } else {
             videoElement.addEventListener('canplay', function () {
               videoElement.addEventListener('canplay',playVideo,false);
+              console.log("not: videoElement.readyState >= videoElement.HAVE_FUTURE_DATA");
             }, false);
           }
         }
