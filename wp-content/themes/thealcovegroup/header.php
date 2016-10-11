@@ -10,6 +10,10 @@
 
   <body <?php body_class(); ?>>
 
+    <?php if ( is_front_page() ): ?>
+      <div id="loadingStatus"></div>
+      <div id="pageHide"> <!-- Wraps the page content to hide while video loads -->
+    <?php endif; ?>
 
     <!-- Menu toggle hidden -->
     <input id="menu-toggle" type="checkbox" />

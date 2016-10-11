@@ -129,6 +129,47 @@
     <script>
     jQuery(function ($) {
 	    $(document).ready(function() {
+
+        var pageHasLoaded = false;
+
+        window.addEventListener('load', eventWindowLoaded, false);
+        function eventWindowLoaded() {
+          var videoElement = document.getElementById("videoPreload");
+          videoElement.addEventListener('progress',updateLoadingStatus,false);
+          if (videoElement.readyState >= videoElement.HAVE_FUTURE_DATA) {
+            // console.log('video can play!');
+            videoElement.addEventListener('canplay',playVideo,false);
+          } else {
+            videoElement.addEventListener('canplay', function () {
+              // console.log('video can play!');
+              videoElement.addEventListener('canplay',playVideo,false);
+            }, false);
+          }
+        }
+
+        function updateLoadingStatus() {
+          if (pageHasLoaded) { return }
+          var loadingStatus = document.getElementById("loadingStatus");
+          var videoElement = document.getElementById("videoPreload");
+          var percentLoaded = parseInt(((videoElement.buffered.end(0) / videoElement.duration) * 100));
+          if (percentLoaded > 1) {
+            playVideo();
+            pageHasLoaded = true;
+          }
+          document.getElementById("loadingStatus").innerHTML =   percentLoaded + '%';
+        }
+
+        function playVideo() {
+          var videoElement = document.getElementById("videoPreload");
+          videoElement.play();
+          $('#pageHide').css({
+            "opacity": "1",
+            "pointer-events": "auto"
+          });
+          // $('#pageHide').css("opacity", "1");
+        }
+
+        
         var pageHeight;
         var transformedValue;
         var remUnit = parseInt($('html').css("font-size"));
