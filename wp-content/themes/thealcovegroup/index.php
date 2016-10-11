@@ -162,11 +162,10 @@
         function playVideo() {
           var videoElement = document.getElementById("videoPreload");
           videoElement.play();
-          $('#pageHide').css({
+          $('#pageHide, #fp-nav').css({
             "opacity": "1",
             "pointer-events": "auto"
           });
-          // $('#pageHide').css("opacity", "1");
         }
 
 
