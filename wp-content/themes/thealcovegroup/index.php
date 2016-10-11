@@ -130,6 +130,12 @@
     jQuery(function ($) {
 	    $(document).ready(function() {
 
+        <?php if ( post_custom('use_video_background') ): ?>
+        $('#pageHide').css({
+          "opacity": "0",
+          "pointer-events": "none"
+        });
+
         var pageHasLoaded = false;
 
         window.addEventListener('load', eventWindowLoaded, false);
@@ -167,6 +173,7 @@
             "pointer-events": "auto"
           });
         }
+        <?php endif; ?>
 
 
         var pageHeight;
