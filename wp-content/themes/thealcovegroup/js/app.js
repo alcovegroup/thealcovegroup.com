@@ -27,7 +27,11 @@ jQuery(function ($) {
 	var advanceFormButton = $('#advance-form');
 	
 	menuToggle.attr("checked", false);
-	darkenOverlay.css("height", docHeight);
+	
+	setTimeout(function(){
+		darkenOverlay.css("height", docHeight);
+	}, 0);
+	
 
 	scrollIncrement();
 
