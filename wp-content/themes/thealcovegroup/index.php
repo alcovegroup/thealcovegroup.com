@@ -170,12 +170,12 @@
         }
 
         } else {
-          showPageImage();
+          showImagePage();
         }
         <?php endif; ?>
 
         <?php if ( !post_custom('use_video_background') ): ?>
-        showPageImage();
+        showImagePage();
         <?php endif; ?>
 
         function showImagePage(){
