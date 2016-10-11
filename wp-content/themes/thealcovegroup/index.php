@@ -131,7 +131,9 @@
 	    $(document).ready(function() {
 
         <?php if ( post_custom('use_video_background') ): ?>
+        console.log("video background is in use");
         if ($(window).width() > responsiveWidth) {
+          console.log("and screen size is larger than mobile");
 
         var pageHasLoaded = false;
 
@@ -173,11 +175,13 @@
         }
 
         } else {
+          console.log("and screen size is mobile");
           showImagePage();
         }
         <?php endif; ?>
 
         <?php if ( !post_custom('use_video_background') ): ?>
+        console.log("video background is not in use");
         showImagePage();
         <?php endif; ?>
 
