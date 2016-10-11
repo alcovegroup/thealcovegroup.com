@@ -5,6 +5,8 @@ body {
 
 /* line 10, ../scss/modules.scss */
 #pageHide {
+  opacity: 0;
+  pointer-events: none;
   -moz-transition: opacity 0.4s linear;
   -o-transition: opacity 0.4s linear;
   -webkit-transition: opacity 0.4s linear;

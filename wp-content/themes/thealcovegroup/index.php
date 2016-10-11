@@ -131,11 +131,7 @@
 	    $(document).ready(function() {
 
         <?php if ( post_custom('use_video_background') ): ?>
-        $('#pageHide').css({
-          "opacity": "0",
-          "pointer-events": "none"
-        });
-
+        
         var pageHasLoaded = false;
 
         window.addEventListener('load', eventWindowLoaded, false);
@@ -173,6 +169,15 @@
             "pointer-events": "auto"
           });
         }
+        <?php endif; ?>
+
+        <?php if ( !post_custom('use_video_background') ): ?>
+        setTimeout(function(){   
+          $('#pageHide').css({
+            "opacity": "1",
+            "pointer-events": "auto"
+          });
+        }, 20);
         <?php endif; ?>
 
 
