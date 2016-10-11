@@ -165,6 +165,7 @@
             "opacity": "1",
             "pointer-events": "auto"
           });
+          pageHasLoaded = false;
         }
 
         } else {
