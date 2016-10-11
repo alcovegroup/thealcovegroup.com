@@ -753,7 +753,7 @@ ul.social-icons span.icon-icon-phone, ul.social-icons span.icon-icon-linkedin, u
 
 /* line 653, ../scss/modules.scss */
 .home #hero, .home .featured-home {
-  height: 100%;
+  height: 100vh;
 }
 
 /* line 658, ../scss/modules.scss */
