@@ -161,6 +161,14 @@
           navigationPosition: 'right',
           responsiveWidth: responsiveWidth,
           afterRender: function () {
+
+            var heroHeight = $("#hero").height();
+            var numFeaturedHomes = $('.featured-home').length;
+            var featuredHomeHeight = $('.featured-home').height();
+            var footerHeight = $('#footer').height();
+            var calculatedHeight = heroHeight + (featuredHomeHeight*numFeaturedHomes) + footerHeight;
+            $('#darken-overlay').css("height", calculatedHeight);
+
             if ($(window).width() > responsiveWidth) {
               <?php if ( post_custom('use_video_background') ): ?>
               var videoDiv =  '<div class="video-bg"><video id="videoPreload" width="100%" height="100%" preload autoplay loop muted><source src="<?php echo the_field( "mp4_video_file" ); ?>" type="video/mp4"><source src="<?php echo the_field( "webm_video_file" ); ?>" type="video/webm"><source src="<?php echo the_field( "ogg_video_file" ); ?>" type="video/ogg">Your browser does not support the video tag.</video></div>';
