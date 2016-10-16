@@ -68,17 +68,32 @@
               </tr>
             </table>
             <?php endif; ?>
-            <form>
-              <input type="text" placeholder="First Name*" required />
-              <input type="text" placeholder="Last Name*" required />
-              <input type="text" placeholder="Email Address*" required />
-              <input type="text" placeholder="Phone Number*" required />
-              <textarea rows="7" placeholder="Optional Message"></textarea>
+            <form id="general-contact-form" action="" method="post" data-abide onsubmit="event.preventDefault(); formSubmission(event);">
+              <input type="text" name="first-name" placeholder="First Name*" required />
+              <input type="text" name="last-name" placeholder="Last Name*" required />
+              <input type="text" name="email-address" placeholder="Email Address*" pattern="email" required />
+              <input type="text" name="phone-number" placeholder="Phone Number*" required />
+              <textarea rows="7" name="optional-message" placeholder="Optional Message"></textarea>
               <div>
                 <span><sup>*</sup>Required</span>
                 <input type="submit" value="Inquire" />
               </div>
             </form>
+            <script type="text/javascript">
+              var __ss_noform = __ss_noform || [];
+              __ss_noform.push(['baseURI', 'https://app-3QEHIZGEXU.marketingautomation.services/webforms/receivePostback/MzYwtzQwMDG0BAA/']);
+              __ss_noform.push(['form', 'general-contact-form', 'e6bce1b2-1723-4431-8216-92d3f9f3a583']);
+              __ss_noform.push(['submitType', 'manual']);
+            </script>
+            <script type="text/javascript" src="https://koi-3QEHIZGEXU.marketingautomation.services/client/noform.js?ver=1.24" ></script>
+
+
+            <!-- Shows after form submit hides form -->
+            <div id="thank-you-message">
+              <h3>Thanks for contacting The Alcove Group!</h3>
+              <p>A specialist will get back to you shortly to discuss your submission.</p>
+            </div>
+
         </div>
       </div>
 
@@ -99,6 +114,27 @@
     <script src="<?php echo get_template_directory_uri(); ?>/bower_components/foundation/js/foundation.min.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/app.js"></script>
     <script>
+
+      $(document).foundation({
+        abide : {
+          live_validate : true, // validate the form as you go
+          validate_on_blur : false, // validate whenever you focus/blur on an input field
+          focus_on_invalid : false // automatically bring the focus to an invalid input field
+        }
+      });
+      function formSubmission(event) {
+       $('#general-contact-form').on('invalid.fndtn.abide', function () {
+          var invalid_fields = $(this).find('[data-invalid]');
+          // console.log("invalid fields: ");
+          // console.log(invalid_fields);
+        }).on('valid.fndtn.abide', function () {
+          console.log('valid!');
+          __ss_noform.push(['submit', null, 'b5322a6c-5d00-4271-bd84-20fccb02c863']);
+          $('#general-contact-form').hide();
+          $('#thank-you-message').show();
+        });
+      }
+
       function initMap() {
 
         var myLatLng = {lat: 33.5650816, lng: -111.91640030000002};
