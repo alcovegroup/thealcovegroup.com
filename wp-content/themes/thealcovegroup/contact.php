@@ -70,9 +70,13 @@
             <?php endif; ?>
             <form id="general-contact-form" action="" method="post" data-abide onsubmit="event.preventDefault(); formSubmission(event);">
               <input type="text" name="first-name" placeholder="First Name*" required />
+              <small class="error">We need to know who to contact!</small>
               <input type="text" name="last-name" placeholder="Last Name*" required />
+              <small class="error">We need to know who to contact!</small>
               <input type="text" name="email-address" placeholder="Email Address*" pattern="email" required />
+              <small class="error">A valid email address is required.</small>
               <input type="text" name="phone-number" placeholder="Phone Number*" required />
+              <small class="error">A phone number is required.</small>
               <textarea rows="7" name="optional-message" placeholder="Optional Message"></textarea>
               <div>
                 <span><sup>*</sup>Required</span>
