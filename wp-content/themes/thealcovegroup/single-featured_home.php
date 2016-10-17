@@ -459,9 +459,6 @@
       </div>
       <!-- Footer -->
 
-
-      <!-- <div id="darken-overlay"></div> -->
-
     <?php endwhile; endif; wp_reset_query(); ?>
     </div>
     <!-- Expanding content frame -->
@@ -488,10 +485,10 @@
       });
 
       //fix height of overlay- bugs due to slick slider
-			setTimeout(function(){
-				var theHeight = $(document).height();
-				$('#darken-overlay').css( "height", theHeight );
-			}, 500);
+			// setTimeout(function(){
+			// 	var theHeight = $(document).height();
+			// 	$('#darken-overlay').css( "height", theHeight );
+			// }, 500);
 
       if ($(window).width() > 767) {
         $('.slickslide').on('init', function(event, slick){

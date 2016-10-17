@@ -164,15 +164,11 @@
       </div>
       <!-- Details content -->
 
-
       <!-- Footer -->
       <div id="footer" class="reverse alcove-texture">
         <?php get_template_part( 'partials/footerContent' ); ?>
       </div>
       <!-- Footer -->
-
-
-      <!-- <div id="darken-overlay"></div> -->
 
     </div>
     <!-- Expanding content frame -->
@@ -192,7 +188,7 @@
 			                       		html.clientHeight, html.scrollHeight, html.offsetHeight );
 				console.log(theHeight);
 				// console.log("height is: " + $('#darken-overlay').css("height"));
-				$('#darken-overlay').css( "height", theHeight);
+				// $('#darken-overlay').css( "height", theHeight);
 				// console.log("height is: " + $('#darken-overlay').css("height"));
 			}, 3000);
 
