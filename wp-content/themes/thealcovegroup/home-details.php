@@ -180,18 +180,6 @@
     <script>
     jQuery(function ($) {
 		$(document).ready(function() {
-			setTimeout(function(){
-				var body = document.body,
-		    	html = document.documentElement;
-
-				var theHeight = Math.max( body.scrollHeight, body.offsetHeight, 
-			                       		html.clientHeight, html.scrollHeight, html.offsetHeight );
-				console.log(theHeight);
-				// console.log("height is: " + $('#darken-overlay').css("height"));
-				// $('#darken-overlay').css( "height", theHeight);
-				// console.log("height is: " + $('#darken-overlay').css("height"));
-			}, 3000);
-
 			
 			$('.slickslide').slick({
 		        dots: true,

@@ -484,12 +484,6 @@
         }
       });
 
-      //fix height of overlay- bugs due to slick slider
-			// setTimeout(function(){
-			// 	var theHeight = $(document).height();
-			// 	$('#darken-overlay').css( "height", theHeight );
-			// }, 500);
-
       if ($(window).width() > 767) {
         $('.slickslide').on('init', function(event, slick){
           //find number of photos
