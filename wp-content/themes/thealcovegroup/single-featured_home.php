@@ -460,7 +460,7 @@
       <!-- Footer -->
 
 
-      <div id="darken-overlay"></div>
+      <!-- <div id="darken-overlay"></div> -->
 
     <?php endwhile; endif; wp_reset_query(); ?>
     </div>

@@ -117,7 +117,7 @@
       </div> <!-- End of fullpage slider -->
 
 
-      <div id="darken-overlay"></div>
+      <!-- <div id="darken-overlay"></div> -->
 
     </div>
     <!-- Expanding content frame -->
@@ -162,12 +162,12 @@
           responsiveWidth: responsiveWidth,
           afterRender: function () {
 
-            var heroHeight = $("#hero").height();
-            var numFeaturedHomes = $('.featured-home').length;
-            var featuredHomeHeight = $('.featured-home').height();
-            var footerHeight = $('#footer').height();
-            var calculatedHeight = heroHeight + (featuredHomeHeight*numFeaturedHomes) + footerHeight;
-            $('#darken-overlay').css("height", calculatedHeight);
+            // var heroHeight = $("#hero").height();
+            // var numFeaturedHomes = $('.featured-home').length;
+            // var featuredHomeHeight = $('.featured-home').height();
+            // var footerHeight = $('#footer').height();
+            // var calculatedHeight = heroHeight + (featuredHomeHeight*numFeaturedHomes) + footerHeight;
+            // $('#darken-overlay').css("height", calculatedHeight);
 
             if ($(window).width() > responsiveWidth) {
               <?php if ( post_custom('use_video_background') ): ?>

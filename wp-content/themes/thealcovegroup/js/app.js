@@ -61,15 +61,41 @@ jQuery(function ($) {
 		if (menuExpanded == false) {
 			// console.log("menu has been expanded");
 			menuPanel.offset({ top: windowScrollPos});
-			pageBody.css("overflow-y", "hidden");
+			// pageBody.css("overflow-y", "hidden");
 			menuExpanded = true;
-			darkenOverlay.toggleClass( "exposed" );
+			// darkenOverlay.toggleClass( "exposed" );
+			contentFrame.append( "<div id='darken-overlay'></div>" );
+
+			if ($(window).width() < responsiveWidth) {
+				pageBody.css("overflow-y", "hidden");
+			} else {
+				if ( $('.home')[0] || $('.page-template-about')[0] ) {
+					$.fn.fullpage.setAllowScrolling(false);
+				} else {
+					pageBody.css("overflow-y", "hidden");
+				}
+			}
+
+
 		} else {
 			// console.log("menu has been collapsed");
 			menuPanel.offset({ top: 0});
-			pageBody.css("overflow-y", "auto");
+			// pageBody.css("overflow-y", "auto");
 			menuExpanded = false;
-			darkenOverlay.toggleClass( "exposed" );
+			// darkenOverlay.toggleClass( "exposed" );
+			$( "#darken-overlay" ).remove();
+
+			if ($(window).width() < responsiveWidth) {
+				pageBody.css("overflow-y", "auto");
+			} else {
+				if ( $('.home')[0] || $('.page-template-about')[0] ) {
+					$.fn.fullpage.setAllowScrolling(true);
+				} else {
+					pageBody.css("overflow-y", "auto");
+				}
+			}
+
+
 		}
 	});
 
