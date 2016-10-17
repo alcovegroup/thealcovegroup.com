@@ -118,7 +118,7 @@
 
       $(document).foundation({
         abide : {
-          live_validate : true, // validate the form as you go
+          live_validate : false, // validate the form as you go
           validate_on_blur : false, // validate whenever you focus/blur on an input field
           focus_on_invalid : false // automatically bring the focus to an invalid input field
         }
