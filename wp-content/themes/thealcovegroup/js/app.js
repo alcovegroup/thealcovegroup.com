@@ -25,6 +25,9 @@ jQuery(function ($) {
 	var darkenOverlay = $('#darken-overlay');
 	var windowScrollPos = window.pageYOffset;
 	var advanceFormButton = $('#advance-form');
+
+	var remUnit = parseInt($('html').css("font-size"));
+    var responsiveWidth = 37.70588*remUnit;
 	
 	menuToggle.attr("checked", false);
 	
