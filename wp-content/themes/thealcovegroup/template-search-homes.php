@@ -237,7 +237,6 @@
       <!-- Footer -->
 
 
-      <div id="darken-overlay"></div>
 
     </div>
     <!-- Expanding content frame -->
