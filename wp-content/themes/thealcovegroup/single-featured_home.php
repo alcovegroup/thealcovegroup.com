@@ -572,7 +572,7 @@
 	});
 
     var geocoder, map;
-    var homeAddress = "$map_address";
+    var homeAddress = "<?php echo the_field( 'address_1' ); ?> <?php echo the_field( 'address_2' ); ?>";
 
     function initMap() {
       geocoder = new google.maps.Geocoder();
