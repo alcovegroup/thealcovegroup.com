@@ -24,7 +24,7 @@
                 <a href="<?php echo get_page_link(6); ?>" class="btn">Find your Home’s Value</a>
               </div>
               <div>
-                <a href="<?php echo get_page_link(8); ?>" class="btn">Search Homes</a>
+                <a href="<?php echo get_page_link(343); ?>" class="btn">Search Homes</a>
               </div>
             </div>
           </div>
