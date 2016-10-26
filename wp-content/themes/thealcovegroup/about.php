@@ -63,9 +63,9 @@
         <div class="about-bio-row row full-width section">
           <?php if (has_post_thumbnail( $post->ID ) ): ?>
             <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
-          <div class="small-12 medium-6 columns about-photo" style="background-image: url('<?php echo $image[0]; ?>');"></div>
+          <div class="small-12 medium-5 columns about-photo" style="background-image: url('<?php echo $image[0]; ?>');"></div>
           <?php endif; ?>
-          <div class="small-12 medium-6 columns about-bio-text">
+          <div class="small-12 medium-7 columns about-bio-text">
             <div class="about-bio-text-inner">
               <h2><?php the_title(); ?></h2>
               <h3><?php the_field( 'job_title' ); ?></h3>
@@ -93,9 +93,9 @@
         <div class="about-bio-row row full-width section">
           <?php if (has_post_thumbnail( $post->ID ) ): ?>
             <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
-          <div class="small-12 medium-6 medium-push-6 columns about-photo" style="background-image: url('<?php echo $image[0]; ?>');"></div>
+          <div class="small-12 medium-5 medium-push-7 columns about-photo" style="background-image: url('<?php echo $image[0]; ?>');"></div>
           <?php endif; ?>
-          <div class="small-12 medium-6 medium-pull-6 columns about-bio-text">
+          <div class="small-12 medium-7 medium-pull-5 columns about-bio-text">
             <div class="about-bio-text-inner">
               <h2><?php the_title(); ?></h2>
               <h3><?php the_field( 'job_title' ); ?></h3>
