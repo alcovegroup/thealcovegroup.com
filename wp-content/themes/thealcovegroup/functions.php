@@ -1,9 +1,5 @@
 <?php
 
-@ini_set( 'upload_max_size' , '200M' );
-@ini_set( 'post_max_size', '200M');
-@ini_set( 'max_execution_time', '300' );
-
 function alcove_theme_styles() {
 	wp_enqueue_style( 'fullpage_js', get_template_directory_uri() . '/bower_components/fullpage.js/jquery.fullPage.css' );
 	wp_enqueue_style( 'app_css', get_template_directory_uri() . '/stylesheets/app.css' );
