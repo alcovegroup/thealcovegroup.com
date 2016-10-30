@@ -60,7 +60,7 @@ jQuery(function ($) {
 	menuButtons.add('a[href="http://mls.liquinas.com/#featured-home-0"]').on("mousedown", function(event){
 		event.preventDefault();
 	});
-	menuButtons.add('a[href="http://mls.liquinas.com/#featured-home-0"]').on("click", function(){
+	menuButtons.add('a[href="http://mls.liquinas.com/#featured-home-0"]').on("click", function(target){
 		if (menuExpanded == false) {
 			// console.log("menu has been expanded");
 			menuPanel.offset({ top: windowScrollPos});
@@ -85,7 +85,7 @@ jQuery(function ($) {
 			menuPanel.offset({ top: 0});
 			// pageBody.css("overflow-y", "auto");
 			menuExpanded = false;
-			if (this == $('a[href="http://mls.liquinas.com/#featured-home-0"]')) {
+			if (target == $('a[href="http://mls.liquinas.com/#featured-home-0"]')) {
 				menuToggle.attr("checked", false);
 			}
 			// darkenOverlay.toggleClass( "exposed" );
