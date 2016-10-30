@@ -88,9 +88,13 @@ jQuery(function ($) {
 			menuExpanded = false;
 			console.log("this");
 			console.log(this);
+			console.log("featuredHomesAnchor");
+			console.log(featuredHomesAnchor);
 			if ($(this) == featuredHomesAnchor) {
-				console.log("conditional met");
+				console.log("they are the same");
 				menuToggle.attr("checked", false);
+			} else {
+				console.log("how are these not the same?");
 			}
 			// darkenOverlay.toggleClass( "exposed" );
 			$( "#darken-overlay" ).remove();
