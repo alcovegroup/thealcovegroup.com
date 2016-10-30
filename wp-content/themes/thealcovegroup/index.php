@@ -158,7 +158,12 @@
           navigation: true,
           navigationPosition: 'right',
           // anchors:['fullpage-home', 'fullpage-featured-homes-anchor'],
-
+          anchors: ['fullpage-home',
+            for (i = 0; i < featuredHomeSections.length); i++ {
+              'featured-home-' + i + ',';
+            },
+            'fullpage-footer'
+          ];
           responsiveWidth: responsiveWidth,
           afterRender: function () {
 
