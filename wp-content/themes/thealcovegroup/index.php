@@ -49,7 +49,7 @@
       <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
       <!-- Featured Home -->
-      <div class="featured-home section">
+      <div class="featured-home section" data-anchor="featured-homes">
         <div class="featured-home-image">
           <ul class="slickslide">
             <?php 
@@ -155,7 +155,7 @@
         $('#fullpage-slider').fullpage({
           navigation: true,
           navigationPosition: 'right',
-          anchors:['fullpage-home', 'fullpage-featured-homes-anchor'],
+          // anchors:['fullpage-home', 'fullpage-featured-homes-anchor'],
           responsiveWidth: responsiveWidth,
           afterRender: function () {
 
