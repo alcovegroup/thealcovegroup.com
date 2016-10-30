@@ -12,7 +12,7 @@
       <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
        style="background-image: url('<?php echo $image[0]; ?>');"
       <?php endif; ?>
-      class="section">
+      class="section" data-anchor="hero-section">
         
 
         <div class="hero-overlay reverse" style="background-color: rgba(1, 38, 57, <?php the_field( 'background_opacity' ); ?>);">
