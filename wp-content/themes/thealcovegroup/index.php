@@ -141,6 +141,8 @@
         var transformedValue;
         var remUnit = parseInt($('html').css("font-size"));
         // var responsiveWidth = Math.ceil(37.70588*remUnit);
+        var featuredHomeSections = $(".section:not(#hero,#footer)");
+        console.log(featuredHomeSections);
         
         console.log(remUnit);
 
@@ -156,6 +158,7 @@
           navigation: true,
           navigationPosition: 'right',
           // anchors:['fullpage-home', 'fullpage-featured-homes-anchor'],
+
           responsiveWidth: responsiveWidth,
           afterRender: function () {
 
