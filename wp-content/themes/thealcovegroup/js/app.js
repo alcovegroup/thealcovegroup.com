@@ -87,7 +87,7 @@ jQuery(function ($) {
 			menuExpanded = false;
 			console.log("this");
 			console.log(this);
-			if ($(this) == $('a[href="http://mls.liquinas.com/#featured-home-0"]')) {
+			if (this == $('a[href="http://mls.liquinas.com/#featured-home-0"]')) {
 				console.log("conditional met");
 				menuToggle.attr("checked", false);
 			}
