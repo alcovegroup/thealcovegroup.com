@@ -88,7 +88,7 @@ jQuery(function ($) {
 			menuExpanded = false;
 			console.log("this");
 			console.log(this);
-			if (this == featuredHomesAnchor) {
+			if ($(this) == featuredHomesAnchor) {
 				console.log("conditional met");
 				menuToggle.attr("checked", false);
 			}
