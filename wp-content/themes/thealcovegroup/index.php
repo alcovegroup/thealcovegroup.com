@@ -202,7 +202,7 @@
         if (document.documentElement.clientWidth <= responsiveWidth) {
         // if (document.documentElement.clientWidth <= 640) {
           $.fn.fullpage.destroy('all');
-          featuredHomeSections[0].attr('id', 'featured-home-0');
+          $(featuredHomeSections[0]).attr('id', 'featured-home-0');
         }
         pageHeight = $('#hero').css("height");
         $('.scroll-cta > div > *').on("click", function(){
