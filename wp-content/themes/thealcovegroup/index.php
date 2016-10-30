@@ -200,27 +200,6 @@
           }
         });
 
-        $('a[href="http://mls.liquinas.com/#featured-home-0"]').on("click", function(){
-          console.log("anchor link clicked");
-          
-          //duplicate menu close script
-          menuPanel.offset({ top: 0});
-          menuExpanded = false;
-          $( "#darken-overlay" ).remove();
-
-          if ($(window).width() < responsiveWidth) {
-            pageBody.css("overflow-y", "auto");
-          } else {
-            if ( $('.home')[0] || $('.page-template-about')[0] ) {
-              $.fn.fullpage.setAllowScrolling(true);
-            } else {
-              pageBody.css("overflow-y", "auto");
-            }
-          }
-          //end duplicate menu close script
-
-        });
-
         if (document.documentElement.clientWidth <= responsiveWidth) {
         // if (document.documentElement.clientWidth <= 640) {
           $.fn.fullpage.destroy('all');
