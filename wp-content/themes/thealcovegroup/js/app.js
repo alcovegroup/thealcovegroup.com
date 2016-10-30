@@ -90,7 +90,7 @@ jQuery(function ($) {
 			console.log(this);
 			console.log("featuredHomesAnchor");
 			console.log(featuredHomesAnchor);
-			if ($(this) == featuredHomesAnchor) {
+			if (this == featuredHomesAnchor) {
 				console.log("they are the same");
 				menuToggle.attr("checked", false);
 			} else {
