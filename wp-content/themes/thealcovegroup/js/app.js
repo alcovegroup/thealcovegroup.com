@@ -47,12 +47,10 @@ jQuery(function ($) {
 	    	console.log("translated");
 	    	if (!$header.hasClass("minimized")) {
 	    		$header.addClass("minimized");
-	    		// $logoImg.attr( "src", "../img/temp-logo-mark.png" );
 	    	}
 	    } else {
 	    	if ($header.hasClass("minimized")) {
 	    		$header.removeClass("minimized");
-	    		// $logoImg.attr( "src", "../img/temp-logo-full.png" );
 	    	}
 	    }
 	}
@@ -63,13 +61,9 @@ jQuery(function ($) {
 	});
 	menuButtons.add(featuredHomesAnchor).on("click", function(target){
 		if (menuExpanded == false) {
-			// console.log("menu has been expanded");
 			menuPanel.offset({ top: windowScrollPos});
-			// pageBody.css("overflow-y", "hidden");
 			menuExpanded = true;
-			// darkenOverlay.toggleClass( "exposed" );
 			contentFrame.append( "<div id='darken-overlay'></div>" );
-
 			if ($(window).width() < responsiveWidth) {
 				pageBody.css("overflow-y", "hidden");
 			} else {
@@ -79,26 +73,13 @@ jQuery(function ($) {
 					pageBody.css("overflow-y", "hidden");
 				}
 			}
-
-
 		} else {
-			// console.log("menu has been collapsed");
 			menuPanel.offset({ top: 0});
-			// pageBody.css("overflow-y", "auto");
 			menuExpanded = false;
-			console.log("this");
-			console.log(this);
-			console.log("featuredHomesAnchor");
-			console.log(featuredHomesAnchor);
 			if (this == featuredHomesAnchor) {
-				console.log("they are the same");
 				menuToggle.attr("checked", false);
-			} else {
-				console.log("how are these not the same?");
 			}
-			// darkenOverlay.toggleClass( "exposed" );
 			$( "#darken-overlay" ).remove();
-
 			if ($(window).width() < responsiveWidth) {
 				pageBody.css("overflow-y", "auto");
 			} else {
@@ -108,8 +89,6 @@ jQuery(function ($) {
 					pageBody.css("overflow-y", "auto");
 				}
 			}
-
-
 		}
 	});
 
