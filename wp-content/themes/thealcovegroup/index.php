@@ -164,7 +164,7 @@
           navigation: true,
           navigationPosition: 'right',
           // anchors:['fullpage-home', 'fullpage-featured-homes-anchor'],
-          anchors: anchorsToUse;
+          anchors: anchorsToUse,
           responsiveWidth: responsiveWidth,
           afterRender: function () {
 
