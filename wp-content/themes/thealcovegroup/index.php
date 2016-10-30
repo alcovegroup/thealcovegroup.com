@@ -43,7 +43,6 @@
       </div>
       <!-- Hero -->
 
-      <!-- <div id="featured-homes-anchor" style="position: relative;"></div> -->
       <!-- Featured Home Section -->
 
       <?php $loop = new WP_Query( array( 'post_type' => 'featured_home', 'posts_per_page' => -1 ) ); ?>
@@ -156,6 +155,7 @@
         $('#fullpage-slider').fullpage({
           navigation: true,
           navigationPosition: 'right',
+          anchors:['featured-homes-anchor'],
           responsiveWidth: responsiveWidth,
           afterRender: function () {
 
