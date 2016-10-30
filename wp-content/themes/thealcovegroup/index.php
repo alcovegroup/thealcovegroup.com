@@ -12,7 +12,7 @@
       <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
        style="background-image: url('<?php echo $image[0]; ?>');"
       <?php endif; ?>
-      class="section" data-anchor="hero-section">
+      class="section">
         
 
         <div class="hero-overlay reverse" style="background-color: rgba(1, 38, 57, <?php the_field( 'background_opacity' ); ?>);">
@@ -49,7 +49,7 @@
       <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
       <!-- Featured Home -->
-      <div class="featured-home section" data-anchor="featured-homes">
+      <div class="featured-home section">
         <div class="featured-home-image">
           <ul class="slickslide">
             <?php 
@@ -108,7 +108,7 @@
     
 
       <!-- Footer -->
-      <div id="footer" class="reverse alcove-texture section" data-anchor="footer-section">
+      <div id="footer" class="reverse alcove-texture section">
         <?php get_template_part( 'partials/footerContent' ); ?>
       </div>
       <!-- Footer -->
@@ -146,7 +146,7 @@
         var anchorsToUse = [];
         anchorsToUse.push('fullpage-home');
         for (i = 0; i < featuredHomeSections.length; i++) {
-          'featured-home-' + i + ',';
+          anchorsToUse.push("'featured-home-" + i + "',");
         }
         anchorsToUse.push('fullpage-footer');
         
