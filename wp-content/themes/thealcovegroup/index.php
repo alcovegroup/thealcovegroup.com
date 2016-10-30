@@ -43,7 +43,7 @@
       </div>
       <!-- Hero -->
 
-      <div id="featured-homes-anchor" style="position: relative;"></div>
+      <!-- <div id="featured-homes-anchor" style="position: relative;"></div> -->
       <!-- Featured Home Section -->
 
       <?php $loop = new WP_Query( array( 'post_type' => 'featured_home', 'posts_per_page' => -1 ) ); ?>
