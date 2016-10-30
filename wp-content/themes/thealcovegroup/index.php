@@ -155,7 +155,7 @@
         $('#fullpage-slider').fullpage({
           navigation: true,
           navigationPosition: 'right',
-          anchors:['featured-homes-anchor'],
+          anchors:['home, featured-homes-anchor, featured-home-2, featured-home-3, featured-home-4'],
           responsiveWidth: responsiveWidth,
           afterRender: function () {
 
