@@ -20,7 +20,7 @@ jQuery(function ($) {
 	var menuToggle = $('input#menu-toggle');
 	var menuPanel = $('#menu-frame');
 	var menuButtons = $('.js-menu-btn');
-	var featuredHomesAnchor = $('a[href="http://mls.liquinas.com/#featured-home-0"]');
+	var featuredHomesAnchor = $('a[href="http://mls.liquinas.com/#featured-home-0"]')[0];
 	var menuExpanded = false;
 	var contentFrame = $('#content-frame');
 	var darkenOverlay = $('#darken-overlay');
