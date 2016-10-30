@@ -85,7 +85,9 @@ jQuery(function ($) {
 			menuPanel.offset({ top: 0});
 			// pageBody.css("overflow-y", "auto");
 			menuExpanded = false;
-			menuToggle.attr("checked", false);
+			if (this == $('a[href="http://mls.liquinas.com/#featured-home-0"]')) {
+				menuToggle.attr("checked", false);
+			}
 			// darkenOverlay.toggleClass( "exposed" );
 			$( "#darken-overlay" ).remove();
 
