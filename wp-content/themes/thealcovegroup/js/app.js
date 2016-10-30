@@ -20,6 +20,7 @@ jQuery(function ($) {
 	var menuToggle = $('input#menu-toggle');
 	var menuPanel = $('#menu-frame');
 	var menuButtons = $('.js-menu-btn');
+	var featuredHomesAnchor = $('a[href="http://mls.liquinas.com/#featured-home-0"]');
 	var menuExpanded = false;
 	var contentFrame = $('#content-frame');
 	var darkenOverlay = $('#darken-overlay');
@@ -57,10 +58,10 @@ jQuery(function ($) {
 	}
 	window.onscroll = scrollIncrement;
 	
-	menuButtons.add('a[href="http://mls.liquinas.com/#featured-home-0"]').on("mousedown", function(event){
+	menuButtons.add(featuredHomesAnchor).on("mousedown", function(event){
 		event.preventDefault();
 	});
-	menuButtons.add('a[href="http://mls.liquinas.com/#featured-home-0"]').on("click", function(target){
+	menuButtons.add(featuredHomesAnchor).on("click", function(target){
 		if (menuExpanded == false) {
 			// console.log("menu has been expanded");
 			menuPanel.offset({ top: windowScrollPos});
@@ -87,7 +88,7 @@ jQuery(function ($) {
 			menuExpanded = false;
 			console.log("this");
 			console.log(this);
-			if (this == $('a[href="http://mls.liquinas.com/#featured-home-0"]')) {
+			if (this == featuredHomesAnchor) {
 				console.log("conditional met");
 				menuToggle.attr("checked", false);
 			}
