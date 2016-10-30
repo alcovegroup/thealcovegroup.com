@@ -15,7 +15,7 @@
       class="section">
         
 
-        <div class="hero-overlay reverse">
+        <div class="hero-overlay reverse" style="background-color: rgba(1, 38, 57, <?php the_field( 'background_opacity' ); ?>);">
 
           <!-- Hero Buttons -->
           <div class="row v-center">
