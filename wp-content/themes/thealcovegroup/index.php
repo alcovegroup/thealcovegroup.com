@@ -146,7 +146,7 @@
         var anchorsToUse = [];
         anchorsToUse.push('fullpage-home');
         for (i = 0; i < featuredHomeSections.length; i++) {
-          anchorsToUse.push("'featured-home-" + i + "',");
+          anchorsToUse.push('featured-home-' + i);
         }
         anchorsToUse.push('fullpage-footer');
         
