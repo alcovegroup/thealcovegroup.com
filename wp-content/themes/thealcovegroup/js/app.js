@@ -85,6 +85,7 @@ jQuery(function ($) {
 			menuPanel.offset({ top: 0});
 			// pageBody.css("overflow-y", "auto");
 			menuExpanded = false;
+			menuToggle.attr("checked", false);
 			// darkenOverlay.toggleClass( "exposed" );
 			$( "#darken-overlay" ).remove();
 
