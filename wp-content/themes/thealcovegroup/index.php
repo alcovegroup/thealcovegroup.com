@@ -140,9 +140,8 @@
         var pageHeight;
         var transformedValue;
         var remUnit = parseInt($('html').css("font-size"));
-        // var responsiveWidth = Math.ceil(37.70588*remUnit);
+        
         var featuredHomeSections = $(".section:not(#hero,#footer)");
-        console.log(featuredHomeSections);
         var anchorsToUse = [];
         anchorsToUse.push('fullpage-home');
         for (i = 0; i < featuredHomeSections.length; i++) {
@@ -163,7 +162,6 @@
         $('#fullpage-slider').fullpage({
           navigation: true,
           navigationPosition: 'right',
-          // anchors:['fullpage-home', 'fullpage-featured-homes-anchor'],
           anchors: anchorsToUse,
           responsiveWidth: responsiveWidth,
           afterRender: function () {
@@ -204,6 +202,7 @@
         if (document.documentElement.clientWidth <= responsiveWidth) {
         // if (document.documentElement.clientWidth <= 640) {
           $.fn.fullpage.destroy('all');
+          featuredHomeSections[0].attr('id', 'featured-home-0');
         }
         pageHeight = $('#hero').css("height");
         $('.scroll-cta > div > *').on("click", function(){
