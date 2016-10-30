@@ -108,7 +108,7 @@
     
 
       <!-- Footer -->
-      <div id="footer" class="reverse alcove-texture section">
+      <div id="footer" class="reverse alcove-texture section" data-anchor="footer-section">
         <?php get_template_part( 'partials/footerContent' ); ?>
       </div>
       <!-- Footer -->
