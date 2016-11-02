@@ -8,10 +8,10 @@
 
     <?php if ( is_singular( 'featured_home' ) ): ?>
       <meta property="og:title" content="<?php echo the_title(); ?>" />
-      <meta property="og:url" content="http://www.sharethis.com" />
-      <meta property="og:image" content="http://sharethis.com/images/logo.jpg" />
-      <meta property="og:description" content="ShareThis is its people. It's imperative that we hire smart,innovative people who can work intelligently as we continue to disrupt the very category we created. Come join us!" />
-      <meta property="og:site_name" content="ShareThis" />
+      <meta property="og:url" content="<?php echo get_post_permalink(); ?>" />
+      <meta property="og:image" content="<?php echo get_field('photo_gallery')[0]; ?>" />
+      <meta property="og:description" content="TBD" />
+      <meta property="og:site_name" content="<?php echo get_site_url(); ?>" />
     <?php endif; ?>
 
   </head>
