@@ -15,7 +15,7 @@
       <meta property="og:image" content="<?php echo $featured_image[0]; ?>" />
       <?php endif; ?>
 
-      <meta property="og:description" content="<?php get_the_content(); ?>" />
+      <meta property="og:description" content="<?php get_the_content('Read more'); ?>" />
       <meta property="og:site_name" content="<?php echo get_site_url(); ?>" />
     <?php endif; ?>
 
