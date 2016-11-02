@@ -9,7 +9,7 @@
     <?php if ( is_singular( 'featured_home' ) ): ?>
       <meta property="og:title" content="<?php echo the_title(); ?>" />
       <meta property="og:url" content="<?php echo get_post_permalink(); ?>" />
-      <meta property="og:image" content="<?php echo get_field('photo_gallery')[0]; ?>" />
+      <meta property="og:image" content="<?php echo get_field('photo_gallery')[0]['sizes']['thumbnail']; ?>" />
       <meta property="og:description" content="TBD" />
       <meta property="og:site_name" content="<?php echo get_site_url(); ?>" />
     <?php endif; ?>
