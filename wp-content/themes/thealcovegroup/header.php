@@ -6,6 +6,12 @@
     <title>Welcome to the Alcove Group</title>
     <?php wp_head(); ?>
 
+    <?php if ( is_singular( 'featured_home' ) ): ?>
+      <script>
+        console.log('this is an unlisted featured home single page');
+      </script>
+    <?php endif; ?>
+
   </head>
 
   <body <?php body_class(); ?>>
