@@ -9,7 +9,12 @@
     <?php if ( is_singular( 'featured_home' ) ): ?>
       <meta property="og:title" content="<?php echo the_title(); ?>" />
       <meta property="og:url" content="<?php echo get_post_permalink(); ?>" />
-      <meta property="og:image" content="<?php echo get_field('photo_gallery')[0]['sizes']['thumbnail']; ?>" />
+
+      <?php if (has_post_thumbnail( $post->ID ) ): ?>
+      <?php $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
+      <meta property="og:image" content="<?php echo $featured_image[0]; ?>" />
+      <?php endif; ?>
+
       <meta property="og:description" content="TBD" />
       <meta property="og:site_name" content="<?php echo get_site_url(); ?>" />
     <?php endif; ?>
