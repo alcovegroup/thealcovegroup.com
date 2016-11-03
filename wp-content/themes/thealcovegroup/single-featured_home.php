@@ -28,7 +28,7 @@
                   <a href="http://www.facebook.com/sharer.php?u=<?php echo get_permalink(); ?>">
                     <span class="social-icon"><span class="icon-icon-facebook"></span></span>
                   </a>
-                  <a href="#">
+                  <a href="https://www.linkedin.com/shareArticle">
                     <span class="social-icon"><span class="icon-icon-linkedin"></span></span>
                   </a>
                 </td>
