@@ -25,10 +25,10 @@
               <tr>
                 <td class="table-left-header">
                   <h4>Share this Home</h4>
-                  <a href="http://www.facebook.com/sharer.php?u=<?php echo get_permalink(); ?>">
+                  <a href="http://www.facebook.com/sharer.php?u=<?php echo get_permalink(); ?>" target="_blank">
                     <span class="social-icon"><span class="icon-icon-facebook"></span></span>
                   </a>
-                  <a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>&title=<?php echo the_title(); ?>&summary=<?php echo the_content() ?>&source=<?php echo get_site_url(); ?>">
+                  <a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>&title=<?php echo the_title(); ?>&summary=<?php echo get_the_content() ?>&source=<?php echo get_site_url(); ?>" target="_blank">
                     <span class="social-icon"><span class="icon-icon-linkedin"></span></span>
                   </a>
                 </td>
