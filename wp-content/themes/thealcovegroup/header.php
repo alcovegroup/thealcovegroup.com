@@ -6,18 +6,14 @@
     <title>Welcome to the Alcove Group</title>
     <?php wp_head(); ?>
 
-
-      <meta property="og:title" content="<?php echo the_title(); ?>" />
-      <meta property="og:url" content="<?php echo get_post_permalink(); ?>" />
-
-      <?php if (has_post_thumbnail( $post->ID ) ): ?>
-      <?php $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
-      <meta property="og:image" content="<?php echo $featured_image[0]; ?>" />
-      <?php endif; ?>
-
-      <meta property="og:description" content="<?php echo get_the_content() ?>" />
-      <meta property="og:site_name" content="<?php echo get_site_url(); ?>" />
-
+    <meta property="og:title" content="<?php echo the_title(); ?>" />
+    <meta property="og:url" content="<?php echo get_post_permalink(); ?>" />
+    <?php if (has_post_thumbnail( $post->ID ) ): ?>
+    <?php $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
+    <meta property="og:image" content="<?php echo $featured_image[0]; ?>" />
+    <?php endif; ?>
+    <meta property="og:description" content="<?php echo get_the_content() ?>" />
+    <meta property="og:site_name" content="<?php echo get_site_url(); ?>" />
 
   </head>
 
