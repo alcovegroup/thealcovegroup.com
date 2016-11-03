@@ -6,7 +6,7 @@
     <title>Welcome to the Alcove Group</title>
     <?php wp_head(); ?>
 
-    <?php if ( is_singular( 'featured_home' ) ): ?>
+
       <meta property="og:title" content="<?php echo the_title(); ?>" />
       <meta property="og:url" content="<?php echo get_post_permalink(); ?>" />
 
@@ -17,7 +17,7 @@
 
       <meta property="og:description" content="<?php echo get_the_content() ?>" />
       <meta property="og:site_name" content="<?php echo get_site_url(); ?>" />
-    <?php endif; ?>
+
 
   </head>
 
