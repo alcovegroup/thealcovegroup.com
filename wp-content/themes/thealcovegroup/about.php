@@ -15,26 +15,43 @@
 
       <div id="fullpage-slider"> <!-- Start fullpage slider -->
 
-      <!-- Hero -->
+
+
+
+
+      
+
+      <!-- Hero With YouTube Embed-->
       <div id="hero"
       <?php if (has_post_thumbnail( $post->ID ) ): ?>
       <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
        style="background-image: url('<?php echo $image[0]; ?>');"
       <?php endif; ?>
+      <?php if ( post_custom('use_video') ): ?>
       class="section">
+      <?php else : ?>
+        class="section about-hero-no-video">
+      <?php endif; ?>
+
         <div class="hero-overlay reverse">
 
           <!-- Contents -->
           <div class="row about-contents">
+            <?php if ( post_custom('use_video') ): ?>
             <div class="small-12 medium-10 medium-offset-1 large-6 large-offset-0 columns about-copy">
+            <?php else : ?>
+            <div class="small-12 small-centered medium-8 columns about-copy about-copy-centered">
+            <?php endif; ?>
               <h1><?php the_title(); ?></h1>
               <?php if (have_posts()) : while (have_posts()) : the_post();?>
                 <?php the_content(); ?>
                 <?php endwhile; endif; wp_reset_query(); ?>
             </div>
+            <?php if ( post_custom('use_video') ): ?>
             <div class="small-12 medium-10 medium-offset-1 large-6 large-offset-0 columns feature-video">
               <iframe src="https://www.youtube.com/embed/<?php echo the_field( 'youtube_id' ); ?>" frameborder="0" allowfullscreen></iframe>
             </div>
+            <?php endif; ?>
           </div>
           <!-- Contents -->
 
@@ -48,7 +65,18 @@
 
         </div>
       </div>
-      <!-- Hero -->
+      <!-- End Hero With YouTube Embed -->
+
+      
+
+     
+
+      
+
+
+
+
+
 
       <!-- About Bio Section -->
 
