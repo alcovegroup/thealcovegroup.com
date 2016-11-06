@@ -36,7 +36,12 @@
         <div class="hero-overlay reverse">
 
           <!-- Contents -->
+          <?php if ( post_custom('use_video') ): ?>
           <div class="row about-contents">
+          <?php else : ?>
+          <div class="row about-contents v-center">
+          <?php endif; ?>
+          
             <?php if ( post_custom('use_video') ): ?>
             <div class="small-12 medium-10 medium-offset-1 large-6 large-offset-0 columns about-copy">
             <?php else : ?>
