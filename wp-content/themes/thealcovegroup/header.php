@@ -11,7 +11,10 @@
     <?php if (has_post_thumbnail( $post->ID ) ): ?>
     <?php $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
     <meta property="og:image" content="<?php echo $featured_image[0]; ?>" />
+    <?php else : ?>
+    <meta property="og:image" content="http://mls.liquinas.com/wp-content/uploads/2016/11/Alcove-FeaturedImageDefault-thumb.jpg" />
     <?php endif; ?>
+
     <meta property="og:description" content="<?php echo get_the_content() ?>" />
     <meta property="og:site_name" content="<?php echo get_site_url(); ?>" />
 
