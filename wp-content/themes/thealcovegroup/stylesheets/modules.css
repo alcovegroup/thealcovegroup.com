@@ -1931,36 +1931,41 @@ d88P        "Y8888P"   "Y8888P"         "Y88888P"  888
     height: 35%;
   }
 
-  /* line 1624, ../scss/modules.scss */
+  /* line 1625, ../scss/modules.scss */
+  .ipad-fs-fix .featured-home .featured-home-details {
+    top: 100%;
+  }
+
+  /* line 1631, ../scss/modules.scss */
   #hero .video-bg {
     display: block;
   }
-  /* line 1627, ../scss/modules.scss */
+  /* line 1634, ../scss/modules.scss */
   #hero .hero-overlay {
     padding: 12rem 1rem 5rem;
   }
-  /* line 1631, ../scss/modules.scss */
+  /* line 1638, ../scss/modules.scss */
   #hero .hero-form .select-prefix.inline {
     text-align: left;
   }
-  /* line 1633, ../scss/modules.scss */
+  /* line 1640, ../scss/modules.scss */
   #hero .hero-form .select-prefix.inline span,
   #hero .hero-form .select-prefix.inline select {
     float: left;
     position: relative;
   }
-  /* line 1638, ../scss/modules.scss */
+  /* line 1645, ../scss/modules.scss */
   #hero .hero-form .select-prefix.inline span {
     width: 10%;
     top: 1.5rem;
     margin-right: 2%;
   }
-  /* line 1644, ../scss/modules.scss */
+  /* line 1651, ../scss/modules.scss */
   #hero .hero-form .select-prefix.inline select {
     width: 88%;
   }
 
-  /* line 1650, ../scss/modules.scss */
+  /* line 1657, ../scss/modules.scss */
   .search-results-outer-shadow {
     -moz-box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
     -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
@@ -1969,7 +1974,7 @@ d88P        "Y8888P"   "Y8888P"         "Y88888P"  888
     margin: 0 auto;
   }
 
-  /* line 1655, ../scss/modules.scss */
+  /* line 1662, ../scss/modules.scss */
   .search-result-item,
   .search-result-message {
     height: 20.3125rem;
@@ -1979,26 +1984,26 @@ d88P        "Y8888P"   "Y8888P"         "Y88888P"  888
     -webkit-box-shadow: none;
     box-shadow: none;
   }
-  /* line 1661, ../scss/modules.scss */
+  /* line 1668, ../scss/modules.scss */
   .search-result-item:nth-child(even),
   .search-result-message:nth-child(even) {
     background-color: #f9f9f9;
   }
-  /* line 1664, ../scss/modules.scss */
+  /* line 1671, ../scss/modules.scss */
   .search-result-item .results-featured-image,
   .search-result-message .results-featured-image {
     height: 100%;
   }
 
-  /* line 1669, ../scss/modules.scss */
+  /* line 1676, ../scss/modules.scss */
   .page-template-about .about-contents {
     top: 10rem;
   }
-  /* line 1671, ../scss/modules.scss */
+  /* line 1678, ../scss/modules.scss */
   .page-template-about .about-contents .about-copy {
     padding-right: 3rem;
   }
-  /* line 1674, ../scss/modules.scss */
+  /* line 1681, ../scss/modules.scss */
   .page-template-about .about-contents .feature-video {
     margin-bottom: 0;
     position: relative;
@@ -2006,17 +2011,17 @@ d88P        "Y8888P"   "Y8888P"         "Y88888P"  888
     padding-bottom: 0;
     float: left;
   }
-  /* line 1682, ../scss/modules.scss */
+  /* line 1689, ../scss/modules.scss */
   .page-template-about .about-bio-row {
     height: 48rem;
   }
-  /* line 1685, ../scss/modules.scss */
+  /* line 1692, ../scss/modules.scss */
   .page-template-about .about-bio-row .about-photo,
   .page-template-about .about-bio-row .about-bio-text {
     height: 100%;
   }
 
-  /* line 1702, ../scss/modules.scss */
+  /* line 1709, ../scss/modules.scss */
   .page-template-home-details #content-frame,
   .single-featured_home #content-frame,
   .single-sr-listings #content-frame,
@@ -2024,13 +2029,13 @@ d88P        "Y8888P"   "Y8888P"         "Y88888P"  888
     padding-top: 12.1875rem;
   }
 
-  /* line 1710, ../scss/modules.scss */
+  /* line 1717, ../scss/modules.scss */
   .page-template-home-details #subheader-row > div,
   .single-featured_home #subheader-row > div,
   .single-sr-listings #subheader-row > div {
     text-align: left;
   }
-  /* line 1714, ../scss/modules.scss */
+  /* line 1721, ../scss/modules.scss */
   .page-template-home-details #home-gallery-row,
   .single-featured_home #home-gallery-row,
   .single-sr-listings #home-gallery-row {
@@ -2038,7 +2043,7 @@ d88P        "Y8888P"   "Y8888P"         "Y88888P"  888
     background-color: gray;
     margin-bottom: 2rem;
   }
-  /* line 1718, ../scss/modules.scss */
+  /* line 1725, ../scss/modules.scss */
   .page-template-home-details #home-gallery-row #home-gallery-thumbs,
   .single-featured_home #home-gallery-row #home-gallery-thumbs,
   .single-sr-listings #home-gallery-row #home-gallery-thumbs {
@@ -2048,7 +2053,7 @@ d88P        "Y8888P"   "Y8888P"         "Y88888P"  888
     border: 1px dashed red;
     text-align: center;
   }
-  /* line 1724, ../scss/modules.scss */
+  /* line 1731, ../scss/modules.scss */
   .page-template-home-details #home-gallery-row #home-gallery-thumbs ol,
   .single-featured_home #home-gallery-row #home-gallery-thumbs ol,
   .single-sr-listings #home-gallery-row #home-gallery-thumbs ol {
@@ -2059,7 +2064,7 @@ d88P        "Y8888P"   "Y8888P"         "Y88888P"  888
     border: none;
     list-style-type: none;
   }
-  /* line 1731, ../scss/modules.scss */
+  /* line 1738, ../scss/modules.scss */
   .page-template-home-details #home-gallery-row #home-gallery-thumbs ol li,
   .single-featured_home #home-gallery-row #home-gallery-thumbs ol li,
   .single-sr-listings #home-gallery-row #home-gallery-thumbs ol li {
@@ -2070,13 +2075,13 @@ d88P        "Y8888P"   "Y8888P"         "Y88888P"  888
     margin: 0;
     padding: 0;
   }
-  /* line 1743, ../scss/modules.scss */
+  /* line 1750, ../scss/modules.scss */
   .page-template-home-details #home-content-row h1,
   .single-featured_home #home-content-row h1,
   .single-sr-listings #home-content-row h1 {
     font-size: 1.8rem;
   }
-  /* line 1747, ../scss/modules.scss */
+  /* line 1754, ../scss/modules.scss */
   .page-template-home-details #home-map,
   .single-featured_home #home-map,
   .single-sr-listings #home-map {
@@ -2084,28 +2089,28 @@ d88P        "Y8888P"   "Y8888P"         "Y88888P"  888
     width: 100%;
   }
 
-  /* line 1756, ../scss/modules.scss */
+  /* line 1763, ../scss/modules.scss */
   .page-template-contact #content-frame .contact-content .contact-form-col .line-section-table {
     margin-top: 0;
   }
 
-  /* line 1764, ../scss/modules.scss */
+  /* line 1771, ../scss/modules.scss */
   #footer ul.menu {
     text-align: center;
     margin: 1.5rem 0;
   }
-  /* line 1767, ../scss/modules.scss */
+  /* line 1774, ../scss/modules.scss */
   #footer ul.menu li {
     display: inline;
     margin: 0 0.7rem 0 0;
   }
-  /* line 1770, ../scss/modules.scss */
+  /* line 1777, ../scss/modules.scss */
   #footer ul.menu li::after {
     content: "|";
     display: inline-block;
     margin-left: 1rem;
   }
-  /* line 1776, ../scss/modules.scss */
+  /* line 1783, ../scss/modules.scss */
   #footer ul.menu li:last-child::after {
     content: "";
   }
@@ -2121,7 +2126,7 @@ d88P        "Y8888P"   "Y8888P"         "Y88888P"  888
 888       888 8888888888 8888888P"         88888888 d88P     888 888   T88b  "Y8888P88 8888888888 
 */
 @media only screen and (min-width: 40.0625em) and (max-width: 64.0625em) {
-  /* line 1802, ../scss/modules.scss */
+  /* line 1809, ../scss/modules.scss */
   .page-template-about .about-contents .feature-video iframe {
     width: 27.5rem;
     height: 17.5rem;
@@ -2138,88 +2143,88 @@ d88P        "Y8888P"   "Y8888P"         "Y88888P"  888
 88888888 d88P     888 888   T88b  "Y8888P88 8888888888        "Y88888P"  888        
 */
 @media only screen and (min-width: 64.0625em) {
-  /* line 1825, ../scss/modules.scss */
+  /* line 1832, ../scss/modules.scss */
   .featured-home .featured-home-image {
     height: 80%;
   }
-  /* line 1828, ../scss/modules.scss */
+  /* line 1835, ../scss/modules.scss */
   .featured-home .featured-home-details {
     top: 80%;
     height: 20%;
   }
-  /* line 1831, ../scss/modules.scss */
+  /* line 1838, ../scss/modules.scss */
   .featured-home .featured-home-details .left-group,
   .featured-home .featured-home-details .right-group {
     width: 33%;
     position: relative;
   }
-  /* line 1836, ../scss/modules.scss */
+  /* line 1843, ../scss/modules.scss */
   .featured-home .featured-home-details .left-group {
     left: 20%;
     float: left;
   }
-  /* line 1840, ../scss/modules.scss */
+  /* line 1847, ../scss/modules.scss */
   .featured-home .featured-home-details .right-group {
     float: right;
     right: 20%;
   }
 
-  /* line 1847, ../scss/modules.scss */
+  /* line 1854, ../scss/modules.scss */
   .page-template-about .about-contents {
     top: 13rem;
   }
-  /* line 1850, ../scss/modules.scss */
+  /* line 1857, ../scss/modules.scss */
   .page-template-about .about-contents .feature-video iframe {
     width: 90%;
   }
-  /* line 1855, ../scss/modules.scss */
+  /* line 1862, ../scss/modules.scss */
   .page-template-about .about-bio-row {
     height: 48rem;
   }
-  /* line 1857, ../scss/modules.scss */
+  /* line 1864, ../scss/modules.scss */
   .page-template-about .about-bio-row .about-photo {
     height: 100%;
   }
-  /* line 1860, ../scss/modules.scss */
+  /* line 1867, ../scss/modules.scss */
   .page-template-about .about-bio-row .about-bio-text {
     height: 100%;
   }
-  /* line 1864, ../scss/modules.scss */
+  /* line 1871, ../scss/modules.scss */
   .page-template-about .about-bio-row .about-bio-text .about-bio-text-inner p {
     line-height: 1.7;
     font-size: 1.0625rem;
     margin: 1rem 0;
   }
 
-  /* line 1878, ../scss/modules.scss */
+  /* line 1885, ../scss/modules.scss */
   .search-result-item,
   .search-result-message {
     height: 15.3125rem;
   }
-  /* line 1881, ../scss/modules.scss */
+  /* line 1888, ../scss/modules.scss */
   .search-result-item .results-listing,
   .search-result-message .results-listing {
     height: 100%;
   }
-  /* line 1883, ../scss/modules.scss */
+  /* line 1890, ../scss/modules.scss */
   .search-result-item .results-listing h2,
   .search-result-message .results-listing h2 {
     font-size: 1.47rem;
   }
-  /* line 1886, ../scss/modules.scss */
+  /* line 1893, ../scss/modules.scss */
   .search-result-item .results-listing h2,
   .search-result-item .results-listing .list-price,
   .search-result-message .results-listing h2,
   .search-result-message .results-listing .list-price {
     width: 60%;
   }
-  /* line 1891, ../scss/modules.scss */
+  /* line 1898, ../scss/modules.scss */
   .search-result-item .results-listing .list-price h3,
   .search-result-message .results-listing .list-price h3 {
     margin-bottom: 0.5rem;
     font-size: 1.058rem;
   }
-  /* line 1895, ../scss/modules.scss */
+  /* line 1902, ../scss/modules.scss */
   .search-result-item .results-listing .list-price h3,
   .search-result-item .results-listing .list-price h2,
   .search-result-message .results-listing .list-price h3,
@@ -2227,7 +2232,7 @@ d88P        "Y8888P"   "Y8888P"         "Y88888P"  888
     float: none;
     text-align: left;
   }
-  /* line 1901, ../scss/modules.scss */
+  /* line 1908, ../scss/modules.scss */
   .search-result-item .results-listing .results-details,
   .search-result-message .results-listing .results-details {
     position: absolute;
@@ -2235,23 +2240,23 @@ d88P        "Y8888P"   "Y8888P"         "Y88888P"  888
     right: 0.4rem;
     width: 37%;
   }
-  /* line 1906, ../scss/modules.scss */
+  /* line 1913, ../scss/modules.scss */
   .search-result-item .results-listing .results-details .details-tile,
   .search-result-message .results-listing .results-details .details-tile {
     padding-top: 0.9rem;
     padding-bottom: 0.9rem;
   }
-  /* line 1909, ../scss/modules.scss */
+  /* line 1916, ../scss/modules.scss */
   .search-result-item .results-listing .results-details .details-tile h5,
   .search-result-message .results-listing .results-details .details-tile h5 {
     width: 58%;
   }
-  /* line 1912, ../scss/modules.scss */
+  /* line 1919, ../scss/modules.scss */
   .search-result-item .results-listing .results-details .details-tile h4,
   .search-result-message .results-listing .results-details .details-tile h4 {
     width: 38%;
   }
-  /* line 1917, ../scss/modules.scss */
+  /* line 1924, ../scss/modules.scss */
   .search-result-item .results-listing a.btn,
   .search-result-message .results-listing a.btn {
     position: absolute;
@@ -2260,15 +2265,15 @@ d88P        "Y8888P"   "Y8888P"         "Y88888P"  888
     margin: 0;
   }
 
-  /* line 1928, ../scss/modules.scss */
+  /* line 1935, ../scss/modules.scss */
   .page-template-contact #content-frame #office-map-row h1 {
     font-size: 2rem;
   }
-  /* line 1932, ../scss/modules.scss */
+  /* line 1939, ../scss/modules.scss */
   .page-template-contact #content-frame h2 {
     font-size: 1.7rem;
   }
-  /* line 1935, ../scss/modules.scss */
+  /* line 1942, ../scss/modules.scss */
   .page-template-contact #content-frame h3 {
     font-size: 1.5rem;
   }
@@ -2284,41 +2289,41 @@ d8888   d8888   d88P  Y88b 888              888     888 888   Y88b
 8888888 8888888  "Y8888P"   "Y8888P"         "Y88888P"  888        
 */
 @media only screen and (min-width: 1165px) {
-  /* line 1958, ../scss/modules.scss */
+  /* line 1965, ../scss/modules.scss */
   ul.slickslide {
     height: 568px;
   }
-  /* line 1960, ../scss/modules.scss */
+  /* line 1967, ../scss/modules.scss */
   ul.slickslide .slick-slide {
     height: 468px;
   }
-  /* line 1964, ../scss/modules.scss */
+  /* line 1971, ../scss/modules.scss */
   ul.slickslide .slick-dots li {
     height: 100px;
     width: 100px;
   }
 
-  /* line 1972, ../scss/modules.scss */
+  /* line 1979, ../scss/modules.scss */
   .slick-dots-track .slick-dots-track-arrow {
     width: 3.5rem;
     font-size: 0.9rem;
   }
-  /* line 1976, ../scss/modules.scss */
+  /* line 1983, ../scss/modules.scss */
   .slick-dots-track .slick-dots-track-arrow#scroll-left .icon-icon-arrow-down {
     left: -1.3rem;
     top: 1.75rem;
   }
-  /* line 1982, ../scss/modules.scss */
+  /* line 1989, ../scss/modules.scss */
   .slick-dots-track .slick-dots-track-arrow#scroll-right .icon-icon-arrow-down {
     right: -0.2rem;
     top: 2.75rem;
   }
 
-  /* line 1992, ../scss/modules.scss */
+  /* line 1999, ../scss/modules.scss */
   .page-template-about .about-bio-row .about-bio-text .about-bio-text-inner {
     padding: 4rem;
   }
-  /* line 1998, ../scss/modules.scss */
+  /* line 2005, ../scss/modules.scss */
   .page-template-about .about-bio-row:nth-child(even) .about-bio-text .about-bio-text-inner {
     padding-right: 9.375rem;
   }
@@ -2334,18 +2339,18 @@ d8888   d88P  Y88b d8888  888              888     888 888   Y88b
 8888888 888888888  8888888 "Y8888P"         "Y88888P"  888        
 */
 @media only screen and (min-width: 75.9375rem) {
-  /* line 2019, ../scss/modules.scss */
+  /* line 2026, ../scss/modules.scss */
   .search-result-item,
   .search-result-message {
     height: 18.25rem;
   }
-  /* line 2023, ../scss/modules.scss */
+  /* line 2030, ../scss/modules.scss */
   .search-result-item .results-listing .results-details,
   .search-result-message .results-listing .results-details {
     padding: 0.6875rem 0 0 1.5rem;
     width: 38.5%;
   }
-  /* line 2026, ../scss/modules.scss */
+  /* line 2033, ../scss/modules.scss */
   .search-result-item .results-listing .results-details .details-tile,
   .search-result-message .results-listing .results-details .details-tile {
     height: 7.75rem;
@@ -2353,19 +2358,19 @@ d8888   d88P  Y88b d8888  888              888     888 888   Y88b
     float: left;
     padding: 0;
   }
-  /* line 2031, ../scss/modules.scss */
+  /* line 2038, ../scss/modules.scss */
   .search-result-item .results-listing .results-details .details-tile:nth-child(2), .search-result-item .results-listing .results-details .details-tile:nth-child(4),
   .search-result-message .results-listing .results-details .details-tile:nth-child(2),
   .search-result-message .results-listing .results-details .details-tile:nth-child(4) {
     margin-left: 0.3125rem;
   }
-  /* line 2035, ../scss/modules.scss */
+  /* line 2042, ../scss/modules.scss */
   .search-result-item .results-listing .results-details .details-tile:nth-child(3), .search-result-item .results-listing .results-details .details-tile:nth-child(4),
   .search-result-message .results-listing .results-details .details-tile:nth-child(3),
   .search-result-message .results-listing .results-details .details-tile:nth-child(4) {
     margin-top: 0.3125rem;
   }
-  /* line 2039, ../scss/modules.scss */
+  /* line 2046, ../scss/modules.scss */
   .search-result-item .results-listing .results-details .details-tile h4,
   .search-result-item .results-listing .results-details .details-tile h5,
   .search-result-message .results-listing .results-details .details-tile h4,
@@ -2375,7 +2380,7 @@ d8888   d88P  Y88b d8888  888              888     888 888   Y88b
     text-align: center;
     width: 100%;
   }
-  /* line 2046, ../scss/modules.scss */
+  /* line 2053, ../scss/modules.scss */
   .search-result-item .results-listing .results-details .details-tile h5,
   .search-result-message .results-listing .results-details .details-tile h5 {
     font-size: 0.95rem;

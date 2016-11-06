@@ -35,6 +35,10 @@ jQuery(function ($) {
 	setTimeout(function(){
 		darkenOverlay.css("height", docHeight);
 	}, 0);
+
+	if( /iPad/i.test(navigator.userAgent) ) {
+		pageBody.addClass("ipad-fs-fix");
+	}
 	
 
 	scrollIncrement();
