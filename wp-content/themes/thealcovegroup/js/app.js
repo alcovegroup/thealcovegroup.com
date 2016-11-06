@@ -96,27 +96,6 @@ jQuery(function ($) {
 		}
 	});
 
-	// $('a[href="http://mls.liquinas.com/#featured-home-0"]').on("click", function(){
- //      console.log("anchor link clicked");
-      
- //      //duplicate menu close script
- //      menuPanel.offset({ top: 0});
- //      menuExpanded = false;
- //      $( "#darken-overlay" ).remove();
-
- //      if ($(window).width() < responsiveWidth) {
- //        pageBody.css("overflow-y", "auto");
- //      } else {
- //        if ( $('.home')[0] || $('.page-template-about')[0] ) {
- //          $.fn.fullpage.setAllowScrolling(true);
- //        } else {
- //          pageBody.css("overflow-y", "auto");
- //        }
- //      }
- //      //end duplicate menu close script
-
- //    });
-
 	function menuButtonClick() {
 		if (menuExpanded == false) {
 			// console.log("menu has been expanded");
@@ -133,25 +112,29 @@ jQuery(function ($) {
 		}
 	}
 
-	// var featuredHomesLink = $('a[href="index.html"]');
- //    featuredHomesLink.on( "click", function(e){
- //    	e.preventDefault();
- //    	if (menuToggle.prop( "checked" )) {
- //    		menuToggle.prop("checked",false);
- //    	}
- //    	menuButtonClick();
- //    } );
-
-
-	
-
 });
 
 
+$( function() {
+	$('.commanator').each(function() {
+		$(this).on('keyup', function () {
+			var x = $(this).val();
+			$(this).val(addCommas(x));
+		});
+	});
+} );
 
+function addCommas(x)
+{
+    //remove commas
+    retVal = x ? parseFloat(x.replace(/,/g, '')) : '';
+	
+	retVal = x ? parseFloat(x.replace(/\$/g, '')) : '';
 
-
-
+    //apply formatting
+    final = retVal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	return final;
+}
 
 
 

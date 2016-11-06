@@ -1118,6 +1118,7 @@ HTML;
         ###################################
         # DETAILS MARKUP
         ###################################
+        $listing_url =  "http://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
         $cont .= <<<HTML
         <!-- Subheader row -->
 <div id="subheader-row" class="row">
@@ -1238,6 +1239,8 @@ HTML;
         <div class="inquire-form form-button-right">
           <h4>Interested in this home?</h4>
           <form>
+          <input type="text" name="MLS-id" value="$listing_mlsid" style="display: none;"/>
+              <input type="text" name="listing-url" value="$listing_url" style="display: none;"/>
             <input type="text" placeholder="First Name*" required />
             <input type="text" placeholder="Last Name*" required />
             <input type="text" placeholder="Email Address*" required />

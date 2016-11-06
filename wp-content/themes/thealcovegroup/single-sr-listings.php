@@ -76,5 +76,9 @@
     });
 
 </script>
-
+  <!-- Footer -->
+  <div id="footer" class="reverse alcove-texture">
+    <?php get_template_part( 'partials/footerContent' ); ?>
+  </div>
+  <!-- Footer -->
 <?php get_footer(); ?>

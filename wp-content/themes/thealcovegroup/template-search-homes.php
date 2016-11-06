@@ -142,10 +142,10 @@
                       </div>
                     </div>
                     <div class="small-6 medium-4 medium-pull-4 columns">
-                        <input type="text" placeholder="Price Min." id="minprice" name="minprice" <?php if(!empty($shortcode_buildout['minprice'])) { ?>value="$<?=$shortcode_buildout['minprice'];?>"<?php } ?> />
+                        <input type="text" placeholder="Price Min." id="minprice" name="minprice" <?php if(!empty($shortcode_buildout['minprice'])) { ?>value="$<?=$shortcode_buildout['minprice'];?>"<?php } ?> class="commanator" />
                     </div>
                     <div class="small-6 medium-4 columns">
-                      <input type="text" placeholder="Price Max." id="maxprice" name="maxprice" <?php if(!empty($shortcode_buildout['maxprice'])) { ?>value="$<?=$shortcode_buildout['maxprice'];?>"<?php } ?> />
+                      <input type="text" placeholder="Price Max." id="maxprice" name="maxprice" <?php if(!empty($shortcode_buildout['maxprice'])) { ?>value="$<?=$shortcode_buildout['maxprice'];?>"<?php } ?> class="commanator" />
                     </div>
                   </div>
 
@@ -179,7 +179,7 @@
 
                   <div class="row">
                     <div class="small-12 medium-4 columns">
-                      <input type="text" placeholder="Min. Sq. Ft." name="area" value="<?=$shortcode_buildout['area'];?>" />
+                      <input type="text" placeholder="Min. Sq. Ft." name="area" value="<?=$shortcode_buildout['area'];?>" class="commanator" />
                     </div>
                   </div>
 
@@ -288,8 +288,13 @@
             max: 10000000,
             values: [ <?=$slider_price_min_set;?>, <?=$slider_price_max_set;?> ],
             slide: function( event, ui ) {
-                $( "#minprice" ).val( "$" + ui.values[ 0 ] );
-                $( "#maxprice" ).val( "$" + ui.values[ 1 ] );
+                $( "#minprice" ).val( "" + ui.values[ 0 ] );
+                var x = $("#minprice").val();
+                $("#minprice").val(addCommas(x));
+
+                $( "#maxprice" ).val( "" + ui.values[ 1 ] );
+                var x = $("#maxprice").val();
+                $("#maxprice").val(addCommas(x));
             }
         });
         $( "#slider-range2" ).slider({
@@ -313,6 +318,7 @@
             }
         });
     } );
+
 </script>
 </body>
 </html>
