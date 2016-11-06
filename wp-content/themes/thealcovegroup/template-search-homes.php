@@ -288,11 +288,11 @@
             max: 10000000,
             values: [ <?=$slider_price_min_set;?>, <?=$slider_price_max_set;?> ],
             slide: function( event, ui ) {
-                $( "#minprice" ).val( "" + ui.values[ 0 ] );
+                $( "#minprice" ).val( "$" + ui.values[ 0 ] );
                 var x = $("#minprice").val();
                 $("#minprice").val(addCommas(x));
 
-                $( "#maxprice" ).val( "" + ui.values[ 1 ] );
+                $( "#maxprice" ).val( "$" + ui.values[ 1 ] );
                 var x = $("#maxprice").val();
                 $("#maxprice").val(addCommas(x));
             }

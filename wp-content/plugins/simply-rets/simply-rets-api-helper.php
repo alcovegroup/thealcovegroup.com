@@ -1238,7 +1238,7 @@ HTML;
         $additional_details_markup_2
         <div class="inquire-form form-button-right">
           <h4>Interested in this home?</h4>
-          <form>
+          <form id="inquire-form" action="" method="post" data-abide onsubmit="event.preventDefault(); formSubmission(event);">
           <input type="text" name="MLS-id" value="$listing_mlsid" style="display: none;"/>
               <input type="text" name="listing-url" value="$listing_url" style="display: none;"/>
             <input type="text" placeholder="First Name*" required />
@@ -1258,6 +1258,19 @@ HTML;
               <input type="submit" value="Inquire" />
             </div>
           </form>
+          <script type="text/javascript">
+              var __ss_noform = __ss_noform || [];
+              __ss_noform.push(['baseURI', 'https://app-3QEHIZGEXU.marketingautomation.services/webforms/receivePostback/MzYwtzQwMDG0BAA/']);
+              __ss_noform.push(['form', 'inquire-form', '7c39939e-318b-4fb1-a3cf-93d47759eb2a']);
+              __ss_noform.push(['submitType', 'manual']);
+            </script>
+            <script type="text/javascript" src="https://koi-3QEHIZGEXU.marketingautomation.services/client/noform.js?ver=1.24" ></script>
+
+            <!-- Shows after form submit hides form -->
+            <div id="thank-you-message">
+              <h3>Thanks for contacting The Alcove Group!</h3>
+              <p>A specialist will get back to you shortly to discuss your submission.</p>
+            </div>
         </div>
       </div>
 </div>
