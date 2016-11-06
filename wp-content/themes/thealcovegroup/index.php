@@ -212,7 +212,6 @@
           if (document.documentElement.clientWidth > responsiveWidth) {
             $.fn.fullpage.moveSectionDown();
           } else {
-            console.log("should be scrolling to featured homes on mobile");
             $('html, body').animate({scrollTop: $("#featured-home-0").offset().top});
           }
         });
