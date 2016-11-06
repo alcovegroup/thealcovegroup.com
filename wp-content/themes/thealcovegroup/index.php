@@ -213,7 +213,7 @@
             $.fn.fullpage.moveSectionDown();
           } else {
             var aTag = $("a[name='featured-home-0']");
-            $('html,body').animate({scrollTop: aTag.offset().top},'slow');
+            $('#content-frame').animate({scrollTop: aTag.offset().top},'slow');
           }
         });
     });
