@@ -212,8 +212,7 @@
           if (document.documentElement.clientWidth > responsiveWidth) {
             $.fn.fullpage.moveSectionDown();
           } else {
-            var aTag = $("a[name='featured-home-0']");
-            $('#content-frame').animate({scrollTop: aTag.offset().top},'slow');
+            $('#content-frame').animate({scrollTop: $("#featured-home-0").offset().top});
           }
         });
     });
