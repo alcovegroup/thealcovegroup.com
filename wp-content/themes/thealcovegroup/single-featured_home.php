@@ -17,7 +17,7 @@
       <!-- Subheader row -->
       <div id="subheader-row" class="row">
         <div class="small-12 medium-4 columns">
-          <a href="<?php echo get_page_link(8); ?>" class="btn small">Back to Search</a>
+          <a href="<?php echo get_page_link(343); ?>" class="btn small">Back to Search</a>
         </div>
         <div class="small-12 medium-8 large-6 columns">
           <div class="subheader-share-2">
