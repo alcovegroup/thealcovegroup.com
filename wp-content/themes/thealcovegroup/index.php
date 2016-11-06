@@ -209,7 +209,12 @@
         }
         pageHeight = $('#hero').css("height");
         $('.scroll-cta > div > *').on("click", function(){
-          $.fn.fullpage.moveSectionDown();
+          if (document.documentElement.clientWidth > responsiveWidth) {
+            $.fn.fullpage.moveSectionDown();
+          } else {
+            var aTag = $("a[name='featured-home-0']");
+            $('html,body').animate({scrollTop: aTag.offset().top},'slow');
+          }
         });
     });
 	});
