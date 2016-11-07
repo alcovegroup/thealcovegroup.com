@@ -112,7 +112,8 @@ jQuery(function ($) {
 		}
 	}
 
-});
+
+
 
 
 $(document).ready(function() {
@@ -139,6 +140,18 @@ $(document).ready(function() {
         }
     });
 });
+
+
+
+
+
+
+
+
+});
+
+
+
 
 function addCommas(x)
 {
