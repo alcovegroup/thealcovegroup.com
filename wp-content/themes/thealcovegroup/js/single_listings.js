@@ -1,11 +1,6 @@
 jQuery(function ($) {
 	$(document).ready(function() {
 
-  // var inputID = $('input[name="MLS-id"]');
-  // var inputURL = $('input[name="listing-url"]');
-  // inputID.val("MLS ID of this listing");
-  // inputURL.val("Website URL of this listing");
-
   $(document).foundation({
 	abide : {
 	  live_validate : false, // validate the form as you go
