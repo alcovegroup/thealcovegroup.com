@@ -37,17 +37,17 @@
                 <form id="buy-a-home-form" class="row form-and-blurb" action="" method="post" data-abide onsubmit="event.preventDefault(); formSubmission(event);">
                   <input type="checkbox" name="Submitted Buy A Home Form" value="Submitted Buy A Home Form" checked style="display: none;" />
                   <div class="row">
-                    <!-- <div class="small-12 medium-4 medium-push-4 columns">
+                    <div class="small-12 medium-4 medium-push-4 columns">
                       <div class="slider-holder">
                         <div class="slider-bar"></div>
                         <div class="slider-grip" id="sq-ft-range-min"></div>
                         <div class="slider-grip" id="sq-ft-range-max"></div>
                       </div>
-                    </div> -->
-                    <div class="small-6 columns">
+                    </div>
+                    <div class="small-6 medium-4 medium-pull-4 columns">
                       <input type="text" placeholder="Sq. Ft. Min." name="sq-ft-min" />
                     </div>
-                    <div class="small-6 columns">
+                    <div class="small-6 medium-4 columns">
                       <input type="text" placeholder="Sq. Ft. Max." name="sq-ft-max" />
                     </div>
                   </div>
@@ -62,17 +62,17 @@
                     </div>
                   </div>
                   <div class="row">
-                    <!-- <div class="small-12 medium-4 medium-push-4 columns">
+                    <div class="small-12 medium-4 medium-push-4 columns">
                       <div class="slider-holder">
                         <div class="slider-bar"></div>
                         <div class="slider-grip" id="lot-range-min"></div>
                         <div class="slider-grip" id="lot-range-max"></div>
                       </div>
-                    </div> -->
-                    <div class="small-6 columns">
+                    </div>
+                    <div class="small-6 medium-4 medium-pull-4 columns">
                       <input type="text" placeholder="Lot Size Min." name="lot-min" />
                     </div>
-                    <div class="small-6 columns">
+                    <div class="small-6 medium-4 columns">
                       <input type="text" placeholder="Lot Size Max." name="lot-max" />
                     </div>
                   </div>
