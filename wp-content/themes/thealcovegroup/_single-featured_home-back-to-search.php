@@ -1,0 +1,1 @@
+<a href="<?php echo get_page_link(343); ?>" class="btn small">Back to Search</a>
