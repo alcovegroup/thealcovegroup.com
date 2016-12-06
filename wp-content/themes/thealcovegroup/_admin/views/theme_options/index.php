@@ -94,33 +94,6 @@
         <?php $this->text('slider_height', 'Override Slider Height', 'Sets a height limit to the slideshow container. Blank defaults to automatic image height'); ?>
 		</div>
 	</div>
-	<div id='posts_settings' style='display: none;' class='mainTab'>
-		<?php $this->checkbox('posts_navigation', 'Show posts navigation'); ?>
-		<?php $this->checkbox('posts_featured', 'Show featured image on posts'); ?>
-		<?php $this->checkbox('author', 'Show author info box on posts'); ?>
-		<?php $this->checkbox('tags', 'Show tags on posts'); ?>
-		<?php $this->checkbox('categories', 'Show categories on posts'); ?>
-		<?php $this->checkbox('related', 'Show related posts box on posts'); ?>
-		<?php $this->checkboxes(array(
-			'twitter' => 'Twitter',
-			'facebook' => 'Facebook',
-			'digg' => 'Digg',
-			'stumbleupon' => 'StumbleUpon',
-			'reddit' => 'Reddit',
-			'tumblr' => 'Tumblr',
-			'email' => 'Email',
-			'google' => 'Google +1',
-		),
-		'Social Media Support'); ?>
-	</div>
-	<div id='appearence_settings' style='display: none;' class='mainTab'>
-		
-		<?php $this->colorpicker('link_color', 'Link Color'); ?>
-		
-		<?php $this->textarea('custom_css', 'Custom CSS', ''); ?>
-		
-		<?php $this->textarea('custom_js', 'Custom Javascript', ''); ?>
-	</div>
 	<div class='reset_save'>
 		<div class='reset_button'>
 			<input onclick='return confirm("Click OK to reset. Any settings will be lost!");' type='submit' name='reset' value='' class='reset_btn' />

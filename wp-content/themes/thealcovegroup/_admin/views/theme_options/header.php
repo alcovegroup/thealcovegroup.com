@@ -151,8 +151,6 @@ jQuery(document).ready(function() {
 	<ul class='main_tabs'>
 		<li class='selected'><a class='general' href='#general_settings'>General Settings</a></li>
 		<li><a class='homepage' href='#homepage_settings'>Homepage Settings</a></li>
-		<li><a class='posts' href='#posts_settings'>Posts Settings</a></li>
-		<li><a class='appearence' href='#appearence_settings'>Appearence Settings</a></li>
 	</ul>
 	
 	<div class='pyre_container'>
@@ -167,9 +165,5 @@ jQuery(document).ready(function() {
 			<ul class='homepage_settings selected'>
             	<li class='selected'><a href='#theme_homepage'>Home Page</a></li>
 				<li><a href='#theme_slider'>Slider Options</a></li>
-			</ul>
-			<ul class='posts_settings selected'>
-			</ul>
-			<ul class='appearence_settings selected'>
 			</ul>
 		</div>
