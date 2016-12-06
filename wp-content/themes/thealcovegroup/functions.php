@@ -1,5 +1,10 @@
 <?php
 
+/******************************************************************
+ * setup the admin
+ ******************************************************************/
+require_once('_admin/bootstrap.php');
+
 function alcove_theme_styles() {
 	wp_enqueue_style( 'fullpage_js', get_template_directory_uri() . '/bower_components/fullpage.js/jquery.fullPage.css' );
 	wp_enqueue_style( 'app_css', get_template_directory_uri() . '/stylesheets/app.css' );
@@ -56,7 +61,7 @@ add_theme_support( 'post-thumbnails' );
 add_action('admin_menu', 'add_gcf_interface');
 
 function add_gcf_interface() {
-	add_options_page('Global Fields', 'Global Fields', 'manage_options', 'functions', 'editglobalcustomfields');
+	add_options_page('Global Fields', 'Global Fields', '8', 'functions', 'editglobalcustomfields');
 }
 
 function editglobalcustomfields() {
