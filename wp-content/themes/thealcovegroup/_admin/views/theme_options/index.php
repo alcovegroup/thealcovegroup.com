@@ -11,7 +11,7 @@
 		<div id='theme_header' style='display: none;'>
 
 			<h2>Website Header Details</h2>
-			<?php $this->text('general_email', 'Company Email', ''); ?>
+			<?php $this->text('generic_email', 'Company Email', ''); ?>
 			<?php $this->text('company_facebook', 'Company Facebook Page', ''); ?>
 			<?php $this->text('company_linkedin', 'Company LinkedIn Page', ''); ?>
 
