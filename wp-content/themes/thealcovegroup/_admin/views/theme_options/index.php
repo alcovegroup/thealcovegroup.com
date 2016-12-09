@@ -8,22 +8,12 @@
 	<div style='clear: both;'></div>
 	<div id='general_settings' class='mainTab'>
 		<div id='general'>
-			<?php $this->upload('logo', 'Logo', 'Upload your logo'); ?>
-			<?php $this->upload('favicon', 'Favicon', 'Upload your Favicon'); ?>
-			<?php //$this->textarea('header_banner', 'Header Banner Code', ''); ?>
-			<?php $this->text('feedburner', 'Feedburner URL', ''); ?>
-            <?php $this->select('catpage_display', array(
-					'a' => 'Single Item Display',
-					'b' => '2-Column Block Display',),
-				'Category Page Display');
-			?>
-            <?php $this->checkbox('catpage_linkoff', 'Disable Auto-Thumbnails for category pages.'); ?>
-            <?php $this->select('searchpage_display', array(
-					'a' => 'Single Item Display',
-					'b' => '2-Column Block Display',),
-				'Search Page Display');
-			?>
-            <?php $this->checkbox('searchpage_linkoff', 'Disable Auto-Thumbnails for search pages.'); ?>
+			
+			<h2>Website Header Details</h2>
+			<?php $this->text('general-email', 'Company Email', ''); ?>
+			<?php $this->text('company-facebook', 'Company Facebook Page', ''); ?>
+			<?php $this->text('company-linkedin', 'Company LinkedIn Page', ''); ?>
+
 		</div>
 		<div id='analytics' style='display: none;'>
 			<?php $this->textarea('analytics', 'Analaytics Code', ''); ?>
