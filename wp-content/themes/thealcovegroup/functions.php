@@ -61,7 +61,7 @@ add_theme_support( 'post-thumbnails' );
 add_action('admin_menu', 'add_gcf_interface');
 
 function add_gcf_interface() {
-	add_options_page('Global Fields', 'Global Fields', '7', 'functions', 'editglobalcustomfields');
+	add_options_page('Global Fields', 'Global Fields', 'edit_pages', 'functions', 'editglobalcustomfields');
 }
 
 function editglobalcustomfields() {
