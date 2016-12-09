@@ -156,9 +156,8 @@ jQuery(document).ready(function() {
 	<div class='pyre_container'>
 		<div class='sub_tabs'>
 			<ul class='general_settings selected'>
-				<li class='selected'><a href='#general'>General</a></li>
 				
-                <li><a href='#theme_header'>Header</a></li>
+                <li class='selected'><a href='#theme_header'>Header</a></li>
 				<li><a href='#theme_footer'>Footer</a></li>
 				<li><a href='#analytics'>Analytics</a></li>
 			</ul>
