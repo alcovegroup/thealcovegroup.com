@@ -157,10 +157,10 @@ jQuery(document).ready(function() {
 		<div class='sub_tabs'>
 			<ul class='general_settings selected'>
 				<li class='selected'><a href='#general'>General</a></li>
-				<li><a href='#analytics'>Analytics</a></li>
-				<li><a href='#social_media'>Social Media</a></li>
+				
                 <li><a href='#theme_header'>Header</a></li>
 				<li><a href='#theme_footer'>Footer</a></li>
+				<li><a href='#analytics'>Analytics</a></li>
 			</ul>
 			<ul class='homepage_settings selected'>
             	<li class='selected'><a href='#theme_homepage'>Home Page</a></li>
