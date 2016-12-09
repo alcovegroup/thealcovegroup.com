@@ -60,7 +60,7 @@ add_theme_support( 'post-thumbnails' );
 // get the the role object
 $editor = get_role('editor');
 // add $cap capability to this role object
-$editor->add_cap('edit_theme_options');
+$editor->add_cap('editglobalcustomfields');
 
 //Custom Theme Settings
 add_action('admin_menu', 'add_gcf_interface');
