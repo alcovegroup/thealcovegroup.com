@@ -7,30 +7,24 @@
 	</div>
 	<div style='clear: both;'></div>
 	<div id='general_settings' class='mainTab'>
-		<div id='general'>
-			
+	
+		<div id='theme_header' style='display: none;'>
+
 			<h2>Website Header Details</h2>
-			<?php $this->text('general-email', 'Company Email', ''); ?>
-			<?php $this->text('company-facebook', 'Company Facebook Page', ''); ?>
-			<?php $this->text('company-linkedin', 'Company LinkedIn Page', ''); ?>
+			<?php $this->text('general_email', 'Company Email', ''); ?>
+			<?php $this->text('company_facebook', 'Company Facebook Page', ''); ?>
+			<?php $this->text('company_linkedin', 'Company LinkedIn Page', ''); ?>
 
 		</div>
+        <div id='theme_footer' style='display: none;'>
+       		<h2>Website Header Details</h2>
+			<?php $this->textarea('footer_subscribe', 'Newsletter Subscription Message', ''); ?>
+		</div>
+
 		<div id='analytics' style='display: none;'>
 			<?php $this->textarea('analytics', 'Analaytics Code', ''); ?>
 		</div>
-		<div id='social_media' style='display: none;'>
-			<?php $this->text('twitter_link', 'Twitter Link', ''); ?>
-			<?php $this->text('facebook_link', 'Facebook Link', ''); ?>
-            <?php $this->text('youtube_link', 'Youtube Link', ''); ?>
-		</div>
-		<div id='theme_header' style='display: none;'>
-			<?php $this->text('header_sidebar_topmargin', 'Header Sidebar<br />Top Margin', 'Applies a top margin to the widget area next to the logo. Blank defaults to 5.'); ?>
-            <?php $this->text('header_sidebar_bottommargin', 'Header Sidebar<br />Bottom Margin', 'Applies a bottom margin to the widget area next to the logo. Blank defaults to 0.'); ?>
-		</div>
-        <div id='theme_footer' style='display: none;'>
-			<?php $this->textarea('footer_left', 'Footer Text Left', ''); ?>
-			<?php $this->textarea('footer_right', 'Footer Text Right', ''); ?>
-		</div>
+
 	</div>
 		
 	<div id='homepage_settings' style='display: none;' class='mainTab'>
