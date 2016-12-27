@@ -5,6 +5,7 @@
  * @package WordPress
  * @subpackage thealcovegroup
  */
+session_start();
 ?>
 
 

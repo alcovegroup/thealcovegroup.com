@@ -8,7 +8,13 @@
 ?>
 
 
-<?php get_header(); ?>
+<?php get_header();
+session_start();
+$backtosearch = htmlspecialchars($_SERVER[REQUEST_URI]);
+$_SESSION['backtosearch'] = $backtosearch;
+$GLOBALS['perpage'] = 10;
+$perpage = $GLOBALS['perpage'];
+?>
     <!-- Expanding content frame -->
     <div id="content-frame" style="padding-top: 0!important">
 
@@ -28,7 +34,9 @@
                 $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                 $actual_link = preg_replace('~(.*)\?(.*)$~', '$1', $actual_link);
                 $_GET['minprice'] = str_replace('$', '', $_GET['minprice']);
+                $_GET['minprice'] = str_replace(',', '', $_GET['minprice']);
                 $_GET['maxprice'] = str_replace('$', '', $_GET['maxprice']);
+                $_GET['maxprice'] = str_replace(',', '', $_GET['maxprice']);
                 $shortcode_buildout = array(
                     ##############################
                     # PRICE
@@ -60,7 +68,11 @@
                     ##############################
                     # ZIP
                     ##############################
-                    'postalcodes' => (is_numeric($_GET['city'])) ? htmlspecialchars($_GET['zip']) : ''
+                    'postalcodes' => (is_numeric($_GET['city'])) ? htmlspecialchars($_GET['zip']) : '',
+                    ##############################
+                    # OFFSET
+                    ##############################
+                    'offset' => (is_numeric($_GET['pageNumber'])) ? (htmlspecialchars($_GET['pageNumber']) * $perpage) : ''
                 );
                 ?>
 
@@ -138,21 +150,21 @@
                   <div class="row">
                     <div class="small-12 medium-4 medium-push-4 columns">
                       <div class="slider-holder">
-                          <div id="slider-range" class="slider-bar"></div>
+                          <div id="price_slider"></div>
                       </div>
                     </div>
                     <div class="small-6 medium-4 medium-pull-4 columns">
-                        <input type="text" placeholder="Price Min." id="minprice" name="minprice" <?php if(!empty($shortcode_buildout['minprice'])) { ?>value="$<?=$shortcode_buildout['minprice'];?>"<?php } ?> class="commanator" />
+                        <input type="text" placeholder="Price Min." id="minprice" name="minprice" <?php if(!empty($shortcode_buildout['minprice'])) { ?>value="$<?=$shortcode_buildout['minprice'];?>"<?php } ?> class="js_money" />
                     </div>
                     <div class="small-6 medium-4 columns">
-                      <input type="text" placeholder="Price Max." id="maxprice" name="maxprice" <?php if(!empty($shortcode_buildout['maxprice'])) { ?>value="$<?=$shortcode_buildout['maxprice'];?>"<?php } ?> class="commanator" />
+                      <input type="text" placeholder="Price Max." id="maxprice" name="maxprice" <?php if(!empty($shortcode_buildout['maxprice'])) { ?>value="$<?=$shortcode_buildout['maxprice'];?>"<?php } ?> class="js_money" />
                     </div>
                   </div>
 
                   <div class="row">
                     <div class="small-12 medium-4 medium-push-4 columns">
                       <div class="slider-holder">
-                          <div id="slider-range2" class="slider-bar"></div>
+                          <div id="bed_slider"></div>
                       </div>
                     </div>
                     <div class="small-6 medium-4 medium-pull-4 columns">
@@ -166,7 +178,7 @@
                   <div class="row">
                     <div class="small-12 medium-4 medium-push-4 columns">
                       <div class="slider-holder">
-                          <div id="slider-range3" class="slider-bar"></div>
+                          <div id="bath_slider"></div>
                       </div>
                     </div>
                     <div class="small-6 medium-4 medium-pull-4 columns">
@@ -205,30 +217,19 @@
         <div class="row search-results-outer-shadow">
           <?php if (have_posts()) : while (have_posts()) : the_post();?>
             <?php the_content();
-              //var_dump($shortcode_buildout);
               $the_shortcode = '[sr_listings';
               foreach($shortcode_buildout as $key => $value) {
                   if(!empty($value)) {
                       $the_shortcode .= ' ' . $key . '="' . $value . '"';
                   }
               }
+              $the_shortcode .= ' limit="' . $perpage .'"';
               $the_shortcode .= ']';
               echo do_shortcode($the_shortcode); ?>
           <?php endwhile; endif; wp_reset_query(); ?>
         </div>
       </div>
       <!-- Search Results -->
-
-      <!-- Pagination -->
-      <div id="pagination-row">
-          <div id="pagination-left" class="pagination-arrow"><span class="icon-icon-arrow-down"></span></div>
-          <div class="pagination-count">
-            <input type="text" value="1" />
-            <span>of </span><span id="total-pages">5</span>
-          </div>
-          <div id="pagination-right" class="pagination-arrow"><span class="icon-icon-arrow-down"></span></div>
-      </div>
-      <!-- End Pagination -->
 
       <!-- Footer -->
       <div id="footer" class="reverse alcove-texture">
@@ -246,17 +247,35 @@
     <script src="<?php echo get_template_directory_uri(); ?>/js/app.js"></script>
 
 <?php wp_footer(); ?>
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<script src="<?php echo get_template_directory_uri(); ?>/js/jquery-ui.js"></script>
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/js/nouislider/nouislider.css">
+<script src="<?php echo get_template_directory_uri(); ?>/js/nouislider/nouislider.min.js"></script>
 <style>
+    .noUi-horizontal .noUi-handle {
+        width: .80em;
+        background: url(<?php echo get_template_directory_uri(); ?>/img/temp-icon-slider-grip.png);
+        background-position: top;
+        left: -6px;
+    }
+    .noUi-target {
+        border: 0;
+        box-shadow: none;
+        height: 8px;
+        background-color: rgba(226, 226, 226, 0.1);
+        border-bottom: 1px solid #FFFFFF;
+    }
+
+    .noUi-handle:before, .noUi-handle:after {
+        display: none;
+    }
+
+    .noUi-connect {
+        background: none;
+        box-shadow: none;
+    }
+
+
     .ui-draggable, .ui-droppable {
         background-position: top;
-    }
-    .ui-slider .ui-slider-handle {
-        width: .80em;
-    }
-    .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
-        background: url(<?php echo get_template_directory_uri(); ?>/img/temp-icon-slider-grip.png);
     }
     .ui-widget.ui-widget-content {
         border: none;
@@ -269,56 +288,105 @@
         top: -.3em;
         margin-left: -.35em;
     }
+    #slider-range {
+        z-index: 999;
+        display: block;
+    }
 </style>
 <script>
 <?php
-    $slider_price_min_set = (!empty($shortcode_buildout['minprice'])) ? $shortcode_buildout['minprice'] : 0;
-    $slider_price_max_set = (!empty($shortcode_buildout['maxprice'])) ? $shortcode_buildout['maxprice'] : 10000000;
+    //$slider_price_min_set = (!empty($shortcode_buildout['minprice'])) ? $shortcode_buildout['minprice'] : 0;
+    //$slider_price_max_set = (!empty($shortcode_buildout['maxprice'])) ? $shortcode_buildout['maxprice'] : 10000000;
 
-    $slider_beds_min_set = (!empty($shortcode_buildout['minbeds'])) ? $shortcode_buildout['minbeds'] : 0;
-    $slider_beds_max_set = (!empty($shortcode_buildout['maxbeds'])) ? $shortcode_buildout['maxbeds'] : 20;
+    //$slider_beds_min_set = (!empty($shortcode_buildout['minbeds'])) ? $shortcode_buildout['minbeds'] : 0;
+    //$slider_beds_max_set = (!empty($shortcode_buildout['maxbeds'])) ? $shortcode_buildout['maxbeds'] : 20;
 
-    $slider_baths_min_set = (!empty($shortcode_buildout['minbaths'])) ? $shortcode_buildout['minbaths'] : 0;
-    $slider_baths_max_set = (!empty($shortcode_buildout['maxbaths'])) ? $shortcode_buildout['maxbaths'] : 20;
+    //$slider_baths_min_set = (!empty($shortcode_buildout['minbaths'])) ? $shortcode_buildout['minbaths'] : 0;
+    //$slider_baths_max_set = (!empty($shortcode_buildout['maxbaths'])) ? $shortcode_buildout['maxbaths'] : 20;
+
+    if(!empty($shortcode_buildout['minprice'])) {$slider_price_min_set = $shortcode_buildout['minprice']; echo "var j_price_min = ".$shortcode_buildout['minprice'].";";} else {$slider_price_min_set = 0; echo "var j_price_min = '';";}
+    if(!empty($shortcode_buildout['maxprice'])) {$slider_price_max_set = $shortcode_buildout['maxprice']; echo "var j_price_max = ".$shortcode_buildout['maxprice'].";";} else {$slider_price_max_set = 10000000; echo "var j_price_max = '';";}
+
+    if(!empty($shortcode_buildout['minbeds'])) {$slider_beds_min_set = $shortcode_buildout['minbeds']; echo "var j_beds_min = ".$shortcode_buildout['minbeds'].";";} else {$slider_beds_min_set = 0; echo "var j_beds_min = '';";}
+    if(!empty($shortcode_buildout['maxbeds'])) {$slider_beds_max_set = $shortcode_buildout['maxbeds']; echo "var j_beds_max = ".$shortcode_buildout['maxbeds'].";";} else {$slider_beds_max_set = 20; echo "var j_beds_max = '';";}
+
+    if(!empty($shortcode_buildout['minbaths'])) {$slider_baths_min_set = $shortcode_buildout['minbaths']; echo "var j_baths_min = ".$shortcode_buildout['minbaths'].";";} else {$slider_baths_min_set = 0; echo "var j_baths_min = '';";}
+    if(!empty($shortcode_buildout['maxbaths'])) {$slider_baths_max_set = $shortcode_buildout['maxbaths']; echo "var j_baths_max = ".$shortcode_buildout['maxbaths'].";";} else {$slider_baths_max_set = 20; echo "var j_baths_max = '';";}
 ?>
-    $( function() {
-        $( "#slider-range" ).slider({
-            range: true,
-            min: 0,
-            max: 10000000,
-            values: [ <?=$slider_price_min_set;?>, <?=$slider_price_max_set;?> ],
-            slide: function( event, ui ) {
-                $( "#minprice" ).val( "$" + ui.values[ 0 ] );
-                var x = $("#minprice").val();
-                $("#minprice").val(addCommas(x));
+var priceSlider = document.getElementById('price_slider');
+var bedSlider = document.getElementById('bed_slider');
+var bathSlider = document.getElementById('bath_slider');
 
-                $( "#maxprice" ).val( "$" + ui.values[ 1 ] );
-                var x = $("#maxprice").val();
-                $("#maxprice").val(addCommas(x));
-            }
-        });
-        $( "#slider-range2" ).slider({
-            range: true,
-            min: 0,
-            max: 20,
-            values: [ <?=$slider_beds_min_set;?>, <?=$slider_beds_max_set;?> ],
-            slide: function( event, ui ) {
-                $( "#minbeds" ).val( ui.values[ 0 ] );
-                $( "#maxbeds" ).val( ui.values[ 1 ] );
-            }
-        });
-        $( "#slider-range3" ).slider({
-            range: true,
-            min: 0,
-            max: 20,
-            values: [ <?=$slider_baths_min_set;?>, <?=$slider_baths_max_set;?> ],
-            slide: function( event, ui ) {
-                $( "#minbaths" ).val( ui.values[ 0 ] );
-                $( "#maxbaths" ).val( ui.values[ 1 ] );
-            }
-        });
-    } );
+noUiSlider.create(priceSlider, {
+    connect: true,
+    behaviour: 'tap',
+    start: [ <?=$slider_price_min_set;?>, <?=$slider_price_max_set;?> ],
+    range: {
+        // Starting at 500, step the value by 500,
+        // until 4000 is reached. From there, step by 1000.
+        'min': [ 0 ],
+        //'10%': [ 500, 500 ],
+        //'50%': [ 4000, 1000 ],
+        'max': [ 10000000 ]
+    }
+});
 
+noUiSlider.create(bedSlider, {
+    connect: true,
+    behaviour: 'tap',
+    start: [ <?=$slider_beds_min_set;?>, <?=$slider_beds_max_set;?> ],
+    range: {
+        // Starting at 500, step the value by 500,
+        // until 4000 is reached. From there, step by 1000.
+        'min': [ 0 ],
+        'max': [ 20 ]
+    }
+});
+
+noUiSlider.create(bathSlider, {
+    connect: true,
+    behaviour: 'tap',
+    start: [ <?=$slider_baths_min_set;?>, <?=$slider_baths_max_set;?> ],
+    range: {
+        // Starting at 500, step the value by 500,
+        // until 4000 is reached. From there, step by 1000.
+        'min': [ 0 ],
+        'max': [ 20 ]
+    }
+});
 </script>
+<script>
+    var pricenodes = [
+        document.getElementById('minprice'), // 0
+        document.getElementById('maxprice')  // 1
+    ];
+
+    var bednodes = [
+        document.getElementById('minbeds'), // 0
+        document.getElementById('maxbeds')  // 1
+    ];
+
+    var bathnodes = [
+        document.getElementById('minbaths'), // 0
+        document.getElementById('maxbaths')  // 1
+    ];
+
+    // Display the slider value and how far the handle moved
+    // from the left edge of the slider.
+    priceSlider.noUiSlider.on('update', function ( values, handle, unencoded, isTap, positions ) {
+        pricenodes[handle].value = Math.round(values[handle]);
+        var x = $("#minprice").val();
+        $("#minprice").val(addMoneySign(x));
+        var y = $("#maxprice").val();
+        $("#maxprice").val(addMoneySign(y));
+    });
+    bedSlider.noUiSlider.on('update', function ( values, handle, unencoded, isTap, positions ) {
+        bednodes[handle].value = Math.round(values[handle]);
+    });
+    bathSlider.noUiSlider.on('update', function ( values, handle, unencoded, isTap, positions ) {
+        bathnodes[handle].value = Math.round(values[handle]);
+    });
+</script>
+
 </body>
 </html>

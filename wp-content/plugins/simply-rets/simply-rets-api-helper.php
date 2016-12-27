@@ -519,7 +519,8 @@ HTML;
         $bathsHalf = SimplyRetsApiHelper::srDetailsTable($listing_bathsHalf, "");
         // total baths
         $listing_bathsTotal = $listing->property->bathrooms;
-        $bathsTotal = SimplyRetsApiHelper::srDetailsTable($listing_bathsTotal, "");
+        $listing_bathsTotal = str_replace('.00', '', $listing_bathsTotal);
+        $listing_bathsTotal = preg_replace('~(.*)(\.)(.)0$~', '$1$2$3', $listing_bathsTotal);
         // stories
         $listing_stories = $listing->property->stories;
         $stories = SimplyRetsApiHelper::srDetailsTable($listing_stories, "");
@@ -1119,11 +1120,13 @@ HTML;
         # DETAILS MARKUP
         ###################################
         $listing_url =  "http://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
+        $backtosearch = (!empty($_SESSION['backtosearch'])) ? $_SESSION['backtosearch'] : '/search-homes/';
+        //session_destroy();
         $cont .= <<<HTML
         <!-- Subheader row -->
 <div id="subheader-row" class="row">
     <div class="small-12 medium-4 columns">
-        <a href="<?php echo get_page_link(8); ?>" class="btn small">Back to Search</a>
+        <a href="$backtosearch" class="btn small">Back to Search</a>
     </div>
     <div class="small-12 medium-8 large-6 columns">
         <div class="subheader-share-2">
@@ -1191,7 +1194,7 @@ HTML;
 
                 <div class="listing-details-tile">
                     <h4>Bathrooms</h4>
-                    <h3>$bathsMarkup</h3>
+                    <h3>$listing_bathsTotal</h3>
                 </div>
 
                 <div class="listing-details-tile">
@@ -1201,7 +1204,7 @@ HTML;
 
                 <div class="listing-details-tile">
                     <h4>Sq. Ft. Lot</h4>
-                    <h3>$lotsize_markup</h3>
+                    <h3>$listing_lotSizeArea</h3>
                 </div>
         </div>
 
@@ -1318,6 +1321,7 @@ HTML;
             $listing_bedrooms = $listing->property->bedrooms;
             $bedrooms = SimplyRetsApiHelper::srDetailsTable($listing_bedrooms, "Bedrooms");
             // full baths
+            $listing_bathsFull = $listing->property->bathsFull;
             $listing_bathsFull = $listing->property->bathsFull;
             $bathsFull = SimplyRetsApiHelper::srDetailsTable($listing_bathsFull, "Full Baths");
             // half baths
@@ -1603,6 +1607,36 @@ HTML;
     }
 
 
+    public static function pagination($count, $href, $perpage, $current_page) {
+        $output = '';
+        $pagination_type = (preg_match('~(\?(.*)=)~', $href)) ? '&' : '?';
+        if(!isset($_REQUEST["pageNumber"])) $_REQUEST["pageNumber"] = 1;
+        if(!is_numeric($current_page) || empty($current_page)) {$current_page = '1';}
+        if($perpage != 0)
+            $pages  = ceil($count/$perpage);
+
+        //if pages exists after loop's lower limit
+        if($pages>1) {
+                $output = $output . '<!-- Pagination -->
+      <div id="pagination-row">';
+            if($_REQUEST['pageNumber'] != '1') {
+                $pagedown = $current_page - 1;
+                $output .= '<a href="'.$href.$pagination_type.'pageNumber='.$pagedown.'""><div id="pagination-left" class="pagination-arrow"><span class="icon-icon-arrow-down"></span></div></a>';
+            }
+          $output .= '<div class="pagination-count">
+            <input type="text" value="'.$_REQUEST["pageNumber"].'" disabled />
+            <span>of </span><span id="total-pages">'.$pages.'</span>
+          </div>';
+            if($_REQUEST['pageNumber'] != $pages) {
+                $pageup = $current_page + 1;
+                $output .= '<a href="'.$href.$pagination_type.'pageNumber='.$pageup.'""><div id="pagination-right" class="pagination-arrow"><span class="icon-icon-arrow-down"></span></div></a>';
+            }
+          $output .= '</div>
+      <!-- End Pagination -->';
+        }
+        return $output;
+    }
+
     public static function srResidentialResultsGenerator( $response, $settings ) {
         $br                = "<br>";
         $cont              = "";
@@ -1647,8 +1681,10 @@ HTML;
         $mapHelper = SrSearchMap::srMapHelper();
         $map->setAutoZoom(true);
         $markerCount = 0;
-
         foreach( $response as $listing ) {
+            //echo 'x99';
+            //var_dump($listing);
+            //echo '<hr />';
             $listing_uid        = $listing->mlsId;
             $mlsid              = $listing->listingId;
             $listing_price      = $listing->listPrice;
@@ -1747,11 +1783,15 @@ HTML;
             $areaMarkup  = SimplyRetsApiHelper::resultDataColumnMarkup(
                 $area, ''
             );
+            // total baths
+            $listing_bathsTotal = $listing->property->bathrooms;
+            $listing_bathsTotal = str_replace('.00', '', $listing_bathsTotal);
+            $listing_bathsTotal = preg_replace('~(.*)(\.)(.)0$~', '$1$2$3', $listing_bathsTotal);
             $yearMarkup  = SimplyRetsApiHelper::resultDataColumnMarkup($yearBuilt, 'Built in', true);
             $cityMarkup  = SimplyRetsApiHelper::resultDataColumnMarkup($city, 'Located in', true);
             $mlsidMarkup = SimplyRetsApiHelper::resultDataColumnMarkup($mlsid, 'MLS #:', true);
             $listing_lotSize = $listing->property->lotSize;
-            $lotsize_markup  = SimplyRetsApiHelper::srDetailsTable($listing_lotSize, "");
+            $listing_lotSizeArea = $listing->property->lotSizeArea;
 
             if( $area == 0 ) {
                 $areaMarkup = SimplyRetsApiHelper::resultDataColumnMarkup($bathsHalf, 'Half Baths', false);
@@ -1804,7 +1844,7 @@ HTML;
                 </div>
                 <div class="details-tile clearfix">
                   <h5>Bath</h5>
-                  <h4>$bathsMarkup</h4>
+                  <h4>$listing_bathsTotal</h4>
                 </div>
                 <div class="details-tile clearfix">
                   <h5>Sq. Ft. House</h5>
@@ -1812,7 +1852,7 @@ HTML;
                 </div>
                 <div class="details-tile clearfix">
                   <h5>Sq. Ft. Lot</h5>
-                  <h4>$lotsize_markup</h4>
+                  <h4>$listing_lotSizeArea</h4>
                 </div>
               </div>
               <a href="$link" class="btn small">View Home</a>
@@ -1853,8 +1893,19 @@ HTML;
             $cont .= $resultsMarkup;
         }
 
-        //Pagination
-        //$cont .= "<hr><p class='sr-pagination'>$prev_link $next_link</p>";
+        //(OLD)Pagination
+        //$cont .= "<hr>x66<p class='sr-pagination'>$prev_link $next_link</p>";
+
+        #####
+        # PAGINATION START
+        #####
+        $thecount = count($response);
+        $perpage = $GLOBALS['perpage'];
+        $current_page = (!empty($_GET['pageNumber'])) ? $_GET['pageNumber'] : '';
+        $clean_URI = preg_replace('~(.*)((&|\?)pageNumber=(\d+)?)~', '$1', $_SERVER[REQUEST_URI]);
+        $pagiantion_link = "http://$_SERVER[HTTP_HOST]$clean_URI";
+        $pagination = SimplyRetsApiHelper::pagination($thecount, $pagiantion_link, 5, $current_page);
+        $cont .= $pagination;
 
         return $cont;
 
