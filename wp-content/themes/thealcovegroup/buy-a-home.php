@@ -45,10 +45,10 @@
                       </div>
                     </div>
                     <div class="small-6 medium-4 medium-pull-4 columns">
-                      <input type="text" placeholder="Sq. Ft. Min." name="sq-ft-min" />
+                      <input type="text" placeholder="Sq. Ft. Min." name="sq-ft-min" class="commanator" />
                     </div>
                     <div class="small-6 medium-4 columns">
-                      <input type="text" placeholder="Sq. Ft. Max." name="sq-ft-max" />
+                      <input type="text" placeholder="Sq. Ft. Max." name="sq-ft-max" class="commanator" />
                     </div>
                   </div>
                   <div class="row">
@@ -70,10 +70,10 @@
                       </div>
                     </div>
                     <div class="small-6 medium-4 medium-pull-4 columns">
-                      <input type="text" placeholder="Lot Size Min." name="lot-min" />
+                      <input type="text" placeholder="Lot Size Min." name="lot-min" class="commanator" />
                     </div>
                     <div class="small-6 medium-4 columns">
-                      <input type="text" placeholder="Lot Size Max." name="lot-max" />
+                      <input type="text" placeholder="Lot Size Max." name="lot-max" class="commanator" />
                     </div>
                   </div>
                   <div class="row">

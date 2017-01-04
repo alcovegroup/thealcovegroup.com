@@ -112,6 +112,24 @@ jQuery(function ($) {
 		}
 	}
 
+	$('.commanator').each(function() {
+        var x = $(this).val();
+        $(this).val(addCommas(x));
+        $(this).on('keyup', function () {
+            var x = $(this).val();
+            $(this).val(addCommas(x));
+        });
+    });
+
+    $('.js_money').each(function() {
+        var x = $(this).val();
+        $(this).val(addMoneySign(x));
+        $(this).on('keyup', function () {
+            var x = $(this).val();
+            $(this).val(addMoneySign(x));
+        });
+    });
+
 });
 
 function addCommas(x)

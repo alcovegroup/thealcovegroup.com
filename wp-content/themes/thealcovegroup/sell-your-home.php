@@ -111,7 +111,7 @@
                   </div>
                   <div class="row">
                     <div class="small-12 medium-4 columns">
-                      <input type="text" placeholder="Sq. Ft.*" name="sq-ft" required />
+                      <input type="text" placeholder="Sq. Ft.*" name="sq-ft" required class="commanator" />
                       <small class="error">Square footage is required.</small>
                     </div>
                     <div class="small-12 medium-4 columns">
@@ -125,7 +125,7 @@
                   </div>
                   <div class="row">
                     <div class="small-12 columns">
-                      <input type="text" placeholder="Desired Sale Price*" name="desired-sale-price" required />
+                      <input type="text" placeholder="Desired Sale Price*" name="desired-sale-price" class="commanator js_money" required />
                       <small class="error">Desired Sale Price is required</small>
                     </div>
                   </div>
