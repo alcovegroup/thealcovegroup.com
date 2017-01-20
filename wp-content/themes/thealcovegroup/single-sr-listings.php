@@ -6,15 +6,18 @@
  * @subpackage thealcovegroup
  */
 session_start();
+$fb_listed_metadata = 1;
+$listing_url =  "http://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
+$mls_id = preg_replace('~http:(.*)\/listings\/([0-9]+)\/(.*)~', '$2', $listing_url);
+$mls_data = SimplyRetsApiHelper::pullDataDump('/'.$mls_id);
+require_once ('header.php');
 ?>
-
-
-<?php get_header(); ?>
 
   <!-- Expanding content frame -->
   <div id="content-frame">
     <?php if (have_posts()) : while (have_posts()) : the_post();?>
-        <?php the_content(); ?>
+        <?php
+      the_content(); ?>
       <!-- Footer -->
       <div id="footer" class="reverse alcove-texture">
         <?php get_template_part( 'partials/footerContent' ); ?>

@@ -4,17 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome to the Alcove Group</title>
-    <?php wp_head(); ?>
-    <meta property="og:title" content="<?php echo the_title(); ?>" />
-    <meta property="og:url" content="<?php echo get_post_permalink(); ?>" />
-    <?php if (has_post_thumbnail( $post->ID ) ): ?>
-      <?php $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
-      <meta property="og:image" content="<?php echo $featured_image[0]; ?>" />
-    <?php else : ?>
-      <meta property="og:image" content="http://mls.liquinas.com/wp-content/uploads/2016/11/Alcove-FeaturedImageDefault-thumb.jpg" />
-    <?php endif; ?>
-    <meta property="og:description" content="<?php echo get_the_content() ?>" />
-    <meta property="og:site_name" content="<?php echo get_site_url(); ?>" />
+    <?php wp_head();
+    $post_id = get_the_id();
+    if(is_singular('featured_home')) {include_once ('template-fb-metadata-featured.php');}
+    if($fb_listed_metadata == 1) {include_once ('template-fb-metadata-listed.php');}
+    ?>
   </head>
 
   <body <?php body_class(); ?>>

@@ -12,7 +12,7 @@
 session_start();
 $backtosearch = htmlspecialchars($_SERVER[REQUEST_URI]);
 $_SESSION['backtosearch'] = $backtosearch;
-$GLOBALS['perpage'] = 10;
+$GLOBALS['perpage'] = 50;
 $perpage = $GLOBALS['perpage'];
 ?>
     <!-- Expanding content frame -->
@@ -225,8 +225,10 @@ $perpage = $GLOBALS['perpage'];
               }
               $the_shortcode .= ' limit="' . $perpage .'"';
               $the_shortcode .= ']';
-              echo do_shortcode($the_shortcode); ?>
-          <?php endwhile; endif; wp_reset_query(); ?>
+              if(isset($_GET['zip'])) {
+                  echo do_shortcode($the_shortcode);
+                  }
+          endwhile; endif; wp_reset_query(); ?>
         </div>
       </div>
       <!-- Search Results -->
@@ -245,6 +247,7 @@ $perpage = $GLOBALS['perpage'];
     <script src="<?php echo get_template_directory_uri(); ?>/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/bower_components/foundation/js/foundation.min.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/app.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/search.js"></script>
 
 <?php wp_footer(); ?>
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/js/nouislider/nouislider.css">

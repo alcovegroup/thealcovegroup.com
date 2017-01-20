@@ -47,8 +47,11 @@
 
       <?php $loop = new WP_Query( array( 'post_type' => 'featured_home', 'posts_per_page' => -1 ) ); ?>
       <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-
-      <!-- Featured Home -->
+          <?php if ( post_custom('mls_id') ) {
+              $fetch_mls_id = post_custom('mls_id');
+              include_once('template-render-homepage-mls-listing.php');
+          } else { ?>
+          <!-- Featured Home -->
       <div class="featured-home section">
         <div class="featured-home-image">
           <ul class="slickslide">
@@ -99,8 +102,9 @@
         </div>
       </div>
       <!-- Featured Home -->
-
-      <?php endwhile; wp_reset_query(); ?>
+          <?php
+          }#if mls_id
+      endwhile; wp_reset_query(); ?>
 
 
       <!-- Featured Home Section -->

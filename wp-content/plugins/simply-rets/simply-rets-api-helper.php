@@ -16,6 +16,9 @@ class SimplyRetsApiHelper {
         $request_url      = SimplyRetsApiHelper::srRequestUrlBuilder( $params );
         $request_response = SimplyRetsApiHelper::srApiRequest( $request_url );
         $response_markup  = SimplyRetsApiHelper::srResidentialResultsGenerator( $request_response, $settings );
+        if(!is_array($params) && preg_match('~\/([0-9]+)$~', $params)) {
+            $response_markup  = SimplyRetsApiHelper::srResidentialResultsGenerator( $request_response, $settings, 'usehometemplate' );
+        }
 
         return $response_markup;
     }
@@ -27,6 +30,13 @@ class SimplyRetsApiHelper {
         $response_markup  = SimplyRetsApiHelper::srResidentialDetailsGenerator( $request_response );
 
         return $response_markup;
+    }
+
+    public static function pullDataDump( $listing_id ) {
+        $request_url      = SimplyRetsApiHelper::srRequestUrlBuilder( $listing_id );
+        $request_response = SimplyRetsApiHelper::srApiRequest( $request_url );
+
+        return $request_response['response'];
     }
 
     public static function retrieveWidgetListing( $listing_id, $settings = NULL ) {
@@ -1117,195 +1127,18 @@ HTML;
         endif;
         $additional_details_markup_2 .= '</div>';
         ###################################
-        # DETAILS MARKUP
+        # END DETAILS MARKUP
         ###################################
-        $listing_url =  "http://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
-        $backtosearch = (!empty($_SESSION['backtosearch'])) ? $_SESSION['backtosearch'] : '/search-homes/';
-        //session_destroy();
-        $cont .= <<<HTML
-        <!-- Subheader row -->
-<div id="subheader-row" class="row">
-    <div class="small-12 medium-4 columns">
-        <a href="$backtosearch" class="btn small">Back to Search</a>
-    </div>
-    <div class="small-12 medium-8 large-6 columns">
-        <div class="subheader-share-2">
-            <table class="line-section-table">
-                <tr>
-                    <td class="table-left-header">
-                        <h4>Share this Home</h4>
-                        <a href="#">
-                            <span class="social-icon"><span class="icon-icon-facebook"></span></span>
-                        </a>
-                        <a href="#">
-                            <span class="social-icon"><span class="icon-icon-linkedin"></span></span>
-                        </a>
-                    </td>
-                    <td class="fill-line"></td>
-                </tr>
-            </table>
-        </div>
-    </div>
-</div>
-<!-- Subheader row -->
 
-<!-- Jumbotron -->
-<div id="home-gallery-row" class="row">
-    <ul class="slickslide">
-    
-        $jumbotron_markup
-    </ul>
-    <div class="slick-thumbs">
-        <ul>
-            $jumbotron_thumbs_markup
-        </ul>
-    </div>
-</div>
-<!-- Jumbotron -->
-
-<!-- Details content -->
-<div id="home-content-row" class="row">
-    <div id="home-content-left" class="small-12 large-6 columns">
-        <h1>$addrFull $state $postal_code</h1>
-        <?php if ( post_custom('list_price') ): ?>
-            <div class="listing-price">
-                <table class="line-section-table">
-                    <tr>
-                        <td><h4>List Price</h4></td>
-                        <td class="fill-line"></td>
-                    </tr>
-                </table>
-                <h3>$price</h3>
-            </div>
-        <?php endif; ?>
-
-        <div class="listing-details clearfix">
-            <table class="line-section-table">
-                <tr>
-                    <td><h4>Details</h4></td>
-                    <td class="fill-line"></td>
-                </tr>
-            </table>
-
-                <div class="listing-details-tile">
-                    <h4>Bedrooms</h4>
-                    <h3>$bedrooms</h3>
-                </div>
-
-                <div class="listing-details-tile">
-                    <h4>Bathrooms</h4>
-                    <h3>$listing_bathsTotal</h3>
-                </div>
-
-                <div class="listing-details-tile">
-                    <h4>Sq. Ft. House</h4>
-                    <h3>$areaMarkup</h3>
-                </div>
-
-                <div class="listing-details-tile">
-                    <h4>Sq. Ft. Lot</h4>
-                    <h3>$listing_lotSizeArea</h3>
-                </div>
-        </div>
-
-            <div class="listing-description">
-                <h4>Description</h4>
-                $lot_description
-            </div>
-
-        <div class="listing-schools">
-            <table class="line-section-table">
-                <tr>
-                    <td><h4>School Details</h4></td>
-                    <td class="fill-line"></td>
-                </tr>
-            </table>
-
-                <h4>District</h4>
-                <h3>$school_district</h3>
-
-                <h4>Elementary School</h4>
-                <h3>$school_elementary            <?php endif; ?>
-
-                <h4>Middle School</h4>
-                <h3>$school_middle</h3>
-
-                <h4>High School</h4>
-                <h3>$school_high</h3>
-
-        </div>
-        $details_table_markup
-    </div>
-    <div id="home-content-right" class="small-12 large-6 columns">
-        <div id="home-map"></div>
-        $additional_details_markup_2
-        <div class="inquire-form form-button-right">
-          <h4>Interested in this home?</h4>
-          <form id="inquire-form" action="" method="post" data-abide onsubmit="event.preventDefault(); formSubmission(event);">
-          <input type="text" name="MLS-id" value="$listing_mlsid" style="display: none;"/>
-              <input type="text" name="listing-url" value="$listing_url" style="display: none;"/>
-            <input type="text" placeholder="First Name*" required />
-            <input type="text" placeholder="Last Name*" required />
-            <input type="text" placeholder="Email Address*" required />
-            <input type="text" placeholder="Phone Number*" required />
-            <span class="select-span">How soon are you interested in buying?</span>
-            <select required>
-              <option selected disabled>Select<sup>*</sup></option>
-              <option value="planning-now">Now</option>
-              <option value="planning-1-3">1-3 months</option>
-              <option value="planning-6-plus">6 months - 1 year</option>
-            </select>
-            <textarea rows="7" placeholder="Optional Message"></textarea>
-            <div>
-              <span><sup>*</sup>Required</span>
-              <input type="submit" value="Inquire" />
-            </div>
-          </form>
-          <script type="text/javascript">
-              var __ss_noform = __ss_noform || [];
-              __ss_noform.push(['baseURI', 'https://app-3QEHIZGEXU.marketingautomation.services/webforms/receivePostback/MzYwtzQwMDG0BAA/']);
-              __ss_noform.push(['form', 'inquire-form', '7c39939e-318b-4fb1-a3cf-93d47759eb2a']);
-              __ss_noform.push(['submitType', 'manual']);
-            </script>
-            <script type="text/javascript" src="https://koi-3QEHIZGEXU.marketingautomation.services/client/noform.js?ver=1.24" ></script>
-
-            <!-- Shows after form submit hides form -->
-            <div id="thank-you-message">
-              <h3>Thanks for contacting The Alcove Group!</h3>
-              <p>A specialist will get back to you shortly to discuss your submission.</p>
-            </div>
-        </div>
-      </div>
-</div>
-<script>
-    var geocoder, map;
-    var homeAddress = "$map_address";
-
-    function initMap() {
-      geocoder = new google.maps.Geocoder();
-      geocoder.geocode({
-        'address': homeAddress
-      }, function(results, status) {
-        if (status == google.maps.GeocoderStatus.OK) {
-          var myOptions = {
-            zoom: 10,
-            center: results[0].geometry.location,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-          }
-          map = new google.maps.Map(document.getElementById("home-map"), myOptions);
-
-          var marker = new google.maps.Marker({
-            map: map,
-            position: results[0].geometry.location
-          });
-        }
-      });
-    }
-  </script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvOFHf88DsjnHQ0lDbjK7tE-AAgqvNsVc&callback=initMap"
-          async defer></script>
-<!-- Details content -->
-HTML;
+        ###################################
+        # SINGLE ITEM HTML
+        ###################################
+        ob_start();
+        include ('template-single-listing-html.php');
+        $cont .= ob_get_clean();
+        ###################################
+        # END SINGLE ITEM HTML
+        ###################################
         //SIMPLY RETS CONTACT FORM
         //$cont .= SimplyRetsApiHelper::srContactFormDeliver();
         //$cont .= $contact_markup;
@@ -1637,7 +1470,7 @@ HTML;
         return $output;
     }
 
-    public static function srResidentialResultsGenerator( $response, $settings ) {
+    public static function srResidentialResultsGenerator( $response, $settings, $extras = null ) {
         $br                = "<br>";
         $cont              = "";
         $pagination        = $response['pagination'];
@@ -1681,15 +1514,17 @@ HTML;
         $mapHelper = SrSearchMap::srMapHelper();
         $map->setAutoZoom(true);
         $markerCount = 0;
+        $resultsMarkup = '';
         foreach( $response as $listing ) {
             //echo 'x99';
             //var_dump($listing);
             //echo '<hr />';
             $listing_uid        = $listing->mlsId;
-            $mlsid              = $listing->listingId;
+            $mlsid              = $listing_uid;
             $listing_price      = $listing->listPrice;
             $remarks            = $listing->remarks;
             $city               = $listing->address->city;
+            $state              = $listing->address->state;
             $county             = $listing->geo->county;
             $address            = $listing->address->full;
             $zip                = $listing->address->postalCode;
@@ -1818,71 +1653,46 @@ HTML;
                 $photo_count_markup .= ($photo_count > 2) ? 's' : '';
                 $photo_count_markup .= "</h3>";
             }
-            $resultsMarkup .= <<<HTML
-            
-                      <!-- Results Item -->
-          <div class="search-result-item">
-            <div class="small-12 medium-6 large-4 columns results-featured-image" style="background-image:url('$main_photo');">
-              $photo_count_markup
-            </div>
-            <div class="small-12 medium-6 large-8 columns results-listing">
-              <a href="$link">
-                    <h2>$addrFull</h2>
-                    <!--<h2>$address</h2>-->
-                  </a>
-              <div class="list-price clearfix">
-                <h3>List Price</h3>
-                <h2 style="margin-bottom: 8px;">$listing_USD</h2>
-                <h3>$yearMarkup</h3>
-                <!--<h3>$cityMarkup</h3>-->
-                <h3>$mlsidMarkup</h3>
-              </div>
-              <div class="results-details">
-                <div class="details-tile clearfix">
-                  <h5>Bed</h5>
-                  <h4>$bedsMarkup</h4>
-                </div>
-                <div class="details-tile clearfix">
-                  <h5>Bath</h5>
-                  <h4>$listing_bathsTotal</h4>
-                </div>
-                <div class="details-tile clearfix">
-                  <h5>Sq. Ft. House</h5>
-                  <h4>$areaMarkup</h4>
-                </div>
-                <div class="details-tile clearfix">
-                  <h5>Sq. Ft. Lot</h5>
-                  <h4>$listing_lotSizeArea</h4>
-                </div>
-              </div>
-              <a href="$link" class="btn small">View Home</a>
-            </div>
-          </div>
-          <!-- Results Item -->
-HTML;
+        ###################################
+        # END DETAILS MARKUP
+        ###################################
+
+        ###################################
+        # Full listings HTML
+        ###################################
+        ob_start();
+            if($extras == 'usehometemplate') {
+                include ('template-home-single-listing-html.php');
+            } else {
+                include('template-full-listings-html.php');
+            }
+        $resultsMarkup .= ob_get_clean();
+        ###################################
+        # END Full listings HTML
+        ###################################
 
         }
 
         $markerCount > 0 ? $mapMarkup = $mapHelper->render($map) : $mapMarkup = '';
 
-        if( $map_setting == 'false' ) {
+        if( $map_setting == 'false' && $extras != 'usehometemplate') {
             $mapMarkup = '';
         }
 
-        if( $map_position == 'list_only' )
+        if( $map_position == 'list_only' && $extras != 'usehometemplate')
         {
             $cont .= $resultsMarkup;
         }
-        elseif( $map_position == 'map_only' )
+        elseif( $map_position == 'map_only' && $extras != 'usehometemplate')
         {
             $cont .= $mapMarkup;
         }
-        elseif( $map_position == 'map_above' )
+        elseif( $map_position == 'map_above' && $extras != 'usehometemplate')
         {
             $cont .= $mapMarkup;
             $cont .= $resultsMarkup;
         }
-        elseif( $map_position == 'map_below' )
+        elseif( $map_position == 'map_below' && $extras != 'usehometemplate')
         {
             $cont .= $resultsMarkup;
             $cont .= '<hr>';
@@ -1892,21 +1702,15 @@ HTML;
         {
             $cont .= $resultsMarkup;
         }
-
+        ###################################
+        # Pagination
+        ###################################
         //(OLD)Pagination
         //$cont .= "<hr>x66<p class='sr-pagination'>$prev_link $next_link</p>";
-
-        #####
-        # PAGINATION START
-        #####
-        $thecount = count($response);
-        $perpage = $GLOBALS['perpage'];
-        $current_page = (!empty($_GET['pageNumber'])) ? $_GET['pageNumber'] : '';
-        $clean_URI = preg_replace('~(.*)((&|\?)pageNumber=(\d+)?)~', '$1', $_SERVER[REQUEST_URI]);
-        $pagiantion_link = "http://$_SERVER[HTTP_HOST]$clean_URI";
-        $pagination = SimplyRetsApiHelper::pagination($thecount, $pagiantion_link, 5, $current_page);
-        $cont .= $pagination;
-
+        include_once('template-pagination.php');
+        ###################################
+        # END Pagination
+        ###################################
         return $cont;
 
     }
