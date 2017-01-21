@@ -28,7 +28,7 @@ class SimplyRetsApiHelper {
         $request_url      = SimplyRetsApiHelper::srRequestUrlBuilder( $listing_id );
         $request_response = SimplyRetsApiHelper::srApiRequest( $request_url );
         $response_markup  = SimplyRetsApiHelper::srResidentialDetailsGenerator( $request_response );
-
+		
         return $response_markup;
     }
 
@@ -595,8 +595,10 @@ HTML;
         $listing_laundry = $listing->property->laundryFeatures;
         $laundry_features = SimplyRetsApiHelper::srDetailsTable($listing_laundry, "Laundry Features");
         // lot description
-        $listing_lot_descrip = $listing->property->lotDescription;
-        $lot_description = SimplyRetsApiHelper::srDetailsTable($listing_lot_descrip, "");
+		$the_description = $listing->property->lotDescription;
+		$the_remarks = $listing->remarks;
+        $listing_lot_descrip = (empty($the_remarks)) ? $the_description : $the_remarks;
+        $lot_description = $listing_lot_descrip;
         // additional rooms
         $listing_rooms = $listing->property->additionalRooms;
         $additional_rooms = SimplyRetsApiHelper::srDetailsTable($listing_rooms, "Additional Rooms");
