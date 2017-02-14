@@ -3,7 +3,7 @@
 # PAGINATION START
 #####
 $thecount = count($response);
-$thecount = $myareacount;
+$thecount = (!empty($myareacount) && is_numeric($myareacount) && $myareacount > 0) ? $myareacount : $thecount;
 $perpage = $GLOBALS['perpage'];
 $current_page = (!empty($_GET['pageNumber'])) ? $_GET['pageNumber'] : '';
 $clean_URI = preg_replace('~(.*)((&|\?)pageNumber=(\d+)?)~', '$1', $_SERVER[REQUEST_URI]);
