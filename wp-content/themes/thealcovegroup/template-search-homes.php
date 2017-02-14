@@ -37,6 +37,8 @@ $perpage = $GLOBALS['perpage'];
                 $_GET['minprice'] = str_replace(',', '', $_GET['minprice']);
                 $_GET['maxprice'] = str_replace('$', '', $_GET['maxprice']);
                 $_GET['maxprice'] = str_replace(',', '', $_GET['maxprice']);
+                $numeric_area = str_replace('%2C', '', $_GET['area']);
+                $numeric_area = str_replace(',', '', $_GET['area']);
                 $shortcode_buildout = array(
                     ##############################
                     # PRICE
@@ -56,26 +58,29 @@ $perpage = $GLOBALS['perpage'];
                     ##############################
                     # SQ FT
                     ##############################
-                    'area' => (is_numeric($_GET['area'])) ? htmlspecialchars($_GET['area']) : '',
+                    'area' => (is_numeric($numeric_area)) ? htmlspecialchars($numeric_area) : '',
                     ##############################
                     # CITY
                     ##############################
-                    'cities' => (ctype_alnum($_GET['city'])) ? htmlspecialchars($_GET['city']) : '',
+                    'cities' => (ctype_alnum($_GET['cities'])) ? htmlspecialchars($_GET['cities']) : '',
                     ##############################
                     # STATE (FORCED)
                     ##############################
-                    //'state' => (ctype_alnum($_GET['city'])) ? htmlspecialchars($_GET['city']) : '',
+                    'state' => (ctype_alnum($_GET['state'])) ? htmlspecialchars($_GET['state']) : '',
                     ##############################
                     # ZIP
                     ##############################
-                    'postalcodes' => (is_numeric($_GET['city'])) ? htmlspecialchars($_GET['zip']) : '',
+                    'postalcodes' => (is_numeric($_GET['zip'])) ? htmlspecialchars($_GET['zip']) : '',
+                    ##############################
+                    # TYPE
+                    ##############################
+                    'type' => 'RES',
                     ##############################
                     # OFFSET
                     ##############################
                     'offset' => (is_numeric($_GET['pageNumber'])) ? (htmlspecialchars($_GET['pageNumber']) * $perpage) : ''
                 );
                 ?>
-
               <form method="get" action="<?=$actual_link;?>">
                 <div class="row">
                   <div id="form-page-1" class="row">
@@ -85,66 +90,66 @@ $perpage = $GLOBALS['perpage'];
                   </div>
                   <div class="row">
                     <div class="small-12 medium-4 columns">
-                      <input type="text" placeholder="City" name="cities" />
+                      <input type="text" placeholder="City" name="cities" <?php if(!empty($shortcode_buildout['cities'])) { ?>value="<?=$shortcode_buildout['cities'];?>"<?php } ?> />
                     </div>
                     <div class="small-12 medium-4 columns">
-                      <select>
+                      <select name="state" id="state">
                         <option selected disabled>State</option>
-                        <option value="AL">Alabama</option>
-                        <option value="AK">Alaska</option>
-                        <option value="AZ">Arizona</option>
-                        <option value="AR">Arkansas</option>
-                        <option value="CA">California</option>
-                        <option value="CO">Colorado</option>
-                        <option value="CT">Connecticut</option>
-                        <option value="DE">Delaware</option>
-                        <option value="DC">District Of Columbia</option>
-                        <option value="FL">Florida</option>
-                        <option value="GA">Georgia</option>
-                        <option value="HI">Hawaii</option>
-                        <option value="ID">Idaho</option>
-                        <option value="IL">Illinois</option>
-                        <option value="IN">Indiana</option>
-                        <option value="IA">Iowa</option>
-                        <option value="KS">Kansas</option>
-                        <option value="KY">Kentucky</option>
-                        <option value="LA">Louisiana</option>
-                        <option value="ME">Maine</option>
-                        <option value="MD">Maryland</option>
-                        <option value="MA">Massachusetts</option>
-                        <option value="MI">Michigan</option>
-                        <option value="MN">Minnesota</option>
-                        <option value="MS">Mississippi</option>
-                        <option value="MO">Missouri</option>
-                        <option value="MT">Montana</option>
-                        <option value="NE">Nebraska</option>
-                        <option value="NV">Nevada</option>
-                        <option value="NH">New Hampshire</option>
-                        <option value="NJ">New Jersey</option>
-                        <option value="NM">New Mexico</option>
-                        <option value="NY">New York</option>
-                        <option value="NC">North Carolina</option>
-                        <option value="ND">North Dakota</option>
-                        <option value="OH">Ohio</option>
-                        <option value="OK">Oklahoma</option>
-                        <option value="OR">Oregon</option>
-                        <option value="PA">Pennsylvania</option>
-                        <option value="RI">Rhode Island</option>
-                        <option value="SC">South Carolina</option>
-                        <option value="SD">South Dakota</option>
-                        <option value="TN">Tennessee</option>
-                        <option value="TX">Texas</option>
-                        <option value="UT">Utah</option>
-                        <option value="VT">Vermont</option>
-                        <option value="VA">Virginia</option>
-                        <option value="WA">Washington</option>
-                        <option value="WV">West Virginia</option>
-                        <option value="WI">Wisconsin</option>
-                        <option value="WY">Wyoming</option>
+                        <option value="AL" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'AL') {echo ' selected';} ?>>Alabama</option>
+                        <option value="AK" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'AK') {echo ' selected';} ?>>Alaska</option>
+                        <option value="AZ" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'AZ') {echo ' selected';} ?>>Arizona</option>
+                        <option value="AR" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'AR') {echo ' selected';} ?>>Arkansas</option>
+                        <option value="CA" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'CA') {echo ' selected';} ?>>California</option>
+                        <option value="CO" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'CO') {echo ' selected';} ?>>Colorado</option>
+                        <option value="CT" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'CT') {echo ' selected';} ?>>Connecticut</option>
+                        <option value="DE" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'DE') {echo ' selected';} ?>>Delaware</option>
+                        <option value="DC" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'DC') {echo ' selected';} ?>>District Of Columbia</option>
+                        <option value="FL" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'FL') {echo ' selected';} ?>>Florida</option>
+                        <option value="GA" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'GA') {echo ' selected';} ?>>Georgia</option>
+                        <option value="HI" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'HI') {echo ' selected';} ?>>Hawaii</option>
+                        <option value="ID" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'ID') {echo ' selected';} ?>>Idaho</option>
+                        <option value="IL" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'IL') {echo ' selected';} ?>>Illinois</option>
+                        <option value="IN" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'IN') {echo ' selected';} ?>>Indiana</option>
+                        <option value="IA" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'IA') {echo ' selected';} ?>>Iowa</option>
+                        <option value="KS" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'KS') {echo ' selected';} ?>>Kansas</option>
+                        <option value="KY" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'KY') {echo ' selected';} ?>>Kentucky</option>
+                        <option value="LA" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'LA') {echo ' selected';} ?>>Louisiana</option>
+                        <option value="ME" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'ME') {echo ' selected';} ?>>Maine</option>
+                        <option value="MD" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'MD') {echo ' selected';} ?>>Maryland</option>
+                        <option value="MA" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'MA') {echo ' selected';} ?>>Massachusetts</option>
+                        <option value="MI" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'MI') {echo ' selected';} ?>>Michigan</option>
+                        <option value="MN" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'MN') {echo ' selected';} ?>>Minnesota</option>
+                        <option value="MS" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'MS') {echo ' selected';} ?>>Mississippi</option>
+                        <option value="MO" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'MO') {echo ' selected';} ?>>Missouri</option>
+                        <option value="MT" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'MT') {echo ' selected';} ?>>Montana</option>
+                        <option value="NE" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'NE') {echo ' selected';} ?>>Nebraska</option>
+                        <option value="NV" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'NV') {echo ' selected';} ?>>Nevada</option>
+                        <option value="NH" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'NH') {echo ' selected';} ?>>New Hampshire</option>
+                        <option value="NJ" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'NJ') {echo ' selected';} ?>>New Jersey</option>
+                        <option value="NM" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'NM') {echo ' selected';} ?>>New Mexico</option>
+                        <option value="NY" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'NY') {echo ' selected';} ?>>New York</option>
+                        <option value="NC" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'NC') {echo ' selected';} ?>>North Carolina</option>
+                        <option value="ND" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'ND') {echo ' selected';} ?>>North Dakota</option>
+                        <option value="OH" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'OH') {echo ' selected';} ?>>Ohio</option>
+                        <option value="OK" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'OK') {echo ' selected';} ?>>Oklahoma</option>
+                        <option value="OR" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'OR') {echo ' selected';} ?>>Oregon</option>
+                        <option value="PA" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'PA') {echo ' selected';} ?>>Pennsylvania</option>
+                        <option value="RI" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'RI') {echo ' selected';} ?>>Rhode Island</option>
+                        <option value="SC" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'SC') {echo ' selected';} ?>>South Carolina</option>
+                        <option value="SD" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'SD') {echo ' selected';} ?>>South Dakota</option>
+                        <option value="TN" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'TN') {echo ' selected';} ?>>Tennessee</option>
+                        <option value="TX" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'TX') {echo ' selected';} ?>>Texas</option>
+                        <option value="UT" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'UT') {echo ' selected';} ?>>Utah</option>
+                        <option value="VT" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'VT') {echo ' selected';} ?>>Vermont</option>
+                        <option value="VA" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'VA') {echo ' selected';} ?>>Virginia</option>
+                        <option value="WA" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'WA') {echo ' selected';} ?>>Washington</option>
+                        <option value="WV" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'WV') {echo ' selected';} ?>>West Virginia</option>
+                        <option value="WI" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'WI') {echo ' selected';} ?>>Wisconsin</option>
+                        <option value="WY" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'WY') {echo ' selected';} ?>>Wyoming</option>
                       </select>
                     </div>
                     <div class="small-12 medium-4 columns">
-                      <input type="text" placeholder="Zip" name="zip" />
+                      <input type="text" placeholder="Zip" name="zip" id="postalcodes" <?php if(!empty($shortcode_buildout['postalcodes'])) { ?>value="<?=$shortcode_buildout['postalcodes'];?>"<?php } ?> />
                     </div>
                   </div>
                   <div class="row">
@@ -215,7 +220,15 @@ $perpage = $GLOBALS['perpage'];
       <!-- Search Results -->
       <div id="search-results">
         <div class="row search-results-outer-shadow">
-          <?php if (have_posts()) : while (have_posts()) : the_post();?>
+          <?php
+          ####################################################
+          # Forcing the state if it's not Arizona
+          # This will cause a crash in the shortcode without
+          # disrupting the search form.
+          ####################################################
+          if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] != 'AZ') {$shortcode_buildout['postalcodes'] = '94086';}
+          //
+          if (have_posts()) : while (have_posts()) : the_post();?>
             <?php the_content();
               $the_shortcode = '[sr_listings';
               foreach($shortcode_buildout as $key => $value) {

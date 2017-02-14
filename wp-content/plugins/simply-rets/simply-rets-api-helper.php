@@ -13,9 +13,12 @@
 class SimplyRetsApiHelper {
 
     public static function retrieveRetsListings( $params, $settings = NULL ) {
+        if(is_array($settings) && array_key_exists('area', $settings) && is_numeric($settings['area'])) {
+            $area_params = array('area' => $settings['area']);
+        }
         $request_url      = SimplyRetsApiHelper::srRequestUrlBuilder( $params );
         $request_response = SimplyRetsApiHelper::srApiRequest( $request_url );
-        $response_markup  = SimplyRetsApiHelper::srResidentialResultsGenerator( $request_response, $settings );
+        $response_markup  = SimplyRetsApiHelper::srResidentialResultsGenerator( $request_response, $settings, $area_params );
         if(!is_array($params) && preg_match('~\/([0-9]+)$~', $params)) {
             $response_markup  = SimplyRetsApiHelper::srResidentialResultsGenerator( $request_response, $settings, 'usehometemplate' );
         }
@@ -971,14 +974,6 @@ HTML;
             $realBaths   = $bathsTotal + 0;
             $bathsMarkup = SimplyRetsApiHelper::resultDataColumnMarkup($realBaths, "Bath");
         }
-        $jumbotron_markup = '';
-        $jumbotron_thumbs_markup = '';
-        if(!empty($photos)) {
-            foreach ($photos as $src) {
-                $jumbotron_markup .= '<li><img src="'.$src.'" title="img" alt="img" /></li>';
-                $jumbotron_thumbs_markup .= '<li style="background-image: url(\''.$src.'\')"></li>';
-            }
-        }
         // listing markup
         $map_address = $listing_address . ' ' . $listing_city . ', ' . $listing_state . ' ' . $listing_postal_code;
         ###################################
@@ -1517,6 +1512,12 @@ HTML;
         $map->setAutoZoom(true);
         $markerCount = 0;
         $resultsMarkup = '';
+        //SET UP FOR AREA / SQ. FOOTAGE PARAMS
+        $area_params = '';
+        if(is_array($extras) && array_key_exists('area', $extras) && is_numeric($extras['area'])) {
+            $area_params = $extras['area'];
+        }
+        $myareacount = 0;
         foreach( $response as $listing ) {
             //echo 'x99';
             //var_dump($listing);
@@ -1654,6 +1655,8 @@ HTML;
                 $photo_count_markup = "<h3>+$photo_count Photo";
                 $photo_count_markup .= ($photo_count > 2) ? 's' : '';
                 $photo_count_markup .= "</h3>";
+            } else {
+                $photo_count_markup = '';
             }
         ###################################
         # END DETAILS MARKUP
@@ -1662,13 +1665,28 @@ HTML;
         ###################################
         # Full listings HTML
         ###################################
-        ob_start();
-            if($extras == 'usehometemplate') {
-                include ('template-home-single-listing-html.php');
+            $myarea = str_replace(',', '', $area);
+            if(!empty($area_params) && is_numeric($area_params)) {
+                if($myarea > $area_params) {
+                    $myareacount++;
+                    ob_start();
+                    if ($extras == 'usehometemplate') {
+                        include('template-home-single-listing-html.php');
+                    } else {
+                        include('template-full-listings-html.php');
+                    }
+                    $resultsMarkup .= ob_get_clean();
+                }
             } else {
-                include('template-full-listings-html.php');
+                // AREA / SQ. FOOTAGE PARAMS IGNORED. Business as usual.
+                ob_start();
+                if ($extras == 'usehometemplate') {
+                    include('template-home-single-listing-html.php');
+                } else {
+                    include('template-full-listings-html.php');
+                }
+                $resultsMarkup .= ob_get_clean();
             }
-        $resultsMarkup .= ob_get_clean();
         ###################################
         # END Full listings HTML
         ###################################

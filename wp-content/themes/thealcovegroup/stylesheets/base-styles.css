@@ -601,11 +601,6 @@ textarea:focus {
 }
 
 /* line 546, ../scss/base-styles.scss */
-.noUi-horizontal .noUi-handle {
-  height: 22px !important;
-}
-
-/* line 551, ../scss/base-styles.scss */
 .v-center {
   position: relative !important;
   top: 49% !important;
@@ -614,7 +609,7 @@ textarea:focus {
   transform: translateY(-50%) !important;
 }
 
-/* line 561, ../scss/base-styles.scss */
+/* line 556, ../scss/base-styles.scss */
 .clearfix:after {
   visibility: hidden;
   display: block;
@@ -624,30 +619,30 @@ textarea:focus {
   height: 0;
 }
 
-/* line 569, ../scss/base-styles.scss */
+/* line 564, ../scss/base-styles.scss */
 .clearfix {
   display: inline-block;
 }
 
 /* start commented backslash hack \*/
-/* line 571, ../scss/base-styles.scss */
+/* line 566, ../scss/base-styles.scss */
 * html .clearfix {
   height: 1%;
 }
 
-/* line 572, ../scss/base-styles.scss */
+/* line 567, ../scss/base-styles.scss */
 .clearfix {
   display: block;
 }
 
 /* close commented backslash hack */
 @media only screen and (min-width: 40.0625em) {
-  /* line 578, ../scss/base-styles.scss */
+  /* line 573, ../scss/base-styles.scss */
   html {
     font-size: 17px;
   }
 
-  /* line 581, ../scss/base-styles.scss */
+  /* line 576, ../scss/base-styles.scss */
   input[type="submit"],
   button,
   a.btn,
@@ -657,7 +652,7 @@ textarea:focus {
     font-size: 1.2rem;
   }
 
-  /* line 589, ../scss/base-styles.scss */
+  /* line 584, ../scss/base-styles.scss */
   .slider-holder {
     top: 35px;
   }

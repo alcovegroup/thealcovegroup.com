@@ -6,10 +6,10 @@ jQuery(function ($) {
 	$(document).foundation();
 
 	// if( /iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
-		//browser detection
+	//browser detection
 	// }
 
-	
+
 	var windowHeight = $(window).height();
 	setTimeout(function(){
 		$('.home #hero, .home .featured-home').css("height", windowHeight);
@@ -28,10 +28,10 @@ jQuery(function ($) {
 	var advanceFormButton = $('#advance-form');
 
 	var remUnit = parseInt($('html').css("font-size"));
-    var responsiveWidth = 37.70588*remUnit;
-	
+	var responsiveWidth = 37.70588*remUnit;
+
 	menuToggle.attr("checked", false);
-	
+
 	setTimeout(function(){
 		darkenOverlay.css("height", docHeight);
 	}, 0);
@@ -39,7 +39,7 @@ jQuery(function ($) {
 	if( /iPad/i.test(navigator.userAgent) ) {
 		pageBody.addClass("ipad-fs-fix");
 	}
-	
+
 
 	scrollIncrement();
 
@@ -47,19 +47,19 @@ jQuery(function ($) {
 		windowScrollPos = window.pageYOffset;
 		var $header = $('#header');
 		var $logoImg = $('img.logo');
-	    if (window.pageYOffset > 40) {
-	    	console.log("translated");
-	    	if (!$header.hasClass("minimized")) {
-	    		$header.addClass("minimized");
-	    	}
-	    } else {
-	    	if ($header.hasClass("minimized")) {
-	    		$header.removeClass("minimized");
-	    	}
-	    }
+		if (window.pageYOffset > 40) {
+			console.log("translated");
+			if (!$header.hasClass("minimized")) {
+				$header.addClass("minimized");
+			}
+		} else {
+			if ($header.hasClass("minimized")) {
+				$header.removeClass("minimized");
+			}
+		}
 	}
 	window.onscroll = scrollIncrement;
-	
+
 	menuButtons.add(featuredHomesAnchor).on("mousedown", function(event){
 		event.preventDefault();
 	});
@@ -113,40 +113,40 @@ jQuery(function ($) {
 	}
 
 	$('.commanator').each(function() {
-        var x = $(this).val();
-        $(this).val(addCommas(x));
-        $(this).on('keyup', function () {
-            var x = $(this).val();
-            $(this).val(addCommas(x));
-        });
-    });
+		var x = $(this).val();
+		$(this).val(addCommas(x));
+		$(this).on('keyup', function () {
+			var x = $(this).val();
+			$(this).val(addCommas(x));
+		});
+	});
 
-    $('.js_money').each(function() {
-        var x = $(this).val();
-        $(this).val(addMoneySign(x));
-        $(this).on('keyup', function () {
-            var x = $(this).val();
-            $(this).val(addMoneySign(x));
-        });
-    });
+	$('.js_money').each(function() {
+		var x = $(this).val();
+		$(this).val(addMoneySign(x));
+		$(this).on('keyup', function () {
+			var x = $(this).val();
+			$(this).val(addMoneySign(x));
+		});
+	});
 
 });
 
 function addCommas(x)
 {
-    //remove commas
+	//remove commas
 	console.log('pre: ' + x);
 	retVal = x ? x.replace(/\$/g, '') : '';
-    retVal = retVal.replace(/,/g, '');
+	retVal = retVal.replace(/,/g, '');
 	console.log('final: ' + x);
-    //apply formatting
-    theReturn = retVal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	//apply formatting
+	theReturn = retVal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 	console.log('coma: ' + theReturn);
 	if(retVal > 0) {
 		return theReturn;
 	} else {
 		return "";
-		}
+	}
 }
 
 function addMoneySign(x)
