@@ -868,8 +868,8 @@ ul.social-icons span.icon-icon-phone, ul.social-icons span.icon-icon-linkedin, u
   text-align: center;
   display: inline-block;
 }
-/* line 740, ../scss/modules.scss */
-#pagination-row input[name="pageNumber"] {
+/* line 739, ../scss/modules.scss */
+#pagination-row .pagination-count input[name="pageNumber"] {
   width: 2.8125rem;
   margin-right: 0.3125rem;
 }
