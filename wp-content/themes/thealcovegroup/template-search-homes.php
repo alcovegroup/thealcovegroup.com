@@ -15,6 +15,9 @@ $_SESSION['backtosearch'] = $backtosearch;
 $GLOBALS['perpage'] = 50;
 $perpage = $GLOBALS['perpage'];
 ?>
+<style>
+    .debug {background-color: #000; color: #fff; font-family: Arial;}
+</style>
     <!-- Expanding content frame -->
     <div id="content-frame" style="padding-top: 0!important">
 
@@ -37,8 +40,11 @@ $perpage = $GLOBALS['perpage'];
                 $_GET['minprice'] = str_replace(',', '', $_GET['minprice']);
                 $_GET['maxprice'] = str_replace('$', '', $_GET['maxprice']);
                 $_GET['maxprice'] = str_replace(',', '', $_GET['maxprice']);
-                $numeric_area = str_replace('%2C', '', $_GET['area']);
-                $numeric_area = str_replace(',', '', $_GET['area']);
+                $numeric_area = str_replace('%2C', '', $_GET['minarea']);
+                $numeric_area = str_replace(',', '', $_GET['minarea']);
+                $filtered_city = preg_replace("/[^A-Za-z0-9 ]/", '', $_GET['cities']);
+                $filtered_q = preg_replace("/[^A-Za-z0-9 ]/", '', $_GET['q']);
+                $thepagenumber = (is_numeric($_GET['pageNumber'])) ? (htmlspecialchars($_GET['pageNumber'])) : '';
                 $shortcode_buildout = array(
                     ##############################
                     # PRICE
@@ -58,11 +64,11 @@ $perpage = $GLOBALS['perpage'];
                     ##############################
                     # SQ FT
                     ##############################
-                    'area' => (is_numeric($numeric_area)) ? htmlspecialchars($numeric_area) : '',
+                    'minarea' => (is_numeric($numeric_area)) ? htmlspecialchars($numeric_area) : '',
                     ##############################
                     # CITY
                     ##############################
-                    'cities' => (ctype_alnum($_GET['cities'])) ? htmlspecialchars($_GET['cities']) : '',
+                    'cities' => ( !empty($filtered_city)) ? $filtered_city : '',
                     ##############################
                     # STATE (FORCED)
                     ##############################
@@ -72,20 +78,24 @@ $perpage = $GLOBALS['perpage'];
                     ##############################
                     'postalcodes' => (is_numeric($_GET['zip'])) ? htmlspecialchars($_GET['zip']) : '',
                     ##############################
+                    # Street Address
+                    ##############################
+                    'q' => ( !empty($filtered_q)) ? str_replace(' ', '+', $filtered_q) : '',
+                    ##############################
                     # TYPE
                     ##############################
                     'type' => 'RES',
                     ##############################
                     # OFFSET
                     ##############################
-                    'offset' => (is_numeric($_GET['pageNumber'])) ? (htmlspecialchars($_GET['pageNumber']) * $perpage) : ''
+                    'offset' => (!empty($thepagenumber)) ? (($thepagenumber-1)*$perpage) : ''
                 );
                 ?>
               <form method="get" action="<?=$actual_link;?>">
                 <div class="row">
                   <div id="form-page-1" class="row">
                     <div class="small-12 columns">
-                      <input type="text" placeholder="Street Address" />
+                      <input type="text" name="q" placeholder="Street Address" <?php if(!empty($shortcode_buildout['q'])) { ?>value="<?=str_replace('+', ' ', $shortcode_buildout['q']);?>"<?php } ?> />
                     </div>
                   </div>
                   <div class="row">
@@ -196,7 +206,7 @@ $perpage = $GLOBALS['perpage'];
 
                   <div class="row">
                     <div class="small-12 medium-4 columns">
-                      <input type="text" placeholder="Min. Sq. Ft." name="area" value="<?=$shortcode_buildout['area'];?>" class="commanator" />
+                      <input type="text" placeholder="Min. Sq. Ft." name="minarea" value="<?=$shortcode_buildout['minarea'];?>" class="commanator" />
                     </div>
                   </div>
 
@@ -239,6 +249,7 @@ $perpage = $GLOBALS['perpage'];
               $the_shortcode .= ' limit="' . $perpage .'"';
               $the_shortcode .= ']';
               if(isset($_GET['zip'])) {
+                  //echo '<h1 class="debug">'.$the_shortcode.'</h1>';
                   echo do_shortcode($the_shortcode);
                   }
           endwhile; endif; wp_reset_query(); ?>

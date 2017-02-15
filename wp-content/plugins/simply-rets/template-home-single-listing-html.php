@@ -2,8 +2,7 @@
     <div class="featured-home-image">
         <ul class="slickslide">
             <?php
-            $images = get_field('photo_gallery');
-            if( $images ): ?>
+            if( is_array($listingPhotos) && count(listingPhotos) > 0){ ?>
 
                 <?php
                 $i=1;
@@ -18,7 +17,7 @@
 
                 <?php endforeach; ?>
 
-            <?php endif; ?>
+            <?php } ?>
         </ul>
     </div>
     <div class="featured-overlay"></div>

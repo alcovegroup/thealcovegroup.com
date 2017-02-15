@@ -13,12 +13,14 @@
 class SimplyRetsApiHelper {
 
     public static function retrieveRetsListings( $params, $settings = NULL ) {
-        if(is_array($settings) && array_key_exists('area', $settings) && is_numeric($settings['area'])) {
-            $area_params = array('area' => $settings['area']);
-        }
         $request_url      = SimplyRetsApiHelper::srRequestUrlBuilder( $params );
+        $response_headers = get_headers($request_url, 1);
+        $maximum_count = (array_key_exists('X-Total-Count', $response_headers) && !empty($response_headers['X-Total-Count'])) ? $response_headers['X-Total-Count'] : '';
         $request_response = SimplyRetsApiHelper::srApiRequest( $request_url );
-        $response_markup  = SimplyRetsApiHelper::srResidentialResultsGenerator( $request_response, $settings, $area_params );
+        if(!empty($maximum_count)) {
+            $request_response['pagination']['maximum_count'] = $maximum_count;
+        }
+        $response_markup  = SimplyRetsApiHelper::srResidentialResultsGenerator( $request_response, $settings);
         if(!is_array($params) && preg_match('~\/([0-9]+)$~', $params)) {
             $response_markup  = SimplyRetsApiHelper::srResidentialResultsGenerator( $request_response, $settings, 'usehometemplate' );
         }
@@ -1438,11 +1440,13 @@ HTML;
 
 
     public static function pagination($count, $href, $perpage, $current_page) {
+        $current_url =  "http://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
+        $current_url = preg_replace('~&pageNumber=([0-9]+)~', '', $current_url);
         $output = '';
         $pagination_type = (preg_match('~(\?(.*)=)~', $href)) ? '&' : '?';
         if(!isset($_REQUEST["pageNumber"])) $_REQUEST["pageNumber"] = 1;
         if(!is_numeric($current_page) || empty($current_page)) {$current_page = '1';}
-        if($perpage != 0)
+        if($perpage != 0 && $count > $perpage)
             $pages  = ceil($count/$perpage);
 
         //if pages exists after loop's lower limit
@@ -1454,8 +1458,15 @@ HTML;
                 $output .= '<a href="'.$href.$pagination_type.'pageNumber='.$pagedown.'""><div id="pagination-left" class="pagination-arrow"><span class="icon-icon-arrow-down"></span></div></a>';
             }
           $output .= '<div class="pagination-count">
-            <input type="text" value="'.$_REQUEST["pageNumber"].'" disabled />
-            <span>of </span><span id="total-pages">'.$pages.'</span>
+            <form method="get" action="'.$current_url.'">';
+            if(isset($_GET['pageNumber'])) {
+                unset($_GET['pageNumber']);
+            }
+            foreach ($_GET as $key => $value) {
+                $output .="<input type='hidden' name='$key' value='$value'/>";
+            }
+            $output .= '<input type="text" name="pageNumber" value="'.$_REQUEST["pageNumber"].'" /><span>of </span><span id="total-pages">'.$pages.'</span>
+            </form>
           </div>';
             if($_REQUEST['pageNumber'] != $pages) {
                 $pageup = $current_page + 1;
@@ -1471,6 +1482,7 @@ HTML;
         $br                = "<br>";
         $cont              = "";
         $pagination        = $response['pagination'];
+        $maximum_count     = $response['pagination']['maximum_count'];
         $response          = $response['response'];
         $map_position      = get_option('sr_search_map_position', 'list_only');
         $show_listing_meta = SrUtils::srShowListingMeta();
@@ -1512,12 +1524,7 @@ HTML;
         $map->setAutoZoom(true);
         $markerCount = 0;
         $resultsMarkup = '';
-        //SET UP FOR AREA / SQ. FOOTAGE PARAMS
-        $area_params = '';
-        if(is_array($extras) && array_key_exists('area', $extras) && is_numeric($extras['area'])) {
-            $area_params = $extras['area'];
-        }
-        $myareacount = 0;
+
         foreach( $response as $listing ) {
             //echo 'x99';
             //var_dump($listing);
@@ -1665,20 +1672,6 @@ HTML;
         ###################################
         # Full listings HTML
         ###################################
-            $myarea = str_replace(',', '', $area);
-            if(!empty($area_params) && is_numeric($area_params)) {
-                if($myarea > $area_params) {
-                    $myareacount++;
-                    ob_start();
-                    if ($extras == 'usehometemplate') {
-                        include('template-home-single-listing-html.php');
-                    } else {
-                        include('template-full-listings-html.php');
-                    }
-                    $resultsMarkup .= ob_get_clean();
-                }
-            } else {
-                // AREA / SQ. FOOTAGE PARAMS IGNORED. Business as usual.
                 ob_start();
                 if ($extras == 'usehometemplate') {
                     include('template-home-single-listing-html.php');
@@ -1686,11 +1679,9 @@ HTML;
                     include('template-full-listings-html.php');
                 }
                 $resultsMarkup .= ob_get_clean();
-            }
         ###################################
         # END Full listings HTML
         ###################################
-
         }
 
         $markerCount > 0 ? $mapMarkup = $mapHelper->render($map) : $mapMarkup = '';
