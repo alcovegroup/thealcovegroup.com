@@ -631,7 +631,7 @@ HTML;
         $listing_lotSize = $listing->property->lotSize;
         $lotsize_markup  = SimplyRetsApiHelper::srDetailsTable($listing_lotSize, "");
         // lot size area
-        $listing_lotSizeArea = $listing->property->lotSizeArea;
+        $listing_lotSizeArea = number_format($listing->property->lotSizeArea);
         $lotsizearea_markup  = SimplyRetsApiHelper::srDetailsTable($listing_lotSizeArea, "");
         // lot size area units
         $listing_lotSizeAreaUnits = $listing->property->lotSizeAreaUnits;
@@ -1255,7 +1255,7 @@ HTML;
             $listing_lotSize = $listing->property->lotSize;
             $lotsize_markup  = SimplyRetsApiHelper::srDetailsTable($listing_lotSize, "Lot Size");
             // lot size area
-            $listing_lotSizeArea = $listing->property->lotSizeArea;
+            $listing_lotSizeArea = number_format($listing->property->lotSizeArea);
             $lotsizearea_markup  = SimplyRetsApiHelper::srDetailsTable($listing_lotSizeArea, "Lot Size Area");
             // lot size area units
             $listing_lotSizeAreaUnits = $listing->property->lotSizeAreaUnits;
@@ -1636,7 +1636,7 @@ HTML;
             $cityMarkup  = SimplyRetsApiHelper::resultDataColumnMarkup($city, 'Located in', true);
             $mlsidMarkup = SimplyRetsApiHelper::resultDataColumnMarkup($mlsid, 'MLS #:', true);
             $listing_lotSize = $listing->property->lotSize;
-            $listing_lotSizeArea = $listing->property->lotSizeArea;
+            $listing_lotSizeArea = number_format($listing->property->lotSizeArea);
 
             if( $area == 0 ) {
                 $areaMarkup = SimplyRetsApiHelper::resultDataColumnMarkup($bathsHalf, 'Half Baths', false);

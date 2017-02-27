@@ -191,6 +191,7 @@ if(!empty($photos)) {
                 var myOptions = {
                     zoom: 10,
                     center: results[0].geometry.location,
+                    scrollwheel: false,
                     mapTypeId: google.maps.MapTypeId.ROADMAP
                 }
                 map = new google.maps.Map(document.getElementById("home-map"), myOptions);

@@ -6,10 +6,9 @@
  * @subpackage thealcovegroup
  */
 ?>
-
-
-<?php get_header();
+<?php
 session_start();
+get_header();
 $backtosearch = htmlspecialchars($_SERVER[REQUEST_URI]);
 $_SESSION['backtosearch'] = $backtosearch;
 $GLOBALS['perpage'] = 50;
@@ -104,58 +103,58 @@ $perpage = $GLOBALS['perpage'];
                     </div>
                     <div class="small-12 medium-4 columns">
                       <select name="state" id="state">
-                        <option selected disabled>State</option>
-                        <option value="AL" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'AL') {echo ' selected';} ?>>Alabama</option>
-                        <option value="AK" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'AK') {echo ' selected';} ?>>Alaska</option>
-                        <option value="AZ" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'AZ') {echo ' selected';} ?>>Arizona</option>
-                        <option value="AR" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'AR') {echo ' selected';} ?>>Arkansas</option>
-                        <option value="CA" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'CA') {echo ' selected';} ?>>California</option>
-                        <option value="CO" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'CO') {echo ' selected';} ?>>Colorado</option>
-                        <option value="CT" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'CT') {echo ' selected';} ?>>Connecticut</option>
-                        <option value="DE" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'DE') {echo ' selected';} ?>>Delaware</option>
-                        <option value="DC" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'DC') {echo ' selected';} ?>>District Of Columbia</option>
-                        <option value="FL" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'FL') {echo ' selected';} ?>>Florida</option>
-                        <option value="GA" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'GA') {echo ' selected';} ?>>Georgia</option>
-                        <option value="HI" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'HI') {echo ' selected';} ?>>Hawaii</option>
-                        <option value="ID" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'ID') {echo ' selected';} ?>>Idaho</option>
-                        <option value="IL" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'IL') {echo ' selected';} ?>>Illinois</option>
-                        <option value="IN" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'IN') {echo ' selected';} ?>>Indiana</option>
-                        <option value="IA" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'IA') {echo ' selected';} ?>>Iowa</option>
-                        <option value="KS" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'KS') {echo ' selected';} ?>>Kansas</option>
-                        <option value="KY" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'KY') {echo ' selected';} ?>>Kentucky</option>
-                        <option value="LA" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'LA') {echo ' selected';} ?>>Louisiana</option>
-                        <option value="ME" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'ME') {echo ' selected';} ?>>Maine</option>
-                        <option value="MD" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'MD') {echo ' selected';} ?>>Maryland</option>
-                        <option value="MA" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'MA') {echo ' selected';} ?>>Massachusetts</option>
-                        <option value="MI" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'MI') {echo ' selected';} ?>>Michigan</option>
-                        <option value="MN" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'MN') {echo ' selected';} ?>>Minnesota</option>
-                        <option value="MS" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'MS') {echo ' selected';} ?>>Mississippi</option>
-                        <option value="MO" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'MO') {echo ' selected';} ?>>Missouri</option>
-                        <option value="MT" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'MT') {echo ' selected';} ?>>Montana</option>
-                        <option value="NE" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'NE') {echo ' selected';} ?>>Nebraska</option>
-                        <option value="NV" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'NV') {echo ' selected';} ?>>Nevada</option>
-                        <option value="NH" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'NH') {echo ' selected';} ?>>New Hampshire</option>
-                        <option value="NJ" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'NJ') {echo ' selected';} ?>>New Jersey</option>
-                        <option value="NM" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'NM') {echo ' selected';} ?>>New Mexico</option>
-                        <option value="NY" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'NY') {echo ' selected';} ?>>New York</option>
-                        <option value="NC" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'NC') {echo ' selected';} ?>>North Carolina</option>
-                        <option value="ND" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'ND') {echo ' selected';} ?>>North Dakota</option>
-                        <option value="OH" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'OH') {echo ' selected';} ?>>Ohio</option>
-                        <option value="OK" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'OK') {echo ' selected';} ?>>Oklahoma</option>
-                        <option value="OR" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'OR') {echo ' selected';} ?>>Oregon</option>
-                        <option value="PA" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'PA') {echo ' selected';} ?>>Pennsylvania</option>
-                        <option value="RI" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'RI') {echo ' selected';} ?>>Rhode Island</option>
-                        <option value="SC" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'SC') {echo ' selected';} ?>>South Carolina</option>
-                        <option value="SD" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'SD') {echo ' selected';} ?>>South Dakota</option>
-                        <option value="TN" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'TN') {echo ' selected';} ?>>Tennessee</option>
-                        <option value="TX" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'TX') {echo ' selected';} ?>>Texas</option>
-                        <option value="UT" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'UT') {echo ' selected';} ?>>Utah</option>
-                        <option value="VT" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'VT') {echo ' selected';} ?>>Vermont</option>
-                        <option value="VA" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'VA') {echo ' selected';} ?>>Virginia</option>
-                        <option value="WA" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'WA') {echo ' selected';} ?>>Washington</option>
-                        <option value="WV" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'WV') {echo ' selected';} ?>>West Virginia</option>
-                        <option value="WI" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'WI') {echo ' selected';} ?>>Wisconsin</option>
-                        <option value="WY" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'WY') {echo ' selected';} ?>>Wyoming</option>
+                        <!--<option selected disabled>State</option>-->
+                          <option disabled value="AL" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'AL') {echo ' selected';} ?>>Alabama</option>
+                          <option disabled value="AK" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'AK') {echo ' selected';} ?>>Alaska</option>
+                          <option selected value="AZ" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'AZ') {echo ' selected';} ?>>Arizona</option>
+                          <option disabled value="AR" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'AR') {echo ' selected';} ?>>Arkansas</option>
+                          <option disabled value="CA" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'CA') {echo ' selected';} ?>>California</option>
+                          <option disabled value="CO" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'CO') {echo ' selected';} ?>>Colorado</option>
+                          <option disabled value="CT" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'CT') {echo ' selected';} ?>>Connecticut</option>
+                          <option disabled value="DE" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'DE') {echo ' selected';} ?>>Delaware</option>
+                          <option disabled value="DC" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'DC') {echo ' selected';} ?>>District Of Columbia</option>
+                          <option disabled value="FL" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'FL') {echo ' selected';} ?>>Florida</option>
+                          <option disabled value="GA" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'GA') {echo ' selected';} ?>>Georgia</option>
+                          <option disabled value="HI" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'HI') {echo ' selected';} ?>>Hawaii</option>
+                          <option disabled value="ID" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'ID') {echo ' selected';} ?>>Idaho</option>
+                          <option disabled value="IL" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'IL') {echo ' selected';} ?>>Illinois</option>
+                          <option disabled value="IN" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'IN') {echo ' selected';} ?>>Indiana</option>
+                          <option disabled value="IA" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'IA') {echo ' selected';} ?>>Iowa</option>
+                          <option disabled value="KS" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'KS') {echo ' selected';} ?>>Kansas</option>
+                          <option disabled value="KY" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'KY') {echo ' selected';} ?>>Kentucky</option>
+                          <option disabled value="LA" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'LA') {echo ' selected';} ?>>Louisiana</option>
+                          <option disabled value="ME" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'ME') {echo ' selected';} ?>>Maine</option>
+                          <option disabled value="MD" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'MD') {echo ' selected';} ?>>Maryland</option>
+                          <option disabled value="MA" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'MA') {echo ' selected';} ?>>Massachusetts</option>
+                          <option disabled value="MI" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'MI') {echo ' selected';} ?>>Michigan</option>
+                          <option disabled value="MN" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'MN') {echo ' selected';} ?>>Minnesota</option>
+                          <option disabled value="MS" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'MS') {echo ' selected';} ?>>Mississippi</option>
+                          <option disabled value="MO" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'MO') {echo ' selected';} ?>>Missouri</option>
+                          <option disabled value="MT" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'MT') {echo ' selected';} ?>>Montana</option>
+                          <option disabled value="NE" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'NE') {echo ' selected';} ?>>Nebraska</option>
+                          <option disabled value="NV" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'NV') {echo ' selected';} ?>>Nevada</option>
+                          <option disabled value="NH" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'NH') {echo ' selected';} ?>>New Hampshire</option>
+                          <option disabled value="NJ" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'NJ') {echo ' selected';} ?>>New Jersey</option>
+                          <option disabled value="NM" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'NM') {echo ' selected';} ?>>New Mexico</option>
+                          <option disabled value="NY" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'NY') {echo ' selected';} ?>>New York</option>
+                          <option disabled value="NC" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'NC') {echo ' selected';} ?>>North Carolina</option>
+                          <option disabled value="ND" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'ND') {echo ' selected';} ?>>North Dakota</option>
+                          <option disabled value="OH" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'OH') {echo ' selected';} ?>>Ohio</option>
+                          <option disabled value="OK" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'OK') {echo ' selected';} ?>>Oklahoma</option>
+                          <option disabled value="OR" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'OR') {echo ' selected';} ?>>Oregon</option>
+                          <option disabled value="PA" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'PA') {echo ' selected';} ?>>Pennsylvania</option>
+                          <option disabled value="RI" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'RI') {echo ' selected';} ?>>Rhode Island</option>
+                          <option disabled value="SC" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'SC') {echo ' selected';} ?>>South Carolina</option>
+                          <option disabled value="SD" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'SD') {echo ' selected';} ?>>South Dakota</option>
+                          <option disabled value="TN" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'TN') {echo ' selected';} ?>>Tennessee</option>
+                          <option disabled value="TX" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'TX') {echo ' selected';} ?>>Texas</option>
+                          <option disabled value="UT" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'UT') {echo ' selected';} ?>>Utah</option>
+                          <option disabled value="VT" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'VT') {echo ' selected';} ?>>Vermont</option>
+                          <option disabled value="VA" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'VA') {echo ' selected';} ?>>Virginia</option>
+                          <option disabled value="WA" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'WA') {echo ' selected';} ?>>Washington</option>
+                          <option disabled value="WV" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'WV') {echo ' selected';} ?>>West Virginia</option>
+                          <option disabled value="WI" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'WI') {echo ' selected';} ?>>Wisconsin</option>
+                          <option disabled value="WY" <?php if(!empty($shortcode_buildout['state']) && $shortcode_buildout['state'] == 'WY') {echo ' selected';} ?>>Wyoming</option>
                       </select>
                     </div>
                     <div class="small-12 medium-4 columns">

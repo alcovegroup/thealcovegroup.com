@@ -7,17 +7,11 @@
     <?php wp_head();
     $post_id = get_the_id();
     if(is_singular('featured_home')) {include_once ('template-fb-metadata-featured.php');}
-    if($fb_listed_metadata == 1) {include_once ('template-fb-metadata-listed.php');}
-
-    if(is_front_page()) {include_once ('template-fb-metadata-default.php');}
-    if(is_page_template( 'about.php' )) {include_once ('template-fb-metadata-default.php');}
-    if(is_page_template( 'contact.php' )) {include_once ('template-fb-metadata-default.php');}
-    if(is_page_template( 'template-search-homes.php' )) {include_once ('template-fb-metadata-default.php');}
-    if(is_page_template( 'buy-a-home.php' )) {include_once ('template-fb-metadata-default.php');}
-    if(is_page_template( 'build-a-home.php' )) {include_once ('template-fb-metadata-default.php');}
-    if(is_page_template( 'home-value.php' )) {include_once ('template-fb-metadata-default.php');}
-    if(is_page_template( 'sell-your-home.php' )) {include_once ('template-fb-metadata-default.php');}
-
+    else if($fb_listed_metadata == 1) {
+      include_once ('template-fb-metadata-listed.php');
+    } else {
+      include_once ('template-fb-metadata-default.php');
+    }
     ?>
   </head>
 

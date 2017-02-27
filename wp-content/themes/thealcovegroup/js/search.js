@@ -4,7 +4,6 @@ $(document).ready(function() {
     $("#maxbeds").val(j_beds_max);
     $("#minbaths").val(j_baths_min);
     $("#maxbaths").val(j_baths_max);
-    console.log('x00: ' + j_price_max);
 
     $("#minprice,#maxprice").keydown(function (e) {
         // Allow: backspace, delete, tab, escape, enter and .

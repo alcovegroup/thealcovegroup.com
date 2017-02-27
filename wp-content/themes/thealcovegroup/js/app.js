@@ -48,7 +48,6 @@ jQuery(function ($) {
 		var $header = $('#header');
 		var $logoImg = $('img.logo');
 		if (window.pageYOffset > 40) {
-			console.log("translated");
 			if (!$header.hasClass("minimized")) {
 				$header.addClass("minimized");
 			}
@@ -98,13 +97,11 @@ jQuery(function ($) {
 
 	function menuButtonClick() {
 		if (menuExpanded == false) {
-			// console.log("menu has been expanded");
 			menuPanel.offset({ top: windowScrollPos});
 			pageBody.css("overflow-y", "hidden");
 			menuExpanded = true;
 			darkenOverlay.toggleClass( "exposed" );
 		} else {
-			// console.log("menu has been collapsed");
 			menuPanel.offset({ top: 0});
 			pageBody.css("overflow-y", "auto");
 			menuExpanded = false;
@@ -135,13 +132,10 @@ jQuery(function ($) {
 function addCommas(x)
 {
 	//remove commas
-	console.log('pre: ' + x);
 	retVal = x ? x.replace(/\$/g, '') : '';
 	retVal = retVal.replace(/,/g, '');
-	console.log('final: ' + x);
 	//apply formatting
 	theReturn = retVal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-	console.log('coma: ' + theReturn);
 	if(retVal > 0) {
 		return theReturn;
 	} else {
@@ -152,13 +146,10 @@ function addCommas(x)
 function addMoneySign(x)
 {
 	//remove commas
-	console.log('pre: ' + x);
 	retVal = x ? x.replace(/\$/g, '') : '';
 	retVal = retVal.replace(/,/g, '');
-	console.log('final: ' + x);
 	//apply formatting
 	theReturn = retVal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-	console.log('coma: ' + theReturn);
 	if(retVal > 0) {
 		return "$" + theReturn;
 	} else {

@@ -35,7 +35,6 @@ $(document).ready(function() {
 		$('.slick-dots-track').append("<span id='scroll-left' class='slick-dots-track-arrow'><span class='icon-icon-arrow-down arrow-prev'></span></span>");
 		$('.slick-dots-track').append("<span id='scroll-right' class='slick-dots-track-arrow'><span class='icon-icon-arrow-down arrow-next'></span></span>");
 		$('#scroll-left').on("click", function(){
-		  console.log("left arrow clicked");
 		  if (posX < 0) {
 			$('.slick-dots').css("-webkit-transform", "translateX(" + (posX + thumbWidth) + "px)");
 			$('.slick-dots').css("-moz-transform", "translateX(" + (posX + thumbWidth) + "px)");
@@ -45,7 +44,6 @@ $(document).ready(function() {
 		  }
 		});
 		$('#scroll-right').on("click", function(){
-		  console.log("right arrow clicked");
 		  if (posX > (numThumbsOffScreen * thumbWidth * -1)) {
 			$('.slick-dots').css("-webkit-transform", "translateX(" + (posX + thumbWidth*-1.2) + "px)");
 			$('.slick-dots').css("-moz-transform", "translateX(" + (posX + thumbWidth*-1.2) + "px)");
@@ -98,8 +96,6 @@ $(document).ready(function() {
 function formSubmission(event) {
 	$('#inquire-form').on('invalid.fndtn.abide', function () {
 	  var invalid_fields = $(this).find('[data-invalid]');
-	  // console.log("invalid fields: ");
-	  // console.log(invalid_fields);
 	}).on('valid.fndtn.abide', function () {
 	  console.log('valid!');
 	  __ss_noform.push(['submit', null, '7c39939e-318b-4fb1-a3cf-93d47759eb2a']);

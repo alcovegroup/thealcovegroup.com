@@ -3,7 +3,6 @@
 /******************************************************************
  * setup the admin
  ******************************************************************/
-require_once('_admin/bootstrap.php');
 
 function alcove_theme_styles() {
 	wp_enqueue_style( 'fullpage_js', get_template_directory_uri() . '/bower_components/fullpage.js/jquery.fullPage.css' );

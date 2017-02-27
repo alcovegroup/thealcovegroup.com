@@ -24,7 +24,7 @@
             </div>
             <div class="details-tile clearfix">
                 <h5>Sq. Ft. House</h5>
-                <h4><?=$areaMarkup;?></h4>
+                <h4><?=$area;?></h4>
             </div>
             <div class="details-tile clearfix">
                 <h5>Sq. Ft. Lot</h5>
