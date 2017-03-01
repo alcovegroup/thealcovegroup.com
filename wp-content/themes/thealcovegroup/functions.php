@@ -98,19 +98,9 @@ function editglobalcustomfields() {
 	<p><strong>Alcove Listing Agent</strong><br />
 	<small>This is the contact info which shows up on a listing details page</small><br />
 	<select name="global_listing_agent">
-
-
-	<?php
-
-	$args = array(
-	  'post_type'   => 'bios'
-	);
-	 
-	$all_bios = get_posts( $args );
-
-	?>
-
-
+	<!-- Options should include the names of each custom post type: Bio, as well as a "Generic" option -->
+	<option>Coming soon</option>
+	<!-- Value should pass Name, Featured Image, and Phone contact to the single listing page where contact info is injected -->
 	</select>
 	</p>
 
