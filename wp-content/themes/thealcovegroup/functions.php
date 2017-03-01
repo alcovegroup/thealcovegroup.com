@@ -98,16 +98,7 @@ function editglobalcustomfields() {
 	<p><strong>Alcove Listing Agent</strong><br />
 	<small>This is the contact info which shows up on a listing details page</small><br />
 	<select name="global_listing_agent">
-	<?php 
 
-		$args = array(
-		    'post_type'=> 'bios'
-		    );              
-
-		$the_query = new WP_Query( $args );
-		if($the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); 
-
-	?>
 
 
 	</select>
