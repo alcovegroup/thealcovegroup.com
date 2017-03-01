@@ -100,19 +100,15 @@ function editglobalcustomfields() {
 	<select name="global_listing_agent">
 
 
-<?php
+	<?php
 
-$args = array(
-  'post_type'   => 'bios'
-);
- 
-$all_bios = get_posts( $args );
+	$args = array(
+	  'post_type'   => 'bios'
+	);
+	 
+	$all_bios = get_posts( $args );
 
-
-foreach ( $all_bios ) as $post_type ) {
-   echo '<option>' . $post_type . '</option>';
-}
-?>
+	?>
 
 
 	</select>
