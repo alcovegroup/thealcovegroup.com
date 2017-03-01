@@ -104,7 +104,7 @@ function editglobalcustomfields() {
 	   'name' => 'bios'
 	);
 
-	$output = 'objects'; // names or objects
+	$output = 'names'; // names or objects
 
 	$post_types = get_post_types( $args, $output );
 
