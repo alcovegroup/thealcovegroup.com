@@ -95,10 +95,14 @@ function editglobalcustomfields() {
 	<p><strong>Footer Subscribe Message</strong><br />
 	<input type="text" name="global_footer_message" value="<?php echo get_option('global_footer_message'); ?>" /></p>
 
+	<p><strong>Alcove Listing Agent</strong><br />
+	<small>This is the contact info which shows up on a listing details page</small><br />
+	<input type="text" name="global_listing_agent" value="<?php echo get_option('global_listing_agent'); ?>" /></p>
+
 	<p><input type="submit" name="Submit" value="Update Options" /></p>
 
 	<input type="hidden" name="action" value="update" />
-	<input type="hidden" name="page_options" value="global_company_email,global_company_phone,global_company_facebook,global_company_linkedin,global_footer_message" />
+	<input type="hidden" name="page_options" value="global_company_email,global_company_phone,global_company_facebook,global_company_linkedin,global_footer_message,global_listing_agent" />
 
 	</form>
 	</div>
