@@ -103,8 +103,7 @@ function editglobalcustomfields() {
 	<?php $loop = new WP_Query( array( 'post_type' => 'bios') ); ?>
     <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
-    	<?php $selected = ( the_title(); == get_option('global_listing_agent'); ) ? ' selected="selected"' : ''; ?>
-		<option value="<?php the_title(); ?>" <?php echo $selected ?> ><?php the_title(); ?></option>
+		<option value="<?php the_title(); ?>"><?php the_title(); ?></option>
 
 	<?php endwhile; wp_reset_query(); ?>
 	<!-- Value should pass Name, Featured Image, and Phone contact to the single listing page where contact info is injected -->
