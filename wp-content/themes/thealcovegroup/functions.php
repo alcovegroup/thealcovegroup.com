@@ -99,13 +99,8 @@ function editglobalcustomfields() {
 	<small>This is the contact info which shows up on a listing details page</small><br />
 	<select name="global_listing_agent">
 	<?php
-		$args = array(
-		   'name' => 'bios'
-		);
-		$output = 'names'; // names or objects
-		$post_types = get_post_types( $args, $output );
-		foreach ( $post_types  as $post_type ) {
-		  echo '<option>' . $post_type->name . '</option>';
+		foreach ( get_post_types( '', 'names' ) as $post_type ) {
+		   echo '<option>' . $post_type . '</option>';
 		}
 	?>
 	</select>
