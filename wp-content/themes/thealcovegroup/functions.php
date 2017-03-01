@@ -99,7 +99,7 @@ function editglobalcustomfields() {
 	<small>This is the contact info which shows up on a listing details page</small><br />
 	<select name="global_listing_agent" style="width: 400px;">
 	<!-- Options should include the names of each custom post type: Bio, as well as a "Generic" option -->
-	<?php $loop = new WP_Query( array( 'post_type' => 'bio') ); ?>
+	<?php $loop = new WP_Query( array( 'post_type' => 'bios') ); ?>
     <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
 		<option><?php the_title(); ?></option>
