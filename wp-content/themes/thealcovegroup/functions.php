@@ -105,7 +105,7 @@ function editglobalcustomfields() {
 		$output = 'objects'; // names or objects
 		$post_types = get_post_types( $args, $output );
 		foreach ( $post_types  as $post_type ) {
-		  echo '<option value='"<?php echo get_option('global_listing_agent'); ?>"'>' . $post_type . '</option>';
+		  echo '<option>' . $post_type . '</option>';
 		}
 	?>
 	</select>
