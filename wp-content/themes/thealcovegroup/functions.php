@@ -108,6 +108,9 @@ function editglobalcustomfields() {
 	<?php endwhile; wp_reset_query(); ?>
 	<!-- Value should pass Name, Featured Image, and Phone contact to the single listing page where contact info is injected -->
 	</select>
+	<script>
+		$('select[name="global_listing_agent"]').style.backgroundColor = "red";
+	</script>
 	</p>
 
 	<p><input type="submit" name="Submit" value="Update Options" /></p>
