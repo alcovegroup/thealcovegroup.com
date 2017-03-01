@@ -98,9 +98,16 @@ function editglobalcustomfields() {
 	<p><strong>Alcove Listing Agent</strong><br />
 	<small>This is the contact info which shows up on a listing details page</small><br />
 	<select name="global_listing_agent">
-		<option value="<?php echo get_option('global_listing_agent'); ?>">Generic</option>
-	  <option value="<?php echo get_option('global_listing_agent'); ?>">Jeff Gottschalk</option>
-	  <option value="<?php echo get_option('global_listing_agent'); ?>">Nick Ptak</option>
+	<?php
+		$args = array(
+		   'name' => 'bios'
+		);
+		$output = 'objects'; // names or objects
+		$post_types = get_post_types( $args, $output );
+		foreach ( $post_types  as $post_type ) {
+		  echo '<option value='"<?php echo get_option('global_listing_agent'); ?>"'>' . $post_type . '</option>';
+		}
+	?>
 	</select>
 	</p>
 
