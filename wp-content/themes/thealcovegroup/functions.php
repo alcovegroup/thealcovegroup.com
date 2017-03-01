@@ -101,19 +101,17 @@ function editglobalcustomfields() {
 	<?php
 
 	$args = array(
-	   'name' => 'bios'
-	);
+    'post_type'=> 'bios'
+    );              
 
-	$output = 'names'; // names or objects
-
-	$post_types = get_post_types( $args, $output );
-
-	foreach ( $post_types  as $post_type ) {
-
-	   echo '<option>' . $post_type->name . '</option>';
-	}
+	$the_query = new WP_Query( $args );
+	if($the_query->have_posts() ) : while ( $the_query->have_posts() ); 
+	echo '<option>' . $the_query . '</option>';
+	endwhile; endif; wp_reset_query();
 
 	?>
+
+
 	</select>
 	</p>
 
