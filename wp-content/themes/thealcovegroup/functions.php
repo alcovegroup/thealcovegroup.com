@@ -109,7 +109,7 @@ function editglobalcustomfields() {
 	<!-- Value should pass Name, Featured Image, and Phone contact to the single listing page where contact info is injected -->
 	</select>
 	<script>
-		$('select[name="global_listing_agent"]').style.backgroundColor = "red";
+		alert($('select[name="global_listing_agent"]'));
 	</script>
 	</p>
 
