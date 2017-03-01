@@ -105,7 +105,7 @@ function editglobalcustomfields() {
 		$output = 'names'; // names or objects
 		$post_types = get_post_types( $args, $output );
 		foreach ( $post_types  as $post_type ) {
-		  echo '<option>' . $post_type . '</option>';
+		  echo '<option>' . $post_type->name . '</option>';
 		}
 	?>
 	</select>
