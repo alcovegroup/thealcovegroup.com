@@ -100,7 +100,7 @@ function editglobalcustomfields() {
 	<select name="global_listing_agent">
 	<?php
 		$args = array(
-		   'name' => 'bios'
+		   'name' => 'Bios'
 		);
 		$output = 'objects'; // names or objects
 		$post_types = get_post_types( $args, $output );
