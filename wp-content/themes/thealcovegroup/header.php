@@ -35,7 +35,7 @@
         <?php endif; ?>
 
         <?php if ( get_option('global_company_phone') ): ?>
-        <li><a href="<?php echo get_option('global_company_phone'); ?>"><span class="icon-ring"></span><span class="icon-icon-phone"></span></a></li>
+        <li><a href="tel:<?php echo get_option('global_company_phone'); ?>"><span class="icon-ring"></span><span class="icon-icon-phone"></span></a></li>
         <?php endif; ?>
 
         <?php if ( get_option('global_company_facebook') ): ?>
@@ -66,7 +66,7 @@
           <?php endif; ?>
 
           <?php if ( get_option('global_company_phone') ): ?>
-          <li><a href="<?php echo get_option('global_company_phone'); ?>"><span class="icon-ring"></span><span class="icon-icon-phone"></span></a></li>
+          <li><a href="tel:<?php echo get_option('global_company_phone'); ?>"><span class="icon-ring"></span><span class="icon-icon-phone"></span></a></li>
           <?php endif; ?>
 
           <?php if ( get_option('global_company_facebook') ): ?>
