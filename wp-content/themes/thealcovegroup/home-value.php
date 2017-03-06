@@ -27,6 +27,7 @@
           <div class="row form-page-header form-and-blurb">
             <div class="small-12 small-centered medium-11 large-9 columns">
               <h3><?php the_title(); ?></h3>
+              <?php get_template_part( 'partials/call-now-promo' ); ?>
               <?php if (have_posts()) : while (have_posts()) : the_post();?>
               <?php the_content(); ?>
               <?php endwhile; endif; wp_reset_query(); ?>
