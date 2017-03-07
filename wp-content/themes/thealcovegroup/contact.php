@@ -33,7 +33,7 @@
                 <td class="fill-line"></td>
               </tr>
             </table>
-            <h3><a href="tel:<?php echo the_field( 'phone_number' ); ?>" class="link-no-border">123-456-7890</a></h3>
+            <h3><a href="tel:<?php echo the_field( 'phone_number' ); ?>" class="link-no-border"><?php echo the_field( 'phone_number' ); ?></a></h3>
           </div>
           <?php endif; ?>
           <?php if ( post_custom('fax_number') ): ?>
@@ -44,7 +44,7 @@
                 <td class="fill-line"></td>
               </tr>
             </table>
-            <h3><a href="tel:<?php echo the_field( 'fax_number' ); ?>" class="link-no-border">123-456-7890</a></h3>
+            <h3><a href="tel:<?php echo the_field( 'fax_number' ); ?>" class="link-no-border"><?php echo the_field( 'fax_number' ); ?></a></h3>
           </div>
           <?php endif; ?>
           <?php if ( post_custom('company_email') ): ?>
