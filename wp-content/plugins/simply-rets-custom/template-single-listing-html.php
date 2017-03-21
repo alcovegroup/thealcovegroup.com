@@ -128,11 +128,445 @@ if(!empty($photos)) {
                 <h3><?=$school_high;?></h3>
 
         </div>
-        <?=$details_table_markup;?>
+        <!--ADDITIONAL DETAILS-->
+        <?php
+        $details_table_markup = '';
+        if ( $listing_style || $listing_stories || $listing_interiorFeatures || $listing_exteriorFeatures || $listing_yearBuilt || $listing_heating || $listing_rooms ) {
+            $details_table_markup .= '
+                <div class="additional-details">
+                    <table class="line-section-table">
+                        <tr>
+                            <td><h4>Additional Property Details</h4></td>
+                            <td class="fill-line"></td>
+                        </tr>
+                    </table>
+                    <table class="features-table">';
+            ?>
+            <?php if ($listing_style):
+                $details_table_markup .= '
+                      <tr>
+                        <td>Property Style</td>
+                        <td>' . $listing_style . '</td>
+                      </tr>';
+            endif; ?>
+
+            <?php if ($listing_stories):
+                $details_table_markup .= '
+                      <tr>
+                        <td>Stories</td>
+                        <td>' . $listing_stories . '</td>
+                      </tr>';
+            endif; ?>
+
+            <?php if ($listing->property->bathsFull):
+                $details_table_markup .= '
+                      <tr>
+                        <td>Baths Full</td>
+                        <td>' . $listing->property->bathsFull . '</td>
+                      </tr>';
+            endif; ?>
+
+            <?php if ($listing->property->bathsHalf):
+                $details_table_markup .= '
+                      <tr>
+                        <td>Baths Half</td>
+                        <td>' . $listing->property->bathsHalf . '</td>
+                      </tr>';
+            endif; ?>
+
+            <?php if ($listing_interiorFeatures):
+                $details_table_markup .= '
+                      <tr>
+                        <td>Interior Features</td>
+                        <td>' . $listing_interiorFeatures . '</td>
+                      </tr>';
+            endif; ?>
+
+            <?php if ($listing_exteriorFeatures):
+                $details_table_markup .= '
+                      <tr>
+                        <td>Exterior Features</td>
+                        <td>' . $listing_exteriorFeatures . '</td>
+                      </tr>';
+            endif; ?>
+
+            <?php if ($listing_yearBuilt):
+                $details_table_markup .= '
+                      <tr>
+                        <td>Year Built</td>
+                        <td>' . $listing_yearBuilt . '</td>
+                      </tr>';
+            endif; ?>
+
+            <?php if ($listing->property->fireplaces):
+                $details_table_markup .= '
+                      <tr>
+                        <td>Fireplaces</td>
+                        <td>' . $listing->property->fireplaces . '</td>
+                      </tr>';
+            endif; ?>
+
+            <?php if ($listing->property->flooring):
+                $details_table_markup .= '
+                      <tr>
+                        <td>Flooring</td>
+                        <td>' . $listing->property->flooring . '</td>
+                      </tr>';
+            endif; ?>
+
+            <?php if ($listing->property->subdivision):
+                $details_table_markup .= '
+                      <tr>
+                        <td>Subdivision</td>
+                        <td>' . $listing->property->subdivision . '</td>
+                      </tr>';
+            endif; ?>
+
+            <?php if ($listing->property->roof):
+                $details_table_markup .= '
+                      <tr>
+                        <td>Roof</td>
+                        <td>' . $listing->property->roof . '</td>
+                      </tr>';
+            endif; ?>
+
+            <?php if ($listing->property->heating):
+                $details_table_markup .= '
+                      <tr>
+                        <td>Heating</td>
+                        <td>' . $listing->property->heating . '</td>
+                      </tr>';
+            endif; ?>
+
+            <?php if ($listing->property->cooling):
+                $details_table_markup .= '
+                      <tr>
+                        <td>Cooling</td>
+                        <td>' . $listing->property->cooling . '</td>
+                      </tr>';
+            endif; ?>
+
+            <?php if ($listing->property->lotDescription):
+                $details_table_markup .= '
+                      <tr>
+                        <td>Lot Description</td>
+                        <td>' . $listing->property->lotDescription . '</td>
+                      </tr>';
+            endif; ?>
+
+            <?php if ($listing->property->laundryFeatures):
+                $details_table_markup .= '
+                      <tr>
+                        <td>Laundry Features</td>
+                        <td>' . $listing->property->laundryFeatures . '</td>
+                      </tr>';
+            endif; ?>
+
+            <?php if ($listing_rooms):
+                $details_table_markup .= '
+                      <tr>
+                        <td>Additional Rooms</td>
+                        <td>' . $listing_rooms . '</td>
+                      </tr>';
+            endif; ?>
+
+            <?php if ($listing->property->pool):
+                $details_table_markup .= '
+                  <tr>
+                    <td>Pool</td>
+                    <td>' . $listing->property->pool . '</td>
+                  </tr>';
+            endif; ?>
+
+            <?php if ($listing->property->subType):
+                $details_table_markup .= '
+                  <tr>
+                    <td>Subtype</td>
+                    <td>' . $listing->property->subType . '</td>
+                  </tr>';
+            endif; ?>
+
+            <?php if ($listing->property->areaSource):
+                $details_table_markup .= '
+                  <tr>
+                    <td>Area Source</td>
+                    <td>' . $listing->property->areaSource . '</td>
+                  </tr>';
+            endif; ?>
+
+            <?php if ($listing->property->water):
+                $details_table_markup .= '
+                  <tr>
+                    <td>Water</td>
+                    <td>' . $listing->property->water . '</td>
+                  </tr>';
+            endif; ?>
+
+            <?php if ($listing->property->construction):
+                $details_table_markup .= '
+                  <tr>
+                    <td>Construction</td>
+                    <td>' . $listing->property->construction . '</td>
+                  </tr>';
+            endif; ?>
+
+            <?php if ($listing->property->garageSpaces):
+                $details_table_markup .= '
+                  <tr>
+                    <td>Garage Spaces</td>
+                    <td>' . $listing->property->garageSpaces . '</td>
+                  </tr>';
+            endif; ?>
+
+            <?php if ($listing->property->acres):
+                $details_table_markup .= '
+                  <tr>
+                    <td>Acres</td>
+                    <td>' . $listing->property->acres . '</td>
+                  </tr>';
+            endif; ?>
+
+            <?php
+            $details_table_markup .= '
+                    </table>
+                  </div>';
+        }
+        echo $details_table_markup;
+        ?>
+        <!--/ADDITIONAL DETAILS-->
+        <!--PARKING DETAILS-->
+        <?php
+
+        $parking_table_markup = '';
+        if ( $listing->property->parking->leased || $listing->property->parking->spaces || $listing->property->parking->description) {
+            $parking_table_markup .= '
+        <div class="additional-details">
+            <table class="line-section-table">
+                <tr>
+                    <td><h4>Parking Details</h4></td>
+                    <td class="fill-line"></td>
+                </tr>
+            </table>
+            <table class="features-table">';
+            ?>
+            <?php if ($listing->property->parking->leased):
+                $parking_table_markup .= '
+              <tr>
+                <td>Leased</td>
+                <td>' . $listing->property->parking->leased . '</td>
+              </tr>';
+            endif; ?>
+
+            <?php if ($listing->property->parking->spaces):
+                $parking_table_markup .= '
+              <tr>
+                <td>Spaces</td>
+                <td>' . $listing->property->parking->spaces . '</td>
+              </tr>';
+            endif; ?>
+
+            <?php if ($listing->property->parking->description):
+                $parking_table_markup .= '
+              <tr>
+                <td>Description</td>
+                <td>' . $listing->property->parking->description . '</td>
+              </tr>';
+            endif; ?>
+
+            <?php
+            $parking_table_markup .= '
+            </table>
+          </div>';
+        }
+        echo $parking_table_markup;
+        ?>
+        <!--/PARKING DETAILS-->
     </div>
     <div id="home-content-right" class="small-12 large-6 columns">
         <div id="home-map"></div>
+        <!--ADDITIONAL DETAILS 2-->
+        <?php
+        $additional_details_markup_2 = '<div class="additional-details">';
+        /**
+        if ( $listing_directions || $listing_county || $listing_market_area ):
+            $additional_details_markup_2 .='
+		  <table class="line-section-table">
+              <tr>
+                <td><h4>Geographic Details</h4></td>
+                <td class="fill-line"></td>
+              </tr>
+            </table>
+            <table class="features-table">';
+            if ( $listing_directions ):
+                $additional_details_markup_2 .= '
+              <tr>
+                <td>Directions</td>
+                <td>'.$listing_directions.'</td>
+              </tr>';
+            endif;
+            if ( $listing_county ):
+                $additional_details_markup_2 .= '
+              <tr>
+                <td>County</td>
+                <td>'.$listing_county.'</td>
+              </tr>';
+            endif;
+            if ( $listing_market_area ):
+                $additional_details_markup_2 .= '
+              <tr>
+                <td>Market Area</td>
+                <td>'.$listing_market_area.'</td>
+              </tr>';
+            endif;
+            $additional_details_markup_2 .= '
+            </table>';
+        endif;
+        $additional_details_markup_2 .= '
+            <table class="line-section-table">
+              <tr>
+                <td><h4>Address Details</h4></td>
+                <td class="fill-line"></td>
+              </tr>
+            </table>
+            <table class="features-table">';
+        if ( $listing_address && $listing_city && $listing_state && $listing_postal_code):
+            $additional_details_markup_2 .= '
+              <tr>
+                <td>Address</td>
+                <td>'.$listing_address.'<br />'.$listing_city.', '.$listing_state.' '.$listing_postal_code.'</td>
+              </tr>';
+        endif;
+        if ( $listing_cross_street ):
+            $additional_details_markup_2 .= '
+              <tr>
+                <td>Cross Street</td>
+                <td>'.$listing_cross_street.'</td>
+              </tr>';
+        endif;
+        $additional_details_markup_2 .= '</table>';
+        **/
+            $additional_details_markup_2 .= '
+            <table class="line-section-table">
+              <tr>
+                <td><h4>Listing Information</h4></td>
+                <td class="fill-line"></td>
+              </tr>
+            </table>
+            <table class="features-table">';
+        ?>
+
+        <?php if ($listing->mlsId):
+        $additional_details_markup_2 .= '
+		  <tr>
+			<td>MLS ID</td>
+			<td>' . $listing->mlsId . '</td>
+		  </tr>';
+        endif; ?>
+
+        <?php if ($listing->mls->status):
+            $additional_details_markup_2 .= '
+		  <tr>
+			<td>Status</td>
+			<td>' . $listing->mls->status . '</td>
+		  </tr>';
+        endif; ?>
+
+        <?php if ($listing->mls->daysOnMarket):
+            $additional_details_markup_2 .= '
+		  <tr>
+			<td>Days On Market</td>
+			<td>' . $listing->mls->daysOnMarket . '</td>
+		  </tr>';
+        endif; ?>
+
+        <?php if ($listing->listDate):
+            $additional_details_markup_2 .= '
+		  <tr>
+			<td>List Date</td>
+			<td>' . $listing->listDate . '</td>
+		  </tr>';
+        endif; ?>
+
+        <?php if ($listing->agreement):
+            $additional_details_markup_2 .= '
+		  <tr>
+			<td>Agreement</td>
+			<td>' . $listing->agreement . '</td>
+		  </tr>';
+        endif; ?>
+
+        <?php if ($listing->tax->taxYear):
+            $additional_details_markup_2 .= '
+		  <tr>
+			<td>Tax Year</td>
+			<td>' . $listing->tax->taxYear . '</td>
+		  </tr>';
+        endif; ?>
+
+        <?php if ($listing->tax->taxAnnualAmount):
+            $additional_details_markup_2 .= '
+		  <tr>
+			<td>Annual Tax Amount</td>
+			<td>' . $listing->tax->taxAnnualAmount . '</td>
+		  </tr>';
+        endif; ?>
+
+        <?php if ($listing->association->fee):
+            $additional_details_markup_2 .= '
+		  <tr>
+			<td>Association Fee</td>
+			<td>' . $listing->association->fee . '</td>
+		  </tr>';
+        endif; ?>
+
+        <?php if ($listing->association->name):
+            $additional_details_markup_2 .= '
+		  <tr>
+			<td>Association Name</td>
+			<td>' . $listing->association->name . '</td>
+		  </tr>';
+        endif; ?>
+
+        <?php if ($listing->association->amenities):
+            $additional_details_markup_2 .= '
+		  <tr>
+			<td>Association Amenities</td>
+			<td>' . $listing->association->amenities . '</td>
+		  </tr>';
+        endif; ?>
+
+      <?php
+        $additional_details_markup_2 .= '</table>';
+        $additional_details_markup_2 .= '</div>';
+        ?>
+        <!--/ADDITIONAL DETAILS 2-->
         <?=$additional_details_markup_2;?>
+        <div id="alcove-contact-box" class="reverse">
+            <h4>Contact The Alcove Group</h4>
+            <div class="row">
+                <div class="small-6 medium-4 medium-offset-1 columns">
+                    <div class="alcove-contact-photo"></div>
+                </div>
+                <div class="small-6 medium-7 columns">
+                    <h5>Jeff Gottschalk</h5>
+                    <a class="btn hide-for-medium-up">Call Now</a>
+                    <div class="show-for-medium-up">
+                        <p>Call Now</p>
+                        <a href="#">4802801934</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="alcove-contact-box" class="reverse">
+            <h4>Contact The Alcove Group</h4>
+            <a class="btn hide-for-medium-up">Call Now</a>
+            <div class="show-for-medium-up">
+                <p>Call Now</p>
+                <a href="#">4802801934</a>
+            </div>
+        </div>
         <div class="inquire-form form-button-right">
             <h4>Interested in this home?</h4>
             <form id="inquire-form" action="" method="post" data-abide onsubmit="event.preventDefault(); formSubmission(event);">
