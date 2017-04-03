@@ -13,11 +13,16 @@
 .no-touch #header a:hover {
   padding: initial;
 }
+/* line 30, ../scss/no-touch.scss */
+.no-touch #header a.call-now-promo:hover {
+  padding: 0.5rem;
+  border: none;
+}
 /* line 33, ../scss/no-touch.scss */
-.no-touch .call-now-promo a:hover {
+.no-touch #header a.call-now-promo:hover h4 {
   color: #FFFFFF;
 }
-/* line 43, ../scss/no-touch.scss */
+/* line 44, ../scss/no-touch.scss */
 .no-touch .social-icons li:hover .icon-ring {
   -moz-transform: scale(1.6);
   -ms-transform: scale(1.6);
@@ -26,7 +31,7 @@
   opacity: 0;
   border-color: #f2d383;
 }
-/* line 52, ../scss/no-touch.scss */
+/* line 53, ../scss/no-touch.scss */
 .no-touch .social-icons li:hover .icon-icon-email::before,
 .no-touch .social-icons li:hover .icon-icon-linkedin::before,
 .no-touch .social-icons li:hover .icon-icon-facebook::before,
@@ -36,7 +41,7 @@
   -webkit-transform: scale(1.35) rotate(360deg);
   transform: scale(1.35) rotate(360deg);
 }
-/* line 60, ../scss/no-touch.scss */
+/* line 61, ../scss/no-touch.scss */
 .no-touch input[type="submit"]:hover,
 .no-touch button:hover,
 .no-touch a.btn:hover,
@@ -46,39 +51,39 @@
   border-color: #012639;
   padding-bottom: 0.7rem;
 }
-/* line 68, ../scss/no-touch.scss */
+/* line 69, ../scss/no-touch.scss */
 .no-touch input[type="submit"]:hover.small,
 .no-touch button:hover.small,
 .no-touch a.btn:hover.small,
 .no-touch label.btn:hover.small {
   padding-bottom: 0.7rem;
 }
-/* line 76, ../scss/no-touch.scss */
+/* line 77, ../scss/no-touch.scss */
 .no-touch .featured-home:nth-child(3n+2) a.btn:hover, .no-touch .featured-home:nth-child(3n+3) a.btn:hover {
   color: #012639;
   background: #FFFFFF;
   border-color: #FFFFFF;
 }
-/* line 89, ../scss/no-touch.scss */
+/* line 90, ../scss/no-touch.scss */
 .no-touch .page-template-home-details #home-content-row .home-content-hidden-link:hover,
 .no-touch .single-featured_home #home-content-row .home-content-hidden-link:hover,
 .no-touch .single-sr-listings #home-content-row .home-content-hidden-link:hover {
   padding: initial;
 }
-/* line 99, ../scss/no-touch.scss */
+/* line 100, ../scss/no-touch.scss */
 .no-touch #pagination-row .pagination-count input[name="pageNumber"]:focus {
   padding: 0.5rem;
   padding-top: 0.75rem;
 }
 @media only screen and (min-width: 40.0625em) {
-  /* line 108, ../scss/no-touch.scss */
+  /* line 109, ../scss/no-touch.scss */
   .no-touch input[type="submit"]:hover,
   .no-touch button:hover,
   .no-touch a.btn:hover,
   .no-touch label.btn:hover {
     padding-bottom: 1rem;
   }
-  /* line 113, ../scss/no-touch.scss */
+  /* line 114, ../scss/no-touch.scss */
   .no-touch input[type="submit"]:hover.small,
   .no-touch button:hover.small,
   .no-touch a.btn:hover.small,
@@ -86,7 +91,7 @@
     padding-bottom: 0.7rem;
   }
 }
-/* line 120, ../scss/no-touch.scss */
+/* line 121, ../scss/no-touch.scss */
 .no-touch .reverse input[type="submit"]:hover,
 .no-touch .reverse button:hover,
 .no-touch .reverse a.btn:hover,
@@ -95,27 +100,28 @@
   background: #FFFFFF;
   border-color: #FFFFFF;
 }
-/* line 147, ../scss/no-touch.scss */
+/* line 148, ../scss/no-touch.scss */
 .no-touch .slick-slider button:hover {
   padding: 0;
   margin: 0;
   background: transparent;
 }
-/* line 155, ../scss/no-touch.scss */
+/* line 156, ../scss/no-touch.scss */
 .no-touch .slick-dots li button.tab:hover {
   background-size: cover;
   background-position: center;
 }
-/* line 165, ../scss/no-touch.scss */
+/* line 166, ../scss/no-touch.scss */
 .no-touch .featured-home:nth-child(3n+2) .featured-home-details a.btn:hover {
   color: #4d4845;
 }
-/* line 172, ../scss/no-touch.scss */
+/* line 173, ../scss/no-touch.scss */
 .no-touch .featured-home:nth-child(3n+4) .featured-home-details a.btn:hover {
   background-color: #302b28;
   color: #f2d383;
 }
-/* line 184, ../scss/no-touch.scss */
+/* line 185, ../scss/no-touch.scss */
 .no-touch #footer ul.menu li a:hover {
   color: #e5a344;
+  padding: 0;
 }

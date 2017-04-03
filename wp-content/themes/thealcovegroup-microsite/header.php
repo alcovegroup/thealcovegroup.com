@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome to the Alcove Group</title>
     <?php wp_head();
+    $GLOBALS['isChildThemePage'] = true;
     $post_id = get_the_id();
     if(is_singular('featured_home')) {include_once ('template-fb-metadata-featured.php');}
     else if($fb_listed_metadata == 1) {
@@ -15,7 +16,7 @@
     ?>
   </head>
 
-  <body <?php body_class(); ?>>
+  <body <?php body_class("microsite-page"); ?>>
   <?php if ( is_front_page() ): ?>
   <div id="loadingStatus"></div>
   <div id="pageHide"> <!-- Wraps the page content to hide while video loads -->
@@ -52,15 +53,28 @@
 
     <!-- Header -->
     <div id="header" class="reverse clearfix">
-      <div class="row">
+      <div id="global-header">
+        <div class="row">
+          <a id="global-home-link" href="<?php site_url(); ?>"><span class="icon-icon-home"></span><span class="show-for-medium-up">{{Parent}} Home</span></a>
+          <span id="regional-label">Explore {{Neighborhood}}</span>
+        </div>
+      </div>
+      <a href="tel:<?php echo get_option('global_company_phone'); ?>" class="hide-for-large-up">
+        <div class="call-now-promo top-nav">
+          <h4>Call Today <?php echo get_option('global_company_phone'); ?></h4>
+        </div>
+      </a>
+      <div id="regional-header" class="row">
         <label class="btn small js-menu-btn" for="menu-toggle">Menu</label>
         <a href="<?php echo get_site_url(); ?>" class="show-for-medium-up header-logo-holder">
           <img src="<?php echo get_template_directory_uri(); ?>/img/alcove-logo-sprite.png" class="logo" />
         </a>
-        <a href="<?php echo get_site_url(); ?>" class="hide-for-medium-up">
+        <a href="<?php echo get_site_url(); ?>" class="hide-for-medium-up mobile-logo-holder">
           <img src="<?php echo get_template_directory_uri(); ?>/img/alcove-logo-mobile.png" class="logo-mobile" />
         </a>
-        <ul class="social-icons show-for-medium-up">
+
+        <div id="call-now-and-social">
+          <ul class="social-icons show-for-medium-up">
           <?php if ( get_option('global_company_email') ): ?>
           <li><a href="mailto:<?php echo get_option('global_company_email'); ?>"><span class="icon-ring"></span><span class="icon-icon-email"></span></a></li>
           <?php endif; ?>
@@ -77,6 +91,11 @@
           <li><a href="<?php echo get_option('global_company_linkedin'); ?>" target="_blank"><span class="icon-ring"></span><span class="icon-icon-linkedin"></span></a></li>
           <?php endif; ?>
         </ul>
+          <a href="tel:<?php echo get_option('global_company_phone'); ?>" class="call-now-promo show-for-large-up">
+            <h4>Call Today <?php echo get_option('global_company_phone'); ?></h4>
+          </a>
+        </div>
+        
       </div>
     </div>
 

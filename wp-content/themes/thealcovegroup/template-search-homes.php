@@ -29,9 +29,15 @@ $perpage = $GLOBALS['perpage'];
       >
         <div class="hero-overlay reverse">
 
+        <div class="row form-page-header form-and-blurb">
+            <div class="small-12 small-centered medium-11 large-9 columns">
+              <h3><?php the_title(); ?></h3>
+              <button class="small" id="search-ui-toggle">Filter Search<span class="icon-icon-arrow-down"></span></button>
+            </div>
+          </div>
+
           <div class="row hero-form form-button-right">
             <div class="small-12 medium-10 medium-offset-1 large-6 large-offset-3 columns">
-              <h3><?php the_title(); ?></h3>
                 <?php
                 $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                 $actual_link = preg_replace('~(.*)\?(.*)$~', '$1', $actual_link);
@@ -413,6 +419,13 @@ noUiSlider.create(bathSlider, {
         bathnodes[handle].value = Math.round(values[handle]);
     });
 </script>
+<script>
+      // $('.hero-form').slideUp('fast');
+      $('#search-ui-toggle').click(function(){
+        $(this).toggleClass('flip');
+        $('.hero-form').slideToggle('fast');
+      });
+    </script>
 
 </body>
 </html>

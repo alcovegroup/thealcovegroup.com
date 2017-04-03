@@ -98,15 +98,12 @@ function editglobalcustomfields() {
 	<p><strong>Alcove Listing Agent</strong><br />
 	<small>This is the contact info which shows up on a listing details page</small><br />
 	<select name="global_listing_agent" value="<?php echo get_option('global_listing_agent'); ?>" style="width: 400px;">
-	<!-- Options should include the names of each custom post type: Bio, as well as a "Generic" option -->
-	<option value="Generic">Generic</option>
+
+	<option value="Generic"<?=get_option('global_listing_agent') == 'Generic' ? ' selected="selected"' : '';?>>Generic</option>
 	<?php $loop = new WP_Query( array( 'post_type' => 'bios') ); ?>
     <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-
-		<option value="<?php the_title(); ?>"><?php the_title(); ?></option>
-
+		<option value="<?php the_title(); ?>"<?=get_option('global_listing_agent') == get_the_title() ? ' selected="selected"' : '';?>><?php the_title(); ?></option>
 	<?php endwhile; wp_reset_query(); ?>
-	<!-- Value should pass Name, Featured Image, and Phone contact to the single listing page where contact info is injected -->
 	</select>
 	</p>
 

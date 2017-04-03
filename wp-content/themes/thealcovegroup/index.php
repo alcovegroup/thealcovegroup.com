@@ -21,10 +21,18 @@
           <div class="row v-center">
             <div class="large-12 columns hero-buttons">
               <div>
-                <a href="<?php echo get_page_link(6); ?>" class="btn">Find your Home’s Value</a>
+                <?php if ($GLOBALS['isChildThemePage']) { ?>
+                  <a href="<?php echo get_page_link(7); ?>" class="btn">Find your {{Neighborhood}} Home’s Value</a>;
+                <?php } else { ?>
+                  <a href="<?php echo get_page_link(6); ?>" class="btn">Find your Home’s Value</a>
+                <?php } ?>
               </div>
               <div>
-                <a href="<?php echo get_page_link(343); ?>" class="btn">Search Homes</a>
+                <?php if ($GLOBALS['isChildThemePage']) { ?>
+                  <a href="<?php echo get_page_link(39); ?>" class="btn">Search {{Neighborhood}} Homes</a>;
+                <?php } else { ?>
+                  <a href="<?php echo get_page_link(343); ?>" class="btn">Search Homes</a>
+                <?php } ?>
               </div>
             </div>
           </div>
@@ -129,6 +137,8 @@
     <script>
     jQuery(function ($) {
 	    $(document).ready(function() {
+
+        // alert("<?php echo get_option('global_listing_agent'); ?>");
 
         function showPage(){
           setTimeout(function(){   
