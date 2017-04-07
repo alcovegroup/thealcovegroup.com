@@ -1,4 +1,5 @@
-<?php get_header(); ?>
+<?php get_header();
+?>
 
     <!-- Expanding content frame -->
     <div id="content-frame">
@@ -21,15 +22,20 @@
           <div class="row v-center">
             <div class="large-12 columns hero-buttons">
               <div>
-                <?php if ($GLOBALS['isChildThemePage']) { ?>
-                  <a href="<?php echo get_page_link(7); ?>" class="btn">Find your {{Neighborhood}} Home’s Value</a>;
+                <?php if ($GLOBALS['isChildThemePage']) {
+                    $neighborhood_name = get_neighborhood_value();
+                    $find_hvalue_path = get_find_homes_value_value();
+                    ?>
+                  <a href="<?=$find_hvalue_path;?>" class="btn">Find your <?=$neighborhood_name;?> Home’s Value</a>;
                 <?php } else { ?>
                   <a href="<?php echo get_page_link(6); ?>" class="btn">Find your Home’s Value</a>
                 <?php } ?>
               </div>
               <div>
-                <?php if ($GLOBALS['isChildThemePage']) { ?>
-                  <a href="<?php echo get_page_link(39); ?>" class="btn">Search {{Neighborhood}} Homes</a>;
+                <?php if ($GLOBALS['isChildThemePage']) {
+                    $search_homes_path = get_search_homes_value();
+                    ?>
+                  <a href="<?=$search_homes_path;?>" class="btn">Search <?=$neighborhood_name;?> Homes</a>;
                 <?php } else { ?>
                   <a href="<?php echo get_page_link(343); ?>" class="btn">Search Homes</a>
                 <?php } ?>

@@ -27,4 +27,25 @@ function my_theme_enqueue_styles() {
 	wp_enqueue_style( 'microsite_css', get_stylesheet_directory_uri() . '/stylesheets/microsite.css', array($parent_style) );
 }
 add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles');
+
+function get_neighborhood_value() {
+    return 'Paradise Valley';
+}
+
+function get_state_value($type='') {
+    $result = ($type == 'long') ? 'Arizona' : 'AZ';
+    return $result;
+}
+
+function get_site_slug_value() {
+    return 'paradise-valley';
+}
+
+function get_find_homes_value_value() {
+    return '/paradise-valley/find-your-homes-value/';
+}
+
+function get_search_homes_value() {
+    return '/paradise-valley/search-homes/';
+}
 ?>

@@ -1,3 +1,11 @@
+<?php
+global $wpdb;
+$parent_site_name = $wpdb->get_var("SELECT option_value FROM wp_options WHERE option_name = 'blogname'");
+$neighborhood_name = get_neighborhood_value();
+$theme_uri = get_template_directory_uri();
+$parent_template_dir_name = preg_replace('~^(.*)\/themes\/(.*)$~i', '$2', $theme_uri);
+$parent_template_dir_name = dirname(__FILE__) . '/../' . $parent_template_dir_name;
+?>
 <!doctype html>
 <html class="no-js" lang="en">
   <head>
@@ -7,11 +15,11 @@
     <?php wp_head();
     $GLOBALS['isChildThemePage'] = true;
     $post_id = get_the_id();
-    if(is_singular('featured_home')) {include_once ('template-fb-metadata-featured.php');}
+    if(is_singular('featured_home')) {include_once ('../'.$parent_template_dir_name.'/template-fb-metadata-featured.php');}
     else if($fb_listed_metadata == 1) {
-      include_once ('template-fb-metadata-listed.php');
+      include_once ($parent_template_dir_name.'/template-fb-metadata-listed.php');
     } else {
-      include_once ('template-fb-metadata-default.php');
+      include_once ($parent_template_dir_name.'/template-fb-metadata-default.php');
     }
     ?>
   </head>
@@ -55,8 +63,8 @@
     <div id="header" class="reverse clearfix">
       <div id="global-header">
         <div class="row">
-          <a id="global-home-link" href="<?php site_url(); ?>"><span class="icon-icon-home"></span><span class="show-for-medium-up">{{Parent}} Home</span></a>
-          <span id="regional-label">Explore {{Neighborhood}}</span>
+          <a id="global-home-link" href="/"><span class="icon-icon-home"></span><span class="show-for-medium-up"><?=$parent_site_name;?> Home</span></a>
+          <span id="regional-label">Explore <?=$neighborhood_name;?></span>
         </div>
       </div>
       <a href="tel:<?php echo get_option('global_company_phone'); ?>" class="hide-for-large-up">

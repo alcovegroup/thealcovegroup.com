@@ -8,7 +8,12 @@
 ?>
 
 
-<?php get_header(); ?>
+<?php get_header();
+if ($GLOBALS['isChildThemePage']) {
+  $state_value = get_state_value();
+  $state_value_long = get_state_value('long');
+}
+?>
 
     <!-- Expanding content frame -->
     <div id="content-frame">
@@ -50,7 +55,9 @@
                   <div class="row">
                     <div class="small-12 medium-4 columns">
                       <?php if ($GLOBALS['isChildThemePage']) {
-                        echo "<input type='text' value='{{Neighborhood}}' name='city' disabled required />";
+                        $neighborhood_name = get_neighborhood_value();
+                        echo "<input type='text' value='{$neighborhood_name}' disabled />";
+                        echo "<input type='hidden' value='{$neighborhood_name}' name='city'  />";
                       } else { ?>
                         <input type="text" placeholder="City*" name="city" required />
                         <small class="error">A city is required.</small>
@@ -58,7 +65,8 @@
                     </div>
                     <div class="small-12 medium-4 columns">
                       <?php if ($GLOBALS['isChildThemePage']) {
-                      echo "<input type='text' value='{{State}}' name='state' disabled required />";
+                      echo "<input type='text' value='{$state_value_long}' disabled  />";
+                      echo "<input type='hidden' value='{$state_value}' name='state' />";
                       } else { ?>
                         <select  name="state" required>
                           <option selected disabled>State<sup>*</sup></option>
