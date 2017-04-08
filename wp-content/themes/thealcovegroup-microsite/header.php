@@ -15,7 +15,7 @@ $parent_template_dir_name = dirname(__FILE__) . '/../' . $parent_template_dir_na
     <?php wp_head();
     $GLOBALS['isChildThemePage'] = true;
     $post_id = get_the_id();
-    if(is_singular('featured_home')) {include_once ('../'.$parent_template_dir_name.'/template-fb-metadata-featured.php');}
+    if(is_singular('featured_home')) {include_once ($parent_template_dir_name.'/template-fb-metadata-featured.php');}
     else if($fb_listed_metadata == 1) {
       include_once ($parent_template_dir_name.'/template-fb-metadata-listed.php');
     } else {

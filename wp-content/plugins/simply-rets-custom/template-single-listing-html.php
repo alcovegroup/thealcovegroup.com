@@ -541,32 +541,38 @@ if(!empty($photos)) {
         ?>
         <!--/ADDITIONAL DETAILS 2-->
         <?=$additional_details_markup_2;?>
+
         <div id="alcove-contact-box" class="reverse">
             <h4>Contact The Alcove Group</h4>
-            <div class="row">
-                <div class="small-6 medium-4 medium-offset-1 columns">
-                    <div class="alcove-contact-photo"></div>
-                </div>
-                <div class="small-6 medium-7 columns">
-                    <h5>Jeff Gottschalk</h5>
-                    <a class="btn hide-for-medium-up">Call Now</a>
-                    <div class="show-for-medium-up">
-                        <p>Call Now</p>
-                        <a href="#">4802801934</a>
+            <?php if (get_option('global_listing_agent') !== 'Generic' ) {
+                $listingAgent = get_page_by_title( get_option('global_listing_agent'), OBJECT, 'bios' );
+                $listingAgentID = $listingAgent->ID;
+                ?>
+                <div class="row">
+                    <div class="small-6 medium-4 medium-offset-1 columns">
+                        <?php if (has_post_thumbnail( $listingAgentID ) ): ?>
+                            <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $listingAgentID ), 'single-post-thumbnail' ); ?>
+                            <div class="alcove-contact-photo" style="background-image: url('<?php echo $image[0]; ?>')"></div>
+                        <?php endif; ?>
+                    </div>
+                    <div class="small-6 medium-7 columns">
+                        <h5><?php echo get_post_field( 'post_title', $listingAgentID ); ?></h5>
+                        <a class="btn hide-for-medium-up">Call Now</a>
+                        <div class="show-for-medium-up">
+                            <p>Call Now</p>
+                            <a href="tel:<?php echo preg_replace("/[^0-9,.]/", "", get_post_meta( $listingAgentID, 'phone_number', true )); ?>"><?php echo get_post_meta( $listingAgentID, 'phone_number', true ); ?></a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            <?php } else { ?>
+                <a class="btn hide-for-medium-up">Call Now</a>
+                <div class="show-for-medium-up">
+                    <p>Call Now</p>
+                    <a href="tel:<?php echo preg_replace("/[^0-9,.]/", "", get_option('global_company_phone')); ?>"><?php echo get_option('global_company_phone'); ?></a>
+                </div>
+            <?php } ?>
         </div>
 
-
-        <div id="alcove-contact-box" class="reverse">
-            <h4>Contact The Alcove Group</h4>
-            <a class="btn hide-for-medium-up">Call Now</a>
-            <div class="show-for-medium-up">
-                <p>Call Now</p>
-                <a href="#">4802801934</a>
-            </div>
-        </div>
         <div class="inquire-form form-button-right">
             <h4>Interested in this home?</h4>
             <form id="inquire-form" action="" method="post" data-abide onsubmit="event.preventDefault(); formSubmission(event);">
