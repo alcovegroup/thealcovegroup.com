@@ -33,7 +33,7 @@
         class="section about-hero-no-video">
       <?php endif; ?>
 
-        <div class="hero-overlay reverse">
+        <?php get_template_part( 'partials/hero-overlay' ); ?>
 
           <!-- Contents -->
           <?php if ( post_custom('use_video') ): ?>

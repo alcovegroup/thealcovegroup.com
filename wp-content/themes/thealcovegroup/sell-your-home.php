@@ -20,7 +20,7 @@
        style="background-image: url('<?php echo $image[0]; ?>');"
       <?php endif; ?>
       >
-        <div class="hero-overlay reverse">
+        <?php get_template_part( 'partials/hero-overlay' ); ?>
 
           <div class="row form-page-header form-and-blurb">
             <div class="small-12 small-centered medium-11 large-9 columns">
