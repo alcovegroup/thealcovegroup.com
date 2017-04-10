@@ -55,7 +55,7 @@
       <div class="row">
         <label class="btn small js-menu-btn" for="menu-toggle">Menu</label>
         <a href="<?php echo get_site_url(); ?>" class="show-for-medium-up header-logo-holder">
-          <img src="<?php echo get_template_directory_uri(); ?>/img/alcove-logo-sprite.png" class="logo" />
+          <img src="<?php echo get_template_directory_uri(); ?>/img/alcove-logo-sprite-large.png" class="logo" />
         </a>
         <a href="<?php echo get_site_url(); ?>" class="hide-for-medium-up">
           <img src="<?php echo get_template_directory_uri(); ?>/img/alcove-logo-mobile.png" class="logo-mobile" />
