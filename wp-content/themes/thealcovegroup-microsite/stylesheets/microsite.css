@@ -92,7 +92,7 @@ Y88b  d88P       888  Y88b  d88P      Y88b. .d88P 888
 @media only screen and (min-width: 40.0625rem) {
   /* line 93, ../scss/microsite.scss */
   .microsite-page #header {
-    height: 13.125rem;
+    height: 17.5rem;
   }
   /* line 95, ../scss/microsite.scss */
   .microsite-page #header #global-header {
@@ -170,7 +170,11 @@ Y88b  d88P       888  Y88b  d88P      Y88b. .d88P 888
 88888888 d88P     888 888   T88b  "Y8888P88 8888888888        "Y88888P"  888        
 */
 @media only screen and (min-width: 64.0625em) {
-  /* line 170, ../scss/microsite.scss */
+  /* line 169, ../scss/microsite.scss */
+  .microsite-page #header {
+    height: 15.625rem;
+  }
+  /* line 171, ../scss/microsite.scss */
   .microsite-page #header.minimized {
     height: 6.5625rem;
   }
@@ -186,7 +190,7 @@ d8888   d88P  Y88b d8888  888              888     888 888   Y88b
 8888888 888888888  8888888 "Y8888P"         "Y88888P"  888        
 */
 @media only screen and (min-width: 75.9375rem) {
-  /* line 191, ../scss/microsite.scss */
+  /* line 192, ../scss/microsite.scss */
   .microsite-page #header #global-header,
   .microsite-page #header #global-header > .row,
   .microsite-page #header #regional-header {
