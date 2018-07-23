@@ -1,0 +1,44 @@
+#adminmenu li.current a.toplevel_page_cache-control{
+    background:#cd0000;
+}
+
+#ic-button-holder {
+    margin: 0 auto;
+    padding-top: 75px;
+    margin-left: 50px;
+    text-align: left;
+}
+
+#ic-button-holder label {
+    font-weight: bold;
+    font-size: 1.5em;
+    display: block;
+    margin-top: 1.5em;
+}
+
+#ic-button-holder input {
+    min-width: 30%;
+}
+
+.ic-generate-button {
+    padding:20px;
+    font-weight:bold;
+    font-family:Verdana, Geneva, sans-serif;
+}
+
+.ic-cleared {
+    font-weight: bold;
+    color:#008000;
+}
+
+.ic-error {
+    font-weight: bold;
+    color:#ff0000;
+}
+.highlight {
+    color: #ff0000;
+}
+
+.ic_ao_toggle {
+    cursor: pointer;
+}

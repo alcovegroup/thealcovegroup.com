@@ -25,7 +25,8 @@ $parent_template_dir_name = dirname(__FILE__) . '/../' . $parent_template_dir_na
   </head>
 
   <body <?php body_class("microsite-page"); ?>>
-  <?php if ( is_front_page() ): ?>
+  <?php
+  if ( is_front_page() ): ?>
   <div id="loadingStatus"></div>
   <div id="pageHide"> <!-- Wraps the page content to hide while video loads -->
     <?php endif; ?>

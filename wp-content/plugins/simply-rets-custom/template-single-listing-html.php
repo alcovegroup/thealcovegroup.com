@@ -557,7 +557,7 @@ if(!empty($photos)) {
                     </div>
                     <div class="small-6 medium-7 columns">
                         <h5><?php echo get_post_field( 'post_title', $listingAgentID ); ?></h5>
-                        <a class="btn hide-for-medium-up">Call Now</a>
+                        <a class="btn hide-for-medium-up" href="tel:<?php echo preg_replace("/[^0-9,.]/", "", get_option('global_company_phone')); ?>">Call Now</a>
                         <div class="show-for-medium-up">
                             <p>Call Now</p>
                             <a href="tel:<?php echo preg_replace("/[^0-9,.]/", "", get_post_meta( $listingAgentID, 'phone_number', true )); ?>"><?php echo get_post_meta( $listingAgentID, 'phone_number', true ); ?></a>
@@ -565,7 +565,7 @@ if(!empty($photos)) {
                     </div>
                 </div>
             <?php } else { ?>
-                <a class="btn hide-for-medium-up">Call Now</a>
+                <a class="btn hide-for-medium-up" href="tel:<?php echo preg_replace("/[^0-9,.]/", "", get_option('global_company_phone')); ?>">Call Now</a>
                 <div class="show-for-medium-up">
                     <p>Call Now</p>
                     <a href="tel:<?php echo preg_replace("/[^0-9,.]/", "", get_option('global_company_phone')); ?>"><?php echo get_option('global_company_phone'); ?></a>

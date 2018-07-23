@@ -7,7 +7,6 @@
  */
 ?>
 
-
 <?php get_header(); ?>
 
     <!-- Expanding content frame -->
@@ -18,7 +17,7 @@
 
 
 
-
+      <?php if ( post_custom('enable_hero') ): ?>
       
 
       <!-- Hero With YouTube Embed-->
@@ -72,16 +71,10 @@
       </div>
       <!-- End Hero With YouTube Embed -->
 
-      
+      <?php endif; ?>      
 
-     
-
-      
-
-
-
-
-
+    
+      <div class="about-header-spacer"></div>
 
       <!-- About Bio Section -->
 
@@ -181,24 +174,24 @@
 	          navigationPosition: 'right',
 	          responsiveWidth: 45.1764*remUnit,
 	          onLeave: function(index, nextIndex, direction){
-	            var leavingSection = $(this);
-	            var $header = $('#header');
-	            var $logoImg = $('img.logo');
-	            var headerSwapTrue = false;
-	            if(index == 1 && direction =='down'){
-	              console.log("leaving section 1 and going down!");
-	              headerSwapTrue = true;
-	            } else if(nextIndex == 1 && direction == 'up'){
-	              console.log("Going up to section 1!");
-	              headerSwapTrue = true;
-	            }
-	            if (headerSwapTrue) {
-	              if (!$header.hasClass("minimized")) {
-	                $header.addClass("minimized");
-	              } else if ($header.hasClass("minimized")) {
-	                $header.removeClass("minimized");
-	              }
-	            }
+	            // var leavingSection = $(this);
+	            // var $header = $('#header');
+	            // var $logoImg = $('img.logo');
+	            // var headerSwapTrue = false;
+	            // if(index == 1 && direction =='down'){
+	            //   console.log("leaving section 1 and going down!");
+	            //   headerSwapTrue = true;
+	            // } else if(nextIndex == 1 && direction == 'up'){
+	            //   console.log("Going up to section 1!");
+	            //   headerSwapTrue = true;
+	            // }
+	            // if (headerSwapTrue) {
+	            //   if (!$header.hasClass("minimized")) {
+	            //     $header.addClass("minimized");
+	            //   } else if ($header.hasClass("minimized")) {
+	            //     $header.removeClass("minimized");
+	            //   }
+	            // }
 	          }
 	        });
 	        if (document.documentElement.clientWidth < 45.1764*remUnit) {

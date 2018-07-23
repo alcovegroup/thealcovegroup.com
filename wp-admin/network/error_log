@@ -1,0 +1,6 @@
+[12-Jul-2017 23:37:27 UTC] PHP Parse error:  syntax error, unexpected '$prepared_values' (T_VARIABLE) in /home2/liquinas/mlsdev/wp-content/plugins/instance-controller/classes/instance_class.php on line 330
+[13-Jul-2017 08:10:13 UTC] PHP Parse error:  syntax error, unexpected '}' in /home2/liquinas/mlsdev/wp-content/plugins/instance-controller/classes/instance_class.php on line 870
+[13-Jul-2017 08:13:21 UTC] PHP Parse error:  syntax error, unexpected '}' in /home2/liquinas/mlsdev/wp-content/plugins/instance-controller/classes/instance_class.php on line 858
+[13-Jul-2017 08:39:20 UTC] WordPress database error Table 'liquinas_mlsdev.wp_52_options' doesn't exist for query SELECT option_value FROM wp_52_options WHERE option_name = 'wp_52_user_roles' LIMIT 1 made by wpmu_delete_blog, switch_to_blog, WP_Roles->reinit, get_option
+[13-Jul-2017 08:39:20 UTC] WordPress database error Table 'liquinas_mlsdev.wp_52_options' doesn't exist for query SELECT option_value FROM wp_52_options WHERE option_name = 'upload_path' LIMIT 1 made by wpmu_delete_blog, get_option
+[13-Jul-2017 10:58:59 UTC] PHP Parse error:  syntax error, unexpected '=', expecting ')' in /home2/liquinas/mlsdev/wp-content/plugins/instance-controller/classes/instance_class.php on line 636

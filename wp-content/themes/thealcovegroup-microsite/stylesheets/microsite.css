@@ -54,31 +54,27 @@
 }
 
 /* line 51, ../scss/microsite.scss */
-.microsite-page #hero .hero-buttons {
-  top: -1rem;
-}
-/* line 53, ../scss/microsite.scss */
 .microsite-page #hero .hero-buttons a.btn {
   line-height: 1.3;
   max-width: 19rem;
 }
-/* line 58, ../scss/microsite.scss */
+/* line 55, ../scss/microsite.scss */
 .microsite-page input[disabled] {
   text-align: center;
   border-color: #f2d383;
   color: #f2d383;
   background: transparent;
 }
-/* line 65, ../scss/microsite.scss */
+/* line 62, ../scss/microsite.scss */
 .microsite-page h3 {
   margin: 1.5rem 0 0;
 }
-/* line 68, ../scss/microsite.scss */
+/* line 65, ../scss/microsite.scss */
 .microsite-page #hero .hero-overlay {
   padding-top: 7rem;
 }
 
-/* line 77, ../scss/microsite.scss */
+/* line 74, ../scss/microsite.scss */
 .home.microsite-page #hero .hero-overlay {
   padding-top: 0;
 }
@@ -94,75 +90,71 @@ Y88b  d88P       888  Y88b  d88P      Y88b. .d88P 888
  "Y8888P"        888   "Y8888P"        "Y88888P"  888        
 */
 @media only screen and (min-width: 40.0625rem) {
-  /* line 96, ../scss/microsite.scss */
+  /* line 93, ../scss/microsite.scss */
   .microsite-page #header {
     height: 17.5rem;
   }
-  /* line 98, ../scss/microsite.scss */
+  /* line 95, ../scss/microsite.scss */
   .microsite-page #header #global-header {
     height: 2.5rem;
   }
-  /* line 100, ../scss/microsite.scss */
+  /* line 97, ../scss/microsite.scss */
   .microsite-page #header #global-header #global-home-link {
     padding: 0.45rem 0;
   }
-  /* line 103, ../scss/microsite.scss */
+  /* line 100, ../scss/microsite.scss */
   .microsite-page #header #global-header #global-home-link .icon-icon-home {
     margin-right: 0.625rem;
   }
-  /* line 106, ../scss/microsite.scss */
+  /* line 103, ../scss/microsite.scss */
   .microsite-page #header #global-header #global-home-link span {
     display: inline-block !important;
   }
-  /* line 111, ../scss/microsite.scss */
+  /* line 108, ../scss/microsite.scss */
   .microsite-page #header #global-header #regional-label {
     padding: 0.45rem 0;
   }
-  /* line 115, ../scss/microsite.scss */
+  /* line 112, ../scss/microsite.scss */
   .microsite-page #header #regional-header {
     height: 9.0625rem;
   }
-  /* line 118, ../scss/microsite.scss */
+  /* line 115, ../scss/microsite.scss */
   .microsite-page #header.minimized {
     height: 8.0625rem;
   }
-  /* line 120, ../scss/microsite.scss */
+  /* line 117, ../scss/microsite.scss */
   .microsite-page #header.minimized #regional-header {
     height: 4.0625rem;
   }
-  /* line 122, ../scss/microsite.scss */
+  /* line 119, ../scss/microsite.scss */
   .microsite-page #header.minimized #regional-header .header-logo-holder {
     top: -2px;
     width: 160px;
     height: 70px;
   }
-  /* line 128, ../scss/microsite.scss */
+  /* line 125, ../scss/microsite.scss */
   .microsite-page #header.minimized label.btn {
     top: 0.8rem;
   }
-  /* line 131, ../scss/microsite.scss */
+  /* line 128, ../scss/microsite.scss */
   .microsite-page #header.minimized ul.social-icons {
     top: 0.45rem;
   }
-  /* line 135, ../scss/microsite.scss */
+  /* line 132, ../scss/microsite.scss */
   .microsite-page #header label.btn {
     top: 4.0625rem;
   }
-  /* line 138, ../scss/microsite.scss */
+  /* line 135, ../scss/microsite.scss */
   .microsite-page #header ul.social-icons {
     top: 3.9375rem;
   }
 
-  /* line 144, ../scss/microsite.scss */
-  .microsite-page #hero .hero-buttons {
-    top: 3.2rem;
-  }
-  /* line 146, ../scss/microsite.scss */
+  /* line 141, ../scss/microsite.scss */
   .microsite-page #hero .hero-buttons a.btn {
     line-height: 1.3;
     max-width: none;
   }
-  /* line 151, ../scss/microsite.scss */
+  /* line 145, ../scss/microsite.scss */
   .microsite-page #hero .hero-overlay {
     padding-top: 17rem;
   }
@@ -178,11 +170,11 @@ Y88b  d88P       888  Y88b  d88P      Y88b. .d88P 888
 88888888 d88P     888 888   T88b  "Y8888P88 8888888888        "Y88888P"  888        
 */
 @media only screen and (min-width: 64.0625em) {
-  /* line 175, ../scss/microsite.scss */
+  /* line 169, ../scss/microsite.scss */
   .microsite-page #header {
     height: 15.625rem;
   }
-  /* line 177, ../scss/microsite.scss */
+  /* line 171, ../scss/microsite.scss */
   .microsite-page #header.minimized {
     height: 6.5625rem;
   }
@@ -198,7 +190,7 @@ d8888   d88P  Y88b d8888  888              888     888 888   Y88b
 8888888 888888888  8888888 "Y8888P"         "Y88888P"  888        
 */
 @media only screen and (min-width: 75.9375rem) {
-  /* line 198, ../scss/microsite.scss */
+  /* line 192, ../scss/microsite.scss */
   .microsite-page #header #global-header,
   .microsite-page #header #global-header > .row,
   .microsite-page #header #regional-header {

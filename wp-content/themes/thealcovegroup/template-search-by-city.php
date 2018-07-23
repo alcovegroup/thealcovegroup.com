@@ -50,6 +50,9 @@ $perpage = $GLOBALS['perpage'];
                 $filtered_city = preg_replace("/[^A-Za-z0-9 ]/", '', $_GET['cities']);
                 $filtered_q = preg_replace("/[^A-Za-z0-9 ]/", '', $_GET['q']);
                 $thepagenumber = (is_numeric($_GET['pageNumber'])) ? (htmlspecialchars($_GET['pageNumber'])) : '';
+                $neighborhood_name = get_neighborhood_value();
+                $global_city = get_option('global_mlsshortcode_city');
+                $global_zip = get_option('global_mlsshortcode_zip');
                 $shortcode_buildout = array(
                     ##############################
                     # PRICE
@@ -74,7 +77,7 @@ $perpage = $GLOBALS['perpage'];
                     # CITY
                     ##############################
                     //'cities' => ( !empty($filtered_city)) ? $filtered_city : '',
-                    'cities' => 'Paradise Valley',
+                    'cities' => $neighborhood_name,
                     ##############################
                     # STATE (FORCED)
                     ##############################
@@ -98,14 +101,20 @@ $perpage = $GLOBALS['perpage'];
                     'offset' => (!empty($thepagenumber)) ? (($thepagenumber-1)*$perpage) : '',
                     'sort' => '-listprice'
                 );
+                if(!empty($global_zip)) {
+                  $shortcode_buildout['postalcodes'] = $global_zip;
+                }
+                if(!empty($global_city)) {
+                  $shortcode_buildout['cities'] = $global_city;
+                }
                 //var_dump($shortcode_buildout);
                 ?>
               <form method="get" action="<?=$actual_link;?>">
                 <div class="row">
                     <div class="row">
                         <div class="small-12 medium-6 columns">
-                            <input type="text" value="Paradise Valley" disabled>
-                            <input type="hidden" name="cities" value="Paradise Valley">
+                            <input type="text" <?php if(!empty($shortcode_buildout['cities'])) { ?>value="<?=$shortcode_buildout['cities'];?>"<?php } ?> Valley" disabled>
+                            <input type="hidden" name="cities" <?php if(!empty($shortcode_buildout['cities'])) { ?>value="<?=$shortcode_buildout['cities'];?>"<?php } ?>>
                         </div>
                         <div class="small-12 medium-6 columns">
                             <input type="text" id="state" value="Arizona" disabled>

@@ -51,7 +51,7 @@
     <!-- Menu frame -->
 
     <!-- Header -->
-    <div id="header" class="reverse clearfix">
+    <div id="header" class="reverse clearfix<?php if (  is_page( 17 ) ): ?> minimized<?php endif; ?>">
       <div class="row">
         <label class="btn small js-menu-btn" for="menu-toggle">Menu</label>
         <a href="<?php echo get_site_url(); ?>" class="show-for-medium-up header-logo-holder">

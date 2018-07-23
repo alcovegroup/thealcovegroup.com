@@ -40,10 +40,7 @@ jQuery(function ($) {
 		pageBody.addClass("ipad-fs-fix");
 	}
 
-
-	scrollIncrement();
-
-	function scrollIncrement(ev){
+	function scrollIncrement(){
 		windowScrollPos = window.pageYOffset;
 		var $header = $('#header');
 		var $logoImg = $('img.logo');
@@ -56,8 +53,12 @@ jQuery(function ($) {
 				$header.removeClass("minimized");
 			}
 		}
+	}	
+	if (window.location.pathname != '/about/') {
+		scrollIncrement()
+		window.onscroll = scrollIncrement;
 	}
-	window.onscroll = scrollIncrement;
+	
 
 	menuButtons.add(featuredHomesAnchor).on("mousedown", function(event){
 		event.preventDefault();

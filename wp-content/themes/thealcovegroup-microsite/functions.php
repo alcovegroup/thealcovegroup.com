@@ -29,7 +29,8 @@ function my_theme_enqueue_styles() {
 add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles');
 
 function get_neighborhood_value() {
-    return 'Paradise Valley';
+	$return = get_option('global_mlsshortcode_city');
+    return $return;
 }
 
 function get_state_value($type='') {
@@ -38,14 +39,17 @@ function get_state_value($type='') {
 }
 
 function get_site_slug_value() {
-    return 'paradise-valley';
+	$return = get_blog_details();
+    return $return->path;
 }
 
 function get_find_homes_value_value() {
-    return '/paradise-valley/find-your-homes-value/';
+	$return = get_site_slug_value();
+    return $return . 'find-your-homes-value/';
 }
 
 function get_search_homes_value() {
-    return '/paradise-valley/search-homes/';
+	$return = get_site_slug_value();
+    return $return . 'search-homes/';
 }
 ?>

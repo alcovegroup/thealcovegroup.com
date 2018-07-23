@@ -106,11 +106,20 @@ function editglobalcustomfields() {
 	<?php endwhile; wp_reset_query(); ?>
 	</select>
 	</p>
+	<br />
+	<hr />
+	<h1>MLS Data Parameters</h1>
+	<p><strong>City</strong><br />
+	<input type="text" name="global_mlsshortcode_city" value="<?php echo get_option('global_mlsshortcode_city'); ?>" /></p>
+	<p><strong>State</strong><br />
+	<input type="text" name="global_mlsshortcode_state" value="<?php echo get_option('global_mlsshortcode_state'); ?>" /></p>
+	<p><strong>Zip</strong><br />
+	<input type="text" name="global_mlsshortcode_zip" value="<?php echo get_option('global_mlsshortcode_zip'); ?>" /></p>
 
 	<p><input type="submit" name="Submit" value="Update Options" /></p>
 
 	<input type="hidden" name="action" value="update" />
-	<input type="hidden" name="page_options" value="global_company_email,global_company_phone,global_company_facebook,global_company_linkedin,global_footer_message,global_listing_agent" />
+	<input type="hidden" name="page_options" value="global_company_email,global_company_phone,global_company_facebook,global_company_linkedin,global_footer_message,global_listing_agent,global_mlsshortcode_city,global_mlsshortcode_state,global_mlsshortcode_zip" />
 
 	</form>
 	</div>

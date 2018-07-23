@@ -28,7 +28,7 @@
                     ?>
                   <a href="<?=$find_hvalue_path;?>" class="btn">Find your <?=$neighborhood_name;?> Home’s Value</a>;
                 <?php } else { ?>
-                  <a href="<?php echo get_page_link(6); ?>" class="btn">Find your Home’s Value</a>
+                  <a href="<?php echo get_page_link(17); ?>" class="btn">About Jeff Gottschalk</a>
                 <?php } ?>
               </div>
               <div>
@@ -37,9 +37,14 @@
                     ?>
                   <a href="<?=$search_homes_path;?>" class="btn">Search <?=$neighborhood_name;?> Homes</a>;
                 <?php } else { ?>
-                  <a href="<?php echo get_page_link(343); ?>" class="btn">Search Homes</a>
+                  <a href="<?php echo get_site_url() . '/paradise-valley/'; ?>" class="btn">Search Paradise Valley Homes</a>
                 <?php } ?>
               </div>
+              <?php if (!$GLOBALS['isChildThemePage']) {?>
+                <div>
+                   <a href="<?php echo get_site_url() . '/arcadia/'; ?>" class="btn">Search Arcadia Homes</a>  
+                </div>
+              <?php } ?>
             </div>
           </div>
           <!-- Hero Buttons -->
