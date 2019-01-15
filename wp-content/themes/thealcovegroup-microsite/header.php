@@ -60,8 +60,15 @@ $parent_template_dir_name = dirname(__FILE__) . '/../' . $parent_template_dir_na
     </div>
     <!-- Menu frame -->
 
+     <!-- JS flag that partners with fixed minimized header -->
+    <script>var useOnScroll = true;</script>
+    <?php global $minHeader;
+    if ($minHeader) { ?>
+      <script>useOnScroll = false;</script>
+    <?php } ?>
+    
     <!-- Header -->
-    <div id="header" class="reverse clearfix">
+    <div id="header" class="reverse clearfix<?php if (  $minHeader ): ?> minimized<?php endif; ?>">
       <div id="global-header">
         <div class="row">
           <a id="global-home-link" href="/"><span class="icon-icon-home"></span><span class="show-for-medium-up"><?=$parent_site_name;?> Home</span></a>

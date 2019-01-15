@@ -1,5 +1,4 @@
-<?php get_header();
-?>
+<?php get_header();?>
 
     <!-- Expanding content frame -->
     <div id="content-frame">
@@ -22,13 +21,19 @@
           <div class="row v-center">
             <div class="large-12 columns hero-buttons">
               <div>
+                <a href="<?php echo network_site_url() . '/about/'; ?>" class="btn">Our Realtors</a>
+              </div>
+
+              <div>
                 <?php if ($GLOBALS['isChildThemePage']) {
                     $neighborhood_name = get_neighborhood_value();
                     $find_hvalue_path = get_find_homes_value_value();
                     ?>
-                  <a href="<?=$find_hvalue_path;?>" class="btn">Find your <?=$neighborhood_name;?> Home’s Value</a>;
+                  <!-- <a href="<?=$find_hvalue_path;?>" class="btn">What's my <?=$neighborhood_name;?> home worth?</a> -->
+                  <a href="http://housevaluereport.com/index.cfm?websiteid=3784&fbclid=IwAR09n3Nj7XHrkOG-iod4CZMAnf7Zq2dwKVxESi9z4itiUqr6QE0v3nSxvFo" class="btn">What's my <?=$neighborhood_name;?> home worth?</a>
                 <?php } else { ?>
-                  <a href="<?php echo get_page_link(17); ?>" class="btn">About Jeff Gottschalk</a>
+                  <!-- <a href="<?php echo get_page_link(6); ?>" class="btn">What's my home worth?</a> -->
+                  <a href="http://housevaluereport.com/index.cfm?websiteid=3784&fbclid=IwAR09n3Nj7XHrkOG-iod4CZMAnf7Zq2dwKVxESi9z4itiUqr6QE0v3nSxvFo" class="btn">What's my home worth?</a>
                 <?php } ?>
               </div>
               <div>
@@ -37,14 +42,10 @@
                     ?>
                   <a href="<?=$search_homes_path;?>" class="btn">Search <?=$neighborhood_name;?> Homes</a>;
                 <?php } else { ?>
-                  <a href="<?php echo get_site_url() . '/paradise-valley/'; ?>" class="btn">Search Paradise Valley Homes</a>
+                  <a href="<?php echo get_page_link(343); ?>" class="btn">Search Homes</a>
                 <?php } ?>
               </div>
-              <?php if (!$GLOBALS['isChildThemePage']) {?>
-                <div>
-                   <a href="<?php echo get_site_url() . '/arcadia/'; ?>" class="btn">Search Arcadia Homes</a>  
-                </div>
-              <?php } ?>
+              
             </div>
           </div>
           <!-- Hero Buttons -->
@@ -173,9 +174,6 @@
           anchorsToUse.push('featured-home-' + i);
         }
         anchorsToUse.push('fullpage-footer');
-        
-        console.log(remUnit);
-
         $('.slickslide').slick({
           dots: true,
           arrows: false,
@@ -209,10 +207,8 @@
             var $logoImg = $('img.logo');
             var headerSwapTrue = false;
             if(index == 1 && direction =='down'){
-              console.log("leaving section 1 and going down!");
               headerSwapTrue = true;
             } else if(nextIndex == 1 && direction == 'up'){
-              console.log("Going up to section 1!");
               headerSwapTrue = true;
             }
             if (headerSwapTrue) {
@@ -226,7 +222,6 @@
         });
 
         if (document.documentElement.clientWidth <= responsiveWidth) {
-        // if (document.documentElement.clientWidth <= 640) {
           $.fn.fullpage.destroy('all');
           if (featuredHomeSections[0]) {
             $(featuredHomeSections[0]).attr('id', 'featured-home-0');

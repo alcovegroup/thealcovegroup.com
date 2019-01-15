@@ -53,8 +53,9 @@ jQuery(function ($) {
 				$header.removeClass("minimized");
 			}
 		}
-	}	
-	if (window.location.pathname != '/about/') {
+	}
+	
+	if (useOnScroll) {
 		scrollIncrement()
 		window.onscroll = scrollIncrement;
 	}

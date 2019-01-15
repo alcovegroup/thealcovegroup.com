@@ -5,17 +5,21 @@
  * @package WordPress
  * @subpackage thealcovegroup
  */
-?>
 
-<?php get_header(); ?>
+global $minHeader;
+if (!post_custom('enable_hero')) {
+  $minHeader = true;
+} else {
+  $minHeader = false;
+}
+
+get_header();
+?>
 
     <!-- Expanding content frame -->
     <div id="content-frame">
 
       <div id="fullpage-slider"> <!-- Start fullpage slider -->
-
-
-
 
       <?php if ( post_custom('enable_hero') ): ?>
       
@@ -60,12 +64,13 @@
           <!-- Contents -->
 
           <!-- Scroll CTA -->
-          <div class="row scroll-cta hide-for-medium-only">
+          <div class="row scroll-cta">
             <div class="large-12 columns">
               <span class="outer-circle"><span class="icon-icon-arrow-down"></span></span>
             </div>
           </div>
           <!-- Scroll CTA -->
+
 
         </div>
       </div>
@@ -74,7 +79,7 @@
       <?php endif; ?>      
 
     
-      <div class="about-header-spacer"></div>
+      
 
       <!-- About Bio Section -->
 
@@ -86,7 +91,8 @@
 
 
         <!-- About Bio -->
-        <div class="about-bio-row row full-width section">
+        <div id="first-bio" class="about-bio-row row full-width section reverse">
+          <!-- <div class="about-header-spacer"></div> -->
           <?php if (has_post_thumbnail( $post->ID ) ): ?>
             <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
           <div class="small-12 medium-5 columns about-photo" style="background-image: url('<?php echo $image[0]; ?>');"></div>
@@ -95,6 +101,9 @@
             <div class="about-bio-text-inner">
               <h2><?php the_title(); ?></h2>
               <h3><?php the_field( 'job_title' ); ?></h3>
+              <?php if ( post_custom('show_reviews') ): ?>
+              <a class="about-reviews-btn btn small" href="<?php echo the_field( 'reviews_page' ); ?>"><?php echo the_title(); ?>'s Reviews</a>
+              <?php endif; ?>
               <?php the_content(); ?>
               <ul class="social-icons">
                 <?php if ( post_custom('email_address') ): ?>
@@ -109,6 +118,15 @@
               </ul>
             </div>
           </div>
+
+          <!-- Scroll CTA -->
+          <div class="row scroll-cta">
+            <div class="large-12 columns">
+              <span class="outer-circle"><span class="icon-icon-arrow-down"></span></span>
+            </div>
+          </div>
+          <!-- Scroll CTA -->
+
         </div>
         <!-- End About Bio -->
 
@@ -168,40 +186,43 @@
 	        var pageHeight;
 	        var transformedValue;
 	        var remUnit = parseInt($('html').css("font-size"));
-	        console.log(remUnit);
+          var responsiveWidth = 640;
 	        $('#fullpage-slider').fullpage({
 	          navigation: true,
 	          navigationPosition: 'right',
 	          responsiveWidth: 45.1764*remUnit,
 	          onLeave: function(index, nextIndex, direction){
-	            // var leavingSection = $(this);
-	            // var $header = $('#header');
-	            // var $logoImg = $('img.logo');
-	            // var headerSwapTrue = false;
-	            // if(index == 1 && direction =='down'){
-	            //   console.log("leaving section 1 and going down!");
-	            //   headerSwapTrue = true;
-	            // } else if(nextIndex == 1 && direction == 'up'){
-	            //   console.log("Going up to section 1!");
-	            //   headerSwapTrue = true;
-	            // }
-	            // if (headerSwapTrue) {
-	            //   if (!$header.hasClass("minimized")) {
-	            //     $header.addClass("minimized");
-	            //   } else if ($header.hasClass("minimized")) {
-	            //     $header.removeClass("minimized");
-	            //   }
-	            // }
+              <?php if ( post_custom('enable_hero') ): ?>
+	            var leavingSection = $(this);
+	            var $header = $('#header');
+	            var $logoImg = $('img.logo');
+	            var headerSwapTrue = false;
+              if(index == 1 && direction =='down'){
+                headerSwapTrue = true;
+              } else if(nextIndex == 1 && direction == 'up'){
+                headerSwapTrue = true;
+              }
+              if (headerSwapTrue) {
+                if (!$header.hasClass("minimized")) {
+                  $header.addClass("minimized");
+                } else if ($header.hasClass("minimized")) {
+                  $header.removeClass("minimized");
+                }
+              }
+              <?php endif; ?>
 	          }
 	        });
 	        if (document.documentElement.clientWidth < 45.1764*remUnit) {
 	          $.fn.fullpage.destroy('all');
 	        }
 	        pageHeight = $('#hero').css("height");
-	        console.log("pageHeight: " + pageHeight);
 	        $('.scroll-cta > div > *').on("click", function(){
-	          $.fn.fullpage.moveSectionDown();
-	        });
+          if (document.documentElement.clientWidth > responsiveWidth) {
+            $.fn.fullpage.moveSectionDown();
+          } else {
+            $('html, body').animate({scrollTop: $("#first-bio").offset().top});
+          }
+        });
 	    });
 	});
   </script>

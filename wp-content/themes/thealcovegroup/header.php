@@ -50,9 +50,17 @@
     </div>
     <!-- Menu frame -->
 
+    <!-- JS flag that partners with fixed minimized header -->
+    <script>var useOnScroll = true;</script>
+    <?php global $minHeader;
+    if ($minHeader) { ?>
+      <script>useOnScroll = false;</script>
+    <?php } ?>
+    
     <!-- Header -->
-    <div id="header" class="reverse clearfix<?php if (  is_page( 17 ) ): ?> minimized<?php endif; ?>">
+    <div id="header" class="reverse clearfix<?php if (  $minHeader ): ?> minimized<?php endif; ?>">
       <div class="row">
+        
         <label class="btn small js-menu-btn" for="menu-toggle">Menu</label>
         <a href="<?php echo get_site_url(); ?>" class="show-for-medium-up header-logo-holder">
           <img src="<?php echo get_template_directory_uri(); ?>/img/alcove-logo-sprite-large.png" class="logo" />
