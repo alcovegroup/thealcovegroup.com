@@ -1,0 +1,336 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to the Alcove Group</title>
+    <link rel="stylesheet" type="text/css" href="../bower_components/fullpage.js/jquery.fullPage.css" />
+    <link rel="stylesheet" href="../stylesheets/app.css" />
+    <link rel="stylesheet" href="../stylesheets/base-styles.css" />
+    <link rel="stylesheet" href="../stylesheets/modules.css" />
+    <link rel="stylesheet" href="../stylesheets/no-touch.css" />
+    
+    <script src="../bower_components/modernizr/modernizr.js"></script>
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../bower_components/fullpage.js/jquery.fullPage.js"></script>
+    <link rel="stylesheet" type="text/css" href="../bower_components/slick-carousel/slick/slick.css"/>
+
+  </head>
+
+  <body class="home">
+    <div id="loadingStatus"></div>
+
+    <div id="pageHide"> <!-- Wraps the page content to hide while video loads -->
+
+    <!-- Menu toggle hidden -->
+    <input id="menu-toggle" type="checkbox" />
+    <!-- Menu toggle hidden -->
+
+    <!-- Menu frame -->
+    <div id="menu-frame" class="reverse alcove-texture">
+      <label class="js-menu-btn" for="menu-toggle"><span class="icon-icon-x"></span>Close</label>
+      <ul class="mobile-menu">
+          <li><a href="index.html">Featured Homes</a></li>
+          <li><a href="home-value.html">Find Your Home’s Value</a></li>
+          <li><a href="search-homes.html">Search Homes</a></li>
+          <li><a href="sell-your-home.html">Sell Your Home</a></li>
+          <li><a href="buy-a-home.html">Buy A Home</a></li>
+          <li><a href="build-a-home.html">Build A Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      <ul class="social-icons">
+          <li><a href="#"><span class="icon-ring"></span><span class="icon-icon-email"></span></a></li>
+          <li><a href="#"><span class="icon-ring"></span><span class="icon-icon-phone"></span></a></li>
+          <li><a href="#"><span class="icon-ring"></span><span class="icon-icon-facebook"></span></a></li>
+          <li><a href="#"><span class="icon-ring"></span><span class="icon-icon-linkedin"></span></a></li>
+        </ul>
+    </div>
+    <!-- Menu frame -->
+
+    <!-- Header -->
+    <div id="header" class="reverse clearfix">
+      <div class="row">
+        <label class="btn small js-menu-btn" for="menu-toggle">Menu</label>
+        <a href="index.html" class="show-for-medium-up header-logo-holder">
+          <img src="../img/alcove-logo-sprite-large.png" class="logo" />
+        </a>
+        <a href="index.html" class="hide-for-medium-up">
+          <img src="../img/alcove-logo-mobile.png" class="logo-mobile" />
+        </a>
+        <ul class="social-icons show-for-medium-up">
+          <li><a href="#"><span class="icon-ring"></span><span class="icon-icon-email"></span></a></li>
+          <li><a href="#"><span class="icon-ring"></span><span class="icon-icon-phone"></span></a></li>
+          <li><a href="#"><span class="icon-ring"></span><span class="icon-icon-facebook"></span></a></li>
+          <li><a href="#"><span class="icon-ring"></span><span class="icon-icon-linkedin"></span></a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- Header -->
+
+    <!-- Expanding content frame -->
+    <div id="content-frame">
+
+      <div id="fullpage-slider"> <!-- Start fullpage slider -->
+
+      <!-- Hero -->
+      
+      <div id="hero" class="section" style="background-image: url('../img/temp-hero-bg.jpg');">
+        <div class="video-bg" style="width: 100%; height: 100%; position: absolute;">
+          <video id="videoPreload" width="100%" height="100%" preload autoplay loop muted style="position: absolute; top: 50%; left: 50%; z-index: 1; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translate(-50%, -50%); z-index: -1000;">
+            <source src="http://mls.liquinas.com/wp-content/uploads/2016/08/earth_night_rotate_1080.mp4" type="video/mp4">
+            <source src="http://mls.liquinas.com/wp-content/uploads/2016/08/earth_night_rotate_1080.webm" type="video/webm">
+            <source src="http://mls.liquinas.com/wp-content/uploads/2016/08/earth_night_rotate_1080.ogg" type="video/ogg">
+          Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <div class="hero-overlay reverse">
+
+          <!-- Hero Buttons -->
+          <div class="row v-center">
+            <div class="large-12 columns hero-buttons">
+              <div>
+                <a href="home-value.html" class="btn">Find your Home’s Value</a>
+                <span class="btn-subtext">Get access to your home's value, instantly!</span>
+              </div>
+              <div>
+                <a href="search-homes.html" class="btn">Search Homes</a>
+              </div>
+            </div>
+          </div>
+          <!-- Hero Buttons -->
+
+          <!-- Scroll CTA -->
+          <div class="row scroll-cta">
+            <div class="large-12 columns">
+              <h3>The Alcove Group Featured Homes</h3>
+              <span class="outer-circle"><span class="icon-icon-arrow-down"></span></span>
+            </div>
+          </div>
+          <!-- Scroll CTA -->
+
+        </div>
+      </div>
+      <!-- Hero -->
+
+
+      <!-- Featured Home Section -->
+      <!-- <div id="section2-mobile"></div> -->
+
+      <!-- Featured Home Always Mobile-->
+      <div class="featured-home section">
+        <div class="featured-home-image">
+          <ul class="slickslide">
+            <li style="background-image: url('../img/temp-featured-home-01.jpg');"></li>
+            <li style="background-image: url('../img/temp-featured-home-02.jpg');"></li>
+            <li style="background-image: url('../img/temp-featured-home-03.jpg');"></li>
+            <li style="background-image: url('../img/temp-featured-home-02.jpg');"></li>
+          </ul>
+        </div>
+        <div class="featured-overlay"></div>
+        <div class="row full-width featured-home-details">
+          <div class="small-12 columns v-center">
+              <div class="featured-home-details-inner">
+                <div class="left-group">
+                  <h4>6336 E Via Estrella Ave</h4>
+                  <h4>Paradise Valley, AZ 85253</h4>
+                  <h3>$1,774,950</h3>
+                </div>
+                <div class="right-group">
+                  <a href="#" class="btn">View Home</a>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <!-- Featured Home Always Mobile-->
+
+      <!-- Featured Home -->
+      <div class="featured-home section">
+        <div class="featured-home-image">
+          <ul class="slickslide">
+            <li style="background-image: url('../img/temp-featured-home-01.jpg');"></li>
+            <li style="background-image: url('../img/temp-featured-home-02.jpg');"></li>
+            <li style="background-image: url('../img/temp-featured-home-03.jpg');"></li>
+            <li style="background-image: url('../img/temp-featured-home-02.jpg');"></li>
+          </ul>
+        </div>
+        <div class="featured-overlay"></div>
+        <div class="row full-width featured-home-details">
+          <div class="small-12 columns v-center">
+            <div class="featured-home-details-inner">
+              <div class="left-group">
+                <h4>6336 E Via Estrella Ave</h4>
+                <h4>Paradise Valley, AZ 85253</h4>
+                <h3>$1,774,950</h3>
+              </div>
+              <div class="right-group">
+                <a href="#" class="btn">View Home</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Featured Home -->
+
+      <!-- Featured Home -->
+      <div class="featured-home section">
+        <div class="featured-home-image">
+          <ul class="slickslide">
+            <li style="background-image: url('../img/temp-featured-home-01.jpg');"></li>
+            <li style="background-image: url('../img/temp-featured-home-02.jpg');"></li>
+            <li style="background-image: url('../img/temp-featured-home-03.jpg');"></li>
+            <li style="background-image: url('../img/temp-featured-home-02.jpg');"></li>
+          </ul>
+        </div>
+        <div class="featured-overlay"></div>
+        <div class="row full-width featured-home-details">
+          <div class="small-12 columns v-center">
+            <div class="featured-home-details-inner">
+              <div class="left-group">
+                <h4>6336 E Via Estrella Ave</h4>
+                <h4>Paradise Valley, AZ 85253</h4>
+                <h3>$1,774,950</h3>
+              </div>
+              <div class="right-group">
+                <a href="#" class="btn">View Home</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Featured Home -->
+
+      <!-- Featured Home Section -->
+
+      
+
+      <!-- Footer -->
+      <div id="footer" class="reverse alcove-texture section">
+        <div class="row">
+          <div class="small-12 medium-8 medium-offset-2 columns footer-content">
+            <h4>Subscribe to Alcove Market Updates</h4>
+            <form id="footerSubscribe">
+              <input type="text" placeholder="Email Address*" required/>
+              <input type="submit" class="small" value="Subscribe" />
+            </form>
+            <ul class="social-icons">
+              <li><a href="#"><span class="icon-ring"></span><span class="icon-icon-email"></span></a></li>
+              <li><a href="#"><span class="icon-ring"></span><span class="icon-icon-phone"></span></a></li>
+              <li><a href="#"><span class="icon-ring"></span><span class="icon-icon-facebook"></span></a></li>
+              <li><a href="#"><span class="icon-ring"></span><span class="icon-icon-linkedin"></span></a></li>
+            </ul>
+            <ul class="menu">
+              <li><a href="index.html">Featured Homes</a></li>
+              <li><a href="home-value.html">Find Your Home’s Value</a></li>
+              <li><a href="search-homes.html">Search Homes</a></li>
+              <li><a href="sell-your-home.html">Sell Your Home</a></li>
+              <li><a href="buy-a-home.html">Buy A Home</a></li>
+              <li><a href="build-a-home.html">Build A Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <p class="copyright">Copyright© The Alcove Group 2016</p>
+          </div>
+        </div>
+      </div>
+      <!-- Footer -->
+
+      </div> <!-- End of fullpage slider -->
+
+    </div>
+    <!-- Expanding content frame -->
+
+    
+    <script src="../bower_components/foundation/js/foundation.min.js"></script>
+    <script type="text/javascript" src="../bower_components/slick-carousel/slick/slick.min.js"></script>
+    <script src="../js/app.js"></script>
+    <script>
+    $(document).ready(function() {
+
+        function showPage(){
+          setTimeout(function(){   
+            $('#pageHide').css({
+              "opacity": "1",
+              "pointer-events": "auto"
+            });
+          }, 35);
+        }
+        showPage();
+
+        var pageHeight;
+        var transformedValue;
+        var remUnit = parseInt($('html').css("font-size"));
+        var responsiveWidth = 37.70588*remUnit;
+        console.log(remUnit);
+
+        $('.slickslide').slick({
+          dots: true,
+          arrows: false,
+          customPaging : function() {
+              return '<span></span>';
+          }
+        });
+
+        $('#fullpage-slider').fullpage({
+          // anchors: ['section1', 'section2'],
+          navigation: true,
+          navigationPosition: 'right',
+          responsiveWidth: responsiveWidth,
+          afterRender: function () {
+            
+            // var heroHeight = $("#hero").height();
+            // var numFeaturedHomes = $('.featured-home').length;
+            // var featuredHomeHeight = $('.featured-home').height();
+            // var footerHeight = $('#footer').height();
+            // var calculatedHeight = heroHeight + (featuredHomeHeight*numFeaturedHomes) + footerHeight;
+            // $('#darken-overlay').css("height", calculatedHeight);
+
+            if ($(window).width() > responsiveWidth) {
+              $('video').get(0).play();
+            }
+          },
+          onLeave: function(index, nextIndex, direction){
+            $('video').get(0).play();
+            var leavingSection = $(this);
+            var $header = $('#header');
+            var $logoImg = $('img.logo');
+            var headerSwapTrue = false;
+            if(index == 1 && direction =='down'){
+              console.log("leaving section 1 and going down!");
+              headerSwapTrue = true;
+            } else if(nextIndex == 1 && direction == 'up'){
+              console.log("Going up to section 1!");
+              headerSwapTrue = true;
+            }
+            if (headerSwapTrue) {
+              if (!$header.hasClass("minimized")) {
+                $header.addClass("minimized");
+              } else if ($header.hasClass("minimized")) {
+                $header.removeClass("minimized");
+              }
+            }
+          }
+        });
+        if (document.documentElement.clientWidth < 37.70588*remUnit) {
+          $.fn.fullpage.destroy('all');
+        }
+        pageHeight = $('#hero').css("height");
+        $('.scroll-cta > div > *').on("click", function(){
+          $.fn.fullpage.moveSectionDown();
+        });
+
+        // function menuButtonClick() {
+        //   alert("this works");
+        // }
+
+        
+
+    });
+    </script>
+
+    </div> <!-- End of page hide wrapper -->
+
+  </body>
+</html>

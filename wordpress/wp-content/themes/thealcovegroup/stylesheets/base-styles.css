@@ -1,0 +1,682 @@
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~ CINZEL ~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@import url(https://fonts.googleapis.com/css?family=Cinzel:400,700,900);
+@font-face {
+  font-family: 'icomoon';
+  src: url("../assets/fonts/icomoon/icomoon.eot?i8agtb");
+  src: url("../assets/fonts/icomoon/icomoon.eot?i8agtb#iefix") format("embedded-opentype"), url("../assets/fonts/icomoon/icomoon.ttf?i8agtb") format("truetype"), url("../assets/fonts/icomoon/icomoon.woff?i8agtb") format("woff"), url("../assets/fonts/icomoon/icomoon.svg?i8agtb#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* line 8, ../scss/base-styles.scss */
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* line 23, ../scss/base-styles.scss */
+.icon-icon-x:before {
+  content: "\e908";
+}
+
+/* line 26, ../scss/base-styles.scss */
+.icon-icon-arrow-down:before {
+  content: "\e905";
+}
+
+/* line 29, ../scss/base-styles.scss */
+.icon-icon-arrow-in:before {
+  content: "\e906";
+}
+
+/* line 32, ../scss/base-styles.scss */
+.icon-icon-expand:before {
+  content: "\e907";
+}
+
+/* line 35, ../scss/base-styles.scss */
+.icon-icon-checkmark:before {
+  content: "\e900";
+}
+
+/* line 38, ../scss/base-styles.scss */
+.icon-icon-email:before {
+  content: "\e901";
+}
+
+/* line 41, ../scss/base-styles.scss */
+.icon-icon-facebook:before {
+  content: "\e902";
+}
+
+/* line 44, ../scss/base-styles.scss */
+.icon-icon-linkedin:before {
+  content: "\e903";
+}
+
+/* line 47, ../scss/base-styles.scss */
+.icon-icon-phone:before {
+  content: "\e904";
+}
+
+/* line 50, ../scss/base-styles.scss */
+.icon-icon-home:before {
+  content: "\e909";
+}
+
+/* line 53, ../scss/base-styles.scss */
+.icon-icon-star:before {
+  content: "\e910";
+}
+
+/* line 57, ../scss/base-styles.scss */
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+/* line 63, ../scss/base-styles.scss */
+html {
+  font-size: 16px;
+  height: 100%;
+}
+
+/* line 68, ../scss/base-styles.scss */
+body {
+  font-family: "Adobe Garamond Pro", Palatino Linotype, Palatino, Georgia, serif;
+  line-height: 1.7;
+  color: #302b28;
+  overflow-x: hidden;
+  min-height: 100%;
+}
+
+/* line 76, ../scss/base-styles.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Cinzel", Palatino Linotype, Palatino, Georgia, serif;
+  line-height: 1;
+}
+
+/* line 86, ../scss/base-styles.scss */
+h1, h2 {
+  font-weight: 900;
+}
+
+/* line 90, ../scss/base-styles.scss */
+h3, h4 {
+  font-weight: 700;
+}
+
+/* line 93, ../scss/base-styles.scss */
+h5, h6 {
+  font-weight: 400;
+}
+
+/* line 97, ../scss/base-styles.scss */
+h1 {
+  font-size: 2.2rem;
+}
+
+/* line 100, ../scss/base-styles.scss */
+h2 {
+  font-size: 2rem;
+}
+
+/* line 103, ../scss/base-styles.scss */
+h3 {
+  font-size: 1.6rem;
+}
+
+/* line 106, ../scss/base-styles.scss */
+h4 {
+  font-size: 1.4rem;
+}
+
+/* line 117, ../scss/base-styles.scss */
+h5 {
+  font-size: 1.4rem;
+}
+
+/* line 120, ../scss/base-styles.scss */
+h6 {
+  font-size: 1.2rem;
+}
+
+/* line 124, ../scss/base-styles.scss */
+a {
+  text-decoration: none;
+  font-weight: 700;
+  color: #064557;
+  border-bottom: 1px solid #064557;
+  -moz-transition: border-color 0.2s linear, padding 0.2s ease-in-out, color 0.2s linear;
+  -o-transition: border-color 0.2s linear, padding 0.2s ease-in-out, color 0.2s linear;
+  -webkit-transition: border-color 0.2s linear, padding 0.2s ease-in-out, color 0.2s linear;
+  transition: border-color 0.2s linear, padding 0.2s ease-in-out, color 0.2s linear;
+}
+
+/* line 134, ../scss/base-styles.scss */
+p {
+  letter-spacing: 0.01rem;
+  max-width: 44rem;
+}
+/* line 137, ../scss/base-styles.scss */
+p.copyright {
+  font-size: 0.75rem;
+  font-family: "Cinzel", Palatino Linotype, Palatino, Georgia, serif;
+  letter-spacing: 0.05rem;
+  margin: 2.5rem 0 1.5rem 0;
+  max-width: none;
+}
+
+/* line 147, ../scss/base-styles.scss */
+.reverse h1, .reverse h2, .reverse h3, .reverse h4, .reverse h5, .reverse h6, .reverse p {
+  color: #FFFFFF;
+}
+
+/* line 152, ../scss/base-styles.scss */
+strong {
+  font-weight: 700;
+}
+
+/* line 156, ../scss/base-styles.scss */
+em {
+  font-style: italic;
+}
+
+/* line 160, ../scss/base-styles.scss */
+ul, ol {
+  margin: 0.5rem 0;
+  padding: 0.5rem 1rem 0.5rem 2rem;
+  background-color: rgba(226, 226, 226, 0.25);
+  color: #797979;
+  border-left: 2px solid #064557;
+  text-indent: 1rem;
+}
+/* line 167, ../scss/base-styles.scss */
+ul li, ol li {
+  margin-bottom: 0.25rem;
+}
+/* line 169, ../scss/base-styles.scss */
+ul li:last-child, ol li:last-child {
+  margin: 0;
+}
+
+/* line 175, ../scss/base-styles.scss */
+ul {
+  list-style-type: circle;
+}
+
+/* line 179, ../scss/base-styles.scss */
+blockquote, q {
+  quotes: none;
+  font-size: 2rem;
+  color: #064557;
+  font-family: "Cinzel", Palatino Linotype, Palatino, Georgia, serif;
+  font-weight: 100;
+  border: 4px double #064557;
+  margin: 2rem 0 0 0;
+  padding: 0.5rem 1rem 0.75rem 1rem;
+  text-align: center;
+  line-height: 1;
+}
+
+/* line 192, ../scss/base-styles.scss */
+cite {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  font-family: "Adobe Garamond Pro", Palatino Linotype, Palatino, Georgia, serif;
+  margin-top: 1.5rem;
+}
+
+/* line 200, ../scss/base-styles.scss */
+table {
+  margin-top: 2rem;
+  font-weight: 100;
+  font-family: "Adobe Garamond Pro", Palatino Linotype, Palatino, Georgia, serif;
+  border-collapse: collapse;
+}
+/* line 206, ../scss/base-styles.scss */
+table thead tr {
+  background-color: #012639;
+  color: #FFFFFF;
+  font-weight: 100;
+  border: none;
+}
+/* line 211, ../scss/base-styles.scss */
+table thead tr th {
+  font-weight: 100;
+}
+/* line 218, ../scss/base-styles.scss */
+table tr {
+  border-bottom: 1px solid rgba(48, 43, 40, 0.25);
+  -moz-transition: box-shadow 0.2s linear;
+  -o-transition: box-shadow 0.2s linear;
+  -webkit-transition: box-shadow 0.2s linear;
+  transition: box-shadow 0.2s linear;
+}
+/* line 222, ../scss/base-styles.scss */
+table tr:nth-child(even) {
+  background-color: rgba(48, 43, 40, 0.05);
+}
+/* line 225, ../scss/base-styles.scss */
+table tr:last-child {
+  border: none;
+}
+/* line 229, ../scss/base-styles.scss */
+table td, table th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+/* line 237, ../scss/base-styles.scss */
+form small {
+  color: #FFFFFF;
+}
+/* line 239, ../scss/base-styles.scss */
+form small.error {
+  display: none;
+}
+
+/* line 246, ../scss/base-styles.scss */
+input,
+select,
+textarea {
+  display: block;
+  text-transform: uppercase;
+  width: 100%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid #012639;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  color: #012639;
+  outline: none;
+  font-size: 1.25rem;
+  padding: 0.5rem;
+  padding-top: 0.75rem;
+  font-family: "Adobe Garamond Pro", Palatino Linotype, Palatino, Georgia, serif;
+  letter-spacing: 0.1rem;
+  font-weight: 100;
+  margin-top: 1rem;
+  margin-bottom: 0;
+  background-color: rgba(1, 38, 57, 0.1);
+}
+/* line 268, ../scss/base-styles.scss */
+input[data-invalid],
+select[data-invalid],
+textarea[data-invalid] {
+  background-color: rgba(255, 116, 116, 0.35) !important;
+  border-color: #9a1414 !important;
+}
+/* line 271, ../scss/base-styles.scss */
+input[data-invalid] + .error,
+select[data-invalid] + .error,
+textarea[data-invalid] + .error {
+  display: block;
+}
+
+/* line 276, ../scss/base-styles.scss */
+textarea::-webkit-input-placeholder {
+  text-align: left;
+}
+
+/* line 279, ../scss/base-styles.scss */
+textarea:-moz-input-placeholder {
+  text-align: left;
+}
+
+/* line 282, ../scss/base-styles.scss */
+textarea::-moz-input-placeholder {
+  text-align: left;
+}
+
+/* line 285, ../scss/base-styles.scss */
+textarea::-ms-input-placeholder {
+  text-align: left;
+}
+
+/* line 288, ../scss/base-styles.scss */
+select {
+  height: 44px;
+  font-size: 1.1rem;
+  position: relative;
+  top: -1px;
+  text-align: center;
+}
+
+/* line 295, ../scss/base-styles.scss */
+input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+/* line 298, ../scss/base-styles.scss */
+input:focus:-moz-placeholder {
+  color: transparent;
+}
+
+/* line 301, ../scss/base-styles.scss */
+input:focus::-moz-placeholder {
+  color: transparent;
+}
+
+/* line 304, ../scss/base-styles.scss */
+input:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+/* line 308, ../scss/base-styles.scss */
+::-webkit-input-placeholder {
+  text-align: center;
+  color: #012639;
+  text-transform: uppercase;
+  -moz-transition: opacity, 0.2s, linear;
+  -o-transition: opacity, 0.2s, linear;
+  -webkit-transition: opacity, 0.2s, linear;
+  transition: opacity, 0.2s, linear;
+}
+
+/* line 315, ../scss/base-styles.scss */
+:-moz-placeholder {
+  /* Firefox 18- */
+  text-align: center;
+  color: #012639;
+  text-transform: uppercase;
+}
+
+/* line 321, ../scss/base-styles.scss */
+::-moz-placeholder {
+  /* Firefox 19+ */
+  text-align: center;
+  color: #012639;
+  text-transform: uppercase;
+}
+
+/* line 327, ../scss/base-styles.scss */
+:-ms-input-placeholder {
+  text-align: center;
+  color: #012639;
+  text-transform: uppercase;
+}
+
+/* line 348, ../scss/base-styles.scss */
+input[type="checkbox"] {
+  visibility: hidden;
+  display: none;
+}
+/* line 352, ../scss/base-styles.scss */
+input[type="checkbox"] + label.checkbox-skin {
+  height: 35px;
+  width: 35px;
+  background-color: transparent;
+  border: 2px solid #FFFFFF;
+  float: left;
+}
+/* line 361, ../scss/base-styles.scss */
+input[type="checkbox"] + label::after {
+  content: '';
+  background: transparent;
+  display: inline-block;
+  background-repeat: no-repeat;
+  height: 35px;
+  width: 35px;
+  background-position: 6px 3px;
+  overflow: visible;
+}
+/* line 371, ../scss/base-styles.scss */
+input[type="checkbox"] + label + label {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  line-height: 1.3;
+  padding-left: 1rem;
+  position: relative;
+  float: left;
+  width: 85%;
+}
+/* line 386, ../scss/base-styles.scss */
+input[type="checkbox"]:checked + label::after {
+  background-image: url("../img/temp-icon-checkbox-checked.png");
+}
+
+/* line 405, ../scss/base-styles.scss */
+input[type="submit"],
+button,
+a.btn,
+label.btn {
+  cursor: pointer;
+  display: inline-block;
+  background: transparent;
+  text-align: center;
+  color: #012639;
+  border: 2px solid #012639;
+  padding: 0.7rem 1.2rem;
+  line-height: 1;
+  font-size: 1rem;
+  text-decoration: none;
+  font-family: "Cinzel", Palatino Linotype, Palatino, Georgia, serif;
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+  width: auto;
+  -moz-border-radius: 500px;
+  -webkit-border-radius: 500px;
+  border-radius: 500px;
+  -moz-transition: color 0.2s linear, background 0.2s linear;
+  -o-transition: color 0.2s linear, background 0.2s linear;
+  -webkit-transition: color 0.2s linear, background 0.2s linear;
+  transition: color 0.2s linear, background 0.2s linear;
+}
+
+/* line 432, ../scss/base-styles.scss */
+input[type="submit"].small,
+button.small,
+a.btn.small,
+label.btn.small {
+  padding: 0.7rem 1.2rem;
+  border-width: 1px;
+  line-height: 1;
+  font-size: 1rem;
+}
+
+/* line 442, ../scss/base-styles.scss */
+input[type="text"],
+input[type="number"],
+textarea {
+  letter-spacing: 0.05rem;
+  font-size: 1rem;
+  -moz-transition: padding 0.2s ease-in-out, margin 0.2s ease-in-out, width 0.2s ease-in-out, color 0.2s linear, background-color 0.2s linear, box-shadow 0.2s linear;
+  -o-transition: padding 0.2s ease-in-out, margin 0.2s ease-in-out, width 0.2s ease-in-out, color 0.2s linear, background-color 0.2s linear, box-shadow 0.2s linear;
+  -webkit-transition: padding 0.2s ease-in-out, margin 0.2s ease-in-out, width 0.2s ease-in-out, color 0.2s linear, background-color 0.2s linear, box-shadow 0.2s linear;
+  transition: padding 0.2s ease-in-out, margin 0.2s ease-in-out, width 0.2s ease-in-out, color 0.2s linear, background-color 0.2s linear, box-shadow 0.2s linear;
+}
+/* line 453, ../scss/base-styles.scss */
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+  outline: none;
+  padding: 1.25rem 0 1rem 1.5rem;
+  margin: 0.5rem 0 -0.5rem -1rem;
+  width: 102.75%;
+}
+
+/* line 465, ../scss/base-styles.scss */
+.small-12 input[type="text"]:focus,
+.small-12 input[type="number"]:focus,
+.small-12 textarea:focus {
+  width: 105.5%;
+}
+
+/* line 475, ../scss/base-styles.scss */
+.medium-4 input[type="text"]:focus,
+.medium-4 input[type="number"]:focus,
+.medium-4 textarea:focus {
+  width: 115.5%;
+}
+
+/* line 485, ../scss/base-styles.scss */
+.medium-6 input[type="text"]:focus,
+.medium-6 input[type="number"]:focus,
+.medium-6 textarea:focus {
+  width: 108%;
+  margin-left: -0.5rem;
+}
+
+/* line 493, ../scss/base-styles.scss */
+.reverse input,
+.reverse select,
+.reverse textarea {
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+/* line 499, ../scss/base-styles.scss */
+.reverse input:focus,
+.reverse select:focus,
+.reverse textarea:focus {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-color: transparent;
+  color: #012639;
+  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+/* line 506, ../scss/base-styles.scss */
+.reverse input[type="submit"],
+.reverse button,
+.reverse a.btn,
+.reverse label.btn {
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+  background-color: transparent;
+}
+/* line 514, ../scss/base-styles.scss */
+.reverse ::-webkit-input-placeholder {
+  color: #FFFFFF;
+}
+/* line 517, ../scss/base-styles.scss */
+.reverse :-moz-placeholder {
+  color: #FFFFFF;
+}
+/* line 520, ../scss/base-styles.scss */
+.reverse ::-moz-placeholder {
+  color: #FFFFFF;
+}
+/* line 523, ../scss/base-styles.scss */
+.reverse :-ms-input-placeholder {
+  color: #FFFFFF;
+}
+
+/* line 528, ../scss/base-styles.scss */
+.slider-holder {
+  width: 100%;
+  height: 45px;
+  position: relative;
+  top: 25px;
+  cursor: pointer;
+}
+/* line 534, ../scss/base-styles.scss */
+.slider-holder .slider-bar {
+  height: 8px;
+  background-color: rgba(226, 226, 226, 0.1);
+  border-bottom: 1px solid #FFFFFF;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+}
+/* line 540, ../scss/base-styles.scss */
+.slider-holder .slider-grip {
+  display: inline-block;
+  position: absolute;
+  height: 20px;
+  width: 12px;
+  top: -6px;
+  background: url("../img/temp-icon-slider-grip.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* line 549, ../scss/base-styles.scss */
+.slider-holder .slider-grip#price-range-min, .slider-holder .slider-grip#sq-ft-range-min, .slider-holder .slider-grip#lot-range-min {
+  left: 0;
+}
+/* line 554, ../scss/base-styles.scss */
+.slider-holder .slider-grip#price-range-max, .slider-holder .slider-grip#sq-ft-range-max, .slider-holder .slider-grip#lot-range-max {
+  right: 0;
+}
+
+/* line 563, ../scss/base-styles.scss */
+.noUi-horizontal .noUi-handle {
+  height: 22px !important;
+}
+
+/* line 568, ../scss/base-styles.scss */
+.v-center {
+  position: relative !important;
+  top: 49% !important;
+  -ms-transform: translateY(-50%) !important;
+  -webkit-transform: translateY(-50%) !important;
+  transform: translateY(-50%) !important;
+}
+
+/* line 578, ../scss/base-styles.scss */
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+/* line 586, ../scss/base-styles.scss */
+.clearfix {
+  display: inline-block;
+}
+
+/* start commented backslash hack \*/
+/* line 588, ../scss/base-styles.scss */
+* html .clearfix {
+  height: 1%;
+}
+
+/* line 589, ../scss/base-styles.scss */
+.clearfix {
+  display: block;
+}
+
+/* close commented backslash hack */
+@media only screen and (min-width: 40.0625em) {
+  /* line 595, ../scss/base-styles.scss */
+  html {
+    font-size: 17px;
+  }
+
+  /* line 598, ../scss/base-styles.scss */
+  input[type="submit"],
+  button,
+  a.btn,
+  label.btn {
+    padding: 1rem 1.5rem;
+    line-height: 1.4;
+    font-size: 1.2rem;
+  }
+
+  /* line 606, ../scss/base-styles.scss */
+  .slider-holder {
+    top: 35px;
+  }
+}

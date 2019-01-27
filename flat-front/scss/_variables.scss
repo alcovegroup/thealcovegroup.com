@@ -1,0 +1,36 @@
+// @import "compass";
+
+$defaultTransitionDuration: 0.2s;
+$defaultHeaderHeight: rem-calc(280px);
+$minimizedHeaderHeight: rem-calc(70px);
+$defaultHeaderHeightMicrosite: rem-calc(95px);
+$minimizedHeaderHeightMicrosite: rem-calc(110px);
+$globalHeaderHeight: rem-calc(30px);
+$callNowHeaderHeight: rem-calc(24px);
+$regionalHeaderHeight: rem-calc(65px);
+$globalHeaderHeightDesktop: rem-calc(40px);
+$regionalHeaderHeightDesktop: rem-calc(145px);
+$menuWidth: rem-calc(248px);
+$featuredHomeHeight: rem-calc(490px);
+
+$headlineFontFamily: "Cinzel", Palatino Linotype, Palatino, Georgia, serif;
+$bodyFontFamily: "Adobe Garamond Pro", Palatino Linotype, Palatino, Georgia, serif;
+
+$primaryBlue: #012639;
+$secondaryBlue: #064557;
+$lightYellow: #f2d383;
+$darkYellow: #e5a344;
+$lightBrown: #4d4845;
+$darkBrown: #302b28;
+$red: #ff7474;
+$darkRed: #9a1414;
+$white: #FFFFFF;
+$gray-1: #e2e2e2;
+$gray-2: #b1b1b1;
+$gray-3: #797979;
+$gray-4: #3b3b3b;
+$black: #000000;
+
+@mixin showMe($color) {
+	border: 1px dashed $color;
+}

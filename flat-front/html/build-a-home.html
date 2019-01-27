@@ -1,0 +1,279 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Build A Home</title>
+    <link rel="stylesheet" href="../stylesheets/app.css" />
+    <link rel="stylesheet" href="../stylesheets/base-styles.css" />
+    <link rel="stylesheet" href="../stylesheets/modules.css" />
+    <link rel="stylesheet" href="../stylesheets/no-touch.css" />
+    <script src="../bower_components/modernizr/modernizr.js"></script>
+  </head>
+  <body class="page-template-build-a-home">
+
+    <!-- Menu toggle hidden -->
+    <input id="menu-toggle" type="checkbox" />
+    <!-- Menu toggle hidden -->
+
+    <!-- Menu frame -->
+    <div id="menu-frame" class="reverse alcove-texture">
+      <label class="js-menu-btn" for="menu-toggle"><span class="icon-icon-x"></span>Close</label>
+      <ul class="mobile-menu">
+          <li><a href="index.html">Featured Homes</a></li>
+          <li><a href="home-value.html">Find Your Home’s Value</a></li>
+          <li><a href="search-homes.html">Search Homes</a></li>
+          <li><a href="sell-your-home.html">Sell Your Home</a></li>
+          <li><a href="buy-a-home.html">Buy A Home</a></li>
+          <li><a href="build-a-home.html">Build A Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      <ul class="social-icons">
+          <li><a href="#"><span class="icon-ring"></span><span class="icon-icon-email"></span></a></li>
+          <li><a href="#"><span class="icon-ring"></span><span class="icon-icon-phone"></span></a></li>
+          <li><a href="#"><span class="icon-ring"></span><span class="icon-icon-facebook"></span></a></li>
+          <li><a href="#"><span class="icon-ring"></span><span class="icon-icon-linkedin"></span></a></li>
+        </ul>
+    </div>
+    <!-- Menu frame -->
+
+    <!-- Header -->
+    <div id="header" class="reverse clearfix">
+      <div class="row">
+        <label class="btn small js-menu-btn" for="menu-toggle">Menu</label>
+        <a href="index.html" class="show-for-medium-up header-logo-holder">
+          <img src="../img/alcove-logo-sprite-large.png" class="logo" />
+        </a>
+        <a href="index.html" class="hide-for-medium-up">
+          <img src="../img/alcove-logo-mobile.png" class="logo-mobile" />
+        </a>
+        <ul class="social-icons show-for-medium-up">
+          <li><a href="#"><span class="icon-ring"></span><span class="icon-icon-email"></span></a></li>
+          <li><a href="#"><span class="icon-ring"></span><span class="icon-icon-phone"></span></a></li>
+          <li><a href="#"><span class="icon-ring"></span><span class="icon-icon-facebook"></span></a></li>
+          <li><a href="#"><span class="icon-ring"></span><span class="icon-icon-linkedin"></span></a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- Header -->
+
+    <!-- Expanding content frame -->
+    <div id="content-frame">
+
+      <!-- Hero -->
+      <div id="hero" style="background-image: url('../img/temp-hero-bg-homevalue.jpg');">
+        <div class="hero-overlay reverse">
+
+          <div class="row form-page-header form-and-blurb">
+            <div class="small-12 small-centered medium-11 large-9 columns">
+              <h3>Build A Home</h3>
+              <p>Finding the value of your home can be a daunting task. There’s many things to consider: recently sold comparable homes in your area, active listings in your neighborhood,  and the current state of the market. A meaningful evaluation takes due diligence. We take the time to thoroughly evaluate comparable homes and active listings by reaching out to listing agents that sold the homes or currently have the listings. We inquire about the history of the homes and why the seller’s wanted to move. Understanding why homes sold in your area will help you determine the true value of your home and can help increase your value in some cases. The Alcove Group offers a complimentary home evaluation. Take some time to fill out information about your home and an Alcove Home Consultant will be touch with you shortly to assist you.</p>
+            </div>
+          </div>
+
+          <div class="row hero-form form-button-right">
+            <div class="small-12 small-centered medium-10 large-6 columns"> <!-- Start form column -->
+              <!-- The form itself -->
+                <form id="build-a-home-form" class="row form-and-blurb" action="" method="post" data-abide onsubmit="event.preventDefault(); formSubmission(event);">
+                  <div class="row">
+                    <div class="small-12 columns select-prefix">
+                      <span>Design Style?</span>
+                      <select name="home-style">
+                        <option selected disabled value>Select one</option>
+                        <option value="ranch">Ranch</option>
+                        <option value="contemporary">Contemporary</option>
+                        <option value="mid-century-modern">Mid Century Modern</option>
+                        <option value="santa-fe">Santa Fe</option>
+                        <option value="santa-barbara">Santa Barbara</option>
+                        <option value="old-world">Old World</option>
+                      </select>
+                    </div> 
+                  </div>
+                  <div class="row">
+                    <div class="small-12 medium-4 medium-push-4 columns">
+                      <div class="slider-holder">
+                        <div class="slider-bar"></div>
+                        <div class="slider-grip" id="sq-ft-range-min"></div>
+                        <div class="slider-grip" id="sq-ft-range-max"></div>
+                      </div>
+                    </div>
+                    <div class="small-6 medium-4 medium-pull-4 columns">
+                      <input type="text" placeholder="Sq. Ft. Min." />
+                    </div>
+                    <div class="small-6 medium-4 columns">
+                      <input type="text" placeholder="Sq. Ft. Max." />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="small-6 columns">
+                      <input type="text" placeholder="Beds" name="num-beds" />
+                    </div>
+                    <div class="small-6 columns">
+                      <input type="text" placeholder="Baths" name="num-baths" />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="small-12 medium-4 medium-push-4 columns">
+                      <div class="slider-holder">
+                        <div class="slider-bar"></div>
+                        <div class="slider-grip" id="lot-range-min"></div>
+                        <div class="slider-grip" id="lot-range-max"></div>
+                      </div>
+                    </div>
+                    <div class="small-6 medium-4 medium-pull-4 columns">
+                      <input type="text" placeholder="Lot Size Min." />
+                    </div>
+                    <div class="small-6 medium-4 columns">
+                      <input type="text" placeholder="Lot Size Max." />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="small-12 columns">
+                      <input type="text" placeholder="Desired Zip Codes*" name="desired-zip" />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="small-12 columns">
+                      <select name="price-range" required>
+                        <option selected disabled value>Price Range<sup>*</sup></option>
+                        <option value="lower-range">$500,000 - $1,000,000</option>
+                        <option value="middle-range">$1,000,000 - $3,000,000</option>
+                        <option value="upper-range">$3,000,000 - $10,000,000</option>
+                        <option value="max-range">$10,000,000+</option>
+                      </select>
+                      <small class="error">We need to know your price range!</small>
+                    </div> 
+                  </div>
+                  <div class="row">
+                    <div class="small-12 columns select-prefix">
+                      <span>When are you looking to build a home?</span>
+                      <select name="building-timeframe">
+                        <option disabled selected value>Select<sup>*</sup></option>
+                        <option value="interested">Right now</option>
+                        <option value="1-2-months">1-2 Months</option>
+                        <option value="3-6-months">3-6 Months</option>
+                        <option value="6-plus-months">6+ Months</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="small-12 columns">
+                      <textarea rows="7" placeholder="Other details about the home you want to build" name="other-details"></textarea>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="small-12 medium-6 columns">
+                      <input type="text" placeholder="First Name*" name="first-name" required />
+                      <small class="error">We need to know who to contact!</small>
+                    </div>
+                    <div class="small-12 medium-6 columns">
+                      <input type="text" placeholder="Last Name" name="last-name" />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="small-12 columns">
+                      <input type="text" placeholder="Phone Number*" name="phone-number" required />
+                      <small class="error">A phone number is required.</small>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="small-12 columns">
+                      <input type="text" placeholder="Email Address*" name="email-address" pattern="email" required />
+                      <small class="error">A valid email address is required.</small>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="small-12 columns">
+                      <textarea rows="7" placeholder="Optional message" name="optional-message"></textarea>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="small-12 columns checkbox-opt">
+                      <input type="checkbox" id="newsletter-checkbox" value="newsletter-opt" name="newsletter-opt-in" checked>
+                      <label class="checkbox-skin" for="newsletter-checkbox"></label>
+                      <label class="checkbox-label" for="newsletter-checkbox">Sign me up for the monthly Market Update E-Newsletter</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="small-12 columns">
+                      <span><sup>*</sup>Required</span>
+                      <input type="submit" value="Submit" />
+                    </div>
+                  </div>
+                </form>
+
+              <!-- Shows after form submit hides form -->
+              <div id="thank-you-message">
+                <h3>Thanks for contacting The Alcove Group!</h3>
+                <p>A specialist will get back to you shortly to discuss your submission.</p>
+              </div>
+
+            </div> <!-- End form column -->
+
+          </div>
+        </div>
+      </div>
+      <!-- Hero -->
+
+
+      <!-- Footer -->
+      <div id="footer" class="reverse alcove-texture">
+        <div class="row">
+          <div class="small-12 medium-8 medium-offset-2 columns footer-content">
+            <h4>Subscribe to Alcove Market Updates</h4>
+            <form id="footerSubscribe">
+              <input type="text" placeholder="Email Address" />
+              <input type="submit" class="small" value="Subscribe" />
+            </form>
+            <ul class="social-icons">
+              <li><a href="#"><span class="icon-ring"></span><span class="icon-icon-email"></span></a></li>
+              <li><a href="#"><span class="icon-ring"></span><span class="icon-icon-phone"></span></a></li>
+              <li><a href="#"><span class="icon-ring"></span><span class="icon-icon-facebook"></span></a></li>
+              <li><a href="#"><span class="icon-ring"></span><span class="icon-icon-linkedin"></span></a></li>
+            </ul>
+            <ul class="menu">
+              <li><a href="index.html">Featured Homes</a></li>
+              <li><a href="home-value.html">Find Your Home’s Value</a></li>
+              <li><a href="search-homes.html">Search Homes</a></li>
+              <li><a href="sell-your-home.html">Sell Your Home</a></li>
+              <li><a href="buy-a-home.html">Buy A Home</a></li>
+              <li><a href="build-a-home.html">Build A Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <p class="copyright">Copyright© The Alcove Group 2016</p>
+          </div>
+        </div>
+      </div>
+      <!-- Footer -->
+
+    </div>
+    <!-- Expanding content frame -->
+
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/foundation/js/foundation.min.js"></script>
+    <script src="../bower_components/foundation/js/foundation/foundation.abide.js"></script>
+    <script src="../js/app.js"></script>
+    <script>
+    $(document).foundation({
+      abide : {
+        live_validate : true, // validate the form as you go
+        validate_on_blur : false, // validate whenever you focus/blur on an input field
+        focus_on_invalid : false // automatically bring the focus to an invalid input field
+      }
+    });
+    function formSubmission(event) {
+     $('#build-a-home-form').on('invalid.fndtn.abide', function () {
+        var invalid_fields = $(this).find('[data-invalid]');
+        // console.log("invalid fields: ");
+        // console.log(invalid_fields);
+      }).on('valid.fndtn.abide', function () {
+        console.log('valid!');
+        $('.form-and-blurb').hide();
+        $('#thank-you-message').show();
+      });
+    }
+    </script>
+  </body>
+</html>

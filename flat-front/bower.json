@@ -1,0 +1,11 @@
+{
+  "name": "foundation-compass-app",
+  "version": "0.0.1",
+  "private": "true",
+  "dependencies": {
+    "foundation": "zurb/bower-foundation",
+    "jquery": "^2.1.4",
+    "slick-carousel": "^1.6.0",
+    "fullpage.js": "^2.8.2"
+  }
+}

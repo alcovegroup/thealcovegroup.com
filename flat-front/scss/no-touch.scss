@@ -1,0 +1,209 @@
+@import "settings";
+@import "variables";
+@import "compass";
+
+.no-touch {
+
+a:hover {
+	padding-bottom: 0.5rem;
+	border-color: transparent;
+	color: $darkYellow;
+}
+
+#menu-frame {
+	ul.mobile-menu {
+		li {
+			a {
+				&:hover {
+					padding: 0;
+					color: $darkYellow;
+				}
+			}
+		}
+	}
+}
+
+#header {
+	a:hover {
+		padding: initial;
+	}
+	a.call-now-promo:hover {
+		padding: 0.5rem;
+		border: none;
+		h4 {
+			color: $white;
+		}
+	}
+}
+
+
+
+.social-icons {
+	li {
+		&:hover {
+			.icon-ring {
+				@include transform(scale(1.6));
+				opacity: 0;
+				border-color: $lightYellow;
+			}
+			.icon-icon-email,
+			.icon-icon-linkedin,
+			.icon-icon-facebook,
+			.icon-icon-phone {
+				&::before {
+					@include transform(scale(1.35) rotate(360deg));
+				}
+			}
+		}
+	}
+}
+
+input[type="submit"]:hover,
+button:hover,
+a.btn:hover,
+label.btn:hover {
+	color: $white;
+	background: $primaryBlue;
+	border-color: $primaryBlue;
+	padding-bottom: 0.7rem;
+	&.small {
+		padding-bottom: 0.7rem;
+	}
+}
+
+.featured-home {
+	&:nth-child(3n+2),
+	&:nth-child(3n+3) {
+		a.btn:hover {
+			color: $primaryBlue;
+			background: $white;
+			border-color: $white;
+		}
+	}
+}
+
+.page-template-home-details,
+.single-featured_home,
+.single-sr-listings {
+	#home-content-row {
+		.home-content-hidden-link {
+			&:hover {
+				padding: initial;
+			}
+		}
+	}
+}
+
+#pagination-row {
+	.pagination-count {
+		input[name="pageNumber"] {
+			&:focus {
+				padding: 0.5rem;
+				padding-top: 0.75rem;
+			}
+		}
+	}
+}
+
+@media #{$medium-up} {
+	input[type="submit"]:hover,
+	button:hover,
+	a.btn:hover,
+	label.btn:hover {
+		padding-bottom: 1rem;
+		&.small {
+			padding-bottom: 0.7rem;
+		}
+	}
+}
+
+.reverse {
+	input[type="submit"]:hover,
+	button:hover,
+	a.btn:hover,
+	label.btn:hover {
+		color: $primaryBlue;
+		background: $white;
+		border-color: $white;
+	}
+}
+
+// Turn on if using display block on <tr>
+// table {
+// 	tr {
+// 		&:hover {
+// 			@include box-shadow(0 0 10px rgba($darkBrown, 0.25));
+// 		}
+// 	}
+// 	thead {
+// 		tr {
+// 			&:hover {
+// 				@include box-shadow(none);
+// 			}
+// 		}
+// 	}
+// }
+
+.slick-slider button {
+	&:hover {
+		padding: 0;
+		margin: 0;
+		background: transparent;
+	}
+}
+.slick-dots {
+	li button.tab {
+		&:hover {
+			background-size: cover;
+			background-position: center;
+		}
+	}
+}
+
+.featured-home {
+	&:nth-child(3n+2) {
+		.featured-home-details {
+			a.btn:hover {
+				color: $lightBrown;
+			}
+		}
+	}
+	&:nth-child(3n+4) {
+		.featured-home-details {
+			a.btn:hover {
+				background-color: $darkBrown;
+				color: $lightYellow;
+			}
+		}
+	}
+}
+
+#footer {
+	ul.menu {
+		li {
+			a {
+				&:hover {
+					color: $darkYellow;
+					padding: 0;
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
