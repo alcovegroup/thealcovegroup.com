@@ -1,15 +1,17 @@
 // @import "compass";
 
 $defaultTransitionDuration: 0.2s;
-$defaultHeaderHeight: rem-calc(280px);
-$minimizedHeaderHeight: rem-calc(70px);
+$defaultHeaderHeight: rem-calc(220px);
+$minimizedHeaderHeight: rem-calc(100px);
+$mobileHeaderHeight: rem-calc(70px);
 $defaultHeaderHeightMicrosite: rem-calc(95px);
 $minimizedHeaderHeightMicrosite: rem-calc(110px);
 $globalHeaderHeight: rem-calc(30px);
 $callNowHeaderHeight: rem-calc(24px);
 $regionalHeaderHeight: rem-calc(65px);
+$regionalHeaderHeightMedium: rem-calc(165px);
 $globalHeaderHeightDesktop: rem-calc(40px);
-$regionalHeaderHeightDesktop: rem-calc(145px);
+$regionalHeaderHeightDesktop: rem-calc(229px);
 $menuWidth: rem-calc(248px);
 $featuredHomeHeight: rem-calc(490px);
 

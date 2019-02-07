@@ -39,7 +39,7 @@
 		position: relative;
 		padding: 0 1rem;
 		img.logo-mobile {
-			top: 0.5rem;
+			top: 0.6rem;
 		}
 		.mobile-logo-holder {
 			border: none;
@@ -68,14 +68,20 @@
 	#hero .hero-overlay {
 		padding-top: 7rem;
 	}
-	// .page-template-search-homes.hero-form {
-	// 	display: none;
-	// }
 }
 
 .home.microsite-page {
 	#hero .hero-overlay {
 		padding-top: 0;
+	}
+}
+
+.page-template-home-details,
+.single-featured_home,
+.single-sr-listings,
+.page-template-contact {
+	#content-frame {
+		padding-top: $defaultHeaderHeightMicrosite + $callNowHeaderHeight;
 	}
 }
 
@@ -99,12 +105,10 @@ Y88b  d88P       888  Y88b  d88P      Y88b. .d88P 888
 		height: $globalHeaderHeightDesktop;
 		#global-home-link {
 			padding: 0.45rem 0;
-			// @include showMe(red);
 			.icon-icon-home {
 				margin-right: rem-calc(10px);
 			}
 			span {
-				// @include showMe(yellow);
 				display: inline-block !important;
 			}
 		}
@@ -113,16 +117,21 @@ Y88b  d88P       888  Y88b  d88P      Y88b. .d88P 888
 		}
 	}
 	#regional-header {
-		height: $regionalHeaderHeightDesktop;
+		height: $regionalHeaderHeightMedium;
+	}
+	.header-logo-holder {
+		top: 20px;
+		height: 130px;
+		width: 260px;
 	}
 	&.minimized {
 		height: $globalHeaderHeightDesktop + $regionalHeaderHeight + $callNowHeaderHeight;
 		#regional-header {
 			height: $regionalHeaderHeight;
 			.header-logo-holder {
-				top: -2px;
-				width: 160px;
-				height: 70px;
+				top: 0;
+			    height: 68px;
+    			width: 180px;
 			}
 		}
 		label.btn {
@@ -131,12 +140,24 @@ Y88b  d88P       888  Y88b  d88P      Y88b. .d88P 888
 		ul.social-icons {
 			top: 0.45rem;
 		}
+		.logo {
+			top: -138%;
+		}
 	}
 	label.btn {
 		top: rem-calc(65px);
 	}
 	ul.social-icons {
 		top: rem-calc(63px);
+	}
+}
+
+.page-template-home-details,
+.single-featured_home,
+.single-sr-listings,
+.page-template-contact {
+	#content-frame {
+		padding-top: 242px;
 	}
 }
 
@@ -158,6 +179,7 @@ Y88b  d88P       888  Y88b  d88P      Y88b. .d88P 888
 
 
 
+
 /*
 888             d8888 8888888b.   .d8888b.  8888888888       888     888 8888888b.  
 888            d88888 888   Y88b d88P  Y88b 888              888     888 888   Y88b 
@@ -174,8 +196,22 @@ Y88b  d88P       888  Y88b  d88P      Y88b. .d88P 888
 
 .microsite-page #header {
 	height: rem-calc(250px);
+	.header-logo-holder {
+		top: 40px;
+		height: 149px;
+		width: 320px;
+	}
 	&.minimized {
 		height: $globalHeaderHeightDesktop + $regionalHeaderHeight;
+	}
+}
+
+.page-template-home-details,
+.single-featured_home,
+.single-sr-listings,
+.page-template-contact {
+	#content-frame {
+		padding-top: 272px;
 	}
 }
 
@@ -198,20 +234,10 @@ d8888   d88P  Y88b d8888  888              888     888 888   Y88b
 		#global-header,
 		#global-header > .row,
 		#regional-header {
-			// @include showMe(red);
 			padding: 0;
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
 
 
 
