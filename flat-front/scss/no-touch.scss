@@ -31,7 +31,7 @@ a:hover {
 		padding: 0.5rem;
 		border: none;
 		h4 {
-			color: $white;
+			color: $darkYellow;
 		}
 	}
 }
@@ -72,13 +72,10 @@ label.btn:hover {
 }
 
 .featured-home {
-	&:nth-child(3n+2),
-	&:nth-child(3n+3) {
-		a.btn:hover {
-			color: $primaryBlue;
-			background: $white;
-			border-color: $white;
-		}
+	a.btn:hover {
+		color: $primaryBlue;
+		background: $white;
+		border-color: $white;
 	}
 }
 
@@ -160,23 +157,6 @@ label.btn:hover {
 	}
 }
 
-.featured-home {
-	&:nth-child(3n+2) {
-		.featured-home-details {
-			a.btn:hover {
-				color: $lightBrown;
-			}
-		}
-	}
-	&:nth-child(3n+4) {
-		.featured-home-details {
-			a.btn:hover {
-				background-color: $darkBrown;
-				color: $lightYellow;
-			}
-		}
-	}
-}
 
 #footer {
 	ul.menu {

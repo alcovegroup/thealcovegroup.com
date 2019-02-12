@@ -460,43 +460,20 @@ ul.social-icons {
 			margin-top: 1rem;
 		}
 	}
-	&:nth-child(3n+2) {
-		h4, h3 {
-			color: $white;
-		}
-		a.btn {
-			border-color: $white;
-			color: $white;
-		}
-		.featured-home-details {
-			background-color: rgba($lightBrown, 1);
-		}
+	h4, h3 {
+		color: $white;
 	}
-	&:nth-child(3n+3) {
-		h4, h3 {
-			color: $white;
-		}
-		a.btn {
-			border-color: $white;
-			color: $white;
-		}
-		.featured-home-details {
-			background-color: rgba($primaryBlue, 1);
-		}
+	a.btn {
+		border-color: $white;
+		color: $white;
 	}
-	&:nth-child(3n+4) {
-		.featured-home-details {
-			background-color: rgba($lightYellow, 1);
-			a.btn {
-				border-color: $darkBrown;
-				color: $darkBrown;
-			}
-		}
+	.featured-home-details {
+		background-color: rgba($primaryBlue, 1);
 	}
 }
 
 .alcove-texture {
-	background: url('../img/footer-bg-tile.png'), $darkBrown;
+	background: $primaryBlue;
 	background-size: rem-calc(72px);
 	background-repeat: repeat;
 }
@@ -1321,7 +1298,7 @@ ul {
 
 .call-now-promo {
 	padding: 0.75rem;
-	background: $lightYellow;
+	background: $white;
 	max-width: rem-calc(575px);
 	margin: auto;
 	@include box-shadow(0 0 20px rgba($primaryBlue, 1));
