@@ -1,3 +1,4 @@
 flat-front/.sass-cache/
 wordpress/wp-content/uploads/
 *.sw*
+deploy.php
