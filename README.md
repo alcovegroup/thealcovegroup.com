@@ -18,3 +18,5 @@ will compile to the parent theme and not the proper microsite theme. For now it 
 to:
 
 `wordpress/wp-content/themes/thealcovegroup-microsite/stylesheets`
+
+Testing auto deployment
