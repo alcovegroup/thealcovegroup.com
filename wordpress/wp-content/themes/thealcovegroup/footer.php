@@ -4,7 +4,7 @@
       </div> <!-- End of page hide wrapper -->
     <?php endif; ?>
 
-    <?php if ( get_site_url() === "http://alcoveglobal.com" || get_site_url() === "http://alcoveglobal.com/paradise-valley" ) { ?>
+    <?php if ( get_site_url() === "http://".getenv('CURRENT_DOMAIN') || get_site_url() === "http://".getenv('CURRENT_DOMAIN')."/paradise-valley" ) { ?>
     	<script type="text/javascript">
 		var _ss = _ss || [];
 		_ss.push(['_setDomain', 'https://koi-3QEHIZGEXU.marketingautomation.services/net']);
