@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Alcove Group Instance Creator
-Plugin URI: http://www.thealcovegroup.com
+Plugin URI: http://www.alcoveglobal.com
 Description: Generates a new instance of a child site on the network.
 Version: 1.0
 Author: Edwin Orjales
@@ -87,7 +87,7 @@ function ic_render_page()
                 ?>
             <p>
             <label for="new_site_path">New Site Subdirectory Path</label>
-            Path for the new site. Follows the domain. Lower case.<br />Example: http://thealcovegroup.com/<strong style="color:blue;">newsite</strong>
+            Path for the new site. Follows the domain. Lower case.<br />Example: http://alcoveglobal.com/<strong style="color:blue;">newsite</strong>
             <br />
                 <input type="text" name="new_site_path" value="newsite" />
             </p>

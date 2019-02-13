@@ -1,5 +1,5 @@
 # www.theAlcoveGroup.com
-Development source and WordPress build for www.thealcovegroup.com.
+Development source and WordPress build for www.alcoveglobal.com.
 
 Source sass and flat/static HTML lives in `flat-front/`. Built using Foundation. [See docs.](flat-front)
 
