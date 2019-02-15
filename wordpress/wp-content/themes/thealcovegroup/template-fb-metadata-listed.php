@@ -19,4 +19,4 @@ if( $images ) { ?>
 }
 ?>
 <meta property="og:description" content="<?=$description;?>" />
-<meta property="og:site_name" content="The Alcove Group" />
+<meta property="og:site_name" content="Alcove" />

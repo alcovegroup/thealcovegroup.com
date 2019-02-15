@@ -7,4 +7,4 @@
     <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/img/Alcove-FeaturedImageDefault-thumb.jpg" />
 <?php endif; ?>
 <meta property="og:description" content="<?php echo get_the_content() ?>" />
-<meta property="og:site_name" content="The Alcove Group" />
+<meta property="og:site_name" content="Alcove" />

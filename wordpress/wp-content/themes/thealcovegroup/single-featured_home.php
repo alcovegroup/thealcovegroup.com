@@ -400,7 +400,7 @@
 
 
           <div id="alcove-contact-box" class="reverse">
-            <h4>Contact The Alcove Group</h4>
+            <h4>Contact Alcove</h4>
             <?php if (get_option('global_listing_agent') !== 'Generic' ) {
                 $listingAgent = get_page_by_title( get_option('global_listing_agent'), OBJECT, 'bios' );
                 $listingAgentID = $listingAgent->ID;
@@ -475,7 +475,7 @@
 
             <!-- Shows after form submit hides form -->
             <div id="thank-you-message">
-              <h3>Thanks for contacting The Alcove Group!</h3>
+              <h3>Thanks for contacting Alcove!</h3>
               <p>A specialist will get back to you shortly to discuss your submission.</p>
             </div>
 

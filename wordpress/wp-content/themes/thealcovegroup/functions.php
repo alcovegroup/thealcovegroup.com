@@ -44,7 +44,7 @@ function comicpress_copyright() {
 	");
 	$output = '';
 	if($copyright_dates) {
-		$copyright = "Copyright© The Alcove Group ";
+		$copyright = "Copyright© Alcove ";
 		$copyright .= $copyright_dates[0]->firstdate;
 		if($copyright_dates[0]->firstdate != $copyright_dates[0]->lastdate) {
 			$copyright .= '-' . $copyright_dates[0]->lastdate;
