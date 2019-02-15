@@ -527,6 +527,6 @@
     }
     </script>
   <script src="<?php echo get_template_directory_uri(); ?>/js/single_listings.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvOFHf88DsjnHQ0lDbjK7tE-AAgqvNsVc&callback=initMap" async defer></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8XFtLVleZMXYQmoqjXX6AV90FhKcAfPg&callback=initMap" async defer></script>
 
 <?php get_footer(); ?>

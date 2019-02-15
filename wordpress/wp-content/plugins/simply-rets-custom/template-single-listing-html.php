@@ -644,5 +644,5 @@ if(!empty($photos)) {
         });
     }
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvOFHf88DsjnHQ0lDbjK7tE-AAgqvNsVc&callback=initMap" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8XFtLVleZMXYQmoqjXX6AV90FhKcAfPg&callback=initMap" async defer></script>
 <!-- Details content -->
