@@ -232,7 +232,7 @@
 		});
 	}
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmCM_w4VaOnhY8XQgyl7SFawfm2c5s21A&callback=initMap"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8XFtLVleZMXYQmoqjXX6AV90FhKcAfPg&callback=initMap"
     async defer></script>
 
 <?php get_footer(); ?>

@@ -94,7 +94,7 @@
 
             <!-- Shows after form submit hides form -->
             <div id="thank-you-message">
-              <h3>Thanks for contacting The Alcove Group!</h3>
+              <h3>Thanks for contacting Alcove Global!</h3>
               <p>A specialist will get back to you shortly to discuss your submission.</p>
             </div>
 
@@ -149,7 +149,7 @@
         var contentString = '<div id="content">'+
             '<div id="siteNotice">'+
             '</div>'+
-            '<h4 style="font-size: 1rem; margin: 0.5rem 0; text-align: center;">The Alcove Group</h4>'+
+            '<h4 style="font-size: 1rem; margin: 0.5rem 0; text-align: center;">Alcove Global</h4>'+
             '</div>';
         var infowindow = new google.maps.InfoWindow({
           content: contentString
@@ -158,14 +158,14 @@
         var marker = new google.maps.Marker({
           position: myLatLng,
           map: map,
-          title: 'The Alcove Group'
+          title: 'Alcove Global'
         });
 
         infowindow.open(map, marker);
       }
 
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmCM_w4VaOnhY8XQgyl7SFawfm2c5s21A&callback=initMap"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8XFtLVleZMXYQmoqjXX6AV90FhKcAfPg&callback=initMap"
     async defer></script>
 
 <?php get_footer(); ?>

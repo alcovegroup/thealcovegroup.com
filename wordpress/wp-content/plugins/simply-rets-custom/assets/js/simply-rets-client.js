@@ -284,10 +284,10 @@ var getSearchFormValues = function() {
 
 
 /**
- * Our Map Class
+ * Our srMap Class
  * Holds some state for working with the map:
  */
-function Map() {
+function srMap() {
 
     this.element    = 'sr-map-search';
     this.bounds     = [];
@@ -319,12 +319,12 @@ function Map() {
 
 
 /**
- * Map prototype methods
+ * srMap prototype methods
  */
 
 
 /** `rec`: google.maps.OverlayType === RECTANGLE */
-Map.prototype.getRectanglePoints = function(rec) {
+srMap.prototype.getRectanglePoints = function(rec) {
 
     var latLngs = [];
     var bounds  = new google.maps.LatLngBounds();
@@ -349,7 +349,7 @@ Map.prototype.getRectanglePoints = function(rec) {
     return latLngs;
 }
 
-Map.prototype.getPolygonPoints = function(polygon) {
+srMap.prototype.getPolygonPoints = function(polygon) {
 
     var paths  = polygon.getPaths();
     var points = [];
@@ -389,30 +389,30 @@ Map.prototype.getPolygonPoints = function(polygon) {
 }
 
 
-Map.prototype.addEventListener = function(source, event, fn) {
+srMap.prototype.addEventListener = function(source, event, fn) {
     return google.maps.event.addListener(source, event, fn);
 }
 
-Map.prototype.searchFormValues = function() {
+srMap.prototype.searchFormValues = function() {
     return getSearchFormValues();
 };
 
-Map.prototype.clearMarkers = function() {
+srMap.prototype.clearMarkers = function() {
     if(this.markers.length > 0)
         this.setMapOnMarkers(null);
 }
 
-Map.prototype.clearPolygon = function() {
+srMap.prototype.clearPolygon = function() {
     if(this.polygon !== null)
         this.setMapOnPolygon(null);
 }
 
-Map.prototype.setDrawCtrlOptions = function(opts) {
+srMap.prototype.setDrawCtrlOptions = function(opts) {
     return this.drawCtrl.setOptions(opts);
 }
 
 
-Map.prototype.handlePolygonDraw = function(that, overlay) {
+srMap.prototype.handlePolygonDraw = function(that, overlay) {
 
     that.clearMarkers();
     that.clearPolygon();
@@ -432,7 +432,7 @@ Map.prototype.handlePolygonDraw = function(that, overlay) {
 }
 
 
-Map.prototype.handleRectangleDraw = function(that, overlay) {
+srMap.prototype.handleRectangleDraw = function(that, overlay) {
 
     that.clearMarkers();
     that.clearPolygon();
@@ -452,7 +452,7 @@ Map.prototype.handleRectangleDraw = function(that, overlay) {
 }
 
 
-Map.prototype.handleFormSubmit = function(e) {
+srMap.prototype.handleFormSubmit = function(e) {
     e.preventDefault();
 
     this.clearMarkers();
@@ -470,7 +470,7 @@ Map.prototype.handleFormSubmit = function(e) {
 }
 
 
-Map.prototype.setMapOnMarkers = function(map) {
+srMap.prototype.setMapOnMarkers = function(map) {
 
     for(var i = 0; i < this.markers.length; i++) {
         this.markers[i].setMap(map);
@@ -480,7 +480,7 @@ Map.prototype.setMapOnMarkers = function(map) {
 }
 
 
-Map.prototype.setMapOnPolygon = function(map) {
+srMap.prototype.setMapOnPolygon = function(map) {
 
     this.polygon.setMap(map);
 
@@ -488,7 +488,7 @@ Map.prototype.setMapOnPolygon = function(map) {
 }
 
 
-Map.prototype.handleRequest = function(that, data) {
+srMap.prototype.handleRequest = function(that, data) {
 
     // Remove data from map before request
     that.setMapOnMarkers(null);
@@ -531,7 +531,7 @@ Map.prototype.handleRequest = function(that, data) {
 
 }
 
-Map.prototype.initPaginationEventHandlers = function(that, pag) {
+srMap.prototype.initPaginationEventHandlers = function(that, pag) {
 
     if(pag.next !== null) {
 
@@ -570,7 +570,7 @@ Map.prototype.initPaginationEventHandlers = function(that, pag) {
 }
 
 
-Map.prototype.setLoadMsgMap = function(map) {
+srMap.prototype.setLoadMsgMap = function(map) {
 
     if(!this.polygon && !this.rectangle) return;
 
@@ -580,7 +580,7 @@ Map.prototype.setLoadMsgMap = function(map) {
 }
 
 
-Map.prototype.sendRequest = function(points, params, paginate) {
+srMap.prototype.sendRequest = function(points, params, paginate) {
 
     this.setLoadMsgMap(this.map);
 
@@ -629,7 +629,7 @@ Map.prototype.sendRequest = function(points, params, paginate) {
 
 }
 
-Map.prototype.setDrawingManager = function() {
+srMap.prototype.setDrawingManager = function() {
 
     var that = this;
 
@@ -683,7 +683,7 @@ Map.prototype.setDrawingManager = function() {
 };
 
 
-Map.prototype.initEventListeners = function() {
+srMap.prototype.initEventListeners = function() {
 
     var that = this;
 
