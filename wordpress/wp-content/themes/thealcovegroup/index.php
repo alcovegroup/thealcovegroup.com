@@ -53,7 +53,7 @@
           <!-- Scroll CTA -->
           <div class="row scroll-cta">
             <div class="large-12 columns">
-              <h3>The Alcove Group Featured Homes</h3>
+              <h3>Alcove Featured Homes</h3>
               <span class="outer-circle"><span class="icon-icon-arrow-down"></span></span>
             </div>
           </div>
