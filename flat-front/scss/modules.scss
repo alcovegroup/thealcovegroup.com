@@ -55,7 +55,7 @@ input#menu-toggle {
 }
 
 #menu-frame {
-	background-color: $darkBrown;
+	background-color: $primaryBlue;
 	width: $menuWidth;
 	z-index: 9999;
 	@include transform(translateX($menuWidth*-1));
@@ -84,14 +84,14 @@ input#menu-toggle {
 		text-transform: uppercase;
 		li {
 			color: inherit;
-			border-top: 1px solid $lightBrown;
+			border-top: 1px solid $gray-4;
 			margin: 0;
 			padding: 0.75rem 0.5rem 0.75rem 1rem;
 			min-height: rem-calc(44px);
-			background-color: $darkBrown;
+			background-color: $primaryBlue;
 			text-indent: 0;
 			&:nth-child(even) {
-				background-color: darken($darkBrown, 3%);
+				background-color: $primaryBlue;
 			}
 			a {
 				color: inherit;
