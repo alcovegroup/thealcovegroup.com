@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welcome to the Alcove Group</title>
+    <title>Alcove Luxury Real Estate</title>
     <?php wp_head();
     $post_id = get_the_id();
     if(is_singular('featured_home')) {include_once ('template-fb-metadata-featured.php');}

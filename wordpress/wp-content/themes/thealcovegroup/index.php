@@ -21,7 +21,7 @@
           <div class="row v-center">
             <div class="large-12 columns hero-buttons">
               <div>
-                <a href="<?php echo network_site_url() . '/about/'; ?>" class="btn">Our Realtors</a>
+                <a href="<?php echo network_site_url() . '/about/'; ?>" class="btn">Realtors</a>
               </div>
 
               <div>
