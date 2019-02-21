@@ -60,7 +60,7 @@ input#menu-toggle:checked + #menu-frame {
 
 /* line 57, ../../../../../flat-front/scss/modules.scss */
 #menu-frame {
-  background-color: #302b28;
+  background-color: #012639;
   width: 15.5rem;
   z-index: 9999;
   -moz-transform: translateX(-15.5rem);
@@ -101,16 +101,16 @@ input#menu-toggle:checked + #menu-frame {
 /* line 85, ../../../../../flat-front/scss/modules.scss */
 #menu-frame ul.mobile-menu li {
   color: inherit;
-  border-top: 1px solid #4d4845;
+  border-top: 1px solid #3b3b3b;
   margin: 0;
   padding: 0.75rem 0.5rem 0.75rem 1rem;
   min-height: 2.75rem;
-  background-color: #302b28;
+  background-color: #012639;
   text-indent: 0;
 }
 /* line 93, ../../../../../flat-front/scss/modules.scss */
 #menu-frame ul.mobile-menu li:nth-child(even) {
-  background-color: #282421;
+  background-color: #012639;
 }
 /* line 96, ../../../../../flat-front/scss/modules.scss */
 #menu-frame ul.mobile-menu li a {
@@ -1359,7 +1359,7 @@ ul.social-icons span.icon-icon-phone, ul.social-icons span.icon-icon-linkedin, u
 }
 /* line 1044, ../../../../../flat-front/scss/modules.scss */
 .page-template-about .about-bio-row .about-bio-text {
-  background-color: #4d4845;
+  background-color: #012639;
   height: auto;
 }
 /* line 1047, ../../../../../flat-front/scss/modules.scss */
