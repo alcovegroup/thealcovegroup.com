@@ -252,10 +252,10 @@ $perpage = $GLOBALS['perpage'];
                   }
               }
               $the_shortcode .= ' limit="' . $perpage .'"';
-              $the_shortcode .= ']';
+              $the_shortcode .= ' sort="-listprice"]';
               //if(isset($_GET['zip'])) {
               if(1 == 1) {
-                  // echo '<h1 class="debug">'.$the_shortcode.'</h1>';
+                   //echo '<h1 class="debug">'.$the_shortcode.'</h1>';
                   echo do_shortcode($the_shortcode);
                   }
           endwhile; endif; wp_reset_query(); ?>
