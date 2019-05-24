@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="small-12 medium-8 medium-offset-2 columns footer-content">
+  <div class="small-12 small-centered medium-10 large-8 columns footer-content">
     <?php if ( get_option('global_footer_message') ): ?>
     <h4><?php echo get_option('global_footer_message'); ?></h4>
     <?php endif; ?>
@@ -36,5 +36,11 @@
     </ul>
     <?php wp_nav_menu( array('container' => false, 'menu_class' => 'menu', 'theme_location' => 'footer' ) ); ?>
     <p class="copyright"><?php echo comicpress_copyright(); ?></p>
+  </div>
+  <div class="small-12 small-centered medium-11 columns footer-content">
+    <p class="footer-contact footer-nomax-center">
+        <a class="footer-white-link" href="https://www.google.com/maps/search/7014+E+Camelback+Rd,+B100A,+Scottsdale,+AZ+85251/@33.4993841,-111.9328245,16z/data=!3m1!4b1">7014 E Camelback Rd, B100A, Scottsdale, AZ 85251</a> | <a class="footer-white-link" href="tel:4803594955">480.359.4955</a>
+    </p>
+    <p class="footer-legal footer-nomax-center"><small>Alcove LLC is a licensed real estate broker (LC683810000) in the State of Arizona and abides by Equal Housing Opportunity laws. All material presented herein is intended for informational purposes only. Information is compiled from sources deemed reliable but is subject to errors, omissions, changes in price, condition, sale, or withdraw without notice. No statement is made as to accuracy of any description. All measurements and square footages are approximate. Exact dimensions can be obtained by retaining the services of an architect or engineer. Real estate agents affiliated with Alcove are independent contractor sales associates and are not employees of Alcove.</small></p>
   </div>
 </div>

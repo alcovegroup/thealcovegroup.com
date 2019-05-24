@@ -138,8 +138,11 @@ p {
 		font-size: 0.75rem;
 		font-family: $headlineFontFamily;
 		letter-spacing: 0.05rem;
-		margin: 2.5rem 0 1.5rem 0;
+		margin: 1rem 0 1rem 0;
 		max-width: none;
+		@media #{$large-up} {
+			margin-bottom: 2rem;
+		}
 	}
 }
 

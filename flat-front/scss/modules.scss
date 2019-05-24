@@ -609,7 +609,9 @@ ul.social-icons {
 	}
 	.footer-content {
 		margin-top: 2rem;
-		padding-bottom: 2rem;
+		& + .footer-content {
+			margin-top: 0;
+		}
 	}
 	form#footerSubscribe {
 		top: 1rem;
@@ -620,6 +622,24 @@ ul.social-icons {
 			&:focus {
 				width: 105%;
 			}
+		}
+	}
+	.footer-legal {
+		line-height: 1;
+	}
+	.footer-contact {
+		font-size: 0.85rem;
+	}
+	.footer-nomax-center {
+		max-width: 100%;
+		margin: 0.5em auto 0;
+	}
+	.footer-white-link {
+		color: $white;
+		border: none;
+		padding: 0;
+		&:hover {
+			border: none;
 		}
 	}
 	ul.menu {
@@ -2376,7 +2396,6 @@ d8888   d88P  Y88b d8888  888              888     888 888   Y88b
 }
 
 }
-
 
 
 
