@@ -6,6 +6,7 @@
       <div id="fullpage-slider"> <!-- Start fullpage slider -->
 
       <!-- Hero -->
+      <!-- FOOBAR test comment 2 -->
       
       <div id="hero"
       <?php if (has_post_thumbnail( $post->ID ) ): ?>
