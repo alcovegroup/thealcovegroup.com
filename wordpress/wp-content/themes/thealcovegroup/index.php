@@ -6,7 +6,6 @@
       <div id="fullpage-slider"> <!-- Start fullpage slider -->
 
       <!-- Hero -->
-      <!-- FOOBAR test comment 2 -->
       
       <div id="hero"
       <?php if (has_post_thumbnail( $post->ID ) ): ?>
@@ -22,7 +21,7 @@
           <div class="row v-center">
             <div class="large-12 columns hero-buttons">
               <div>
-                <a href="<?php echo network_site_url() . '/about/'; ?>" class="btn">Realtors</a>
+                <a href="<?php echo network_site_url() . '/about/'; ?>" class="btn">Our Agents</a>
               </div>
 
               <div>
