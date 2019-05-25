@@ -625,7 +625,10 @@ ul.social-icons {
 		}
 	}
 	.footer-legal {
-		line-height: 1;
+		line-height: 0.9;
+		small {
+			font-size: 11px;
+		}
 	}
 	.footer-contact {
 		font-size: 0.85rem;
